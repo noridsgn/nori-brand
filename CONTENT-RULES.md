@@ -2,6 +2,15 @@
 
 Read this, `README.md` and `BRAND.md` before designing anything.
 
+## NORI's rules (31 Oct 2026, after week 1 of the automation) — these override anything below
+
+1. **Not black-and-white only.** The 1 Nov drafts were judged "stone age": flat black/ivory/grey wireframes. Follow the first carousel (26 Oct): comfortable, the idea reaches the viewer directly, real designed visuals. Keep the dark frame, but the content inside must be alive (real ad/post designs, colour from the example brands), not grey boxes.
+2. **No Black Friday / White Friday.** Not ours in the Gulf. Never use it as a topic, example or hook.
+3. **Max 5 slides per carousel.** NORI is a designer: posts are **~70% marketing (his work, his service, DM) / ~30% teaching**, ratio can shift per idea. Not pure education.
+4. **Arabic (Kuwaiti) only when talking to NORI** — every message and summary, never switch to English.
+5. **Never put weekly carousels/reels on noridsgn.com.** The site is for concept projects only. Host post media somewhere else.
+
+
 ## Schedule (Asia/Kuwait)
 
 | Day | What |
@@ -28,6 +37,8 @@ Each week has two ideas. Carousel and reel of the same idea share the message, n
 2. **Body slides**: before/after or steps, one point per slide.
 3. **Practical application slide**: show it applied for real. People liked this most.
 4. **Last slide**: question for comments + DM call to action.
+
+Total: **5 slides max** (see NORI's rules above).
 
 Caption: hook line, «اسحب…», question for comments, DM line, one English line, hashtags.
 
