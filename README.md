@@ -7,7 +7,7 @@ Source files for the «نوري | NORI» identity, kept here so every content se
 | `BRAND.md` | Brand book: idea, colours, type, rules, voice (Arabic) |
 | `logos/` | Stacked, horizontal, mark «ن», avatar, watermark — on-dark and on-light |
 | `highlights/` | Instagram highlight covers |
-| `fonts/` | Inter, Inter Display (IBM Plex Sans Arabic: add the .ttf files here) |
+| `fonts/` | IBM Plex Sans Arabic (all weights), Inter, Inter Display |
 | `tokens/tokens.json` | Colour, type, spacing and radius tokens |
 | `templates/` | HTML templates for posts, stories, profile grid, card, portfolio pages |
 
