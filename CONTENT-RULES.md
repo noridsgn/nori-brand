@@ -8,7 +8,7 @@ Read this, `README.md` and `BRAND.md` before designing anything.
 2. **No Black Friday / White Friday.** Not ours in the Gulf. Never use it as a topic, example or hook.
 3. **Max 5 slides per carousel.** NORI is a designer: posts are **~70% marketing (his work, his service, DM) / ~30% teaching**, ratio can shift per idea. Not pure education.
 4. **Arabic (Kuwaiti) only when talking to NORI** — every message and summary, never switch to English.
-5. **Never put weekly carousels/reels on noridsgn.com.** The site is for concept projects only. Host post media somewhere else.
+5. **The site is for concept projects only.** Weekly post media may sit on noridsgn.com/content/<date>/ only as a temporary, unlinked host for Metricool (NORI OK'd this until a better host is found). Never link it from any page.
 
 
 ## Schedule (Asia/Kuwait)
