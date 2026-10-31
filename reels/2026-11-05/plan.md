@@ -1,58 +1,54 @@
-# Reel B · 5 Nov 2026 · معادلة العرض اللي يبيع
+# Reel B · 5 Nov 2026 · قاعدة الـ 3 ستوريات
 
-Same idea as Carousel B (4 Nov). Same message, different look.
-1080×1920, ~31 s. Identity rules as always: #0E0E0E bg, ivory, grey, ONE gold #C9A45C element on screen at a time, watermark top-left 30px, safe margin 80px (120 top / 200 bottom for reel UI). Plex Arabic + Inter.
+Same idea as Carousel B (4 Nov, «سَديم»). Replaces the earlier offer/Black-Friday plan (rejected: no Black Friday in the Gulf, and the offer idea repeated the 26 Oct post).
+1080×1920, ~26 s. NORI frame (#0E0E0E, ivory, grey, watermark top-left, ONE gold element) around colourful «سَديم» story designs.
 
-Different from Reel A (scanner + countdown): this one is **type that gets edited live**, like a text cursor rewriting a bad offer.
-
-## Motion idea: «الكيرسر» (live rewrite)
-A blinking text cursor writes the bad offer, then backspaces it letter by letter and types the fix. Every fixed word drops down into a growing stack at the bottom of the screen; the stack becomes the formula at the end. The gold element is the **cursor** (and at the end it turns into the gold «=»).
+## Motion idea: «الستوري يتكلم» (story-in-story)
+The reel itself plays like an Instagram story: progress bars at the top fill as he talks. First 15 tiny bars (chaos), then they collapse into 3 thick bars (order). Each of the 3 good stories slides in full-screen in its brand colour. Gold element = the active progress bar only. Different from Reel A (scanner + countdown).
 
 ## Hook (0–2 s)
-«خصومات قوية!!» types in fast and big, holds 10 frames, then gets backspaced in one hard swipe. Screen goes empty with only the gold cursor blinking.
+15 random story cards flash one per 3 frames (pink, purple, red, blurry), the 15 bars at the top fill too fast to read. Freeze on «ولا طلب واحد؟».
 
 ## Voice-over (Kuwaiti) — NORI records this
 
 | # | Target | Line |
 |---|---|---|
-| 1 | 0.0–2.0 s | «خصومات قوية»… وما أحد طلب؟ |
-| 2 | 2.0–5.0 s | المشكلة مو بالخصم. المشكلة بطريقة كتابته. |
-| 3 | 5.0–9.0 s | أول شي: الرقم هو البطل. الزبون يقرا «ثلاثين بالمية» قبل أي كلمة. |
-| 4 | 9.0–13.5 s | ثاني شي: عرض واحد بس. خصم وهدية وتوصيل وسحب… الزبون ما بيتذكر ولا واحد. |
-| 5 | 13.5–17.5 s | ثالث شي: موعد حقيقي. «لفترة محدودة» ما تحرك أحد. «لين الجمعة» تحرك. |
-| 6 | 17.5–21.0 s | ورابع شي: خطوة وحدة. قول له بالضبط شلون يطلب. |
-| 7 | 21.0–26.0 s | رقم، منتج، موعد، خطوة. إذا الزبون ما فهم عرضك بثلاث ثواني، عدّله. |
-| 8 | 26.0–31.0 s | عندك عرض للبلاك فرايدي؟ أرسل لي «عرض» بالدايركت، وأقولك شنو ناقصه. |
+| 1 | 0.0–2.5 s | تنزل خمسطعش ستوري باليوم… ولا طلب واحد؟ |
+| 2 | 2.5–5.5 s | المشكلة مو بالعدد. المشكلة بالترتيب. |
+| 3 | 5.5–9.5 s | جرب ثلاث ستوريات بس. الأولى تشد: سؤال يحس فيه الزبون. |
+| 4 | 9.5–13.5 s | الثانية توريه: المنتج بوضوح، والفايدة برقم. |
+| 5 | 13.5–17.5 s | والثالثة تحركه: رابط أو تصويت، خطوة وحدة بس. |
+| 6 | 17.5–21.5 s | ثلاث ستوريات مرتبة تبيع أكثر من خمسطعش عشوائية. |
+| 7 | 21.5–26.0 s | تبي قوالب ستوري ثابتة لبراندك؟ أرسل لي «ستوري» بالدايركت. |
 
-Recording tips: one take, ½ s pause between lines, say the numbers clearly (they get synced to the type).
+Recording: one take, quiet room, ½ s pause between lines.
 
 ## Storyboard
 
 | Shot | Time | On screen | Motion | Gold |
 |---|---|---|---|---|
-| 1 | 0–2 | «خصومات قوية!!» | fast type-on, hard backspace | cursor |
-| 2 | 2–5 | «مو بالخصم.» then «بطريقة كتابته.» | each phrase types then slides up | cursor |
-| 3 | 5–9 | «عروض حصرية» typed small → backspaced → «30%» types in huge (Inter, 420px) | the % lands on «ثلاثين بالمية» | cursor after 30% |
-| 4 | 9–13.5 | 4 offers type as a list; 3 of them get backspaced, «على كل العطور» stays | backspace rhythm on «ولا واحد» | cursor |
-| 5 | 13.5–17.5 | «لفترة محدودة» → backspace → «لين الجمعة 27/11» | date digits roll in like an odometer | cursor |
-| 6 | 17.5–21 | «للطلب تواصلوا معنا» → backspace → «اطلب من الرابط» | one clean retype | cursor |
-| 7 | 21–26 | the four kept words fall into a vertical stack: الرقم + المنتج + الموعد + الخطوة; then «= عرض ينفهم بـ 3 ثواني» | stack drops on each spoken word; cursor morphs into the gold «=» | gold «=» |
-| 8 | 26–31 | «أرسل لي «عرض» بالدايركت» + NORI. end card | type-on, logo holds 1 s | cursor blinks once at the end |
-
-Fictional brand on screen if a poster appears: «نَسمة» (label it as fictional in the caption).
+| 1 | 0–2.5 | 15 random stories flashing, 15 thin bars | hard cuts every 3 frames, freeze | active thin bar |
+| 2 | 2.5–5.5 | «مو بالعدد» / «بالترتيب» | 15 bars slide together and merge into 3 thick bars | first thick bar |
+| 3 | 5.5–9.5 | «سَديم» navy story: «عطرك يختفي بعد ساعتين؟» + poll sticker | story slides up full-screen, poll sticker pops (scale 0→1) on «سؤال» | bar 1 filling |
+| 4 | 9.5–13.5 | sand story: bottle drops in, «يثبت 12 ساعة» | bottle falls + small bounce, number counts 0→12 | bar 2 filling |
+| 5 | 13.5–17.5 | terracotta story: «اطلبه الحين» + link sticker | sticker taps (finger-tap ripple in ivory) | bar 3 filling |
+| 6 | 17.5–21.5 | the 3 stories side by side small, «3 مرتبة > 15 عشوائية» | zoom out from story 3 to the trio | thin gold line under the trio |
+| 7 | 21.5–26 | «أرسل لي «ستوري» بالدايركت» + NORI. end card | type-on, logo holds 1 s | gold button |
 
 ## Music
-Mechanical keyboard clicks as the rhythm bed (soft, under the voice) + a low warm synth pad; a short "thock" on every backspace. Ducked to ≈ -22 dB under voice.
+Light, modern beat ~110 BPM with a soft "swipe" whoosh on each story change; ducked ≈ -22 dB under the voice.
 
 ## Caption
-«خصومات قوية!!»… وما أحد طلب؟ شوف كيف نعيد كتابة العرض قدامك.
+تنزل 15 ستوري باليوم… ولا طلب واحد؟ المشكلة بالترتيب.
 
 شوف الريل للآخر ←
 
-شنو أسوأ جملة عرض شفتها؟ اكتبها بالكومنت 👇🏻
+كم ستوري تنزل باليوم؟ قول لي بالكومنت 👇🏻
 
-عندك عرض للبلاك فرايدي؟ أرسل لي «عرض» بالدايركت وأقولك شنو ناقصه.
+تبي قوالب ستوري ثابتة لبراندك؟ أرسل لي «ستوري» بالدايركت.
 
-Number, product, deadline, one step.
+«سَديم» براند وهمي سويته للتوضيح.
 
-#تصميم_اعلانات #عروض #بلاك_فرايدي #تسويق #الكويت #addesign #marketing
+3 ordered stories beat 15 random ones.
+
+#ستوري #انستقرام #تسويق #سوشال_ميديا #الكويت #تصميم #graphicdesign #socialmediadesign

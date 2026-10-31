@@ -1,7 +1,7 @@
 # Reel A · 2 Nov 2026 · اختبار الـ 5 ثواني
 
-Same idea as Carousel A (1 Nov). Same message, different look.
-1080×1920, ~30 s, Asia/Kuwait. Identity: #0E0E0E bg, ivory #F2F0EB, grey #8A8A8A, ONE gold #C9A45C element on screen at any time, watermark top-left 30px, safe margin 80px (120 top / 200 bottom for reel UI). Plex Arabic + Inter.
+Same idea as Carousel A (1 Nov, v2: bio + picture, highlights). The grid point was removed: it repeated the 26 Oct post. Use the «لومي» designs from the carousel inside the wireframe so it is colourful, not grey.
+1080×1920, ~26 s, Asia/Kuwait. Identity: #0E0E0E bg, ivory #F2F0EB, grey #8A8A8A, ONE gold #C9A45C element on screen at any time, watermark top-left 30px, safe margin 80px (120 top / 200 bottom for reel UI). Plex Arabic + Inter.
 
 ## Motion idea: «عين الزبون» (the scanner)
 The screen is the customer's eye scanning a profile. A thin gold horizontal scan line is the ONLY gold element for the whole reel. It sweeps down a minimal profile wireframe and stops on each part; the part it stops on "opens" into big kinetic type. A 5-second countdown (Inter, grey, top-right) ticks down once per check — the reel is built around that clock.
@@ -18,9 +18,8 @@ Black screen. Giant «5» in Inter slams in (scale 140%→100%, 6 frames), then 
 | 3 | 5.0–9.0 s | أول شي يقراه البايو. لازم يقول شنو تبيع، وين، وكيف يطلب. |
 | 4 | 9.0–13.0 s | بعدين صورة البروفايل. إذا شعارك فيه اسم طويل، بالسيرش ما ينقرا. |
 | 5 | 13.0–18.0 s | الهايلايتس مو ألبوم ذكريات. خلها: المنيو، الأسعار، كيف تطلب، وآراء الزباين. |
-| 6 | 18.0–23.0 s | وأول تسع بوستات هي واجهة محلك. ستايل واحد يبين إن وراه براند. |
-| 7 | 23.0–27.0 s | افتح بروفايلك الحين، وقول لي بالكومنت: أي وحدة ناقصة عندك؟ |
-| 8 | 27.0–31.0 s | وإذا تبيني أشوفه، أرسل لي «بروفايل» بالدايركت. |
+| 6 | 18.0–22.0 s | افتح بروفايلك الحين، وقول لي بالكومنت: أي وحدة ناقصة عندك؟ |
+| 7 | 22.0–26.0 s | وإذا تبيني أشوفه، أرسل لي «بروفايل» بالدايركت. |
 
 Recording tips: one take, phone close to mouth, quiet room, small pause (½ s) between lines so the cuts can be synced.
 
@@ -33,11 +32,10 @@ Recording tips: one take, phone close to mouth, quiet room, small pause (½ s) b
 | 3 | 5–9 | profile wireframe (grey lines); bio block zooms to fill screen; «شنو تبيع؟ وين؟ كيف أطلب؟» pops word by word on each beat | scan line sweeps down and stops on the bio | scan line |
 | 4 | 9–13 | avatar circle shrinks 400→40px; long name inside blurs out; then a single «م» mark replaces it and stays sharp | shrink with ease-in, swap on the word «ما ينقرا» | scan line under the avatar |
 | 5 | 13–18 | 4 highlight circles; old labels («متفرقات، 2024، New») flip like a split-flap board into «المنيو، الأسعار، كيف تطلب، الآراء» | flip one by one on each spoken word | scan line under the row |
-| 6 | 18–23 | 3×3 grid: random tiles snap into one consistent style, tile by tile in a wave from top-right | snap 9 tiles over 2 s | scan line on the grid |
-| 7 | 23–27 | countdown hits 0; «افتح بروفايلك الحين.» big; «أي وحدة ناقصة؟» grey | text rises line by line | scan line under the title |
-| 8 | 27–31 | «أرسل لي «بروفايل» بالدايركت» + NORI. logo end card | logo holds 1 s | scan line becomes the final underline |
+| 6 | 18–22 | countdown hits 0; «افتح بروفايلك الحين.» big; «أي وحدة ناقصة؟» grey | text rises line by line | scan line under the title |
+| 7 | 22–26 | «أرسل لي «بروفايل» بالدايركت» + NORI. logo end card | logo holds 1 s | scan line becomes the final underline |
 
-Countdown (top-right, Inter 600, grey): 5 → 4 → 3 → 2 → 1 → 0 on shots 1, 3, 4, 5, 6, 7.
+Countdown (top-right, Inter 600, grey): 5 → 4 → 3 → 2 → 0 on shots 1, 3, 4, 5, 6.
 
 ## Music
 Minimal, low ticking pulse (clock-like) at ~100 BPM, deep sub hits on each scan stop; volume ducked under the voice (≈ -22 dB). No vocals.
@@ -47,7 +45,7 @@ Minimal, low ticking pulse (clock-like) at ~100 BPM, deep sub hits on each scan 
 
 شوف الريل للآخر وافتح بروفايلك بعدها ←
 
-أي وحدة من الأربع ناقصة عندك؟ قول لي بالكومنت 👇🏻
+أي وحدة من الثلاث ناقصة عندك؟ قول لي بالكومنت 👇🏻
 
 تبيني أشوف بروفايلك؟ أرسل لي «بروفايل» بالدايركت.
 
