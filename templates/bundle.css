@@ -1,0 +1,35 @@
+/* NORI templates — shared classes for the template previews. All sizes are on the real canvas (1080 / 1920); .k-* scales the whole canvas down for display. */
+.nori-page { margin:0; padding:24px; background:var(--bg); color:var(--ink); font-family:var(--font-ar); display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; }
+.nori-page[dir="rtl"] { direction:rtl; }
+.nori-cap { font:600 12px/16px var(--font-en); letter-spacing:.16em; color:var(--ink-muted); text-transform:uppercase; margin:12px 0 0; direction:ltr; text-align:left; }
+
+.cv { position:relative; overflow:hidden; background:var(--nori-black); color:var(--nori-ivory); font-family:var(--font-ar); box-sizing:border-box; }
+.cv * { box-sizing:border-box; }
+.cv-post { width:1080px; height:1080px; }
+.cv-story { width:1080px; height:1920px; }
+.cv-slide { width:1920px; height:1080px; }
+.k-30 { zoom:.3; } .k-25 { zoom:.25; } .k-20 { zoom:.2; } .k-33 { zoom:.3333; } .k-18 { zoom:.18; }
+
+/* placeholder for the design being shown */
+.ph { position:absolute; background:var(--nori-charcoal); background-image:repeating-linear-gradient(135deg, transparent 0 22px, #232323 22px 24px); display:flex; align-items:center; justify-content:center; }
+.ph span { font:400 30px/1 var(--font-ar); color:var(--nori-ash); background:var(--nori-charcoal); padding:12px 20px; }
+
+/* watermark: always top-left, inside the 80px safe margin */
+.wm { position:absolute; top:80px; left:80px; height:30px; }
+.wm-r { left:auto; right:80px; }
+
+/* the concept label — mandatory on every concept project */
+.concept { display:inline-flex; align-items:center; gap:14px; border:2px solid var(--nori-gold); color:var(--nori-gold); border-radius:999px; padding:12px 26px; font:600 22px/1 var(--font-en); letter-spacing:.12em; white-space:nowrap; }
+.concept b { font:500 24px/1 var(--font-ar); letter-spacing:0; }
+.concept i { width:8px; height:8px; border-radius:50%; background:var(--nori-gold); display:inline-block; }
+
+/* text */
+.t-display { font:700 96px/112px var(--font-ar); margin:0; }
+.t-title { font:600 64px/80px var(--font-ar); margin:0; }
+.t-body { font:400 36px/56px var(--font-ar); margin:0; color:var(--nori-ivory); }
+.t-label { font:600 26px/32px var(--font-en); letter-spacing:.14em; text-transform:uppercase; color:var(--nori-ash); margin:0; direction:ltr; }
+.t-meta { font:400 22px/28px var(--font-en); letter-spacing:.06em; color:var(--nori-ash); direction:ltr; }
+.gold { color:var(--nori-gold); }
+.dot { display:inline-block; width:18px; height:18px; border-radius:50%; background:var(--nori-gold); }
+.rule { position:absolute; height:1.5px; background:var(--nori-graphite); }
+.nori-page .cv { box-shadow:0 0 0 5px var(--line); }

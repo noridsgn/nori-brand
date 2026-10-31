@@ -1,0 +1,47 @@
+<!-- @dsCard height=300 -->
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<title>نوري | NORI</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--bg); color:var(--ink); overflow:hidden; }
+  .cover { position:relative; height:300px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:300px; }
+  .art svg { display:block; }
+  .slab { fill:var(--surface); }
+  .bowl { fill:var(--ink); }
+  .sig { fill:var(--accent); }
+  .grain { fill:var(--line); }
+  .words { position:absolute; left:var(--space-6); bottom:var(--space-6); max-width:440px; }
+  .name { margin:0; font:700 96px/.95 var(--font-display); letter-spacing:-.01em; color:var(--ink); }
+  .name .ar { font-family:var(--font-ar); display:block; font-size:84px; line-height:1.15; margin-bottom:6px; }
+  .tag { margin:var(--space-2) 0 0 2px; font:400 14px/20px var(--font-en); color:var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 300" width="480" height="300">
+<!--
+  blocks      surface slab 240x300 bled off the right edge (x 240..480); ink bowl 160 wide (the open letter noon); accent disc r=22 (the gold dot)
+  arrangement one tall slab with satellites: the bowl sits left of the slab on the baseline, the gold dot above it, exactly as in the mark
+  pattern     literal motif (the dot): a grid of line-token dots at space-3 (24px) pitch inside the slab; the one gold dot sits in the bowl, as in the mark
+  scales      pitch space-3 = 24px, dot r 3px, margins space-6 = 48px, square slab corners radius-0
+-->
+<rect class="slab" x="240" y="0" width="240" height="300"/>
+<g class="grain">
+<circle cx="276" cy="36" r="3"/><circle cx="276" cy="60" r="3"/><circle cx="276" cy="84" r="3"/><circle cx="276" cy="108" r="3"/><circle cx="276" cy="132" r="3"/><circle cx="276" cy="156" r="3"/><circle cx="276" cy="180" r="3"/><circle cx="276" cy="204" r="3"/><circle cx="276" cy="228" r="3"/><circle cx="276" cy="252" r="3"/><circle cx="276" cy="276" r="3"/><circle cx="300" cy="36" r="3"/><circle cx="300" cy="60" r="3"/><circle cx="300" cy="84" r="3"/><circle cx="300" cy="108" r="3"/><circle cx="300" cy="132" r="3"/><circle cx="300" cy="156" r="3"/><circle cx="300" cy="180" r="3"/><circle cx="300" cy="204" r="3"/><circle cx="300" cy="228" r="3"/><circle cx="300" cy="252" r="3"/><circle cx="300" cy="276" r="3"/><circle cx="324" cy="36" r="3"/><circle cx="324" cy="60" r="3"/><circle cx="324" cy="84" r="3"/><circle cx="324" cy="108" r="3"/><circle cx="324" cy="132" r="3"/><circle cx="324" cy="156" r="3"/><circle cx="324" cy="180" r="3"/><circle cx="324" cy="204" r="3"/><circle cx="324" cy="228" r="3"/><circle cx="324" cy="252" r="3"/><circle cx="324" cy="276" r="3"/><circle cx="348" cy="36" r="3"/><circle cx="348" cy="60" r="3"/><circle cx="348" cy="84" r="3"/><circle cx="348" cy="108" r="3"/><circle cx="348" cy="132" r="3"/><circle cx="348" cy="156" r="3"/><circle cx="348" cy="180" r="3"/><circle cx="348" cy="204" r="3"/><circle cx="348" cy="228" r="3"/><circle cx="348" cy="252" r="3"/><circle cx="348" cy="276" r="3"/><circle cx="372" cy="36" r="3"/><circle cx="372" cy="60" r="3"/><circle cx="372" cy="84" r="3"/><circle cx="372" cy="108" r="3"/><circle cx="372" cy="132" r="3"/><circle cx="372" cy="156" r="3"/><circle cx="372" cy="180" r="3"/><circle cx="372" cy="204" r="3"/><circle cx="372" cy="228" r="3"/><circle cx="372" cy="252" r="3"/><circle cx="372" cy="276" r="3"/><circle cx="396" cy="36" r="3"/><circle cx="396" cy="60" r="3"/><circle cx="396" cy="84" r="3"/><circle cx="396" cy="108" r="3"/><circle cx="396" cy="132" r="3"/><circle cx="396" cy="156" r="3"/><circle cx="396" cy="180" r="3"/><circle cx="396" cy="204" r="3"/><circle cx="396" cy="228" r="3"/><circle cx="396" cy="252" r="3"/><circle cx="396" cy="276" r="3"/><circle cx="420" cy="36" r="3"/><circle cx="420" cy="60" r="3"/><circle cx="420" cy="84" r="3"/><circle cx="420" cy="108" r="3"/><circle cx="420" cy="132" r="3"/><circle cx="420" cy="156" r="3"/><circle cx="420" cy="180" r="3"/><circle cx="420" cy="204" r="3"/><circle cx="420" cy="228" r="3"/><circle cx="420" cy="252" r="3"/><circle cx="420" cy="276" r="3"/><circle cx="444" cy="36" r="3"/><circle cx="444" cy="60" r="3"/><circle cx="444" cy="84" r="3"/><circle cx="444" cy="108" r="3"/><circle cx="444" cy="132" r="3"/><circle cx="444" cy="156" r="3"/><circle cx="444" cy="180" r="3"/><circle cx="444" cy="204" r="3"/><circle cx="444" cy="228" r="3"/><circle cx="444" cy="252" r="3"/><circle cx="444" cy="276" r="3"/>
+</g>
+<path class="bowl" d="M48 132 H88 V172 A40 40 0 0 0 168 172 V132 H208 V172 A80 80 0 0 1 48 172 Z"/>
+<circle class="sig" cx="128" cy="160" r="22"/>
+</svg>
+</div>
+<div class="words">
+<p class="name"><span class="ar">نوري</span>NORI<span style="color:var(--accent)">.</span></p>
+<p class="tag">Social media &amp; ad design · Kuwait · النتيجة تتكلم</p>
+</div>
+</div>
+</body>
+</html>
