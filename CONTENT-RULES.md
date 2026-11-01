@@ -56,6 +56,7 @@ Caption: hook line, «اسحب…», question for comments, DM line, one English
 
 - Kinetic Arabic typography / motion, same identity rules.
 - Prepare everything: script, voice-over text, storyboard, timings. NORI records the voice-over and sends it; then edit and finish.
+- **Sound effects: use `sfx/` (Saoud SFX Pack, CC0).** Pick from `sfx/README.md` (ready picks per moment + full index). SFX sit 12–18 dB under the voice-over; only on key moves, not every animation.
 
 ## Approval
 

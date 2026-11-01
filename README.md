@@ -10,6 +10,7 @@ Source files for the «نوري | NORI» identity, kept here so every content se
 | `fonts/` | IBM Plex Sans Arabic (all weights), Inter, Inter Display |
 | `tokens/tokens.json` | Colour, type, spacing and radius tokens |
 | `templates/` | HTML templates for posts, stories, profile grid, card, portfolio pages |
+| `sfx/` | 715 sound effects (WAV, CC0, Saoud SFX Pack) for editing reels — see `sfx/README.md` for picks and the full index |
 
 ## Updates since the brand book
 
