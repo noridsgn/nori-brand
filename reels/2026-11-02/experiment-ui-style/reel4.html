@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#EFE8DC}
+#s{position:relative;width:1080px;height:1920px;background:#EFE8DC;color:#1A1A1A;font-family:"IBM Plex Sans Arabic";direction:rtl;overflow:hidden}
+.n{font-family:"Inter";direction:ltr;unicode-bidi:isolate}
+.a{position:absolute}
+.blob{position:absolute;border-radius:50%;filter:blur(70px)}
+.card{position:absolute;border-radius:44px;border:9px solid #FFFFFF;background:#fff;overflow:hidden;box-shadow:0 34px 70px rgba(70,50,20,.18),0 8px 18px rgba(70,50,20,.10)}
+.badge{position:absolute;right:18px;bottom:18px;background:rgba(20,20,20,.62);color:#fff;border-radius:999px;padding:4px 14px;font:600 22px/30px Inter;direction:ltr}
+.chip{display:inline-block;padding:16px 34px;border-radius:24px;background:rgba(255,255,255,.55);border:1.5px solid rgba(0,0,0,.06);font:500 32px/40px "IBM Plex Sans Arabic";color:#5E574C;margin-left:14px}
+.chip.on{background:#1A1A1A;color:#F2F0EB;border-color:#1A1A1A}
+</style></head><body><div id="s">
+<div id="b1" class="blob" style="width:900px;height:900px;left:-380px;top:1180px;background:#A9C94A;opacity:.55"></div>
+<div id="b2" class="blob" style="width:700px;height:700px;left:-150px;top:1420px;background:#7FB2E5;opacity:.35"></div>
+<div id="b3" class="blob" style="width:640px;height:640px;left:620px;top:-200px;background:#C9A45C;opacity:.32"></div>
+<svg class="a" style="left:0;top:0" width="1080" height="1920"><g fill="none" stroke="rgba(60,40,10,.05)" stroke-width="2"><circle cx="540" cy="930" r="520"/><circle cx="540" cy="930" r="760"/><circle cx="540" cy="930" r="1000"/></g></svg>
+<img id="wm" class="a" style="left:50%;top:150px;height:34px;transform:translateX(-50%)">
+<div id="cards"></div>
+<div id="input" class="a" style="left:90px;top:820px;width:900px;height:230px;background:#FAF7F1;border-radius:48px;box-shadow:0 30px 80px rgba(70,50,20,.14),0 2px 0 rgba(255,255,255,.9) inset;border:1.5px solid rgba(0,0,0,.04)">
+  <div id="itext" class="a" style="right:44px;left:44px;top:34px;font:500 44px/60px 'IBM Plex Sans Arabic';color:#1A1A1A;white-space:nowrap;overflow:hidden"></div>
+  <div id="model" class="a" style="right:44px;bottom:34px;font:500 28px/40px 'IBM Plex Sans Arabic';color:#5E574C">نوري <span class="n">1.0</span> ⌄</div>
+  <div class="a" style="left:150px;bottom:36px;display:flex;gap:30px;align-items:center;direction:ltr">
+    <svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="#5E574C" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg width="40" height="40" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="#5E574C" stroke-width="2"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="#5E574C" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+  <div id="send" class="a" style="left:30px;bottom:26px;width:88px;height:88px;border-radius:26px;background:#C9A45C;display:flex;align-items:center;justify-content:center"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+</div>
+<div id="chips" class="a" style="right:90px;left:90px;top:1100px;text-align:center;white-space:nowrap"><span id="c0" class="chip">البايو</span><span id="c1" class="chip">الصورة</span><span id="c2" class="chip">الهايلايتس</span></div>
+<div id="dmb" class="a" style="opacity:0;left:120px;top:640px;background:#1A1A1A;color:#F2F0EB;border-radius:40px 40px 40px 10px;padding:22px 44px;font:700 60px/76px 'IBM Plex Sans Arabic'">بروفايل</div>
+<div id="dmok" class="a n" style="opacity:0;left:130px;top:750px;font:500 26px/34px Inter;color:#8A7F6E">Seen ✓</div>
+<div id="end" class="a" style="left:0;right:0;top:640px;text-align:center;opacity:0"><img id="logo" style="width:500px"><div class="n" style="font:600 48px/60px Inter;margin-top:56px">@nori.dsgn</div><div style="font:500 40px/56px 'IBM Plex Sans Arabic';color:#8A7F6E;margin-top:10px">النتيجة تتكلم</div></div>
+<svg id="cur" class="a" width="84" height="84" viewBox="0 0 32 32" style="left:1200px;top:1500px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.25))"><path d="M10 3c1.2 0 2 .9 2 2v8l1-.1V9c0-1.1.9-2 2-2s2 .9 2 2v4h.4V10.5c0-1.1.9-2 2-2s2 .9 2 2V14h.3v-1.6c0-1.1.9-2 2-2s1.9.9 1.9 2V20c0 4.7-3.6 8.5-8.5 8.5h-1.5c-2.7 0-4.6-1-6.1-3.2L4.4 19.6c-.6-.9-.4-2.1.5-2.7.9-.6 2.1-.4 2.7.5L8 18V5c0-1.1.9-2 2-2z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>
+</div>
+<script>
+const GR='#1F4A2C',LI='#A9C94A',CR='#F5F0DC',INK='#16261B';
+const $=id=>document.getElementById(id);
+function mark(sz,bg=GR){let seg='';for(let i=0;i<8;i++){const a=i*Math.PI/4;seg+=`<line x1="50" y1="50" x2="${50+30*Math.cos(a)}" y2="${50+30*Math.sin(a)}" stroke="${CR}" stroke-width="3"/>`}
+ return `<svg width="${sz}" height="${sz}" viewBox="0 0 100 100" style="display:block"><circle cx="50" cy="50" r="50" fill="${bg}"/><circle cx="50" cy="50" r="34" fill="${LI}"/><circle cx="50" cy="50" r="31" fill="none" stroke="${CR}" stroke-width="2"/>${seg}<circle cx="50" cy="50" r="5" fill="${CR}"/></svg>`}
+function messy(sz){return `<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:#FFE14D;border:${Math.max(2,sz/36)}px solid #E8327C;display:flex;align-items:center;justify-content:center;overflow:hidden"><div style="font:700 ${sz/9}px/1.15 'IBM Plex Sans Arabic';color:#E8327C;text-align:center">مؤسسة لومي<br>للعصائر الطبيعية<br><span style="font-size:${sz/13}px;color:#1B6DD1">ذ.م.م</span></div></div>`}
+const ICON={menu:c=>`<rect x="34" y="36" width="32" height="4" fill="${c}"/><rect x="34" y="48" width="32" height="4" fill="${c}"/><rect x="34" y="60" width="22" height="4" fill="${c}"/>`,
+price:c=>`<path d="M30 50 L50 30 H70 V50 L50 70 Z" fill="none" stroke="${c}" stroke-width="4" stroke-linejoin="round"/><circle cx="61" cy="39" r="4" fill="${c}"/>`,
+bike:c=>`<circle cx="36" cy="60" r="9" fill="none" stroke="${c}" stroke-width="4"/><circle cx="66" cy="60" r="9" fill="none" stroke="${c}" stroke-width="4"/><path d="M36 60 L48 40 H60 L66 60 M48 40 L54 60" fill="none" stroke="${c}" stroke-width="4" stroke-linejoin="round"/>`,
+star:c=>`<path d="M50 30 L56 44 L71 45 L59 55 L63 70 L50 62 L37 70 L41 55 L29 45 L44 44 Z" fill="${c}"/>`};
+const OLDC=['#FF6B6B','#4D96FF','#FFD93D','#6BCB77'],OLDL=['متفرقات','<span class="n">2024</span>','<span class="n">New</span>','صور'];
+const NEWI=['menu','price','bike','star'],NEWL=['المنيو','الأسعار','شلون تطلب','الآراء'];
+function hlBubble(i,on,sz){return on?`<svg width="${sz}" height="${sz}" viewBox="0 0 100 100" style="display:block"><circle cx="50" cy="50" r="50" fill="${GR}"/>${ICON[NEWI[i]](LI)}</svg>`
+ :`<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:${OLDC[i]};position:relative;overflow:hidden"><div style="position:absolute;left:10%;top:52%;width:80%;height:60%;border-radius:50%;background:rgba(255,255,255,.45)"></div><div style="position:absolute;left:32%;top:18%;width:30%;height:30%;border-radius:50%;background:rgba(0,0,0,.18)"></div></div>`}
+// full profile screen (w px wide)
+function profile(on,w){const k=w/520,ink=on?INK:'#111',sub=on?'#5B6B5F':'#777';
+ const tiles=on?[GR,LI,CR,CR,GR,LI]:['#E8327C','#FFE14D','#1B6DD1','#6BCB77','#FF8A3D','#9B5DE5'];
+ let grid='';tiles.forEach((c,i)=>{grid+=`<div style="background:${c};position:relative;${on&&c===CR?'border:1px solid #E2DAC0;':''}">${on?(i===0||i===5?`<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">${mark(54*k,c)}</div>`:`<div style="position:absolute;right:${12*k}px;bottom:${12*k}px;font:700 ${20*k}px/1.2 'IBM Plex Sans Arabic';color:${c===GR?CR:INK}">${['','لومي<br>نعناع','جديدنا','','صباح<br>الفريش',''][i]}</div>`):(i%2?`<div style="position:absolute;inset:22%;border-radius:50%;background:rgba(255,255,255,.5)"></div>`:`<div style="position:absolute;left:12%;right:12%;top:40%;height:${16*k}px;background:#fff;transform:rotate(${i*7-10}deg)"></div>`)}</div>`});
+ return `<div style="width:${w}px;border-radius:${46*k}px;background:#050505;padding:${12*k}px">
+ <div style="border-radius:${36*k}px;overflow:hidden;background:${on?CR:'#fff'};direction:rtl">
+  <div class="n" style="height:${50*k}px;display:flex;justify-content:space-between;align-items:center;padding:0 ${30*k}px;font:600 ${17*k}px/1 Inter;color:${ink}"><span>9:41</span><span>loomi.kw</span><span>•••</span></div>
+  <div style="padding:${14*k}px ${26*k}px 0;display:flex;align-items:center;gap:${24*k}px">${on?mark(104*k):messy(104*k)}
+   <div style="flex:1;display:flex;justify-content:space-around">${[['48','منشور'],['1,204','متابع'],['86','يتابع']].map(s=>`<div style="text-align:center"><div class="n" style="font:600 ${22*k}px/1.3 Inter;color:${ink}">${s[0]}</div><div style="font:400 ${15*k}px/1.3 'IBM Plex Sans Arabic';color:${sub}">${s[1]}</div></div>`).join('')}</div></div>
+  <div style="padding:${14*k}px ${26*k}px 0;font:400 ${18*k}px/${28*k}px 'IBM Plex Sans Arabic';color:${ink}">${on?'<b>لومي · <span class="n">Loomi</span></b><br>عصير فريش ينعصر قدامك<br>الشويخ · كل يوم من <span class="n">8</span> الصبح<br>اطلب واتساب ↓':'<b>مؤسسة لومي للعصائر الطبيعية والمشروبات</b><br>أهلاً وسهلاً بكم في حسابنا الرسمي<br>نتمنى لكم يوم سعيد<br>للتواصل الخاص'}</div>
+  <div style="padding:${16*k}px ${20*k}px;display:flex;justify-content:space-between">${[0,1,2,3].map(i=>`<div style="text-align:center;width:${100*k}px"><div style="width:${70*k}px;height:${70*k}px;margin:0 auto ${6*k}px;border-radius:50%;padding:${3*k}px;border:${2*k}px solid ${on?GR:'#DDD'}">${hlBubble(i,on,60*k)}</div><div style="font:400 ${13*k}px/1.3 'IBM Plex Sans Arabic';color:${ink}">${on?NEWL[i]:OLDL[i]}</div></div>`).join('')}</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:${166*k}px;gap:${3*k}px">${grid}</div>
+ </div></div>`}
+function bioCard(on,w){const k=w/760;const b=on?['<b>لومي · <span class="n">Loomi</span></b>','عصير فريش ينعصر قدامك','الشويخ · كل يوم من <span class="n">8</span> الصبح','اطلب واتساب ↓']:['<b>مؤسسة لومي للعصائر الطبيعية والمشروبات</b>','أهلاً وسهلاً بكم في حسابنا الرسمي','نتمنى لكم يوم سعيد','للتواصل الخاص'];
+ return `<div style="width:${w}px;background:${on?CR:'#fff'};border-radius:${22*k}px;padding:${40*k}px;display:flex;gap:${32*k}px;align-items:flex-start;direction:rtl">${on?mark(150*k):messy(150*k)}<div style="font:400 ${32*k}px/${50*k}px 'IBM Plex Sans Arabic';color:${on?INK:'#111'}">${b.join('<br>')}${on?`<div style="margin-top:${16*k}px;display:inline-block;background:${GR};color:${CR};padding:${8*k}px ${28*k}px;border-radius:${8*k}px;font:600 ${28*k}px/${42*k}px 'IBM Plex Sans Arabic'">اطلب الحين</div>`:`<div class="n" style="margin-top:${16*k}px;font:400 ${26*k}px/${42*k}px Inter;color:#1B6DD1;text-align:right">linktr.ee/loomi.kw.official</div>`}</div></div>`}
+// ---- floating cards
+function thumbProfile(on,sz){return `<div style="width:${sz}px;height:${sz}px;overflow:hidden;background:${on?CR:'#fff'}"><div style="transform:scale(${sz/400});transform-origin:top right;width:400px;margin-right:0;position:relative;right:0;direction:rtl">${profile(on,400).replace('background:#050505','background:transparent').replace(/padding:12px/,'padding:0')}</div></div>`}
+function goodBio(w){const k=w/860;const rows=[['شنو تبيع؟','عصير فريش ينعصر قدامك'],['وين؟','الشويخ · كل يوم من <span class="n">8</span> الصبح'],['شلون يطلب؟','اطلب واتساب ↓']];
+ return `<div style="width:${w}px;background:${CR};padding:${40*k}px ${44*k}px;direction:rtl"><div style="display:flex;align-items:center;gap:${24*k}px;padding-bottom:${24*k}px;border-bottom:2px solid #E2DAC0">${mark(100*k)}<div><div style="font:700 ${40*k}px/${52*k}px 'IBM Plex Sans Arabic';color:${INK}">لومي · <span class="n">Loomi</span></div><div class="n" style="font:500 ${24*k}px/${32*k}px Inter;color:#5B6B5F;text-align:right">loomi.kw</div></div></div>`
+ +rows.map((r,i)=>`<div id="gr${i}" style="display:flex;align-items:center;gap:${26*k}px;height:${92*k}px;${i<2?'border-bottom:2px solid #E2DAC0':''}"><div style="width:${210*k}px;flex:none;font:600 ${30*k}px/${40*k}px 'IBM Plex Sans Arabic';color:${GR}">${r[0]}</div><div style="font:500 ${36*k}px/${48*k}px 'IBM Plex Sans Arabic';color:${INK}">${r[1]}</div></div>`).join('')+`</div>`}
+function strip(w){return `<div style="width:${w}px;background:${CR};padding:40px 30px;display:flex;justify-content:space-between">${[0,1,2,3].map(i=>`<div style="width:190px;text-align:center"><div style="perspective:800px"><div id="fl${i}" style="position:relative;width:150px;height:150px;margin:0 auto;transform-style:preserve-3d"><div style="position:absolute;inset:0;border-radius:50%;padding:6px;border:4px solid #CFC7AE;backface-visibility:hidden">${hlBubble(i,0,130)}</div><div style="position:absolute;inset:0;border-radius:50%;padding:6px;border:4px solid ${GR};backface-visibility:hidden;transform:rotateY(180deg)">${hlBubble(i,1,130)}</div></div></div><div style="position:relative;height:46px;margin-top:14px"><div id="lo${i}" style="position:absolute;inset:0;font:500 30px/46px 'IBM Plex Sans Arabic';color:#7A7464">${OLDL[i]}</div><div id="ln${i}" style="position:absolute;inset:0;font:700 30px/46px 'IBM Plex Sans Arabic';color:${INK};opacity:0">${NEWL[i]}</div></div></div>`).join('')}</div>`}
+const CARDS={
+ kTL:{x:100,y:330,w:320,h:320,r:-6,html:thumbProfile(0,302),badge:'0:05'},
+ kTR:{x:680,y:250,w:290,h:290,r:5,html:thumbProfile(1,272),badge:'0:05'},
+ kBR:{x:640,y:1230,w:340,h:340,r:4,html:`<div style="width:322px;height:322px;overflow:hidden;background:#fff"><div style="transform:scale(.42);transform-origin:top right;width:760px;position:relative;right:0">${bioCard(0,760)}</div></div>`,badge:'bio'},
+ kBIO:{x:110,y:330,w:860,h:430,r:0,html:goodBio(842),badge:''},
+ kAV:{x:330,y:300,w:420,h:420,r:-4,html:`<div id="avh" style="width:402px;height:402px;display:flex;align-items:center;justify-content:center;background:#fff"></div>`,badge:''},
+ kAV2:{x:210,y:380,w:660,h:300,r:0,html:`<div style="width:642px;height:282px;background:#fff;display:flex;align-items:center;gap:36px;padding:0 50px;direction:rtl">${mark(170)}<div><div class="n" style="font:600 50px/62px Inter;text-align:right">loomi.kw</div><div style="font:400 34px/46px 'IBM Plex Sans Arabic';color:#7A7464">لومي · عصير فريش</div></div></div>`,badge:''},
+ kHL:{x:70,y:400,w:940,h:310,r:0,html:strip(922),badge:''},
+ kB4:{x:120,y:250,w:400,h:540,r:-5,html:`<div style="width:382px;height:522px;overflow:hidden;background:#fff"><div style="transform:scale(.735);transform-origin:top right;width:520px;position:relative;right:0">${profile(0,520).replace('background:#050505','background:transparent')}</div></div>`,badge:'قبل'},
+ kAF:{x:560,y:250,w:400,h:540,r:5,html:`<div style="width:382px;height:522px;overflow:hidden;background:${CR}"><div style="transform:scale(.735);transform-origin:top right;width:520px;position:relative;right:0">${profile(1,520).replace('background:#050505','background:transparent')}</div></div>`,badge:'بعد'},
+};
+$('cards').innerHTML=Object.entries(CARDS).map(([id,c])=>`<div id="${id}" class="card" style="left:${c.x}px;top:${c.y}px;width:${c.w}px;height:${c.h}px;opacity:0">${c.html}${c.badge?`<div class="badge">${c.badge.match(/\d/)?c.badge:`<span style="font-family:'IBM Plex Sans Arabic'">${c.badge}</span>`}</div>`:''}</div>`).join('');
+
+// ---- timing
+const E=t=>t<=0?0:t>=1?1:1-Math.pow(1-t,3);
+const SPR=t=>t<=0?0:t>=1?1:1-Math.exp(-6*t)*Math.cos(9*t); // spring with overshoot
+const EIO=t=>t<=0?0:t>=1?1:t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const P=(t,a,d)=>E((t-a)/d);
+// [in, out] windows per card
+const WIN={kTL:[0.45,5.68],kTR:[0.65,6.6],kBR:[0.85,8.75],kBIO:[11.55,12.5],kAV:[12.9,17.0],kAV2:[17.05,18.1],kHL:[19.2,25.75],kB4:[26.0,28.6],kAF:[26.25,30.2]};
+const LINES=[ // [start, end, text]
+ [0.37,2.14,'عندك 5 ثواني بس.'],
+ [2.64,6.19,'الزبون يقرر: يتابعك… أو يطلع.'],
+ [6.69,12.17,'البايو: شنو تبيع، وين، وشلون يطلب.'],
+ [12.67,17.78,'صورة البروفايل لازم تنقرا وهي صغيرة.'],
+ [18.28,25.45,'الهايلايتس: المنيو، الأسعار، شلون تطلب، الآراء.'],
+ [25.95,29.90,'إذا وحدة ناقصة… الزبون طلع.'],
+ [30.40,32.07,'خل أول 5 ثواني لك.'],
+ [32.40,33.05,'بروفايل'],
+];
+const CLICKS=[11.35,16.85,33.3];
+const CUR=[[0,1180,1560],[6.9,1180,1560],[7.65,830,1400],[7.95,830,1400],[8.75,620,930],[9.2,620,980],[11.0,175,960],[11.35,175,960],[11.9,520,1500],[16.3,175,960],[16.85,175,960],[17.4,600,1520],[18.2,1180,1560],[31.9,1180,1560],[32.9,175,960],[33.3,175,960],[33.9,640,1480],[34.5,1180,1620]];
+const FL=[21.33,22.17,23.22,24.26];
+function curAt(t){for(let i=1;i<CUR.length;i++){if(t<=CUR[i][0]){const [t0,x0,y0]=CUR[i-1],[t1,x1,y1]=CUR[i];const p=EIO((t-t0)/(t1-t0||1));return [x0+(x1-x0)*p,y0+(y1-y0)*p]}}return CUR[CUR.length-1].slice(1)}
+function frame(t){
+ // blobs + camera drift
+ $('b1').style.transform=`translate(${Math.sin(t*.3)*60}px,${Math.cos(t*.25)*40}px)`;
+ $('b2').style.transform=`translate(${Math.cos(t*.35)*70}px,${Math.sin(t*.3)*50}px)`;
+ $('b3').style.transform=`translate(${Math.sin(t*.28)*50}px,${Math.cos(t*.33)*40}px)`;
+ const endO=P(t,34.6,.5);
+ // input bar text (typed with the voice)
+ let txt='',ph=true;
+ for(const [a,b,s] of LINES){ if(t>=a-.05){const clr=t>=b+.25; const p=Math.max(0,Math.min(1,(t-a)/Math.max(.4,(b-a)*.85))); txt=clr?'':s.slice(0,Math.ceil(s.length*p)); ph=clr||txt===''; } }
+ const caret=(Math.floor(t*2.2)%2===0)?'<span style="color:#C9A45C;font-weight:300">|</span>':'';
+ $('itext').innerHTML=ph?`<span style="color:#A79F92">اكتب أي شي تبيه…</span>`:txt.replace(/(\d+)/g,'<span class="n">$1</span>')+caret;
+ // send press
+ let press=0;CLICKS.forEach(c=>{press=Math.max(press,1-Math.abs(t-c)/.18)});press=Math.max(0,press);
+ $('send').style.transform=`scale(${1-.12*press})`;$('send').style.boxShadow=press>0?`0 0 ${40*press}px rgba(201,164,92,.8)`:'none';
+ // input bar intro + float + end fade
+ const ib=SPR((t-0.05)/1.0);
+ $('input').style.transform=`translateY(${(1-ib)*120+Math.sin(t*.9)*4}px) scale(${.92+.08*ib})`;$('input').style.opacity=Math.min(1,ib*1.4)*(1-endO);
+ // chips
+ const chIn=P(t,6.9,.5);$('chips').style.opacity=chIn*(1-P(t,30.0,.4));$('chips').style.transform=`translateY(${(1-chIn)*30}px)`;
+ const act=t>=25.9?[1,1,1]:[t>=7.6&&t<12.6,t>=12.6&&t<18.2,t>=18.2&&t<25.9];
+ [0,1,2].forEach(i=>{const el=$('c'+i);el.className='chip'+(act[i]?' on':'');el.style.opacity=(t>=25.9&&i===1&&t>27.9)?.35:1});
+ // cards
+ for(const [id,[a,b]] of Object.entries(WIN)){const c=CARDS[id],el=$(id);
+   let pin=SPR((t-a)/.9), out=P(t,b,.45);
+   let x=0,y=0,sc=.6+.4*pin,rot=c.r,o=Math.min(1,pin*1.5)*(1-out),blur=0;
+   y=(1-pin)*90+Math.sin(t*1.1+c.x)*7; x=Math.cos(t*.8+c.y)*5;
+   if(id==='kTL'){x-=out*600;blur=out*14;rot-=out*20}
+   if(id==='kBR'){ // dragged into the bar
+     const d=EIO((t-7.95)/.8);if(t>7.95){const [cx,cy]=curAt(t);x=(cx-830)*1;y=(cy-1400);sc=1-.75*d;o=1-P(t,8.55,.25);rot=c.r*(1-d)}}
+   if(id==='kBIO'){sc=.85+.15*pin;y=(1-pin)*140;o=Math.min(1,pin*2)*(1-out);y-=out*120}
+   if(id==='kAV2'){y-=out*100}
+   if(id==='kB4'){const f=P(t,27.98,.6);y+=f*260;rot-=f*14;blur=f*6;el.style.filter=`grayscale(${f}) blur(${blur}px)`}
+   el.style.opacity=o;el.style.display=o>.003?'block':'none';
+   el.style.transform=`translate(${x}px,${y}px) rotate(${rot}deg) scale(${sc})`;
+   if(id!=='kB4')el.style.filter=blur?`blur(${blur}px)`:'none';
+ }
+ // bio rows stagger
+ [0,1,2].forEach(i=>{const r=$('gr'+i);const p=P(t,11.75+i*.15,.35);r.style.opacity=p;r.style.transform=`translateX(${(1-p)*-40}px)`});
+ // avatar shrink (unreadable when small) inside kAV
+ const sh=EIO((t-14.9)/1.0),sz=360-300*sh;const av=$('avh');const key=Math.round(sz/3);if(av.dataset.k!=key){av.innerHTML=messy(sz);av.dataset.k=key}
+ // highlights flip
+ FL.forEach((a,i)=>{const p=EIO((t-a)/.55);$('fl'+i).style.transform=`rotateY(${180*p}deg)`;$('lo'+i).style.opacity=1-P(t,a,.2);$('ln'+i).style.opacity=P(t,a+.25,.25)});
+ // DM bubble
+ const dm=SPR((t-33.4)/.8);$('dmb').style.opacity=Math.min(1,dm*1.5)*(1-endO);$('dmb').style.transform=`translateY(${(1-dm)*200}px) scale(${.7+.3*dm})`;
+ $('dmok').style.opacity=P(t,33.9,.3)*(1-endO);
+ // cursor
+ const [cx,cy]=curAt(t);const cu=$('cur');cu.style.left=cx+'px';cu.style.top=cy+'px';
+ let cp=0;CLICKS.concat([7.95]).forEach(c=>{cp=Math.max(cp,1-Math.abs(t-c)/.15)});cu.style.transform=`scale(${1-.15*Math.max(0,cp)})`;
+ cu.style.opacity=t>34.4?0:1;
+ // end
+ $('end').style.opacity=endO;$('end').style.transform=`scale(${.94+.06*endO})`;
+ $('wm').style.opacity=1-endO;
+}
+window.frame=frame;
+</script></body></html>
