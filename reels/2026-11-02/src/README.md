@@ -8,3 +8,8 @@
 
 ## v2 (approved direction)
 v1 (rejected-v1/) was rejected by NORI: flat black, gold underline that jumped around, text popping randomly. v2 follows the 27 Oct reel (`reels/2026-10-27-reference.mp4`): blurred dark poster wall in perspective, small letter-spaced English label on top, centered headline with the key word in gold, words fade in with blur, 3D-tilted mockups floating in the centre, gold sparks at key moments, NORI mark at the bottom centre.
+
+## v3 (NORI's notes on v2)
+- Gold sparks render BEHIND the objects (sparks layer sits under the stages).
+- Bio scene: the messy bio blurs out and the right bio is written line by line, each line with its label aligned on the right: «شنو تبيع؟», «وين؟», «شلون يطلب؟» (no floating chips).
+- Voice was muffled: new chain in `voice-process.sh` (high-pass 110 Hz, light denoise, −5 dB @220 Hz, +4 dB @2.8 kHz and 5 kHz, treble shelf +5 dB @7 kHz, exciter, de-esser, compressor, loudnorm −15 LUFS).
