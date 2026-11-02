@@ -18,8 +18,8 @@ Black screen. Giant «5» in Inter slams in (scale 140%→100%, 6 frames), then 
 | 3 | 5.0–9.0 s | أول شي يقراه البايو. لازم يقول شنو تبيع، وين، وشلون يطلب. |
 | 4 | 9.0–13.0 s | بعدين صورة البروفايل. إذا شعارك فيه اسم طويل، بالسيرش ما ينقرا. |
 | 5 | 13.0–18.0 s | الهايلايتس مو ألبوم ذكريات. خلها: المنيو، الأسعار، كيف تطلب، وآراء الزباين. |
-| 6 | 18.0–22.0 s | افتح بروفايلك الحين، وقول لي بالكومنت: أي وحدة ناقصة عندك؟ |
-| 7 | 22.0–26.0 s | وإذا تبيني أشوفه، أرسل لي «بروفايل» بالدايركت. |
+| 6 | 18.0–22.0 s | إذا وحدة من هالثلاث ناقصة، الزبون طلع قبل لا يشوف شغلك. |
+| 7 | 22.0–26.0 s | خل أول خمس ثواني لك… وأرسل لي «بروفايل» بالدايركت. |
 
 Recording tips: one take, phone close to mouth, quiet room, small pause (½ s) between lines so the cuts can be synced.
 
@@ -32,8 +32,8 @@ Recording tips: one take, phone close to mouth, quiet room, small pause (½ s) b
 | 3 | 5–9 | profile wireframe (grey lines); bio block zooms to fill screen; «شنو تبيع؟ وين؟ كيف أطلب؟» pops word by word on each beat | scan line sweeps down and stops on the bio | scan line |
 | 4 | 9–13 | avatar circle shrinks 400→40px; long name inside blurs out; then a single «م» mark replaces it and stays sharp | shrink with ease-in, swap on the word «ما ينقرا» | scan line under the avatar |
 | 5 | 13–18 | 4 highlight circles; old labels («متفرقات، 2024، New») flip like a split-flap board into «المنيو، الأسعار، كيف تطلب، الآراء» | flip one by one on each spoken word | scan line under the row |
-| 6 | 18–22 | countdown hits 0; «افتح بروفايلك الحين.» big; «أي وحدة ناقصة؟» grey | text rises line by line | scan line under the title |
-| 7 | 22–26 | «أرسل لي «بروفايل» بالدايركت» + NORI. logo end card | logo holds 1 s | scan line becomes the final underline |
+| 6 | 18–22 | countdown hits 0; «الزبون طلع» big, «قبل لا يشوف شغلك.» grey | words drop in one by one, the profile wireframe slides out of frame | scan line under the title |
+| 7 | 22–26 | «خل أول خمس ثواني لك» → «أرسل لي «بروفايل» بالدايركت» + NORI. logo end card | logo holds 1 s | scan line becomes the final underline |
 
 Countdown (top-right, Inter 600, grey): 5 → 4 → 3 → 2 → 0 on shots 1, 3, 4, 5, 6.
 
