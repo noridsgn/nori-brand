@@ -10,6 +10,7 @@ Read this, `README.md` and `BRAND.md` before designing anything.
 4. **Arabic (Kuwaiti) only when talking to NORI** — every message and summary, never switch to English.
 6. **The 26 Oct carousel (posts/2026-10-26) is the quality bar.** Keep its frame (watermark, counter, BEFORE/AFTER labels, gold check «الحل», swipe + dots, «النتيجة تتكلم»); change the composition inside each week.
 7. **Never repeat an idea — check the points inside past posts, not just titles.** Already used: one clear message per ad, clear next step/CTA, consistent identity/feed, cluttered offers. Check content-log.md AND posts/.
+9. **Reels follow the 27 Oct reel (reels/2026-10-27-reference.mp4), not flat kinetic type.** Blurred dark poster wall in perspective behind everything, small letter-spaced English label on top, centred headline with the key word in gold, words fade in with blur in time with the voice, 3D-tilted colourful mockups floating in the centre, gold sparks at key moments, NORI mark bottom centre. No jumping underlines, no text popping in random places. Reel A 2 Nov v1 was rejected for exactly that (reels/2026-11-02/rejected-v1).
 8. **Archive everything in GitHub as you go:** nori-brand/posts/<date>/ (PNGs + HTML), reels in nori-brand/reels/<date>/.
 5. **The site is for concept projects only.** Weekly post media may sit on noridsgn.com/content/<date>/ only as a temporary, unlinked host for Metricool (NORI OK'd this until a better host is found). Never link it from any page.
 
