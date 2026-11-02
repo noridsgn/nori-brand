@@ -6,20 +6,20 @@ const d = f => 'data:image/svg+xml;base64,' + fs.readFileSync(B + f).toString('b
   const mode = process.argv[2] || 'test';
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
-  await page.goto('file://' + __dirname + '/reel.html');
-  await page.evaluate(([w, l]) => { document.getElementById('wm').src = w; document.getElementById('logo').src = l; }, [d('nori-watermark-light.svg'), d('nori-logo-stacked-on-dark.svg')]);
+  await page.goto('file://' + __dirname + '/reel2.html');
+  await page.evaluate(([w, l, av]) => { document.getElementById('mark').src = w; document.getElementById('logo').src = l; document.getElementById('dmav').src = av; }, [d('nori-mark-on-dark.svg'), d('nori-logo-stacked-on-dark.svg'), d('nori-avatar-1080.svg')]);
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(300);
   if (mode === 'test') {
     const ts = process.argv.slice(3).map(Number);
-    for (const t of ts) { await page.evaluate(t => frame(t), t); await page.screenshot({ path: `${__dirname}/test_${t}.png` }); }
+    for (const t of ts) { await page.evaluate(t => frame(t), t); await page.screenshot({ path: `${__dirname}/t2_${t}.png` }); }
   } else {
     const fps = 30, dur = parseFloat(process.argv[3]);
-    fs.mkdirSync(__dirname + '/frames', { recursive: true });
+    fs.mkdirSync(__dirname + '/frames2', { recursive: true });
     const n = Math.ceil(dur * fps);
     for (let i = 0; i < n; i++) {
       await page.evaluate(t => frame(t), i / fps);
-      await page.screenshot({ path: `${__dirname}/frames/f${String(i).padStart(5, '0')}.jpg`, type: 'jpeg', quality: 92 });
+      await page.screenshot({ path: `${__dirname}/frames2/f${String(i).padStart(5, '0')}.jpg`, type: 'jpeg', quality: 92 });
     }
     console.log('frames', n);
   }

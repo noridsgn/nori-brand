@@ -2,157 +2,187 @@
 <html lang="ar"><head><meta charset="utf-8">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:1080px;height:1920px;background:#0E0E0E;overflow:hidden}
-#s{position:relative;width:1080px;height:1920px;background:#0E0E0E;color:#F2F0EB;font-family:"IBM Plex Sans Arabic";direction:rtl;overflow:hidden}
+html,body{width:1080px;height:1920px;background:#0B0B0B;overflow:hidden}
+#s{position:relative;width:1080px;height:1920px;background:#0B0B0B;color:#F2F0EB;font-family:"IBM Plex Sans Arabic";direction:rtl;overflow:hidden}
 .n{font-family:"Inter";direction:ltr;unicode-bidi:isolate}
 .a{position:absolute}
-.sc{position:absolute;inset:0;opacity:0}
-.kick{position:absolute;right:80px;top:330px;display:flex;align-items:center;gap:20px;font:500 34px/44px "IBM Plex Sans Arabic";color:#8A8A8A}
-.kick .n{font:600 30px/40px Inter;letter-spacing:.12em}
-.kick .ln{width:56px;height:2px;background:#3A3A3A}
-.chip{position:absolute;border:2px solid #F2F0EB;border-radius:999px;padding:10px 36px;font:600 46px/60px "IBM Plex Sans Arabic";opacity:0}
+#bgwrap{position:absolute;left:-300px;right:-300px;top:380px;height:1500px;perspective:1400px;filter:blur(8px) brightness(.26) saturate(.7)}
+#wall{position:absolute;left:0;top:0;width:1680px;height:1700px;transform-origin:50% 0;display:grid;grid-template-columns:repeat(7,1fr);gap:26px}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 50% 52%,rgba(11,11,11,0) 0%,rgba(11,11,11,.55) 60%,rgba(11,11,11,.95) 100%),linear-gradient(#0B0B0B 0%,rgba(11,11,11,.9) 17%,rgba(11,11,11,0) 32%,rgba(11,11,11,0) 80%,#0B0B0B 100%)}
+#label{position:absolute;left:0;right:0;top:330px;text-align:center;font:500 25px/30px Inter;letter-spacing:.32em;color:#8A8A8A;direction:ltr}
+.hl{position:absolute;left:60px;right:60px;text-align:center;font:700 100px/128px "IBM Plex Sans Arabic"}
+.w{display:inline-block;opacity:0;white-space:pre}
+.g{color:#C9A45C}
+.stage{position:absolute;left:0;right:0;top:700px;height:900px;perspective:1600px}
+.card3d{position:absolute;transform-style:preserve-3d;box-shadow:0 60px 120px rgba(0,0,0,.65),0 20px 40px rgba(0,0,0,.5)}
+.glass{background:linear-gradient(160deg,#242424,#161616);border:1.5px solid #2E2E2E;border-radius:28px;box-shadow:0 40px 90px rgba(0,0,0,.6)}
+#mark{position:absolute;left:50%;top:1760px;width:52px;margin-left:-26px;opacity:.85}
+.sp{position:absolute;border-radius:50%;background:#E3C27A;box-shadow:0 0 12px 3px rgba(201,164,92,.7)}
 </style></head><body><div id="s">
-<img id="wm" class="a" style="left:80px;top:120px;height:30px">
-<div id="cd" class="a n" style="right:80px;top:116px;font:600 34px/40px Inter;color:#8A8A8A;letter-spacing:.06em">0:05</div>
-<div id="scan" class="a" style="z-index:5;height:6px;background:#C9A45C;width:0;left:80px;top:0;opacity:0"></div>
-
-<!-- S1 -->
-<div id="s1" class="sc">
-  <div id="five" class="a n" style="left:0;right:0;top:330px;text-align:center;font:600 980px/900px Inter;letter-spacing:-.04em">5</div>
-  <div class="a" style="right:80px;left:80px;top:1330px;text-align:center"><span id="s1t" style="display:inline-block;font:700 150px/180px 'IBM Plex Sans Arabic';clip-path:inset(0 0 0 100%)">ثواني بس.</span></div>
-</div>
-
-<!-- S2 -->
-<div id="s2" class="sc">
-  <div id="s2a" class="a" style="right:80px;left:80px;top:560px;font:700 100px/130px 'IBM Plex Sans Arabic'">الزبون يقرر:</div>
-  <div id="s2b" class="a" style="right:80px;left:80px;top:780px;font:700 190px/230px 'IBM Plex Sans Arabic'">يتابعك…</div>
-  <div id="s2c" class="a" style="right:80px;left:80px;top:1060px;font:700 190px/230px 'IBM Plex Sans Arabic';color:#5A5A5A">أو يطلع.</div>
-</div>
-
-<!-- S3 bio -->
-<div id="s3" class="sc">
-  <div class="kick"><span class="n">01</span><span class="ln"></span><span>البايو</span></div>
-  <div id="bioB" class="a" style="right:80px;left:80px;top:480px"></div>
-  <div id="bioA" class="a" style="right:80px;left:80px;top:480px;opacity:0"></div>
-  <div id="c1" class="chip" style="right:80px;top:1010px">شنو تبيع؟</div>
-  <div id="c2" class="chip" style="right:420px;top:1010px">وين؟</div>
-  <div id="c3" class="chip" style="right:80px;top:1130px">شلون أطلب؟</div>
-</div>
-
-<!-- S4 avatar -->
-<div id="s4" class="sc">
-  <div class="kick"><span class="n">02</span><span class="ln"></span><span>صورة البروفايل</span></div>
-  <div id="row" class="a" style="right:80px;left:80px;top:860px;height:120px;opacity:0;display:flex;align-items:center;gap:28px">
-    <div style="width:120px;flex:none"></div>
-    <div><div class="n" style="font:600 40px/50px Inter;text-align:right">loomi.kw</div><div style="font:400 30px/40px 'IBM Plex Sans Arabic';color:#8A8A8A">لومي · عصير فريش</div></div>
-  </div>
-  <div id="av" class="a" style="width:460px;height:460px;right:310px;top:690px"></div>
-  <div id="s4t" class="a" style="right:80px;left:80px;top:1330px;text-align:center;font:700 80px/100px 'IBM Plex Sans Arabic';opacity:0">ما ينقرا.</div>
-</div>
-
-<!-- S5 highlights -->
-<div id="s5" class="sc">
-  <div class="kick"><span class="n">03</span><span class="ln"></span><span>الهايلايتس</span></div>
-  <div id="s5t" class="a" style="right:80px;left:80px;top:440px;font:700 84px/110px 'IBM Plex Sans Arabic';opacity:0">مو ألبوم ذكريات.</div>
-  <div id="hl" class="a" style="right:80px;left:80px;top:640px;height:820px"></div>
-</div>
-
-<!-- S6 -->
-<div id="s6" class="sc">
-  <div id="s6a" class="a" style="right:80px;left:80px;top:560px;font:500 58px/80px 'IBM Plex Sans Arabic';color:#8A8A8A;opacity:0">إذا وحدة من هالثلاث ناقصة،</div>
-  <div id="s6b" class="a" style="right:80px;left:80px;top:720px;font:700 170px/210px 'IBM Plex Sans Arabic'"><span id="w1" style="display:inline-block;opacity:0">الزبون</span> <span id="w2" style="display:inline-block;opacity:0">طلع</span></div>
-  <div id="s6c" class="a" style="right:80px;left:80px;top:1010px;font:500 70px/96px 'IBM Plex Sans Arabic';color:#8A8A8A;opacity:0">قبل لا يشوف شغلك.</div>
-</div>
-
-<!-- S7 -->
-<div id="s7" class="sc">
-  <div id="s7a" class="a" style="right:80px;left:80px;top:420px;font:700 120px/150px 'IBM Plex Sans Arabic';opacity:0">خل أول<br>خمس ثواني<br>لك…</div>
-  <div id="s7b" class="a" style="right:80px;left:80px;top:960px;font:500 64px/84px 'IBM Plex Sans Arabic';color:#8A8A8A;opacity:0">وأرسل لي</div>
-  <div id="s7c" class="a" style="right:80px;left:80px;top:1050px;font:700 150px/190px 'IBM Plex Sans Arabic';opacity:0">«بروفايل»</div>
-  <div id="s7d" class="a" style="right:80px;left:80px;top:1270px;font:500 64px/84px 'IBM Plex Sans Arabic';color:#8A8A8A;opacity:0">بالدايركت</div>
-</div>
-
-<!-- END -->
-<div id="s8" class="sc" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-  <img id="logo" style="width:520px">
-  <div class="n" style="font:600 46px/60px Inter;margin-top:48px">@nori.dsgn</div>
-  <div style="font:500 40px/56px 'IBM Plex Sans Arabic';color:#8A8A8A;margin-top:12px">النتيجة تتكلم</div>
-</div>
+<div id="bgwrap"><div id="wall"></div></div>
+<div id="vig"></div>
+<div id="label"></div>
+<div id="heads"></div>
+<div id="stages"></div>
+<div id="sparks"></div>
+<img id="mark">
 </div>
 <script>
 const GR='#1F4A2C',LI='#A9C94A',CR='#F5F0DC',INK='#16261B';
+const $=id=>document.getElementById(id);
 function mark(sz,bg=GR){let seg='';for(let i=0;i<8;i++){const a=i*Math.PI/4;seg+=`<line x1="50" y1="50" x2="${50+30*Math.cos(a)}" y2="${50+30*Math.sin(a)}" stroke="${CR}" stroke-width="3"/>`}
- return `<svg width="${sz}" height="${sz}" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="${bg}"/><circle cx="50" cy="50" r="34" fill="${LI}"/><circle cx="50" cy="50" r="31" fill="none" stroke="${CR}" stroke-width="2"/>${seg}<circle cx="50" cy="50" r="5" fill="${CR}"/></svg>`}
-function messy(sz){return `<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:#FFE14D;border:${Math.max(2,sz/40)}px solid #E8327C;display:flex;align-items:center;justify-content:center;overflow:hidden"><div style="font:700 ${sz/9}px/1.15 'IBM Plex Sans Arabic';color:#E8327C;text-align:center">مؤسسة لومي<br>للعصائر الطبيعية<br><span style="font-size:${sz/13}px;color:#1B6DD1">ذ.م.م</span></div></div>`}
-function bio(on){const b=on?['<b>لومي · <span class="n">Loomi</span></b>','عصير فريش ينعصر قدامك','الشويخ · كل يوم من <span class="n">8</span> الصبح','اطلب واتساب ↓']:['<b>مؤسسة لومي للعصائر الطبيعية والمشروبات</b>','أهلاً وسهلاً بكم في حسابنا الرسمي','نتمنى لكم يوم سعيد','للتواصل الخاص'];
- return `<div style="background:${on?CR:'#fff'};padding:44px 44px;display:flex;gap:36px;align-items:flex-start">${on?mark(170):messy(170)}<div style="font:400 38px/58px 'IBM Plex Sans Arabic';color:${on?INK:'#111'}">${b.join('<br>')}${on?`<div style="margin-top:18px;display:inline-block;background:${GR};color:${CR};padding:8px 30px;font:600 34px/48px 'IBM Plex Sans Arabic'">اطلب الحين</div>`:`<div class="n" style="margin-top:18px;font:400 30px/48px Inter;color:#1B6DD1;text-align:right">linktr.ee/loomi.kw.official</div>`}</div></div>`}
+ return `<svg width="${sz}" height="${sz}" viewBox="0 0 100 100" style="display:block"><circle cx="50" cy="50" r="50" fill="${bg}"/><circle cx="50" cy="50" r="34" fill="${LI}"/><circle cx="50" cy="50" r="31" fill="none" stroke="${CR}" stroke-width="2"/>${seg}<circle cx="50" cy="50" r="5" fill="${CR}"/></svg>`}
+function messy(sz){return `<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:#FFE14D;border:${Math.max(2,sz/36)}px solid #E8327C;display:flex;align-items:center;justify-content:center;overflow:hidden"><div style="font:700 ${sz/9}px/1.15 'IBM Plex Sans Arabic';color:#E8327C;text-align:center">مؤسسة لومي<br>للعصائر الطبيعية<br><span style="font-size:${sz/13}px;color:#1B6DD1">ذ.م.م</span></div></div>`}
 const ICON={menu:c=>`<rect x="34" y="36" width="32" height="4" fill="${c}"/><rect x="34" y="48" width="32" height="4" fill="${c}"/><rect x="34" y="60" width="22" height="4" fill="${c}"/>`,
 price:c=>`<path d="M30 50 L50 30 H70 V50 L50 70 Z" fill="none" stroke="${c}" stroke-width="4" stroke-linejoin="round"/><circle cx="61" cy="39" r="4" fill="${c}"/>`,
 bike:c=>`<circle cx="36" cy="60" r="9" fill="none" stroke="${c}" stroke-width="4"/><circle cx="66" cy="60" r="9" fill="none" stroke="${c}" stroke-width="4"/><path d="M36 60 L48 40 H60 L66 60 M48 40 L54 60" fill="none" stroke="${c}" stroke-width="4" stroke-linejoin="round"/>`,
 star:c=>`<path d="M50 30 L56 44 L71 45 L59 55 L63 70 L50 62 L37 70 L41 55 L29 45 L44 44 Z" fill="${c}"/>`};
-const OLD=[['#FF6B6B','متفرقات'],['#4D96FF','<span class="n">2024</span>'],['#FFD93D','<span class="n">New</span>'],['#6BCB77','صور']];
-const NEW=[['menu','المنيو'],['price','الأسعار'],['bike','شلون تطلب'],['star','الآراء']];
-let h='';for(let i=0;i<4;i++){const col=i%2,row=Math.floor(i/2);const x=col?80:540,y=row*400;
- h+=`<div style="position:absolute;right:${x}px;top:${y}px;width:380px;text-align:center;perspective:1200px">
- <div id="f${i}" style="position:relative;width:260px;height:260px;margin:0 auto;transform-style:preserve-3d">
-  <div style="position:absolute;inset:0;border-radius:50%;padding:8px;border:4px solid #DDD;background:#fff;backface-visibility:hidden"><div style="width:100%;height:100%;border-radius:50%;background:${OLD[i][0]};position:relative;overflow:hidden"><div style="position:absolute;left:10%;top:52%;width:80%;height:60%;border-radius:50%;background:rgba(255,255,255,.45)"></div><div style="position:absolute;left:32%;top:18%;width:30%;height:30%;border-radius:50%;background:rgba(0,0,0,.18)"></div></div></div>
-  <div style="position:absolute;inset:0;border-radius:50%;padding:8px;border:4px solid ${LI};background:${CR};backface-visibility:hidden;transform:rotateY(180deg)"><svg width="100%" height="100%" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="${GR}"/>${ICON[NEW[i][0]](LI)}</svg></div>
- </div>
- <div style="position:relative;height:64px;margin-top:20px"><div id="lo${i}" style="position:absolute;inset:0;font:500 46px/64px 'IBM Plex Sans Arabic';color:#8A8A8A">${OLD[i][1]}</div><div id="ln${i}" style="position:absolute;inset:0;font:700 46px/64px 'IBM Plex Sans Arabic';opacity:0">${NEW[i][1]}</div></div></div>`}
-document.getElementById('hl').innerHTML=h;
-document.getElementById('bioB').innerHTML=bio(0);document.getElementById('bioA').innerHTML=bio(1);
-document.getElementById('row').firstElementChild.innerHTML='';
+const OLDC=['#FF6B6B','#4D96FF','#FFD93D','#6BCB77'],OLDL=['متفرقات','<span class="n">2024</span>','<span class="n">New</span>','صور'];
+const NEWI=['menu','price','bike','star'],NEWL=['المنيو','الأسعار','شلون تطلب','الآراء'];
+function hlBubble(i,on,sz){return on?`<svg width="${sz}" height="${sz}" viewBox="0 0 100 100" style="display:block"><circle cx="50" cy="50" r="50" fill="${GR}"/>${ICON[NEWI[i]](LI)}</svg>`
+ :`<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:${OLDC[i]};position:relative;overflow:hidden"><div style="position:absolute;left:10%;top:52%;width:80%;height:60%;border-radius:50%;background:rgba(255,255,255,.45)"></div><div style="position:absolute;left:32%;top:18%;width:30%;height:30%;border-radius:50%;background:rgba(0,0,0,.18)"></div></div>`}
+// full profile screen (w px wide)
+function profile(on,w){const k=w/520,ink=on?INK:'#111',sub=on?'#5B6B5F':'#777';
+ const tiles=on?[GR,LI,CR,CR,GR,LI]:['#E8327C','#FFE14D','#1B6DD1','#6BCB77','#FF8A3D','#9B5DE5'];
+ let grid='';tiles.forEach((c,i)=>{grid+=`<div style="background:${c};position:relative;${on&&c===CR?'border:1px solid #E2DAC0;':''}">${on?(i===0||i===5?`<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">${mark(54*k,c)}</div>`:`<div style="position:absolute;right:${12*k}px;bottom:${12*k}px;font:700 ${20*k}px/1.2 'IBM Plex Sans Arabic';color:${c===GR?CR:INK}">${['','لومي<br>نعناع','جديدنا','','صباح<br>الفريش',''][i]}</div>`):(i%2?`<div style="position:absolute;inset:22%;border-radius:50%;background:rgba(255,255,255,.5)"></div>`:`<div style="position:absolute;left:12%;right:12%;top:40%;height:${16*k}px;background:#fff;transform:rotate(${i*7-10}deg)"></div>`)}</div>`});
+ return `<div style="width:${w}px;border-radius:${46*k}px;background:#050505;padding:${12*k}px">
+ <div style="border-radius:${36*k}px;overflow:hidden;background:${on?CR:'#fff'};direction:rtl">
+  <div class="n" style="height:${50*k}px;display:flex;justify-content:space-between;align-items:center;padding:0 ${30*k}px;font:600 ${17*k}px/1 Inter;color:${ink}"><span>9:41</span><span>loomi.kw</span><span>•••</span></div>
+  <div style="padding:${14*k}px ${26*k}px 0;display:flex;align-items:center;gap:${24*k}px">${on?mark(104*k):messy(104*k)}
+   <div style="flex:1;display:flex;justify-content:space-around">${[['48','منشور'],['1,204','متابع'],['86','يتابع']].map(s=>`<div style="text-align:center"><div class="n" style="font:600 ${22*k}px/1.3 Inter;color:${ink}">${s[0]}</div><div style="font:400 ${15*k}px/1.3 'IBM Plex Sans Arabic';color:${sub}">${s[1]}</div></div>`).join('')}</div></div>
+  <div style="padding:${14*k}px ${26*k}px 0;font:400 ${18*k}px/${28*k}px 'IBM Plex Sans Arabic';color:${ink}">${on?'<b>لومي · <span class="n">Loomi</span></b><br>عصير فريش ينعصر قدامك<br>الشويخ · كل يوم من <span class="n">8</span> الصبح<br>اطلب واتساب ↓':'<b>مؤسسة لومي للعصائر الطبيعية والمشروبات</b><br>أهلاً وسهلاً بكم في حسابنا الرسمي<br>نتمنى لكم يوم سعيد<br>للتواصل الخاص'}</div>
+  <div style="padding:${16*k}px ${20*k}px;display:flex;justify-content:space-between">${[0,1,2,3].map(i=>`<div style="text-align:center;width:${100*k}px"><div style="width:${70*k}px;height:${70*k}px;margin:0 auto ${6*k}px;border-radius:50%;padding:${3*k}px;border:${2*k}px solid ${on?GR:'#DDD'}">${hlBubble(i,on,60*k)}</div><div style="font:400 ${13*k}px/1.3 'IBM Plex Sans Arabic';color:${ink}">${on?NEWL[i]:OLDL[i]}</div></div>`).join('')}</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:${166*k}px;gap:${3*k}px">${grid}</div>
+ </div></div>`}
+function bioCard(on,w){const k=w/760;const b=on?['<b>لومي · <span class="n">Loomi</span></b>','عصير فريش ينعصر قدامك','الشويخ · كل يوم من <span class="n">8</span> الصبح','اطلب واتساب ↓']:['<b>مؤسسة لومي للعصائر الطبيعية والمشروبات</b>','أهلاً وسهلاً بكم في حسابنا الرسمي','نتمنى لكم يوم سعيد','للتواصل الخاص'];
+ return `<div style="width:${w}px;background:${on?CR:'#fff'};border-radius:${22*k}px;padding:${40*k}px;display:flex;gap:${32*k}px;align-items:flex-start;direction:rtl">${on?mark(150*k):messy(150*k)}<div style="font:400 ${32*k}px/${50*k}px 'IBM Plex Sans Arabic';color:${on?INK:'#111'}">${b.join('<br>')}${on?`<div style="margin-top:${16*k}px;display:inline-block;background:${GR};color:${CR};padding:${8*k}px ${28*k}px;border-radius:${8*k}px;font:600 ${28*k}px/${42*k}px 'IBM Plex Sans Arabic'">اطلب الحين</div>`:`<div class="n" style="margin-top:${16*k}px;font:400 ${26*k}px/${42*k}px Inter;color:#1B6DD1;text-align:right">linktr.ee/loomi.kw.official</div>`}</div></div>`}
 
+// ---------- background wall
+(function(){let h='';const pal=[[GR,LI],[LI,GR],[CR,GR],['#FFE14D','#E8327C'],[CR,LI],['#E8327C','#FFE14D'],[GR,CR]];
+ for(let i=0;i<49;i++){const [a,b]=pal[(i*5+i%3)%pal.length];h+=`<div style="height:300px;background:${a};border-radius:6px;position:relative;overflow:hidden"><div style="position:absolute;left:14%;right:14%;top:16%;height:18px;background:${b}"></div><div style="position:absolute;left:14%;right:40%;top:28%;height:12px;background:${b};opacity:.6"></div><div style="position:absolute;left:14%;right:14%;bottom:14%;height:42%;background:${b};opacity:.35;border-radius:4px"></div></div>`}
+ $('wall').innerHTML=h})();
+
+// ---------- headlines: [id, top, html with words]
+// word spec: [text, time, gold?]
+const HEADS={
+ h1:[330+120,[['عندك',0.40],['5 ثواني',0.85,1],['بس.',1.55]]],
+ h2:[450,[['الزبون',2.75],['يقرر:',3.6],['\n'],['يتابعك…',4.6,1],['أو يطلع.',5.68]]],
+ h3:[450,[['أول شي',6.69],['يقراه',7.3],['\n'],['البايو.',7.75,1]]],
+ h4:[450,[['صورة',12.7],['البروفايل',13.2],['\n'],['ما ينقرا.',16.7,1]]],
+ h5:[450,[['الهايلايتس',18.3],['\n'],['مو ألبوم',19.35],['ذكريات.',19.85,1]]],
+ h6:[430,[['إذا وحدة',25.95],['ناقصة،',27.0],['\n'],['الزبون',27.98],['طلع.',28.45,1]]],
+ h7:[450,[['خل أول',30.4],['5 ثواني',31.0,1],['\n'],['لك.',31.7]]],
+};
+let hh='';for(const [id,[top,ws]] of Object.entries(HEADS)){hh+=`<div id="${id}" class="hl" style="top:${top}px">`+ws.map((w,j)=>w[0]==='\n'?'<br>':`<span id="${id}w${j}" class="w${w[2]?' g':''}">${w[0].replace(/(\d+)/g,'<span class="n">$1</span>')}</span> `).join('')+'</div>'}
+$('heads').innerHTML=hh;
+
+// ---------- stages
+$('stages').innerHTML=`
+<div id="st1" class="stage"><div id="p1" class="card3d" style="left:280px;top:20px">${profile(0,520)}</div></div>
+<div id="st3" class="stage"><div id="b0" class="card3d" style="left:160px;top:60px;border-radius:22px">${bioCard(0,760)}</div><div id="b1" class="card3d" style="left:160px;top:60px;border-radius:22px;opacity:0">${bioCard(1,760)}</div>
+ <div id="q1" class="a glass" style="right:120px;top:520px;padding:22px 40px;font:600 44px/56px 'IBM Plex Sans Arabic';opacity:0">شنو تبيع؟</div>
+ <div id="q2" class="a glass" style="right:470px;top:600px;padding:22px 40px;font:600 44px/56px 'IBM Plex Sans Arabic';opacity:0">وين؟</div>
+ <div id="q3" class="a glass" style="right:200px;top:690px;padding:22px 40px;font:600 44px/56px 'IBM Plex Sans Arabic';opacity:0">شلون يطلب؟</div></div>
+<div id="st4" class="stage">
+ <div id="srch" class="a glass" style="left:150px;top:140px;width:780px;padding:36px 40px;opacity:0">
+  <div style="display:flex;align-items:center;gap:16px;background:#0E0E0E;border-radius:14px;padding:16px 22px;font:500 32px/40px 'IBM Plex Sans Arabic';color:#8A8A8A">⌕ <span>عصير</span></div>
+  ${[['juice.box.kw','عصائر'],['loomi.kw','لومي'],['fresh.q8','فريش']].map((r,i)=>`<div style="display:flex;align-items:center;gap:22px;margin-top:30px;${i!==1?'opacity:.35':''}"><div id="sa${i}" style="width:80px;height:80px;border-radius:50%;flex:none;${i!==1?`background:${['#4D96FF','','#FF8A3D'][i]}`:''}"></div><div><div class="n" style="font:600 32px/40px Inter;text-align:right">${r[0]}</div><div style="font:400 26px/34px 'IBM Plex Sans Arabic';color:#8A8A8A">${r[1]}</div></div></div>`).join('')}
+ </div>
+ <div id="av" class="a"></div>
+</div>
+<div id="st5" class="stage"><div id="strip" class="card3d" style="left:100px;top:180px;width:880px;background:${CR};border-radius:34px;padding:50px 40px">
+ <div style="display:flex;justify-content:space-between">${[0,1,2,3].map(i=>`<div style="width:190px;text-align:center"><div style="perspective:800px"><div id="fl${i}" style="position:relative;width:160px;height:160px;margin:0 auto;transform-style:preserve-3d">
+  <div style="position:absolute;inset:0;border-radius:50%;padding:6px;border:4px solid #CFC7AE;backface-visibility:hidden">${hlBubble(i,0,140)}</div>
+  <div style="position:absolute;inset:0;border-radius:50%;padding:6px;border:4px solid ${GR};backface-visibility:hidden;transform:rotateY(180deg)">${hlBubble(i,1,140)}</div></div></div>
+  <div style="position:relative;height:50px;margin-top:16px"><div id="lo${i}" style="position:absolute;inset:0;font:500 32px/50px 'IBM Plex Sans Arabic';color:#7A7464">${OLDL[i]}</div><div id="ln${i}" style="position:absolute;inset:0;font:700 32px/50px 'IBM Plex Sans Arabic';color:${INK};opacity:0">${NEWL[i]}</div></div></div>`).join('')}</div></div></div>
+<div id="st6" class="stage"><div id="pb" class="card3d" style="left:110px;top:60px">${profile(0,400)}</div><div id="pa" class="card3d" style="left:570px;top:60px">${profile(1,400)}</div></div>
+<div id="st7" class="stage">
+ <div id="dm" class="a glass" style="left:140px;top:120px;width:800px;padding:34px 40px">
+  <div style="display:flex;align-items:center;gap:20px;padding-bottom:26px;border-bottom:1.5px solid #2E2E2E"><img id="dmav" style="width:76px;height:76px;border-radius:50%;background:#0E0E0E"><div><div class="n" style="font:600 34px/42px Inter;text-align:right">nori.dsgn</div><div style="font:400 26px/34px 'IBM Plex Sans Arabic';color:#8A8A8A">نوري · تصاميم سوشال وإعلانات</div></div></div>
+  <div style="height:230px;position:relative"><div id="bub" class="a" style="left:0;bottom:24px;background:#F2F0EB;color:#0E0E0E;border-radius:30px 30px 30px 8px;padding:18px 34px;font:700 46px/58px 'IBM Plex Sans Arabic';opacity:0">بروفايل</div></div>
+  <div style="display:flex;align-items:center;gap:20px;background:#0E0E0E;border-radius:999px;padding:16px 26px"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z" fill="none" stroke="#F2F0EB" stroke-width="1.8" stroke-linejoin="round"/></svg><span id="typed" style="font:500 34px/44px 'IBM Plex Sans Arabic';color:#8A8A8A">اكتب رسالة…</span></div>
+ </div></div>
+<div id="st8" class="stage" style="top:640px;display:flex;flex-direction:column;align-items:center"><img id="logo" style="width:500px"><div class="n" style="font:600 48px/60px Inter;margin-top:56px">@nori.dsgn</div><div style="font:500 40px/56px 'IBM Plex Sans Arabic';color:#8A8A8A;margin-top:10px">النتيجة تتكلم</div></div>`;
+
+// ---------- sparks (deterministic)
+const SPK=[];let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+for(let i=0;i<34;i++)SPK.push({x:120+rnd()*840,y0:760+rnd()*820,sp:20+rnd()*45,ph:rnd()*6.28,r:2+rnd()*3.5});
+$('sparks').innerHTML=SPK.map((s,i)=>`<div id="k${i}" class="sp" style="width:${s.r*2}px;height:${s.r*2}px"></div>`).join('');
+
+// ---------- timing helpers
 const E=t=>t<=0?0:t>=1?1:1-Math.pow(1-t,3);
+const EIO=t=>t<=0?0:t>=1?1:t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const P=(t,a,d)=>E((t-a)/d);
-const $=id=>document.getElementById(id);
-const SC=[['s1',0,2.45],['s2',2.45,6.45],['s3',6.45,12.42],['s4',12.42,18.03],['s5',18.03,25.70],['s6',25.70,30.17],['s7',30.17,34.6],['s8',34.6,99]];
+const SCN=[ // id, head, stage, label, start, end
+ ['s1','h1','st1','THE 5-SECOND TEST',0,2.45],
+ ['s2','h2','st1','THE 5-SECOND TEST',2.45,6.45],
+ ['s3','h3','st3','CHECK 01  ·  BIO',6.45,12.42],
+ ['s4','h4','st4','CHECK 02  ·  PICTURE',12.42,18.03],
+ ['s5','h5','st5','CHECK 03  ·  HIGHLIGHTS',18.03,25.70],
+ ['s6','h6','st6','THE LESSON',25.70,30.17],
+ ['s7','h7','st7','YOUR TURN',30.17,34.55],
+ ['s8',null,'st8','',34.55,99]];
 const FL=[21.33,22.17,23.22,24.26];
+function vis(t,a,b){return Math.min(P(t,a,.35),1-P(t,b-.3,.3))}
 function frame(t){
- for(const [id,a,b] of SC){const o=Math.min(P(t,a,.22),1-P(t,b-.18,.18));$(id).style.opacity=o;$(id).style.display=o>0.001?'block':'none'; if(id==='s8')$(id).style.display=o>0.001?'flex':'none'}
- const cdv=t<2.45?null:t<6.45?4:t<12.42?3:t<18.03?2:t<25.70?1:t<30.17?0:null;
- $('cd').style.opacity=cdv===null?0:1;$('cd').textContent='0:0'+(cdv??0);
- $('wm').style.opacity=t<34.6?1:1-P(t,34.6,.2);
- // S1
- const k=P(t,.37,.25);$('five').style.transform=`scale(${1.35-0.35*k})`;$('five').style.opacity=k;
- $('s1t').style.clipPath=`inset(0 0 0 ${100-100*P(t,1.15,.7)}%)`;
- // S2
- $('s2a').style.opacity=P(t,2.64,.3);$('s2a').style.transform=`translateY(${40-40*P(t,2.64,.3)}px)`;
- $('s2b').style.opacity=P(t,4.6,.25);$('s2b').style.transform=`translateY(${40-40*P(t,4.6,.25)}px)`;
- const c=P(t,5.68,.2),off=P(t,6.0,.4);$('s2c').style.opacity=c*(1-off);$('s2c').style.transform=`translateX(${-700*off}px)`;
- // S3
- const sw=P(t,11.55,.45);$('bioB').style.opacity=1-sw;$('bioA').style.opacity=sw;
- [['c1',8.95],['c2',10.64],['c3',11.25]].forEach(([id,a])=>{const p=P(t,a,.25);$(id).style.opacity=p;$(id).style.transform=`scale(${.6+.4*p})`});
- // S4
- const sh=P(t,14.9,1.0),gr=P(t,17.0,.5);let sz=460-388*sh;if(t>=17.0)sz=72+228*gr;
- const av=$('av');const mode=t<16.9?'m':'l';
- if(av.dataset.m!==mode+Math.round(sz)){av.innerHTML=mode==='m'?messy(sz):mark(sz);av.dataset.m=mode+Math.round(sz)}
- av.style.width=av.style.height=sz+'px';
- const cx=t<17.0? (540+(1000-42-540)*sh) : (958-418*gr); const cy=t<17.0?(920+0*sh):920;
- av.style.right=(1080-cx-sz/2)+'px';av.style.top=(cy-sz/2)+'px';
- $('row').style.opacity=P(t,15.4,.3)*(1-P(t,16.95,.2));
- $('s4t').style.opacity=P(t,16.64,.25)*(1-P(t,17.0,.2));
- // S5
- $('s5t').style.opacity=P(t,19.3,.3);
- FL.forEach((a,i)=>{const p=P(t,a,.45);$('f'+i).style.transform=`rotateY(${180*p}deg)`;$('lo'+i).style.opacity=1-P(t,a,.2);$('ln'+i).style.opacity=P(t,a+.2,.25)});
- // S6
- $('s6a').style.opacity=P(t,25.95,.3);
- $('w1').style.opacity=P(t,27.98,.2);$('w1').style.transform=`translateY(${-60+60*P(t,27.98,.2)}px)`;
- $('w2').style.opacity=P(t,28.45,.2);$('w2').style.transform=`translateY(${-60+60*P(t,28.45,.2)}px)`;
- $('s6c').style.opacity=P(t,28.9,.3);
- // S7
- $('s7a').style.opacity=P(t,30.4,.3);$('s7a').style.transform=`translateY(${40-40*P(t,30.4,.3)}px)`;
- $('s7b').style.opacity=P(t,32.37,.25);$('s7c').style.opacity=P(t,33.36,.2);$('s7c').style.transform=`scale(${.8+.2*P(t,33.36,.2)})`;$('s7d').style.opacity=P(t,33.75,.25);
- // ONE gold element: the scan line
- let s={o:0,x:80,y:0,w:0};
- if(t<2.45) s={o:P(t,.5,.2),x:240,y:1260,w:600*P(t,.5,.5)};
- else if(t<6.45) s={o:P(t,4.6,.2),x:1000-620,y:1030,w:620*P(t,4.6,.4)};
- else if(t<12.42){const sweep=P(t,7.62,.9);s={o:1,x:80,y:470+440*sweep,w:920}}
- else if(t<18.03){const r=parseFloat(av.style.width);s={o:1,x:cx-r/2,y:cy+r/2+30,w:r}}
- else if(t<25.70){let i=-1;FL.forEach((a,j)=>{if(t>=a)i=j});if(i<0)s={o:P(t,19.3,.3),x:1000-640,y:570,w:640*P(t,19.3,.4)};else{const col=i%2,row=Math.floor(i/2);const right=col?80:540;s={o:1,x:1080-right-380+60,y:640+row*400+360,w:260}}}
- else if(t<30.17) s={o:P(t,27.98,.2),x:1000-700,y:950,w:700*P(t,27.98,.6)};
- else if(t<34.6){ if(t<33.36) s={o:P(t,30.4,.3),x:1000-560,y:900,w:560*P(t,30.6,.5)}; else s={o:1,x:1000-560,y:1250,w:560}}
- const sc=$('scan');const so=t<34.6?s.o*(1-P(t,34.45,.15)):0;sc.style.opacity=so;sc.style.left=s.x+'px';sc.style.top=s.y+'px';sc.style.width=Math.max(0,s.w)+'px';
+ // background drift
+ $('wall').style.transform=`rotateX(52deg) translateY(${-80-t*9}px) translateX(${-20+Math.sin(t*.25)*30}px)`;
+ // headlines & stages visibility
+ const stageVis={};let lab='',labO=0;
+ for(const [id,h,st,label,a,b] of SCN){const v=vis(t,a,b);if(h){$(h).style.opacity=v;$(h).style.filter=`blur(${(1-v)*10}px)`}
+  stageVis[st]=Math.max(stageVis[st]||0,v); if(v>labO){labO=v;lab=label}}
+ // stage st1 spans s1+s2 continuously
+ stageVis['st1']=Math.min(P(t,0,.35),1-P(t,6.15,.3));
+ for(const st of ['st1','st3','st4','st5','st6','st7','st8']){const v=stageVis[st]||0;$(st).style.opacity=v;$(st).style.display=v>0.002?(st==='st8'?'flex':'block'):'none'}
+ $('label').textContent=lab;$('label').style.opacity=labO*.9;
+ // words
+ for(const [id,[top,ws]] of Object.entries(HEADS)) ws.forEach((w,j)=>{if(w[0]==='\n')return;const p=P(t,w[1],.45);const el=$(id+'w'+j);el.style.opacity=p;el.style.filter=`blur(${(1-p)*14}px)`;el.style.transform=`translateY(${(1-p)*26}px)`});
+ // h2 special: "أو يطلع." greyish
+ // ---- st1 (phone, before profile)
+ const fl=Math.sin(t*1.3)*1.2;
+ const leave=P(t,5.7,.6);
+ $('p1').style.transform=`translateY(${(1-P(t,.1,.9))*120+fl*6}px) rotateY(${-14+8*Math.sin(t*.6)+leave*-40}deg) rotateX(${6+fl}deg) translateX(${-leave*520}px) scale(${.92+.08*P(t,.1,.9)-leave*.15})`;
+ $('p1').style.filter=`blur(${leave*10}px)`;$('p1').style.opacity=1-leave*.85;
+ // ---- st3 bio
+ const fl3=Math.sin(t*1.1);
+ const flip=EIO((t-11.55)/.7);
+ $('b0').style.transform=`translateY(${(1-P(t,6.5,.7))*100+fl3*6}px) rotateX(${8+fl3}deg) rotateY(${-10+180*flip}deg)`;$('b0').style.opacity=flip<.5?1:0;
+ $('b1').style.transform=`translateY(${fl3*6}px) rotateX(${8+fl3}deg) rotateY(${-190+180*flip}deg)`;$('b1').style.opacity=flip>=.5?1:0;
+ [['q1',8.95],['q2',10.64],['q3',11.25]].forEach(([id,a],i)=>{const p=P(t,a,.4);const out=P(t,11.75,.4);$(id).style.opacity=p*(1-out);$(id).style.transform=`translateY(${(1-p)*50+Math.sin(t*1.4+i)*6}px) scale(${.8+.2*p})`});
+ // ---- st4 avatar → search → mark
+ const sh=EIO((t-14.75)/1.1),swap=t>=17.0,gr=EIO((t-17.0)/.7);
+ let sz=swap?80+300*gr:400-320*sh;
+ const avx=swap?(150+40+40+40*(1-gr)*0+ (540-190)*gr):(540+(190-540)*sh); // center x
+ const cxA=swap?(190+(540-190)*gr):(540+(190-540)*sh);
+ const cyA=swap?(420+ (360-420)*gr):(360+(420-360)*sh);
+ const av=$('av');const key=(swap?'L':'M')+Math.round(sz/4);
+ if(av.dataset.k!==key){av.innerHTML=swap?mark(sz):messy(sz);av.dataset.k=key}
+ // map visual: in RTL search card avatar sits at right side; compute from card: card left150,width780 → right edge 930; avatar center x = 930-40-40 = 850
+ const cx2=swap?(850+(540-850)*gr):(540+(850-540)*sh), cy2=swap?(140+36+72+30+40+110+ (360-(140+36+72+30+40+110))*gr):(360+((140+36+72+30+40+110)-360)*sh);
+ av.style.left=(cx2-sz/2)+'px';av.style.top=(cy2-sz/2)+'px';
+ av.style.transform=`translateY(${(1-P(t,12.5,.7))*80+Math.sin(t*1.2)*5}px)`;
+ av.style.filter=swap?`drop-shadow(0 0 ${30*gr}px rgba(169,201,74,.45))`:'none';
+ $('srch').style.opacity=P(t,14.9,.4)*(1-P(t,16.95,.35));$('srch').style.transform=`translateY(${(1-P(t,14.9,.5))*40}px)`;
+ // ---- st5 highlights
+ $('strip').style.transform=`translateY(${(1-P(t,18.1,.7))*100+Math.sin(t)*6}px) rotateX(${10+Math.sin(t*.8)}deg) rotateY(${Math.sin(t*.5)*4}deg)`;
+ FL.forEach((a,i)=>{const p=EIO((t-a)/.55);$('fl'+i).style.transform=`rotateY(${180*p}deg)`;$('lo'+i).style.opacity=1-P(t,a,.2);$('ln'+i).style.opacity=P(t,a+.25,.25)});
+ // ---- st6 lesson: before vs after
+ const fade=P(t,28.45,.8);
+ $('pb').style.transform=`translateY(${(1-P(t,25.8,.7))*80+Math.sin(t)*5}px) rotateY(${14}deg) translateZ(${-fade*260}px)`;$('pb').style.filter=`grayscale(${fade}) brightness(${1-.55*fade}) blur(${fade*3}px)`;
+ $('pa').style.transform=`translateY(${(1-P(t,26.1,.7))*80+Math.sin(t+1)*5}px) rotateY(${-14+6*fade}deg) scale(${1+.06*fade})`;
+ // ---- st7 DM
+ $('dm').style.transform=`translateY(${(1-P(t,30.3,.7))*90+Math.sin(t)*5}px) rotateX(${8}deg)`;
+ const ty='بروفايل';const nT=Math.floor(Math.max(0,Math.min(1,(t-32.4)/.8))*ty.length);
+ $('typed').textContent=t<32.4?'اكتب رسالة…':ty.slice(0,nT)+(t<33.36?'|':'');$('typed').style.color=t<32.4?'#8A8A8A':'#F2F0EB';
+ const sent=P(t,33.36,.35);$('bub').style.opacity=sent;$('bub').style.transform=`translateY(${(1-sent)*40}px) scale(${.85+.15*sent})`;
+ if(t>=33.36)$('typed').textContent='اكتب رسالة…',$('typed').style.color='#8A8A8A';
+ // ---- st8 end
+ $('logo').style.transform=`scale(${.9+.1*P(t,34.6,.8)})`;
+ // ---- sparks: active only around hero moments
+ const burst=Math.max(P(t,.85,.4)*(1-P(t,2.3,.3)),P(t,11.55,.3)*(1-P(t,12.3,.3)),P(t,17.0,.3)*(1-P(t,17.9,.3)),P(t,21.3,.3)*(1-P(t,25.5,.3))*.8,P(t,26.2,.3)*(1-P(t,30.0,.3))*.6,P(t,33.36,.3)*(1-P(t,34.4,.3)),P(t,34.7,.4));
+ SPK.forEach((s,i)=>{const y=s.y0-((t*s.sp)%700);const o=burst*(.35+.65*Math.abs(Math.sin(t*2+s.ph)));const el=$('k'+i);el.style.left=(s.x+Math.sin(t*.9+s.ph)*14)+'px';el.style.top=y+'px';el.style.opacity=o});
+ // bottom mark
+ $('mark').style.opacity=t<34.55?.85:.85*(1-P(t,34.55,.3));
 }
 window.frame=frame;
 </script></body></html>
