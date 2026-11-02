@@ -29,7 +29,7 @@ Recording tips: one take, phone close to mouth, quiet room, small pause (½ s) b
 |---|---|---|---|---|
 | 1 | 0–2 | «5» + «ثواني بس.» | 5 slams in, words type in right→left | scan line draws under the 5 |
 | 2 | 2–5 | «يتابع» / «يطلع» | the two words split apart left/right, «يطلع» fades to grey and slides off | scan line moves to top of screen |
-| 3 | 5–9 | profile wireframe (grey lines); bio block zooms to fill screen; «شنو تبيع؟ وين؟ كيف أطلب؟» pops word by word on each beat | scan line sweeps down and stops on the bio | scan line |
+| 3 | 5–9 | profile wireframe (grey lines); bio block zooms to fill screen; «شنو تبيع؟ وين؟ شلون أطلب؟» pops word by word on each beat | scan line sweeps down and stops on the bio | scan line |
 | 4 | 9–13 | avatar circle shrinks 400→40px; long name inside blurs out; then a single «م» mark replaces it and stays sharp | shrink with ease-in, swap on the word «ما ينقرا» | scan line under the avatar |
 | 5 | 13–18 | 4 highlight circles; old labels («متفرقات، 2024، New») flip like a split-flap board into «المنيو، الأسعار، شلون تطلب، الآراء» | flip one by one on each spoken word | scan line under the row |
 | 6 | 18–22 | countdown hits 0; «الزبون طلع» big, «قبل لا يشوف شغلك.» grey | words drop in one by one, the profile wireframe slides out of frame | scan line under the title |
