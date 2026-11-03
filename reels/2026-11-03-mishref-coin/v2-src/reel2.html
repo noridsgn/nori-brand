@@ -1,0 +1,243 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:T;font-weight:500;src:url(fonts/tajawal-arabic-500-normal.woff2)}
+@font-face{font-family:T;font-weight:800;src:url(fonts/tajawal-arabic-800-normal.woff2)}
+@font-face{font-family:T;font-weight:500;unicode-range:U+0000-00FF;src:url(fonts/tajawal-latin-500-normal.woff2)}
+@font-face{font-family:T;font-weight:700;unicode-range:U+0000-00FF;src:url(fonts/tajawal-latin-700-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+canvas{position:absolute;inset:0}
+#gl{visibility:hidden}
+.ov{position:absolute;opacity:0}
+#oldtxt{left:280px;top:1140px}
+#brand{left:400px;top:1490px}
+#title{left:0;right:0;top:1150px;text-align:center;direction:rtl;color:#fff;font-family:T;font-weight:800;font-size:80px;letter-spacing:-.5px}
+#concept{left:0;right:0;top:1262px;display:flex;justify-content:center;align-items:center;gap:22px;font-family:T;font-weight:700;font-size:26px;letter-spacing:9px;color:#DAA21B}
+#concept i{display:block;height:1.5px;width:0;background:linear-gradient(90deg,rgba(218,162,27,0),#DAA21B)}
+#concept i.r{background:linear-gradient(270deg,rgba(218,162,27,0),#DAA21B)}
+#small{left:0;right:0;top:1318px;text-align:center;direction:rtl;font-family:T;font-weight:500;font-size:28px;color:rgba(255,255,255,.5)}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<canvas id="gl" width="1080" height="1920"></canvas>
+<canvas id="out" width="1080" height="1920"></canvas>
+<img id="oldtxt" class="ov" src="old-text.png"><img id="brand" class="ov" src="brand.png">
+<div id="title" class="ov">جمعية مشرف التعاونية</div>
+<div id="concept" class="ov"><i class="r"></i><span>CONCEPT 01</span><i></i></div>
+<div id="small" class="ov">مفهوم غير رسمي</div>
+<script type="module">
+import * as THREE from 'three';
+import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+const W=1080,H=1920;
+const glc=document.getElementById('gl');
+const renderer=new THREE.WebGLRenderer({canvas:glc,antialias:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(1); renderer.setSize(W,H,false);
+renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.0;
+const scene=new THREE.Scene();
+
+// ---------- studio environment (softboxes) ----------
+function studioEnv(){
+  const s=new THREE.Scene(); s.background=new THREE.Color(0x020202);
+  const box=(w,h,x,y,z,ry,rx,int,col=0xffffff)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:new THREE.Color(col).multiplyScalar(int),side:THREE.DoubleSide}));m.position.set(x,y,z);m.rotation.set(rx||0,ry||0,0);s.add(m);};
+  box(10,4,0,9,0,0,Math.PI/2,2.2);            // top softbox
+  box(1.2,12,-8,1,2,Math.PI/2.4,0,5.5);        // left strip
+  box(1.0,12,8,1,-1,-Math.PI/2.2,0,3.2,0xfff2dc); // right warm strip
+  box(8,1.0,0,4,-9,0,0,2.4);                   // back rim
+  box(3,3,3,-2,8,Math.PI,0,0.8);               // low front fill
+  box(1.4,9,-4.5,2,8,Math.PI-0.5,0,4.0);       // front-left strip
+  box(1.0,9,4.8,1,8,Math.PI+0.5,0,2.6,0xfff0d0); // front-right warm strip
+  box(6,2.2,0,6,7,Math.PI,0.6,1.6);           // front top panel
+  const pm=new THREE.PMREMGenerator(renderer); return pm.fromScene(s,0.02).texture;
+}
+scene.environment=studioEnv();
+
+// ---------- procedural textures ----------
+function rnd(seed){let s=seed;return()=>{s=(s*16807)%2147483647;return s/2147483647;};}
+function brushed(size,seed,base,amp,scratches){
+  const c=document.createElement('canvas');c.width=c.height=size;const x=c.getContext('2d');const r=rnd(seed);
+  x.fillStyle=`rgb(${base},${base},${base})`;x.fillRect(0,0,size,size);
+  const cx=size/2;
+  for(let i=0;i<900;i++){const rr=r()*cx;const v=base+(r()-.5)*amp;x.strokeStyle=`rgba(${v},${v},${v},.35)`;x.lineWidth=r()*1.6+.3;x.beginPath();x.arc(cx,cx,rr,0,Math.PI*2);x.stroke();}
+  for(let i=0;i<scratches;i++){const a=r()*6.28,l=20+r()*160,px=r()*size,py=r()*size;const v=base+60+r()*60;x.strokeStyle=`rgba(${v},${v},${v},${.25+r()*.4})`;x.lineWidth=.6+r();x.beginPath();x.moveTo(px,py);x.lineTo(px+Math.cos(a)*l,py+Math.sin(a)*l);x.stroke();}
+  const id=x.getImageData(0,0,size,size);for(let i=0;i<id.data.length;i+=4){const n=(r()-.5)*18;id.data[i]+=n;id.data[i+1]+=n;id.data[i+2]+=n;}x.putImageData(id,0,0);
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.NoColorSpace;t.anisotropy=8;return t;
+}
+function noiseTex(size,seed,base,amp){const c=document.createElement('canvas');c.width=c.height=size;const x=c.getContext('2d');const r=rnd(seed);
+  const id=x.createImageData(size,size);for(let i=0;i<id.data.length;i+=4){const v=base+(r()-.5)*amp;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=255;}x.putImageData(id,0,0);
+  for(let i=0;i<120;i++){const px=r()*size,py=r()*size,a=r()*6.28,l=10+r()*80;x.strokeStyle=`rgba(255,255,255,${.15+r()*.3})`;x.lineWidth=.5;x.beginPath();x.moveTo(px,py);x.lineTo(px+Math.cos(a)*l,py+Math.sin(a)*l);x.stroke();}
+  const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.colorSpace=THREE.NoColorSpace;return t;}
+const faceRough=brushed(1024,7,110,120,90);
+const reedTex=(()=>{const c=document.createElement('canvas');c.width=2048;c.height=4;const x=c.getContext('2d');for(let i=0;i<2048;i+=10){const g=x.createLinearGradient(i,0,i+10,0);g.addColorStop(0,'#222');g.addColorStop(.5,'#fff');g.addColorStop(1,'#222');x.fillStyle=g;x.fillRect(i,0,10,4);}const t=new THREE.CanvasTexture(c);t.wrapS=THREE.RepeatWrapping;t.colorSpace=THREE.NoColorSpace;return t;})();
+const goldRough=noiseTex(512,3,70,40), silverRough=noiseTex(512,11,55,40);
+
+// ---------- materials ----------
+const bodyMat=new THREE.MeshPhysicalMaterial({color:0x1f2024,metalness:1,roughness:1,roughnessMap:faceRough,bumpMap:faceRough,bumpScale:0.4,clearcoat:0.15,clearcoatRoughness:0.6});
+const rimMat=new THREE.MeshPhysicalMaterial({color:0x34353a,metalness:1,roughness:0.22});
+const edgeMat=new THREE.MeshPhysicalMaterial({color:0x303136,metalness:1,roughness:0.34,bumpMap:reedTex,bumpScale:2.0});
+const goldMat=new THREE.MeshPhysicalMaterial({color:0xffc35a,metalness:1,roughness:0.9,roughnessMap:goldRough,clearcoat:0.3,clearcoatRoughness:0.25});
+const silverMat=new THREE.MeshPhysicalMaterial({color:0xeef0f4,metalness:1,roughness:0.9,roughnessMap:silverRough,clearcoat:0.2});
+
+// ---------- coin ----------
+const R=255/(H/(2*10*Math.tan(15*Math.PI/180)));   // 0.712
+const TH=0.085, h=TH/2;
+const svgText=await (await fetch('mark-white.svg')).text();
+const svg=new SVGLoader().parse(svgText);
+const markGeos=svg.paths.map(p=>({gold:p.color.getHexString().toLowerCase()!=='ffffff',geo:new THREE.ExtrudeGeometry(SVGLoader.createShapes(p),{depth:7,bevelEnabled:true,bevelThickness:2.2,bevelSize:2.0,bevelSegments:4,curveSegments:32})}));
+function makeCoin(){
+  const g=new THREE.Group();
+  const pts=[]; const rw=0.075, rh=0.018;
+  pts.push(new THREE.Vector2(R-rw,h-0.004));pts.push(new THREE.Vector2(R-rw*0.55,h+rh));pts.push(new THREE.Vector2(R-0.01,h+rh));pts.push(new THREE.Vector2(R,h+rh-0.01));
+  pts.push(new THREE.Vector2(R,-h-rh+0.01));pts.push(new THREE.Vector2(R-0.01,-h-rh));pts.push(new THREE.Vector2(R-rw*0.55,-h-rh));pts.push(new THREE.Vector2(R-rw,-h+0.004));
+  g.add(new THREE.Mesh(new THREE.LatheGeometry(pts,256),rimMat));
+  const edge=new THREE.Mesh(new THREE.CylinderGeometry(R+0.0015,R+0.0015,TH+rh*2-0.024,256,1,true),edgeMat);g.add(edge);
+  const f1=new THREE.Mesh(new THREE.CircleGeometry(R-rw+0.002,192),bodyMat);f1.rotation.x=-Math.PI/2;f1.position.y=h;g.add(f1);
+  const f2=f1.clone();f2.rotation.x=Math.PI/2;f2.position.y=-h;g.add(f2);
+  const core=new THREE.Mesh(new THREE.CylinderGeometry(R-0.01,R-0.01,TH-0.002,64),bodyMat);g.add(core);
+  const mk=(sign)=>{const m=new THREE.Group();markGeos.forEach(o=>m.add(new THREE.Mesh(o.geo,o.gold?goldMat:silverMat)));const s=(R*1.02)/324;m.scale.set(s,-s,s*0.85);m.position.set(-162*s,158*s,0);const w=new THREE.Group();w.add(m);
+    if(sign>0){w.rotation.x=-Math.PI/2;w.position.y=h;}else{w.rotation.x=Math.PI/2;w.rotation.z=Math.PI;w.position.y=-h;}return w;};
+  g.add(mk(1));g.add(mk(-1));
+  return g;
+}
+const N=8; const coins=[]; for(let i=0;i<N;i++){const c=makeCoin();scene.add(c);coins.push(c);}
+
+// ---------- background / bokeh ----------
+const plateTex=new THREE.TextureLoader().load('bg.png'); plateTex.colorSpace=THREE.SRGBColorSpace;
+const darkBg=new THREE.Color(0x050505);
+const bokeh=new THREE.Group();scene.add(bokeh);
+{const r=rnd(42);for(let i=0;i<70;i++){const warm=r()<.7;const m=new THREE.Mesh(new THREE.SphereGeometry(0.03+r()*0.05,8,8),new THREE.MeshBasicMaterial({color:new THREE.Color(warm?0xffc469:0xdfe6ff).multiplyScalar(1.2+r()*2.2)}));
+  const a=r()*6.28, d=6+r()*10; m.position.set(Math.cos(a)*d*0.9,(r()-.5)*14,-(4+r()*12));bokeh.add(m);}}
+
+// ---------- lights ----------
+const key=new THREE.DirectionalLight(0xffffff,0); scene.add(key); scene.add(key.target);
+const rimL=new THREE.DirectionalLight(0xfff0d8,1.2); scene.add(rimL); scene.add(rimL.target);
+const glint=new THREE.PointLight(0xfff3d6,0,5,1.5); scene.add(glint);
+
+// ---------- post ----------
+const cam=new THREE.PerspectiveCamera(30,W/H,0.05,200);
+const composer=new EffectComposer(renderer);
+composer.setPixelRatio(1); composer.setSize(W,H);
+composer.addPass(new RenderPass(scene,cam));
+const bokehPass=new BokehPass(scene,cam,{focus:10,aperture:0.0,maxblur:0.012}); composer.addPass(bokehPass);
+const bloom=new UnrealBloomPass(new THREE.Vector2(W,H),0.45,0.55,0.82); composer.addPass(bloom);
+composer.addPass(new OutputPass());
+const grain=new ShaderPass({uniforms:{tDiffuse:{value:null},seed:{value:0},amt:{value:0.045},vig:{value:0.35}},
+  vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
+  fragmentShader:`uniform sampler2D tDiffuse;uniform float seed,amt,vig;varying vec2 vUv;float h(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233))+seed)*43758.5453);}
+  void main(){vec4 c=texture2D(tDiffuse,vUv);float n=h(vUv*vec2(1080.,1920.))-.5;c.rgb+=n*amt;vec2 d=vUv-.5;c.rgb*=1.-vig*dot(d*vec2(1.,1.4),d*vec2(1.,1.4))*1.4;gl_FragColor=c;}`});
+composer.addPass(grain);
+
+// ---------- helpers ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,t)=>a+(b-a)*t;
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2, eout=t=>1-Math.pow(1-t,3), ein=t=>t*t*t, seg=(t,a,b)=>clamp((t-a)/(b-a));
+const PI=Math.PI, V=(x,y,z)=>new THREE.Vector3(x,y,z);
+const qA=(ax,ang)=>new THREE.Quaternion().setFromAxisAngle(ax.clone().normalize(),ang);
+const BASEY=(960-845)/(H/(2*10*Math.tan(15*Math.PI/180)));
+function hideFrom(k){coins.forEach((c,i)=>c.visible=i<k);}
+function setReveal(rv){
+  goldMat.color.setRGB(lerp(0.05,1.0,rv),lerp(0.035,0.70,rv),lerp(0.01,0.28,rv));
+  silverMat.color.setRGB(lerp(0.045,0.92,rv),lerp(0.045,0.93,rv),lerp(0.05,0.96,rv));
+  goldMat.roughness=lerp(1.0,1.15,rv); silverMat.roughness=lerp(1.0,1.25,rv);
+}
+const shake=(t,a)=>V(Math.sin(t*7.1)*a+Math.sin(t*13.3)*a*.4,Math.sin(t*5.3+1)*a+Math.cos(t*11.7)*a*.4,0);
+
+// ---------- shot logic ----------
+function setScene(t){
+  let env=0.25, keyI=0, rimI=1.2, rv=0, focus=10, ap=0, bg='plate', bk=false, exp=1.0;
+  let gI=0, gP=V(0,0,0);
+  coins.forEach(c=>{c.position.set(0,0,0);c.quaternion.identity();c.visible=false;});
+  const c0=coins[0]; c0.visible=true;
+  const faceQ=qA(V(1,0,0),PI/2);
+  if(t<1.2){                                    // S1 teaser
+    const k=seg(t,0,1.2);
+    cam.fov=30; cam.position.set(0,0,lerp(10,9.55,ease(k))); cam.up.set(0,1,0); cam.lookAt(0,0,0);
+    let y=BASEY, ang=0;
+    if(t>0.95){const j=seg(t,0.95,1.2); y=BASEY+lerp(0,0.35,ein(j)); ang=lerp(0,0.9,ein(j));}
+    c0.position.set(0,y,0); c0.quaternion.copy(qA(V(1,0,0),ang)).multiply(faceQ);
+    env=0.16; rimI=0.9; keyI=0; bg='plate';
+  } else if(t<2.5){                             // S2 close low-angle flip
+    const k=seg(t,1.2,2.5);
+    const y=lerp(0.2,1.9,eout(k)); const ang=0.9+lerp(0,5.2*PI,eout(k)*0.8+k*0.2);
+    c0.position.set(0,y,0); c0.quaternion.copy(qA(V(1,0.15,0),ang)).multiply(faceQ);
+    const cy=y*0.92;
+    cam.fov=34; const sh=shake(t,0.012); cam.position.set(0.45+sh.x,cy-0.85+sh.y,4.6); cam.up.set(0,1,0); cam.lookAt(0,y,0);
+    focus=cam.position.distanceTo(c0.position); ap=0.0012; env=0.85; keyI=0.9; rimI=2.2; bg='dark'; bk=true;
+  } else if(t<4.5){                             // S3 macro edge slow-mo
+    const k=seg(t,2.5,4.5);
+    c0.position.set(0,0,0);
+    const q=qA(V(0,1,0),lerp(-0.5,0.35,k)).multiply(qA(V(1,0,0),PI/2-lerp(1.05,0.95,k)));
+    c0.quaternion.copy(q);
+    cam.fov=28; const sh=shake(t,0.004);
+    cam.position.set(lerp(0.9,0.6,k)+sh.x,lerp(0.35,0.25,k)+sh.y,lerp(2.5,2.15,ease(k))); cam.up.set(0,1,0);
+    cam.lookAt(0.05,0.0,0);
+    focus=cam.position.distanceTo(V(0.25,0.0,0.45)); ap=0.0028; env=0.5; rimI=1.6; bg='dark'; bk=true;
+    const gk=seg(t,2.8,4.2); gI= gk>0&&gk<1? 14*Math.sin(gk*PI):0; gP=V(lerp(-1.5,1.6,gk),0.25,1.0);
+  } else if(t<7.0){                             // S4 top-down split into ring
+    const k=seg(t,4.5,7.0);
+    const sp=ease(seg(t,4.6,5.6)); const rr=lerp(0,1.95,sp);
+    for(let i=0;i<N;i++){const c=coins[i];c.visible=true;const phi=i/N*2*PI+lerp(0,0.6,k);
+      c.position.set(Math.cos(phi)*rr,lerp(0,0.0,sp),Math.sin(phi)*rr);
+      const tilt=lerp(0,0.6,sp)+ (t-4.5)*0.15;
+      const radial=V(Math.cos(phi),0,Math.sin(phi));
+      c.quaternion.copy(qA(radial,tilt)).multiply(qA(V(0,1,0),-phi));
+    }
+    cam.fov=42; const hgt=lerp(7.2,9.6,ease(k)); cam.position.set(Math.sin(k*0.5)*0.4,hgt,0.001+Math.cos(k*0.5)*0.4); cam.up.set(Math.sin(k*0.9),0,-Math.cos(k*0.9)); cam.lookAt(0,0,0);
+    rv=ease(seg(t,5.1,6.3)); env=lerp(0.55,1.5,rv); keyI=lerp(0.2,2.6,rv); rimI=1.5; focus=hgt; ap=0.0012; bg='dark'; bk=false;
+    const gk=seg(t,5.4,6.6); gI= gk>0&&gk<1? 6*Math.sin(gk*PI):0; gP=V(lerp(-3,3,gk),2.5,lerp(-1,1,gk));
+  } else {                                      // S5 converge + title
+    const k=seg(t,7.0,7.9); const cv=ease(k);
+    cam.fov=30; cam.position.set(0,0,lerp(10.6,10,eout(seg(t,7,10)))); cam.up.set(0,1,0); cam.lookAt(0,0,0);
+    const rr=lerp(1.95,0,cv);
+    for(let i=0;i<N;i++){const c=coins[i];
+      if(i===0){c.visible=true;c.position.set(0,BASEY,0);c.quaternion.copy(faceQ);continue;}
+      c.visible=cv<0.9;const phi=i/N*2*PI+0.6+lerp(0,0.8,cv);
+      c.position.set(Math.cos(phi)*rr,BASEY+Math.sin(phi)*rr,-0.35-0.12*i);
+      const radial=V(Math.cos(phi),Math.sin(phi),0);
+      c.quaternion.copy(qA(radial,lerp(0.9,0,cv))).multiply(faceQ);
+    }
+    const idle=Math.max(0,t-7.0); const tl=eout(seg(t,7.3,8.2)); coins[0].quaternion.copy(qA(V(0,1,0),tl*(-0.38)+0.025*Math.sin(idle*1.2))).multiply(qA(V(1,0,0),tl*(-0.2)+0.02*Math.sin(idle*0.9))).multiply(faceQ);
+    rv=1; env=1.0; keyI=0.9; rimI=1.6; bg='plate'; ap=0;
+    const gk=seg(t,7.9,8.7); gI=0; gP=V(0,0,5);
+  }
+  setReveal(rv);
+  scene.environmentIntensity=env;
+  key.intensity=keyI; key.position.copy(cam.position).add(V(2,3,1)); key.target.position.set(0,0,0);
+  rimL.intensity=rimI; rimL.position.set(-2,6,-4); rimL.target.position.set(0,0,0);
+  glint.intensity=gI; glint.position.copy(gP);
+  scene.background= bg==='plate'?plateTex:darkBg;
+  bokeh.visible=bk;
+  cam.updateProjectionMatrix();
+  bloom.strength = t>=7.0 ? 0.22 : 0.45; bloom.threshold = t>=7.0 ? 0.93 : 0.82;
+  bokehPass.uniforms.focus.value=focus; bokehPass.uniforms.aperture.value=ap; bokehPass.enabled=ap>0;
+}
+
+// ---------- overlays ----------
+const $=id=>document.getElementById(id);
+function overlays(t){
+  const o=seg(t,0.9,1.15); $('oldtxt').style.opacity=t<1.2?String(1-o):'0'; $('oldtxt').style.filter=`blur(${o*12}px)`;
+  $('brand').style.opacity= t<1.2? '1' : (t>=7.0? String(eout(seg(t,8.6,9.2))):'0');
+  const a=eout(seg(t,8.0,8.7)); $('title').style.opacity=String(a); $('title').style.filter=`blur(${(1-a)*14}px)`; $('title').style.transform=`translateY(${(1-a)*20}px)`;
+  const b=eout(seg(t,8.4,9.1)); $('concept').style.opacity=String(b); document.querySelectorAll('#concept i').forEach(e=>e.style.width=(b*90)+'px'); $('concept').style.letterSpacing=(9+(1-b)*10)+'px';
+  const c=eout(seg(t,8.8,9.4)); $('small').style.opacity=String(c*1);
+}
+
+// ---------- frame with motion-blur accumulation ----------
+const out=$('out').getContext('2d');
+window.frame=(t,sub=1,shutter=1/60)=>{
+  out.globalCompositeOperation='source-over';
+  for(let s=0;s<sub;s++){
+    const ts= sub>1 ? t - shutter*(s/(sub-1)) : t;
+    setScene(Math.max(0,ts)); grain.uniforms.seed.value=(t*97.3)%100;
+    composer.render();
+    out.globalAlpha=1/(s+1); out.drawImage(glc,0,0);
+  }
+  out.globalAlpha=1; overlays(t);
+};
+window.ready=true;
+</script></body></html>
