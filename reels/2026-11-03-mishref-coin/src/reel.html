@@ -1,0 +1,154 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:T;font-weight:500;src:url(fonts/tajawal-arabic-500-normal.woff2)}
+@font-face{font-family:T;font-weight:800;src:url(fonts/tajawal-arabic-800-normal.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(fonts/ibm-plex-sans-arabic-latin-700-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0d0d0b}
+#bg{position:absolute;inset:0;background:url(bg.png)}
+#halo{position:absolute;width:760px;height:760px;border-radius:50%;left:160px;top:465px;
+  background:radial-gradient(closest-side,rgba(0,0,0,.85),rgba(0,0,0,.55) 60%,rgba(0,0,0,0) 100%)}
+#gl{position:absolute;inset:0}
+#oldtxt{position:absolute;left:280px;top:1140px}
+#brand{position:absolute;left:400px;top:1490px}
+#title{position:absolute;left:0;right:0;top:1160px;text-align:center;direction:rtl;color:#fff;font-family:T;font-weight:800;font-size:84px;line-height:1.1}
+#bar{position:absolute;left:50%;top:1290px;transform:translateX(-50%);background:#fff;height:58px;width:420px;overflow:hidden;clip-path:inset(0 100% 0 0)}
+#bar span{position:absolute;left:22px;top:-4px;font-family:P;font-weight:700;font-size:54px;color:#000;letter-spacing:.5px}
+#small{position:absolute;left:0;right:0;top:1378px;text-align:center;direction:rtl;font-family:T;font-weight:500;font-size:30px;color:rgba(255,255,255,.55)}
+#spark{position:absolute;width:260px;height:260px;margin:-130px 0 0 -130px;pointer-events:none;mix-blend-mode:screen;opacity:0}
+#flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 44%,rgba(218,162,27,.22),rgba(218,162,27,0) 45%);opacity:0;mix-blend-mode:screen}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="bg"></div><div id="halo"></div><div id="flash"></div>
+<canvas id="gl" width="1080" height="1920"></canvas>
+<svg id="spark" viewBox="-130 -130 260 260"><defs><radialGradient id="g"><stop offset="0" stop-color="#fff"/><stop offset=".25" stop-color="#fff6d8" stop-opacity=".9"/><stop offset="1" stop-color="#DAA21B" stop-opacity="0"/></radialGradient></defs>
+<circle r="46" fill="url(#g)"/><path d="M0,-128 L7,-7 L128,0 L7,7 L0,128 L-7,7 L-128,0 L-7,-7Z" fill="#fff" opacity=".9"/><path d="M0,-60 L4,-4 L60,0 L4,4 L0,60 L-4,4 L-60,0 L-4,-4Z" fill="#fff" transform="rotate(45)" opacity=".7"/></svg>
+<img id="oldtxt" src="old-text.png"><img id="brand" src="brand.png">
+<div id="title">جمعية مشرف التعاونية</div>
+<div id="bar"><span>concept 01</span></div>
+<div id="small">مفهوم غير رسمي</div>
+<script type="module">
+import * as THREE from 'three';
+import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const canvas=document.getElementById('gl');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(1); renderer.setSize(1080,1920,false);
+renderer.outputColorSpace=THREE.SRGBColorSpace; renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.0;
+const scene=new THREE.Scene();
+const pmrem=new THREE.PMREMGenerator(renderer);
+scene.environment=pmrem.fromScene(new RoomEnvironment(),0.04).texture;
+const cam=new THREE.PerspectiveCamera(30,1080/1920,0.1,100); cam.position.set(0,0,10);
+const PXU=1920/(2*10*Math.tan(15*Math.PI/180)); // px per unit
+const R=255/PXU, TH=0.11;
+const BASEY=(960-845)/PXU;
+
+// coin body via lathe (raised rim)
+const pts=[];const r0=R, rimW=0.07, h=TH/2, rimH=0.022;
+pts.push(new THREE.Vector2(0,h));
+pts.push(new THREE.Vector2(r0-rimW,h));
+pts.push(new THREE.Vector2(r0-rimW*0.6,h+rimH));
+pts.push(new THREE.Vector2(r0-0.012,h+rimH));
+pts.push(new THREE.Vector2(r0,h+rimH-0.012));
+pts.push(new THREE.Vector2(r0,-h-rimH+0.012));
+pts.push(new THREE.Vector2(r0-0.012,-h-rimH));
+pts.push(new THREE.Vector2(r0-rimW*0.6,-h-rimH));
+pts.push(new THREE.Vector2(r0-rimW,-h));
+pts.push(new THREE.Vector2(0,-h));
+const bodyMat=new THREE.MeshPhysicalMaterial({color:0x17171a,metalness:0.9,roughness:0.42,clearcoat:0.25,clearcoatRoughness:0.5});
+const body=new THREE.Mesh(new THREE.LatheGeometry(pts,192),bodyMat);
+// edge reeding (thin ridges) for realism
+const edgeTex=(()=>{const c=document.createElement('canvas');c.width=1024;c.height=8;const x=c.getContext('2d');for(let i=0;i<1024;i+=8){x.fillStyle='#fff';x.fillRect(i,0,4,8);x.fillStyle='#777';x.fillRect(i+4,0,4,8);}const t=new THREE.CanvasTexture(c);t.wrapS=THREE.RepeatWrapping;return t;})();
+const edge=new THREE.Mesh(new THREE.CylinderGeometry(R+0.001,R+0.001,TH+rimH*2-0.03,192,1,true),new THREE.MeshPhysicalMaterial({color:0x1c1c20,metalness:1,roughness:0.35,bumpMap:edgeTex,bumpScale:0.6}));
+const coin=new THREE.Group(); coin.add(body); coin.add(edge);
+
+// mark from SVG
+const svgText=await (await fetch('mark-white.svg')).text();
+const data=new SVGLoader().parse(svgText);
+const shieldMat=new THREE.MeshPhysicalMaterial({color:0x2a2006,metalness:1,roughness:0.32,clearcoat:.4});
+const blockMat=new THREE.MeshPhysicalMaterial({color:0x26262b,metalness:0.85,roughness:0.36,clearcoat:.4});
+function markGroup(){
+  const g=new THREE.Group();
+  data.paths.forEach((p,i)=>{
+    const shapes=SVGLoader.createShapes(p);
+    const geo=new THREE.ExtrudeGeometry(shapes,{depth:9,bevelEnabled:true,bevelThickness:3,bevelSize:2.5,bevelSegments:3,curveSegments:24});
+    const isGold=(p.color.getHexString().toLowerCase()!=='ffffff');
+    g.add(new THREE.Mesh(geo,isGold?shieldMat:blockMat));
+  });
+  // svg coords: 324x316, y down -> center & flip
+  const s=(R*1.05)/324;
+  g.scale.set(s,-s,s*0.9);
+  g.position.set(-162*s, 158*s, 0);
+  const wrap=new THREE.Group(); wrap.add(g); return wrap;
+}
+const front=markGroup(); front.rotation.x=-Math.PI/2; front.position.y=h; coin.add(front);
+const back=markGroup(); back.rotation.x=Math.PI/2; back.rotation.z=Math.PI; back.position.y=-h; coin.add(back);
+const pivot=new THREE.Group(); pivot.add(coin); coin.rotation.x=Math.PI/2; scene.add(pivot);
+
+// lights
+const rim=new THREE.DirectionalLight(0xfff1d6,1.6); rim.position.set(-1,5,-1.5); scene.add(rim);
+const key=new THREE.DirectionalLight(0xffffff,0); key.position.set(2,2,6); scene.add(key);
+const glint=new THREE.PointLight(0xfff0c8,0,6,1.2); scene.add(glint);
+const fill=new THREE.AmbientLight(0xffffff,0.05); scene.add(fill);
+
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const eout=t=>1-Math.pow(1-t,3), ein=t=>t*t*t;
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const $=id=>document.getElementById(id);
+const PI=Math.PI;
+
+window.frame=(t)=>{
+  // ---- motion ----
+  let y=0, ang=0, ry=0;
+  const J0=0.6,J1=1.15,S1=3.5,L1=4.45;
+  if(t<J0){ y=0; ang=0; }
+  else if(t<J1){ const k=seg(t,J0,J1); y=lerp(0,0.95,eout(k)); ang=lerp(0,3.5*PI,eout(k)*0.85+k*0.15); ry=0.35*k; }
+  else if(t<S1){ const k=seg(t,J1,S1); y=lerp(0.95,1.06,Math.sin(k*PI/2)); ang=lerp(3.5*PI,4.12*PI,k); ry=lerp(0.35,0.18,k); }
+  else if(t<L1){ const k=seg(t,S1,L1); y=lerp(1.06,0,ease(k)); ang=lerp(4.12*PI,6*PI,ease(k)); ry=lerp(0.18,0,ease(k)); }
+  else { const k=t-L1; y=0.015*Math.sin(k*2.2); ang=6*PI+0.05*Math.sin(k*1.6); ry=0.07*Math.sin(k*1.3); }
+  // tiny anticipation squash before jump
+  if(t>J0-0.12 && t<J0){ y=-0.03*Math.sin(seg(t,J0-0.12,J0)*PI); }
+  pivot.position.y=BASEY+y;
+  pivot.rotation.set(ang,ry,0);
+
+  // ---- lighting / reveal ----
+  const rv=ease(seg(t,4.05,5.0));
+  scene.environmentIntensity=lerp(0.07,1.0,rv);
+  if('environmentIntensity' in scene===false){}
+  key.intensity=lerp(0,2.4,rv);
+  rim.intensity=lerp(1.0,2.2,rv);
+  fill.intensity=lerp(0.05,0.25,rv);
+  shieldMat.color.setRGB(lerp(0.09,0.85,rv),lerp(0.065,0.58,rv),lerp(0.01,0.06,rv));
+  shieldMat.emissive.setRGB(0.35*rv,0.22*rv,0.02*rv);
+  shieldMat.roughness=lerp(0.32,0.28,rv);
+  blockMat.color.setRGB(lerp(0.05,0.92,rv),lerp(0.05,0.92,rv),lerp(0.055,0.95,rv));
+  blockMat.metalness=lerp(0.85,0.55,rv);
+  blockMat.emissive.setRGB(0.10*rv,0.10*rv,0.11*rv);
+  // glint: light sweeps across the edge during slow-mo
+  const gk=seg(t,1.3,2.35);
+  glint.intensity= gk>0&&gk<1 ? 40*Math.sin(gk*PI) : 0;
+  glint.position.set(lerp(-2.2,2.2,gk), BASEY+1.2+0.5, 1.4);
+  // second soft glint on reveal
+  const g2=seg(t,4.5,5.2); if(g2>0&&g2<1){ glint.intensity=18*Math.sin(g2*PI); glint.position.set(lerp(-1.6,1.6,g2),BASEY+0.6,2.0); }
+
+  renderer.render(scene,cam);
+
+  // ---- 2D overlays ----
+  const sy=845-y*PXU;
+  $('halo').style.top=(sy-380)+'px';
+  $('halo').style.opacity=String(lerp(1,0.35,seg(t,0.6,1.0))*(1-0.5*rv) + 0.15*clamp(1-Math.abs(y)/1.2));
+  const sp=$('spark'); const sk=seg(t,1.55,2.15);
+  if(sk>0&&sk<1){ sp.style.opacity=String(Math.sin(sk*PI)); sp.style.left=(540+lerp(-180,190,sk))+'px'; sp.style.top=(sy-10)+'px'; sp.style.transform=`rotate(${sk*40}deg) scale(${0.5+0.7*Math.sin(sk*PI)})`; }
+  else{ const s2=seg(t,4.55,5.05); if(s2>0&&s2<1){ sp.style.opacity=String(0.85*Math.sin(s2*PI)); sp.style.left=(540+150)+'px'; sp.style.top=(sy-190)+'px'; sp.style.transform=`rotate(${s2*30}deg) scale(${0.4+0.5*Math.sin(s2*PI)})`;} else sp.style.opacity='0'; }
+  $('flash').style.opacity=String(0.9*Math.sin(clamp(seg(t,4.4,5.3))*PI));
+  const ot=seg(t,0.6,0.95); $('oldtxt').style.opacity=String(1-ot); $('oldtxt').style.filter=`blur(${ot*14}px)`; $('oldtxt').style.transform=`translateY(${ot*18}px)`;
+  const tt=eout(seg(t,4.95,5.6)); $('title').style.opacity=String(tt); $('title').style.filter=`blur(${(1-tt)*16}px)`; $('title').style.transform=`translateY(${(1-tt)*22}px)`;
+  const bt=eout(seg(t,5.35,5.95)); $('bar').style.clipPath=`inset(0 ${100-bt*100}% 0 0)`;
+  const st=eout(seg(t,5.8,6.3)); $('small').style.opacity=String(st);
+};
+window.ready=true;
+</script></body></html>
