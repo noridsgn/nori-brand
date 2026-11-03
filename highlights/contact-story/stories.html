@@ -1,0 +1,56 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:IN;font-weight:400;src:url(Inter-Regular.otf)}
+@font-face{font-family:IN;font-weight:600;src:url(Inter-SemiBold.otf)}
+@font-face{font-family:IND;font-weight:700;src:url(InterDisplay-Bold.otf)}
+@font-face{font-family:PA;font-weight:400;src:url(IBMPlexSansArabic-Regular.ttf)}
+@font-face{font-family:PA;font-weight:600;src:url(IBMPlexSansArabic-SemiBold.ttf)}
+@font-face{font-family:PA;font-weight:700;src:url(IBMPlexSansArabic-Bold.ttf)}
+:root{--black:#0E0E0E;--ivory:#F2F0EB;--ash:#8A8A8A;--gold:#C9A45C}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#333}
+.s{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--black);color:var(--ivory)}
+.glow{position:absolute;width:1300px;height:1300px;border-radius:50%;background:radial-gradient(closest-side,rgba(60,48,30,.75),rgba(43,36,24,.35) 45%,rgba(14,14,14,0) 100%)}
+.logo{position:absolute;top:189px;width:247px}
+.a{position:absolute}
+.lab{font-family:IN;font-weight:600;font-size:23px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+.line{position:absolute;left:80px;right:80px;top:1412px;height:1.5px;background:#262626}
+/* EN */
+#en .h{left:80px;top:680px;font-family:IND;font-weight:700;font-size:120px;line-height:135px;letter-spacing:-.035em}
+#en .sub{left:80px;top:988px;width:860px;font-family:IN;font-weight:400;font-size:37px;line-height:61px;color:#9a9893}
+#en .mail{left:80px;top:1500px;font-family:IN;font-weight:600;font-size:64px;letter-spacing:-.02em;color:var(--gold)}
+#en .lk{top:1622px;font-family:IN;font-size:32px}
+/* AR */
+#ar{direction:rtl}
+#ar .h{right:80px;top:712px;font-family:PA;font-weight:700;font-size:104px;line-height:130px}
+#ar .sub{right:80px;top:1024px;font-family:PA;font-weight:400;font-size:36px;color:#9a9893}
+#ar .lab2{font-family:PA;font-weight:400;font-size:30px;color:var(--ash)}
+#ar .mail{right:80px;top:1512px;font-family:IN;font-weight:600;font-size:64px;letter-spacing:-.02em;color:var(--gold);direction:ltr}
+#ar .lk{top:1624px;font-family:IN;font-size:32px;direction:ltr;unicode-bidi:isolate}
+</style></head><body>
+<div class="s" id="en">
+  <div class="glow" style="left:100px;top:480px"></div>
+  <img class="logo" style="left:52px" src="nori-logo-horizontal-on-dark.svg">
+  <div class="a lab" style="right:80px;top:226px">Contact</div>
+  <div class="a lab" style="left:80px;top:597px">Social · Ads · Posters</div>
+  <div class="a h">Want to work<br>together?</div>
+  <div class="a sub">Send me your brief and let’s create something that gets results.</div>
+  <div class="line"></div>
+  <div class="a lab" style="left:80px;top:1456px">Email me</div>
+  <div class="a mail">info@noridsgn.com</div>
+  <div class="a lk" style="left:80px;color:var(--ivory)">noridsgn.com</div>
+  <div class="a lk" style="right:80px;color:var(--ash)">@nori.dsgn</div>
+</div>
+<div class="s" id="ar">
+  <div class="glow" style="left:-300px;top:380px"></div>
+  <img class="logo" style="right:52px" src="nori-logo-horizontal-on-dark.svg">
+  <div class="a lab2" style="left:80px;top:220px">تواصل</div>
+  <div class="a lab2" style="right:80px;top:630px">سوشال · إعلانات · بوسترات</div>
+  <div class="a h">عندك مشروع؟ خلنا<br>نشتغل مع بعض.</div>
+  <div class="a sub">أرسل لي فكرتك، وخلنا نسوي تصميم يجيب نتيجة.</div>
+  <div class="line"></div>
+  <div class="a lab2" style="right:80px;top:1462px">راسلني على الإيميل</div>
+  <div class="a mail">info@noridsgn.com</div>
+  <div class="a lk" style="right:80px;color:var(--ivory)">noridsgn.com</div>
+  <div class="a lk" style="left:80px;color:var(--ash)">@nori.dsgn</div>
+</div>
+</body></html>
