@@ -1,0 +1,213 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Ruqaa;src:url(node_modules/@fontsource/aref-ruqaa/files/aref-ruqaa-arabic-700-normal.woff2);font-weight:700}
+@font-face{font-family:Ruqaa;src:url(node_modules/@fontsource/aref-ruqaa/files/aref-ruqaa-arabic-400-normal.woff2);font-weight:400}
+@font-face{font-family:Readex;src:url(node_modules/@fontsource/readex-pro/files/readex-pro-arabic-300-normal.woff2);font-weight:300}
+@font-face{font-family:Readex;src:url(node_modules/@fontsource/readex-pro/files/readex-pro-arabic-400-normal.woff2);font-weight:400}
+@font-face{font-family:Readex;src:url(node_modules/@fontsource/readex-pro/files/readex-pro-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Readex;src:url(node_modules/@fontsource/readex-pro/files/readex-pro-latin-400-normal.woff2);font-weight:400;unicode-range:U+0000-00FF}
+@font-face{font-family:Readex;src:url(node_modules/@fontsource/readex-pro/files/readex-pro-latin-600-normal.woff2);font-weight:600;unicode-range:U+0000-00FF}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2);font-weight:700}
+:root{--red:#9E2A22;--red2:#C2412F;--cream:#F3EADB;--paper:#FBF6EE;--ink:#1B1714;--sf:#E2A53A;--sand:#E6D5BB;--grey:#8C8378}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#555;font-family:Readex,sans-serif;color:var(--ink)}
+.slide{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--paper)}
+.cnt{position:absolute;top:66px;left:80px;font:500 22px Inter;letter-spacing:.12em;color:var(--grey);direction:ltr}
+.lbl{position:absolute;top:60px;right:80px;font:600 26px Readex;display:flex;align-items:center;gap:14px;color:var(--ink)}
+.lbl::after{content:'';width:14px;height:14px;background:var(--sf);order:-1}
+.dark .lbl,.dark .cnt{color:#cfc6ba}
+h2{position:absolute;top:150px;right:80px;left:80px;font:600 64px/1.3 Readex}
+.sub{position:absolute;top:250px;right:80px;left:80px;font:300 30px/1.6 Readex;color:var(--grey)}
+.band{position:absolute;left:0;right:0;bottom:0;height:250px;background:var(--red);overflow:hidden}
+.band::before{content:'';position:absolute;inset:0;background:
+ radial-gradient(circle at 50% 100%,transparent 54px,rgba(243,234,219,.13) 55px,rgba(243,234,219,.13) 57px,transparent 58px) 0 40px/120px 120px;}
+.band i{position:absolute;left:50%;bottom:110px;width:16px;height:16px;background:var(--sf);transform:translateX(-50%)}
+.dark{background:radial-gradient(120% 80% at 70% 20%,#4a1712 0%,#1B1714 55%,#120f0d 100%);color:var(--cream)}
+.logo{display:flex;flex-direction:column;align-items:center}
+.wm{font:700 150px/1 Ruqaa;letter-spacing:0;white-space:nowrap}
+.wm-meta{display:flex;justify-content:space-between;width:100%;font:400 30px Readex;opacity:.85;margin-top:18px}
+.pill{position:absolute;top:56px;right:80px;border:2px solid var(--sf);color:var(--sf);border-radius:999px;padding:8px 22px;font:500 22px Inter;letter-spacing:.08em;direction:ltr}
+.pill b{font:400 22px Readex;letter-spacing:0}
+.nori{direction:ltr;position:absolute;top:62px;left:80px;font:700 30px Inter;letter-spacing:.14em;color:var(--cream)}
+.card{background:#fff;border-radius:34px;box-shadow:0 20px 50px rgba(60,30,10,.08)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <symbol id="sym" viewBox="0 0 100 130">
+  <path d="M8 130V56A42 42 0 0 1 92 56V130Z" fill="currentColor"/>
+  <clipPath id="ac"><path d="M8 130V56A42 42 0 0 1 92 56V130Z"/></clipPath>
+  <circle cx="50" cy="132" r="27" fill="#E2A53A" clip-path="url(#ac)"/>
+  <path d="M50 30l3.6 8.4 8.4 3.6-8.4 3.6L50 54l-3.6-8.4L38 42l8.4-3.6Z" style="fill:var(--star,#F3EADB)"/>
+ </symbol>
+ <symbol id="arch" viewBox="0 0 100 130"><path d="M8 130V56A42 42 0 0 1 92 56V130Z" fill="none" stroke="currentColor" stroke-width="5"/></symbol>
+</defs></svg>
+
+<!-- 1 cover -->
+<section class="slide dark" id="s1">
+ <div class="nori">NORI.</div>
+ <div class="pill">• CONCEPT · <b>غير رسمي</b></div>
+ <div class="logo" style="position:absolute;top:400px;left:0;right:0">
+  <svg style="width:170px;height:221px;color:var(--red2)"><use href="#sym"/></svg>
+  <div style="font:400 34px Readex;margin-top:40px;opacity:.8">مطعم</div>
+  <div class="wm" style="color:var(--cream)">ألف ليلة وليلة</div>
+  <div class="wm-meta" style="width:640px"><span>من الفجر</span><span style="font-family:Inter;font-weight:500">1969</span></div>
+ </div>
+ <div style="position:absolute;bottom:80px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:flex-end">
+  <div style="font:300 24px/1.6 Readex;color:#b9ada0;max-width:620px">مفهوم غير رسمي، مو تابع لمطعم ألف ليلة وليلة</div>
+  <svg width="74" height="74" viewBox="0 0 74 74"><circle cx="37" cy="37" r="34" fill="none" stroke="#F3EADB" stroke-width="3"/><path d="M43 24 30 37l13 13" fill="none" stroke="#F3EADB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+ </div>
+</section>
+
+<!-- 2 story -->
+<section class="slide" id="s2">
+ <div class="cnt">02 / 10</div><div class="lbl">الحكاية</div>
+ <h2>الناس تحبه… والبراند ساكت</h2>
+ <div class="sub">مطعم يعرفه أكثر من جيل، وقصته تنتشر بحسابات غيره، مو بحسابه.</div>
+ <div style="position:absolute;top:430px;right:80px;left:80px;display:grid;gap:24px">
+  <div class="card" style="padding:40px 46px;display:flex;align-items:center;gap:40px"><b style="font:700 96px Inter;color:var(--red);min-width:290px;direction:ltr;text-align:right">1969</b><span style="font:400 32px/1.5 Readex">مفتوح من أكثر من 55 سنة بنفس المكان بشرق</span></div>
+  <div class="card" style="padding:40px 46px;display:flex;align-items:center;gap:40px"><b style="font:700 96px Inter;color:var(--red);min-width:290px;direction:ltr;text-align:right">4:00</b><span style="font:400 32px/1.5 Readex">يفتح الفجر، والريوق عنده عادة ناس من سنين</span></div>
+  <div class="card" style="padding:40px 46px;display:flex;align-items:center;gap:40px"><b style="font:700 96px Inter;color:var(--red);min-width:290px;direction:ltr;text-align:right">592K</b><span style="font:400 32px/1.5 Readex">مشاهدة لريل واحد عن المطعم، وحسابه نفسه 9 آلاف متابع</span></div>
+ </div>
+ <div class="band"><i></i></div>
+</section>
+
+<!-- 3 symbol -->
+<section class="slide" id="s3">
+ <div class="cnt">03 / 10</div><div class="lbl">الرمز</div>
+ <h2>باب بين الليل والفجر</h2>
+ <div class="sub">ثلاث حكايات بشكل واحد.</div>
+ <div style="position:absolute;top:420px;right:80px;left:80px;display:flex;gap:26px;align-items:center;justify-content:space-between">
+  <div class="card" style="width:270px;height:330px;display:grid;place-items:center"><svg style="width:120px;height:156px;color:var(--red)"><use href="#arch"/></svg></div>
+  <svg width="36" height="24" viewBox="0 0 36 24"><path d="M34 12H4m9-9-9 9 9 9" fill="none" stroke="#E2A53A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="card" style="width:270px;height:330px;display:grid;place-items:center;background:#211b17"><svg width="140" height="140" viewBox="0 0 100 100"><path d="M50 18l7 18 18 7-18 7-7 18-7-18-18-7 18-7Z" fill="#F3EADB"/><path d="M50 110a40 40 0 0 1 0-80" fill="none"/></svg></div>
+  <svg width="36" height="24" viewBox="0 0 36 24"><path d="M34 12H4m9-9-9 9 9 9" fill="none" stroke="#E2A53A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="card" style="width:270px;height:330px;display:grid;place-items:center;background:#f1e7d8"><svg style="width:120px;height:156px;color:var(--red)"><use href="#sym"/></svg></div>
+ </div>
+ <div style="position:absolute;top:780px;right:80px;left:80px;display:flex;justify-content:space-between;text-align:center;font:600 28px Readex">
+  <span style="width:270px">① الباب<br><small style="font:300 23px/1.6 Readex;color:var(--grey)">باب المطعم القديم وقصص ألف ليلة</small></span>
+  <span style="width:270px">② النجمة<br><small style="font:300 23px/1.6 Readex;color:var(--grey)">الليل… واسم المطعم</small></span>
+  <span style="width:270px">③ رمز المطعم<br><small style="font:300 23px/1.6 Readex;color:var(--grey)">والشمس تطلع من تحت: يفتح 4 الفجر</small></span>
+ </div>
+ <div class="band"><i></i></div>
+</section>
+
+<!-- 4 colors & type -->
+<section class="slide" id="s4">
+ <div class="cnt">04 / 10</div><div class="lbl">الألوان والخط</div>
+ <h2>الأحمر باقي… بس صار أعمق</h2>
+ <div class="sub">نفس الأحمر اللي يعرفونه الناس، مع لون الفجر.</div>
+ <div style="position:absolute;top:400px;right:80px;left:80px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px;height:300px">
+  <div style="background:var(--red);border-radius:28px;padding:30px;color:var(--cream);display:flex;flex-direction:column;justify-content:flex-end"><b style="font:600 32px Readex">أحمر عنابي</b><span style="font:500 20px Inter;opacity:.8;direction:ltr;text-align:right">#9E2A22</span></div>
+  <div style="background:var(--sf);border-radius:28px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font:600 28px Readex">زعفراني</b><span style="font:500 20px Inter;direction:ltr;text-align:right">#E2A53A</span></div>
+  <div style="background:var(--cream);border-radius:28px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;border:2px solid #e7dccb"><b style="font:600 28px Readex">كريمي</b><span style="font:500 20px Inter;direction:ltr;text-align:right">#F3EADB</span></div>
+ </div>
+ <div style="position:absolute;top:740px;right:80px;left:80px;display:flex;gap:30px;align-items:center">
+  <div style="width:250px;height:250px;background:var(--ink);border-radius:28px;color:var(--cream);display:grid;place-items:center;font:700 120px Ruqaa">أ ب</div>
+  <div><div style="font:700 70px Ruqaa;color:var(--red)">ألف ليلة وليلة</div>
+   <div style="font:400 30px/1.6 Readex;margin-top:6px">ريوقك من الفجر، من 1969.</div>
+   <div style="font:400 20px Inter;color:var(--grey);margin-top:12px;direction:ltr;text-align:right">Aref Ruqaa · Logo &nbsp;|&nbsp; Readex Pro · Text</div></div>
+ </div>
+ <div class="band"><i></i></div>
+</section>
+
+<!-- 5 sizes -->
+<section class="slide" id="s5">
+ <div class="cnt">05 / 10</div><div class="lbl">بكل الأحجام</div>
+ <h2>يبين حتى وهو صغير</h2>
+ <div class="sub">أغلب طلباتهم من تطبيقات التوصيل. الرمز لازم ينقرى بحجم أيقونة.</div>
+ <div style="position:absolute;top:420px;right:80px;left:80px;display:flex;align-items:flex-end;gap:44px;justify-content:center">
+  <div style="text-align:center"><div style="width:300px;height:300px;border-radius:70px;background:var(--red);display:grid;place-items:center;box-shadow:0 30px 60px rgba(158,42,34,.25)"><svg style="width:150px;height:195px;color:var(--cream);--star:var(--red)"><use href="#sym"/></svg></div><p style="font:400 24px Readex;margin-top:18px;color:var(--grey)">أيقونة التطبيق</p></div>
+  <div style="text-align:center"><div style="width:180px;height:180px;border-radius:50%;background:var(--cream);display:grid;place-items:center;border:3px solid #eadfcd"><svg style="width:80px;height:104px;color:var(--red)"><use href="#sym"/></svg></div><p style="font:400 24px Readex;margin-top:18px;color:var(--grey)">صورة الحساب</p></div>
+  <div style="text-align:center"><div style="width:84px;height:84px;border-radius:20px;background:var(--red);display:grid;place-items:center"><svg style="width:42px;height:55px;color:var(--cream);--star:var(--red)"><use href="#sym"/></svg></div><p style="font:400 24px Readex;margin-top:18px;color:var(--grey)">48px</p></div>
+ </div>
+ <div class="card" style="position:absolute;top:880px;right:140px;left:140px;padding:26px 30px;display:flex;align-items:center;gap:24px">
+  <div style="width:96px;height:96px;border-radius:22px;background:var(--red);display:grid;place-items:center"><svg style="width:48px;height:62px;color:var(--cream);--star:var(--red)"><use href="#sym"/></svg></div>
+  <div style="flex:1"><b style="font:600 30px Readex">ألف ليلة وليلة</b><div style="font:300 23px Readex;color:var(--grey)">لبناني · ريوق · شرق</div></div>
+  <span style="font:500 22px Inter;color:var(--grey)">25-35 min</span>
+ </div>
+ <div class="band"><i></i></div>
+</section>
+
+<!-- 6 menu -->
+<section class="slide" id="s6" style="background:#e9dfcf">
+ <div class="cnt">06 / 10</div><div class="lbl">المنيو</div>
+ <div style="position:absolute;top:170px;left:50%;width:700px;height:1120px;transform:translateX(-50%) rotate(-3deg);background:var(--paper);border-radius:10px;box-shadow:0 40px 80px rgba(60,30,10,.25);padding:70px 70px">
+  <div style="text-align:center"><svg style="width:70px;height:91px;color:var(--red)"><use href="#sym"/></svg><div style="font:700 66px Ruqaa;color:var(--red);margin-top:10px">ألف ليلة وليلة</div><div style="font:300 22px Readex;color:var(--grey)">منذ 1969 · شرق</div></div>
+  <div style="margin-top:50px;font:600 30px Readex;color:var(--red);display:flex;align-items:center;gap:12px"><span style="width:12px;height:12px;background:var(--sf)"></span>الريوق <small style="font:300 22px Readex;color:var(--grey)">من 4 الفجر</small></div>
+  <div style="margin-top:20px;font:400 27px/2.1 Readex">حمسة حلوم<br>مسبحة بالطحينة<br>بيض عربي<br>كبدة طازجة<br>فول وحمص</div>
+  <div style="margin-top:36px;font:600 30px Readex;color:var(--red);display:flex;align-items:center;gap:12px"><span style="width:12px;height:12px;background:var(--sf)"></span>الغدا</div>
+  <div style="margin-top:20px;font:400 27px/2.1 Readex">مشاوي مشكلة<br>كبة<br>فتوش وتبولة</div>
+  <div style="position:absolute;bottom:50px;left:70px;right:70px;border-top:2px dashed #e0d3bf;padding-top:20px;font:300 20px Readex;color:var(--grey);text-align:center">الأصناف للتوضيح فقط</div>
+ </div>
+</section>
+
+<!-- 7 packaging -->
+<section class="slide" id="s7" style="background:linear-gradient(#efe6d7,#e2d4bf)">
+ <div class="cnt">07 / 10</div><div class="lbl">التوصيل</div>
+ <div style="position:absolute;top:150px;right:80px;left:80px;font:600 56px Readex">يوصلك بنفس الروح</div>
+ <!-- bag -->
+ <div style="position:absolute;top:420px;right:150px;width:400px;height:520px;background:var(--cream);border-radius:8px 8px 14px 14px;box-shadow:0 40px 60px rgba(60,30,10,.25);display:flex;flex-direction:column;align-items:center;justify-content:center">
+  <div style="position:absolute;top:-90px;width:180px;height:120px;border:12px solid var(--red);border-bottom:0;border-radius:90px 90px 0 0"></div>
+  <svg style="width:100px;height:130px;color:var(--red)"><use href="#sym"/></svg>
+  <div style="font:700 62px Ruqaa;color:var(--red);margin-top:18px">ألف ليلة وليلة</div>
+  <div style="font:300 22px Readex;color:var(--grey)">ريوقك من الفجر</div>
+ </div>
+ <!-- box -->
+ <div style="position:absolute;top:800px;left:120px;width:470px;height:300px;background:var(--red);border-radius:12px;box-shadow:0 40px 60px rgba(60,30,10,.3);transform:rotate(-6deg);overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,transparent 54px,rgba(243,234,219,.15) 55px,rgba(243,234,219,.15) 57px,transparent 58px) 0 30px/120px 120px"></div>
+  <div style="position:absolute;top:30px;right:30px;display:flex;align-items:center;gap:16px;color:var(--cream)"><svg style="width:52px;height:68px;color:var(--cream);--star:var(--red)"><use href="#sym"/></svg><span style="font:700 46px Ruqaa">ألف ليلة وليلة</span></div>
+  <div style="position:absolute;bottom:24px;left:30px;width:110px;height:14px;background:var(--sf)"></div>
+ </div>
+</section>
+
+<!-- 8 reels covers -->
+<section class="slide" id="s8">
+ <div class="cnt">08 / 10</div><div class="lbl">قوالب الريلز</div>
+ <h2>كل ريل يعرّف بنفسه</h2>
+ <div class="sub">ثلاث قوالب ثابتة بدل التصوير العشوائي.</div>
+ <div style="position:absolute;top:420px;right:60px;left:60px;display:flex;gap:22px;justify-content:center">
+  <div style="width:300px;height:533px;border-radius:24px;background:linear-gradient(#2a1310,#1B1714);color:var(--cream);position:relative;overflow:hidden;padding:30px">
+   <svg style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:240px;height:312px;color:#3a1a15"><use href="#arch"/></svg>
+   <div style="font:500 18px Inter;color:var(--sf);direction:ltr;text-align:right">1969</div>
+   <div style="position:absolute;top:200px;right:30px;left:30px;font:700 58px/1.15 Ruqaa">حكاية<br>من 1969</div>
+   <div style="position:absolute;bottom:30px;right:30px;font:300 18px Readex;opacity:.7">قصص المطعم</div></div>
+  <div style="width:300px;height:533px;border-radius:24px;background:var(--red);color:var(--cream);position:relative;overflow:hidden;padding:30px">
+   <div style="position:absolute;top:120px;left:50%;transform:translateX(-50%);width:230px;height:230px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#f2d29a,#d98b3c 60%,#9a4b1f);box-shadow:0 0 0 14px var(--cream)"></div>
+   <div style="position:absolute;top:400px;right:30px;left:30px;font:300 20px Readex;color:var(--sf)">طبق اليوم</div>
+   <div style="position:absolute;top:430px;right:30px;left:30px;font:700 52px Ruqaa">حمسة حلوم</div></div>
+  <div style="width:300px;height:533px;border-radius:24px;background:linear-gradient(#2b2236 0%,#9e2a22 55%,#E2A53A 100%);color:var(--cream);position:relative;overflow:hidden;padding:30px">
+   <div style="position:absolute;bottom:-70px;left:50%;transform:translateX(-50%);width:220px;height:220px;border-radius:50%;background:#f6c66a;box-shadow:0 0 80px #f6c66a"></div>
+   <div style="font:700 70px Inter;direction:ltr;text-align:right;margin-top:50px">4:00</div>
+   <div style="font:700 56px/1.2 Ruqaa;margin-top:10px">الريوق<br>بدا</div></div>
+ </div>
+ <div class="band" style="height:200px"><i style="bottom:90px"></i></div>
+</section>
+
+<!-- 9 storefront -->
+<section class="slide" id="s9" style="background:linear-gradient(#2b2236 0%,#6f2a2a 38%,#d98b3c 64%,#efd2a0 72%)">
+ <div class="cnt" style="color:#e9dccb">09 / 10</div><div class="lbl" style="color:#f3eadb">الواجهة</div>
+ <div style="position:absolute;top:640px;left:50%;transform:translateX(-50%);width:260px;height:260px;border-radius:50%;background:#f6c66a;box-shadow:0 0 140px 30px rgba(246,198,106,.7)"></div>
+ <div style="position:absolute;bottom:0;left:60px;right:60px;height:820px;background:#d8c4a6;border-radius:6px 6px 0 0;box-shadow:0 -10px 60px rgba(0,0,0,.25)">
+  <div style="position:absolute;top:60px;left:60px;right:60px;height:170px;background:var(--red);border-radius:10px;display:flex;align-items:center;justify-content:center;gap:30px;color:var(--cream);box-shadow:0 0 50px rgba(194,65,47,.5)">
+   <svg style="width:88px;height:114px;color:var(--cream);--star:var(--red)"><use href="#sym"/></svg><span style="font:700 92px Ruqaa">ألف ليلة وليلة</span></div>
+  <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:300px;height:470px;background:#3a2a20;border-radius:150px 150px 0 0;overflow:hidden">
+   <div style="position:absolute;inset:16px 16px 0;border-radius:134px 134px 0 0;background:linear-gradient(#f6c66a,#e09a45)"></div></div>
+  <div style="position:absolute;bottom:120px;right:70px;width:200px;height:260px;background:linear-gradient(#f6d79a,#e3a24f);border-radius:100px 100px 6px 6px;border:12px solid #3a2a20"></div>
+  <div style="position:absolute;bottom:120px;left:70px;width:200px;height:260px;background:linear-gradient(#f6d79a,#e3a24f);border-radius:100px 100px 6px 6px;border:12px solid #3a2a20"></div>
+  <div style="position:absolute;bottom:500px;left:0;right:0;text-align:center;font:600 28px Readex;color:#3a2a20;letter-spacing:.02em">نفتح من 4 الفجر</div>
+ </div>
+</section>
+
+<!-- 10 final -->
+<section class="slide dark" id="s10">
+ <div class="cnt">10 / 10</div>
+ <div class="logo" style="position:absolute;top:210px;right:80px;align-items:flex-end">
+  <svg style="width:110px;height:143px;color:var(--red2)"><use href="#sym"/></svg>
+  <div class="wm" style="font-size:110px;margin-top:20px;color:var(--cream)">ألف ليلة وليلة</div>
+ </div>
+ <div style="position:absolute;top:720px;right:80px;left:80px;font:600 64px/1.4 Readex">هذا مفهوم…<br>بس تخيل لو صار حقيقة.</div>
+ <div style="position:absolute;top:1000px;right:80px;left:80px;font:300 32px/1.7 Readex;color:#d9cdbf">عندك مطعم قصته أكبر من هويته؟<br>أرسل لي كلمة <b style="color:var(--sf);font-weight:600">«مشروع»</b> بالخاص.</div>
+ <div style="position:absolute;bottom:80px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:flex-end;font:300 22px Readex;color:#a99d90">
+  <span>مفهوم غير رسمي للعرض فقط، مو تابع لمطعم ألف ليلة وليلة</span><span style="font:700 22px Inter;color:var(--cream);direction:ltr">NORI · @nori.dsgn</span></div>
+</section>
+</body></html>
