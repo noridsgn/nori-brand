@@ -1,0 +1,124 @@
+<!doctype html><html lang="ar"><head><meta charset="utf-8"><style>
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-Bold.ttf);font-weight:700}
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-SemiBold.ttf);font-weight:600}
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-Medium.ttf);font-weight:500}
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-Regular.ttf);font-weight:400}
+@font-face{font-family:InterL;src:url(/home/claude/nori-brand/fonts/Inter-SemiBold.otf);font-weight:600}
+@font-face{font-family:InterL;src:url(/home/claude/nori-brand/fonts/Inter-Regular.otf);font-weight:400}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:#0B0B0B;overflow:hidden}
+#s{position:relative;width:1080px;height:1920px;background:#0B0B0B;color:#F2F0EB;font-family:Plex;direction:rtl;overflow:hidden}
+#bgwrap{position:absolute;left:-300px;right:-300px;top:380px;height:1500px;perspective:1400px;filter:blur(8px) brightness(.26) saturate(.75)}
+#wall{position:absolute;left:0;top:0;width:1680px;height:1700px;transform-origin:50% 0;transform:rotateX(52deg);display:grid;grid-template-columns:repeat(7,1fr);gap:26px}
+#wall i{display:block;border-radius:18px;height:300px}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 50% 52%,rgba(11,11,11,0) 0%,rgba(11,11,11,.55) 60%,rgba(11,11,11,.95) 100%),linear-gradient(#0B0B0B 0%,rgba(11,11,11,.9) 17%,rgba(11,11,11,0) 32%,rgba(11,11,11,0) 80%,#0B0B0B 100%)}
+#label{position:absolute;left:0;right:0;top:330px;text-align:center;font:400 25px/30px InterL;letter-spacing:.32em;color:#8A8A8A;direction:ltr}
+#head{position:absolute;left:60px;right:60px;top:400px;text-align:center;font:700 80px/112px Plex}
+.w{display:inline-block;white-space:pre}
+.g{color:#C9A45C}
+#stage{position:absolute;left:0;right:0;top:800px;height:900px;perspective:1600px}
+.st{position:absolute;width:300px;height:533px;border-radius:26px;overflow:hidden;box-shadow:0 50px 100px rgba(0,0,0,.6);font-family:Plex}
+.bars{position:absolute;top:12px;left:12px;right:12px;display:flex;gap:6px}
+.bars b{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
+.bars b u{display:block;height:100%;background:#fff;width:0}
+.acc{position:absolute;top:30px;right:16px;display:flex;align-items:center;gap:8px;font:600 15px InterL;direction:ltr}
+.acc span{width:30px;height:30px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font:600 15px Plex}
+#mark{position:absolute;left:50%;top:1760px;width:52px;margin-left:-26px;opacity:.85}
+.sp{position:absolute;border-radius:50%;background:#E3C27A;box-shadow:0 0 12px 3px rgba(201,164,92,.7)}
+#cap{position:absolute;left:0;right:0;top:1690px;text-align:center;font:400 22px Plex;color:#6f6f6f}
+</style></head><body><div id="s">
+<div id="bgwrap"><div id="wall"></div></div><div id="vig"></div>
+<div id="label"></div><div id="sparks"></div><div id="head"></div><div id="stage"></div>
+<div id="cap">«سَديم» براند وهمي سويته للتوضيح</div>
+<img id="mark" src="mark.svg">
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const NAVY='#1F2A40',SAND='#E9DFCB',TERRA='#C4623F',IV='#F2F0EB';
+// wall
+const cols=['#3a2a4a','#4a2a2a','#2a3a4a','#4a3a20','#203a30','#3a3a3a','#4a2040'];
+$('wall').innerHTML=Array.from({length:42},(_,i)=>`<i style="background:${cols[(i*3)%7]}"></i>`).join('');
+// story card factory
+function story(kind,{w=300,prog=[0,0,0]}={}){
+ const h=w*16/9, k=w/300;
+ const bars=`<div class="bars">${prog.map(p=>`<b><u style="width:${p*100}%"></u></b>`).join('')}</div>`;
+ const acc=(c)=>`<div class="acc" style="color:${c}">sadeem.kw<span>س</span></div>`;
+ let inner='';
+ if(kind==='hook') inner=`<div style="background:${NAVY};position:absolute;inset:0;color:${IV}">${bars}${acc(IV)}
+   <div style="position:absolute;top:${130*k}px;right:${24*k}px;left:${24*k}px;font:700 ${42*k}px/1.35 Plex">عطرك يختفي<br>بعد ساعتين؟</div>
+   <div class="poll" style="position:absolute;top:${300*k}px;right:${24*k}px;left:${24*k}px;background:#fff;border-radius:${16*k}px;padding:${14*k}px;color:#1b1b1b;text-align:center;transform-origin:50% 50%">
+   <div style="font:500 ${17*k}px Plex;color:#555">صوّت</div><div style="display:flex;gap:${8*k}px;margin-top:${10*k}px"><div style="flex:1;border:1px solid #ddd;border-radius:${10*k}px;padding:${8*k}px;font:700 ${19*k}px Plex">إي والله</div><div style="flex:1;border:1px solid #ddd;border-radius:${10*k}px;padding:${8*k}px;font:700 ${19*k}px Plex">لا</div></div></div></div>`;
+ if(kind==='show') inner=`<div style="background:${SAND};position:absolute;inset:0;color:${NAVY}">${bars}${acc(NAVY)}
+   <div class="bottle" style="position:absolute;top:${90*k}px;left:50%;width:${140*k}px;margin-left:${-70*k}px">
+    <div style="width:${44*k}px;height:${34*k}px;background:${TERRA};margin:0 auto;border-radius:${4*k}px"></div><div style="width:${22*k}px;height:${14*k}px;background:#b7a98f;margin:0 auto"></div>
+    <div style="height:${170*k}px;background:${NAVY};border-radius:${14*k}px;display:grid;place-items:center"><div style="border:1px solid ${IV};color:${IV};padding:${8*k}px ${14*k}px;font:600 ${20*k}px Plex">سَديم</div></div></div>
+   <div style="position:absolute;bottom:${70*k}px;right:${24*k}px;font:700 ${40*k}px Plex">يثبت <span class="num" style="font-family:InterL">12</span> ساعة</div>
+   <div style="position:absolute;bottom:${40*k}px;right:${24*k}px;font:400 ${16*k}px Plex;color:#777">سديم · عود وفانيلا</div></div>`;
+ if(kind==='act') inner=`<div style="background:${TERRA};position:absolute;inset:0;color:${IV}">${bars}${acc(IV)}
+   <div style="position:absolute;top:${130*k}px;right:${24*k}px;font:700 ${46*k}px/1.3 Plex">اطلبه<br>الحين</div>
+   <div class="link" style="position:absolute;top:${260*k}px;right:${24*k}px;background:#fff;color:#2563eb;border-radius:${10*k}px;padding:${10*k}px ${18*k}px;font:600 ${18*k}px InterL;direction:ltr">🔗 SADEEM.KW</div>
+   <div class="rip" style="position:absolute;top:${255*k}px;right:${70*k}px;width:${60*k}px;height:${60*k}px;border-radius:50%;border:${3*k}px solid ${IV};opacity:0"></div>
+   <div style="position:absolute;bottom:${50*k}px;right:${24*k}px;font:400 ${16*k}px Plex">توصيل نفس اليوم</div></div>`;
+ if(kind==='rand') inner='';
+ return {html:inner,w,h};
+}
+const RAND=['#E8327C','#7B3FE4','#E23B2E','#2BB3A3','#F2B53A','#3d7be0','#ff6f3c','#8bc34a','#c2185b','#5e35b1','#00897b','#f4511e','#6d4c41','#d81b60','#1e88e5'];
+// timeline
+const L=[
+ {t0:0.0,t1:4.92,lab:'THE 3-STORY RULE',words:[['لا '],['تنزل '],['ولا '],['ستوري '],['اليوم…','\n'],['قبل '],['لا '],['تشوف '],['الطريقة '],['الصحيحة.','g']],sc:'chaos'},
+ {t0:4.92,t1:8.44,lab:'THE PROBLEM',words:[['الزبون '],['ما '],['يكمل','g'],[' كل '],['ستورياتك.']],sc:'leave'},
+ {t0:8.44,t1:11.68,lab:'THE FIX',words:[['خلها '],['3','g'],['،','\n'],['وكل '],['وحدة '],['لها '],['شغلة.']],sc:'three'},
+ {t0:12.72,t1:16.24,lab:'STORY 01 · STOP',words:[['الأولى '],['توقّفه:','g','\n'],['سؤال '],['يحس '],['إنك '],['تقصده.']],sc:'hook'},
+ {t0:17.5,t1:21.9,lab:'STORY 02 · SHOW',words:[['الثانية '],['توريه '],['اللي '],['يبيه:','','\n'],['المنتج، '],['و'],['الرقم','g'],[' اللي '],['يهمه.']],sc:'show'},
+ {t0:23.78,t1:28.08,lab:'STORY 03 · ACT',words:[['الثالثة '],['تخليه '],['يطلب:','g','\n'],['زر '],['واحد، '],['ولا '],['تخليه '],['يفكر.']],sc:'act'},
+ {t0:30.6,t1:34.6,lab:'THE RULE',words:[['3','g'],[' ستوريات…','','\n'],['كل '],['وحدة '],['تسوي '],['شغلها.']],sc:'trio'},
+ {t0:38.18,t1:43.34,lab:'YOUR TURN',words:[['تبي '],['قوالب '],['ستوري','g','\n'],['جاهزة '],['لبراندك؟']],sc:'dm'},
+];
+const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+let cur=-1;
+function sceneAt(t){let k=0;for(let i=0;i<L.length;i++){if(t>=L[i].t0-0.25)k=i}return k}
+function renderHead(s,t){
+ const n=s.words.length, span=Math.max(1.2,(s.t1-s.t0)*0.7);
+ let html='';s.words.forEach((w,i)=>{const st=s.t0+span*i/n, p=ease((t-st)/0.35);
+  const cls=w[1]==='g'?'w g':'w'; const br=(w[1]==='\n'||w[2]==='\n')?'<br>':'';
+  html+=`<span class="${cls}" style="opacity:${p};filter:blur(${(1-p)*10}px);transform:translateY(${(1-p)*18}px)">${w[0]}</span>${br}`});
+ $('head').innerHTML=html;
+}
+function card(kind,x,y,w,rot,op,prog,extra=''){const c=story(kind,{w,prog});
+ return `<div class="st" style="left:${x}px;top:${y}px;width:${c.w}px;height:${c.h}px;opacity:${op};transform:rotateY(${rot}deg) ${extra}">${c.html}</div>`}
+function stage(s,t){
+ const lt=t-s.t0, d=s.t1-s.t0; let h='';
+ if(s.sc==='chaos'||s.sc==='leave'){
+  for(let i=0;i<15;i++){const col=i%5,row=Math.floor(i/5);const x=90+col*190+(row%2)*40, y=20+row*250;
+   const jit=Math.sin(t*9+i*1.7)*4; let op=1;
+   if(s.sc==='chaos'){op=ease((lt-i*0.12)/0.3)}
+   if(s.sc==='leave'){const keep=[2,7,12].includes(i);op=keep?1:1-ease((lt-0.2-i*0.12)/0.4)}
+   const flick=(s.sc==='chaos'&&Math.floor(t*12+i)%5===0)?.6:1;
+   h+=`<div class="st" style="left:${x}px;top:${y+jit}px;width:150px;height:230px;opacity:${op*flick};background:${RAND[i]};transform:rotate(${(i%3-1)*6}deg) rotateY(${(i%2?14:-14)}deg)"><div class="bars">${Array(15).fill('<b></b>').join('')}</div><div style="position:absolute;bottom:18px;right:14px;left:14px;height:10px;border-radius:5px;background:rgba(255,255,255,.45)"></div><div style="position:absolute;bottom:38px;right:14px;width:60%;height:10px;border-radius:5px;background:rgba(255,255,255,.3)"></div></div>`}
+ }
+ if(s.sc==='three'){const ks=['act','show','hook'];ks.forEach((k,i)=>{const p=ease((lt-i*0.25)/0.6);h+=card(k,90+i*320,60+(1-p)*80,270,(i-1)*-10,p,[i>=2?1:0,i>=1?1:0,1])})}
+ if(s.sc==='hook'){const p=ease(lt/0.7);h+=card('hook',300,30+(1-p)*60,480,-8*(1-p)-4,p,[cl(lt/d),0,0]);}
+ if(s.sc==='show'){const p=ease(lt/0.7);h+=card('show',300,30+(1-p)*60,480,6-6*p+4,p,[1,cl(lt/d),0]);}
+ if(s.sc==='act'){const p=ease(lt/0.7);h+=card('act',300,30+(1-p)*60,480,-8+8*p-4,p,[1,1,cl(lt/d)]);}
+ if(s.sc==='trio'){const ks=['act','show','hook'];ks.forEach((k,i)=>{const p=ease((lt-i*0.2)/0.6);h+=card(k,90+i*320,60,270,(i-1)*-12,p,[1,1,1],`translateY(${Math.sin(t*1.6+i)*8}px)`)})}
+ if(s.sc==='dm'){const p=ease(lt/0.7);
+  h+=`<div style="position:absolute;left:150px;right:150px;top:${120+(1-p)*60}px;opacity:${p};background:linear-gradient(160deg,#242424,#161616);border:1.5px solid #2E2E2E;border-radius:28px;padding:30px;box-shadow:0 40px 90px rgba(0,0,0,.6);transform:rotateX(${8*(1-p)}deg)">
+   <div style="display:flex;align-items:center;gap:14px;direction:ltr"><img src="mark.svg" style="width:56px;height:56px;border-radius:50%;background:#0B0B0B;padding:8px"><div><div style="font:600 26px InterL">nori.dsgn</div><div style="font:400 20px Plex;color:#8A8A8A">نوري · تصميم سوشال ميديا</div></div></div>
+   <div style="margin-top:40px;display:flex;justify-content:flex-end;direction:ltr"><div style="background:#F2F0EB;color:#111;border-radius:22px;padding:14px 28px;font:700 34px Plex;opacity:${ease((lt-1.6)/0.4)}">ستوري</div></div>
+   <div style="margin-top:28px;border:1px solid #333;border-radius:30px;padding:16px 24px;font:400 22px Plex;color:#777">اكتب رسالة…</div></div>
+   <div style="position:absolute;left:0;right:0;top:560px;text-align:center;font:700 60px/1.4 Plex;opacity:${ease((lt-2.2)/0.5)};filter:blur(${(1-ease((lt-2.2)/0.5))*8}px)">أرسل لي «ستوري» بالدايركت.</div>`}
+ $('stage').innerHTML=h;
+}
+function sparks(t){let h='';for(let i=0;i<26;i++){const ph=(t*0.12+i*0.137)%1;const x=(i*389)%1080, y=1650-ph*1250;const o=Math.sin(ph*Math.PI)*.8;h+=`<i class="sp" style="left:${x}px;top:${y}px;width:${3+(i%3)}px;height:${3+(i%3)}px;opacity:${o}"></i>`}$('sparks').innerHTML=h}
+function frame(t){
+ const k=sceneAt(t), s=L[k];
+ $('label').textContent=s.lab;
+ renderHead(s,t); stage(s,t); sparks(t);
+ $('wall').style.transform=`rotateX(52deg) translateY(${-t*14}px)`;
+ // scene fade between
+ const nx=L[k+1]; let o=1; if(nx&&t>nx.t0-0.45) o=cl((nx.t0-0.25-t)/0.2);
+ const fi=cl((t-(s.t0-0.25))/0.25); $('head').style.opacity=Math.min(o,fi); $('stage').style.opacity=Math.min(o,fi); $('label').style.opacity=Math.min(o,fi);
+}
+window.frame=frame;
+</script></body></html>
