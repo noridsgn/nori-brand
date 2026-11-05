@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
+await p.goto('file://'+__dirname+'/reel.html');
+await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(300);
+await p.evaluate(()=>{frame(25.2);
+ const h=document.getElementById('head');h.style.top='390px';h.style.font='700 138px/170px Plex';
+ h.innerHTML='<span class="w"><span class="g" style="font-family:InterL">3</span> ستوريات</span><br><span class="w">أقوى من <span class="g" style="font-family:InterL">15</span></span>';
+ const l=document.getElementById('label');l.textContent='THE 3-STORY RULE';l.style.top='320px';
+ const st=document.getElementById('stage');st.style.top='830px';
+ document.querySelectorAll('.sp').forEach((e,i)=>{e.style.opacity=.35+.6*((i*37)%10)/10});
+});
+await p.screenshot({path:__dirname+'/cover-B.png'});await b.close();})();
