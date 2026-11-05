@@ -1,0 +1,138 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:Lalezar;src:url(node_modules/@fontsource/lalezar/files/lalezar-arabic-400-normal.woff2)}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-400-normal.woff2);font-weight:400}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-800-normal.woff2);font-weight:800}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2);font-weight:700}
+:root{--red:#D7261E;--redd:#A3150F;--cream:#FFF4E2;--char:#1E1A17;--green:#1F5B43;--gold:#F2B53A;--grey:#8b8178}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#444;font-family:Baloo,sans-serif;color:var(--char)}
+.slide{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--cream)}
+.cnt{position:absolute;top:66px;left:80px;font:500 22px Inter;letter-spacing:.12em;color:var(--grey);direction:ltr}
+.lbl{position:absolute;top:58px;right:80px;font:600 28px Baloo;display:flex;align-items:center;gap:14px}
+.lbl::after{content:'';width:14px;height:14px;background:var(--red);order:-1;border-radius:50%}
+h2{position:absolute;top:140px;right:80px;left:80px;font:400 84px/1.15 Lalezar}
+.sub{position:absolute;top:255px;right:80px;left:80px;font:400 31px/1.55 Baloo;color:#6d625a}
+.ablaq{position:absolute;left:0;right:0;bottom:0;height:120px;background:repeating-linear-gradient(180deg,var(--char) 0 30px,var(--cream) 30px 60px)}
+.nori{position:absolute;top:62px;left:80px;font:700 30px Inter;letter-spacing:.14em;direction:ltr}
+.pill{position:absolute;top:56px;right:80px;border:2px solid currentColor;border-radius:999px;padding:8px 22px;font:500 22px Inter;letter-spacing:.08em;direction:ltr}
+.pill b{font:600 22px Baloo;letter-spacing:0}
+.wm{font:400 180px/1 Lalezar;white-space:nowrap}
+.card{background:#fff;border-radius:34px;box-shadow:0 20px 50px rgba(80,30,10,.08)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <symbol id="rooster" viewBox="0 0 120 120">
+  <circle cx="47" cy="34" r="11" fill="var(--comb,#D7261E)"/><circle cx="62" cy="27" r="12.5" fill="var(--comb,#D7261E)"/><circle cx="77" cy="35" r="10" fill="var(--comb,#D7261E)"/>
+  <circle cx="62" cy="68" r="32" fill="currentColor"/>
+  <path d="M33 60 14 70l20 9Z" fill="var(--beak,#F2B53A)"/>
+  <path d="M38 80c-6 4-7 13 0 16 7-3 6-12 0-16Z" fill="var(--comb,#D7261E)"/>
+  <circle cx="52" cy="60" r="5" fill="var(--eye,#1E1A17)"/>
+  <path d="M78 92c10-4 18-14 18-26" fill="none" stroke="var(--eye,#1E1A17)" stroke-width="0" />
+ </symbol>
+</defs></svg>
+
+<section class="slide" id="s1" style="background:var(--red);color:var(--cream)">
+ <div class="nori">NORI.</div><div class="pill">• CONCEPT · <b>غير رسمي</b></div>
+ <div style="position:absolute;top:330px;left:0;right:0;display:flex;flex-direction:column;align-items:center">
+  <div style="width:300px;height:300px;border-radius:50%;background:var(--cream);display:grid;place-items:center;box-shadow:0 30px 70px rgba(80,0,0,.35)">
+   <svg style="width:220px;height:220px;color:var(--red);--comb:var(--char);--eye:var(--cream)"><use href="#rooster"/></svg></div>
+  <div class="wm" style="margin-top:50px">بروستد الشام</div>
+  <div style="font:600 40px Baloo;margin-top:10px;opacity:.95">قرمشة على أصولها</div>
+ </div>
+ <div style="position:absolute;bottom:160px;right:80px;left:80px;font:400 24px Baloo;opacity:.85">مفهوم غير رسمي، مو تابع لبروستد الشام</div>
+ <div class="ablaq"></div>
+</section>
+
+<section class="slide" id="s2">
+ <div class="cnt">02 / 05</div><div class="lbl">الرمز والألوان</div>
+ <h2>نفس الديك… بس أنظف</h2>
+ <div class="sub">الديك اللي يعرفونه الناس باقي. اللي راح هو الزحمة: كان فيه 3 أسطر نص بالعربي والإنجليزي، وصار سطر واحد.</div>
+ <div style="position:absolute;top:440px;right:80px;left:80px;display:flex;align-items:center;justify-content:space-between">
+  <div class="card" style="width:380px;height:380px;padding:36px;display:flex;flex-direction:column;justify-content:center;gap:16px;background:#f4ece0;box-shadow:none">
+   <b style="font:600 30px Baloo;color:var(--grey)">قبل</b>
+   <span style="font:400 28px/1.6 Baloo;color:#6d625a">ديك كرتوني مرسوم<br>جملة «دلّع كرشك»<br>الاسم بالعربي<br>الاسم بالإنجليزي<br>أحمر وأخضر وأسود</span></div>
+  <svg width="60" height="40" viewBox="0 0 60 40"><path d="M56 20H6m14-14L6 20l14 14" fill="none" stroke="var(--red)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="card" style="width:380px;height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+   <div style="width:190px;height:190px;border-radius:50%;background:var(--red);display:grid;place-items:center"><svg style="width:140px;height:140px;color:var(--cream);--comb:var(--char)"><use href="#rooster"/></svg></div>
+   <span style="font:400 64px Lalezar;color:var(--red)">بروستد الشام</span></div>
+ </div>
+ <div style="position:absolute;top:880px;right:80px;left:80px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:16px;height:200px">
+  <div style="background:var(--red);border-radius:24px;padding:22px;color:var(--cream);display:flex;flex-direction:column;justify-content:flex-end"><b style="font:600 28px Baloo">أحمر القرمشة</b><span style="font:500 18px Inter;direction:ltr;text-align:right">#D7261E</span></div>
+  <div style="background:var(--char);border-radius:24px;padding:22px;color:var(--cream);display:flex;flex-direction:column;justify-content:flex-end"><b style="font:600 24px Baloo">حجر الشام</b><span style="font:500 18px Inter;direction:ltr;text-align:right">#1E1A17</span></div>
+  <div style="background:var(--gold);border-radius:24px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font:600 24px Baloo">ذهبي</b><span style="font:500 18px Inter;direction:ltr;text-align:right">#F2B53A</span></div>
+  <div style="background:#fff;border:2px solid #eadccb;border-radius:24px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font:600 24px Baloo">ياسمين</b><span style="font:500 18px Inter;direction:ltr;text-align:right">#FFF4E2</span></div>
+ </div>
+ <div style="position:absolute;top:1120px;right:80px;left:80px;font:400 27px/1.6 Baloo;color:#6d625a">الخطوط السودا والبيضا تحت كل سلايد هي «الأبلق»، حجر بيوت الشام القديمة بطبقات سودا وبيضا. صارت توقيع البراند على العلب واللوحة.</div>
+ <div class="ablaq" style="height:90px"></div>
+</section>
+
+<section class="slide" id="s3" style="background:linear-gradient(#fff4e2,#f3e2c7)">
+ <div class="cnt">03 / 05</div><div class="lbl">البوكس</div>
+ <h2>البوكس صار هو الإعلان</h2>
+ <div class="sub">أقوى ريل عندهم (665 ألف مشاهدة) كان البوكس الأحمر بالسيارة. فخليناه يعرّف بنفسه من أي زاوية.</div>
+ <div style="position:absolute;top:520px;left:50%;transform:translateX(-50%);width:700px;height:640px">
+  <!-- crispy pieces -->
+  <div style="position:absolute;top:0;left:90px;right:90px;height:220px">
+   <div style="position:absolute;left:30px;top:70px;width:200px;height:150px;border-radius:45% 55% 50% 40%;background:radial-gradient(circle at 35% 35%,#f6c46b,#d78a2c 70%,#a85a17)"></div>
+   <div style="position:absolute;left:180px;top:20px;width:220px;height:180px;border-radius:55% 45% 40% 60%;background:radial-gradient(circle at 40% 30%,#f8cf7a,#d98e2e 70%,#a65817)"></div>
+   <div style="position:absolute;right:20px;top:60px;width:190px;height:160px;border-radius:50% 40% 55% 45%;background:radial-gradient(circle at 40% 35%,#f6c46b,#d78a2c 70%,#a85a17)"></div>
+   <div style="position:absolute;left:120px;top:110px;width:26px;height:150px;background:#f5d27a;border-radius:6px;transform:rotate(-12deg)"></div>
+   <div style="position:absolute;right:150px;top:100px;width:26px;height:160px;background:#f2c866;border-radius:6px;transform:rotate(10deg)"></div>
+  </div>
+  <div style="position:absolute;top:190px;left:0;right:0;height:450px;background:var(--red);border-radius:14px 14px 30px 30px;box-shadow:0 50px 80px rgba(120,20,10,.3);overflow:hidden">
+   <div style="position:absolute;top:0;left:0;right:0;height:80px;background:repeating-linear-gradient(180deg,var(--char) 0 20px,var(--cream) 20px 40px)"></div>
+   <div style="position:absolute;top:140px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:28px;color:var(--cream)">
+    <div style="width:150px;height:150px;border-radius:50%;background:var(--cream);display:grid;place-items:center"><svg style="width:115px;height:115px;color:var(--red);--comb:var(--char);--eye:var(--cream)"><use href="#rooster"/></svg></div>
+    <span style="font:400 92px Lalezar;white-space:nowrap">بروستد الشام</span></div>
+   <div style="position:absolute;bottom:40px;left:0;right:0;text-align:center;font:600 30px Baloo;color:var(--cream);opacity:.9">قرمشة على أصولها</div>
+  </div>
+ </div>
+ <div class="ablaq" style="height:90px"></div>
+</section>
+
+<section class="slide" id="s4">
+ <div class="cnt">04 / 05</div><div class="lbl">التطبيقات والريلز</div>
+ <h2>يبين بالتطبيق وبالريل</h2>
+ <div class="sub">أغلب الطلبات من طلبات وكيتا. الديك لازم ينقرى بحجم أيقونة، والريل لازم يعرّف بنفسه قبل لا تفتحه.</div>
+ <div class="card" style="position:absolute;top:420px;right:80px;left:80px;padding:28px 32px;display:flex;align-items:center;gap:26px">
+  <div style="width:130px;height:130px;border-radius:32px;background:var(--red);display:grid;place-items:center"><svg style="width:100px;height:100px;color:var(--cream);--comb:var(--char)"><use href="#rooster"/></svg></div>
+  <div style="flex:1"><b style="font:400 50px Lalezar">بروستد الشام</b><div style="font:400 26px Baloo;color:var(--grey)">بروستد · كرسبي · مشاوي · السالمية وحولي</div></div>
+  <span style="font:500 24px Inter;color:var(--grey)">20-30 min</span>
+ </div>
+ <div style="position:absolute;top:660px;right:80px;left:80px;display:flex;gap:22px;justify-content:space-between">
+  <div style="flex:1;height:560px;border-radius:26px;background:var(--red);color:var(--cream);position:relative;overflow:hidden;padding:30px">
+   <div style="position:absolute;top:0;left:0;right:0;height:44px;background:repeating-linear-gradient(180deg,var(--char) 0 11px,var(--cream) 11px 22px)"></div>
+   <div style="position:absolute;top:150px;left:50%;transform:translateX(-50%);width:200px;height:170px;border-radius:50% 45% 55% 40%;background:radial-gradient(circle at 40% 35%,#f8cf7a,#d98e2e 70%,#a65817)"></div>
+   <div style="position:absolute;bottom:40px;right:30px;font:400 76px Lalezar">بروستد</div></div>
+  <div style="flex:1;height:560px;border-radius:26px;background:var(--gold);color:var(--char);position:relative;overflow:hidden;padding:30px">
+   <div style="position:absolute;top:0;left:0;right:0;height:44px;background:repeating-linear-gradient(180deg,var(--char) 0 11px,var(--cream) 11px 22px)"></div>
+   <div style="position:absolute;top:140px;left:60px;width:60px;height:210px;border-radius:30px;background:radial-gradient(circle at 40% 30%,#fbe2a6,#d98e2e 80%);transform:rotate(-18deg)"></div>
+   <div style="position:absolute;top:130px;left:140px;width:60px;height:220px;border-radius:30px;background:radial-gradient(circle at 40% 30%,#fbe2a6,#d98e2e 80%);transform:rotate(8deg)"></div>
+   <div style="position:absolute;bottom:40px;right:30px;font:400 76px Lalezar">كرسبي</div></div>
+  <div style="flex:1;height:560px;border-radius:26px;background:var(--char);color:var(--cream);position:relative;overflow:hidden;padding:30px">
+   <div style="position:absolute;top:0;left:0;right:0;height:44px;background:repeating-linear-gradient(180deg,var(--red) 0 11px,var(--cream) 11px 22px)"></div>
+   <div style="position:absolute;top:170px;left:40px;right:40px;height:22px;background:#c9c0b5;border-radius:11px"></div>
+   <div style="position:absolute;top:150px;left:70px;width:70px;height:60px;border-radius:20px;background:#b5541f"></div>
+   <div style="position:absolute;top:150px;left:150px;width:70px;height:60px;border-radius:20px;background:#c66a2a"></div>
+   <div style="position:absolute;top:240px;left:40px;right:40px;height:22px;background:#c9c0b5;border-radius:11px"></div>
+   <div style="position:absolute;top:220px;left:90px;width:120px;height:60px;border-radius:30px;background:#8c3b1a"></div>
+   <div style="position:absolute;bottom:40px;right:30px;font:400 76px Lalezar">مشاوي</div></div>
+ </div>
+ <div class="ablaq" style="height:90px"></div>
+</section>
+
+<section class="slide" id="s5" style="background:var(--char);color:var(--cream)">
+ <div class="cnt" style="color:#a89d92">05 / 05</div>
+ <div style="position:absolute;top:150px;left:80px;right:80px;height:560px;border-radius:12px;overflow:hidden;background:repeating-linear-gradient(180deg,#2c2622 0 40px,#e9dccb 40px 80px)">
+  <div style="position:absolute;top:60px;left:50px;right:50px;height:180px;background:var(--red);border-radius:16px;display:flex;align-items:center;justify-content:center;gap:28px;box-shadow:0 0 60px rgba(215,38,30,.6)">
+   <div style="width:120px;height:120px;border-radius:50%;background:var(--cream);display:grid;place-items:center"><svg style="width:92px;height:92px;color:var(--red);--comb:var(--char);--eye:var(--cream)"><use href="#rooster"/></svg></div>
+   <span style="font:400 110px Lalezar;color:var(--cream)">بروستد الشام</span></div>
+  <div style="position:absolute;bottom:0;left:120px;right:120px;height:260px;background:linear-gradient(#f8d58a,#e3a24f);border:14px solid #2c2622;border-bottom:0;border-radius:18px 18px 0 0"></div>
+ </div>
+ <div style="position:absolute;top:800px;right:80px;left:80px;font:400 84px/1.25 Lalezar">هذا مفهوم…<br>بس تخيل لو صار حقيقة.</div>
+ <div style="position:absolute;top:1060px;right:80px;left:80px;font:400 32px/1.6 Baloo;color:#d9cdbf">عندك مطعم عليه طلب وهويته ما تلحقه؟<br>أرسل لي كلمة <b style="color:var(--gold);font-weight:800">«مشروع»</b> بالخاص.</div>
+ <div style="position:absolute;bottom:70px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:flex-end;font:400 22px Baloo;color:#a89d92">
+  <span>مفهوم غير رسمي للعرض فقط، مو تابع لبروستد الشام</span><span style="font:700 22px Inter;color:var(--cream);direction:ltr">NORI · @nori.dsgn</span></div>
+</section>
+</body></html>
