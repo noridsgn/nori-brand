@@ -65,22 +65,28 @@ function story(kind,{w=300,prog=[0,0,0]}={}){
 const RAND=['#E8327C','#7B3FE4','#E23B2E','#2BB3A3','#F2B53A','#3d7be0','#ff6f3c','#8bc34a','#c2185b','#5e35b1','#00897b','#f4511e','#6d4c41','#d81b60','#1e88e5'];
 // timeline
 const L=[
- {t0:0.0,t1:4.92,lab:'THE 3-STORY RULE',words:[['لا '],['تنزل '],['ولا '],['ستوري '],['اليوم…','\n'],['قبل '],['لا '],['تشوف '],['الطريقة '],['الصحيحة.','g']],sc:'chaos'},
- {t0:4.92,t1:8.44,lab:'THE PROBLEM',words:[['الزبون '],['ما '],['يكمل','g'],[' كل '],['ستورياتك.']],sc:'leave'},
- {t0:8.44,t1:11.68,lab:'THE FIX',words:[['خلها '],['3','g'],['،','\n'],['وكل '],['وحدة '],['لها '],['شغلة.']],sc:'three'},
- {t0:12.72,t1:16.24,lab:'STORY 01 · STOP',words:[['الأولى '],['توقّفه:','g','\n'],['سؤال '],['يحس '],['إنك '],['تقصده.']],sc:'hook'},
- {t0:17.5,t1:21.9,lab:'STORY 02 · SHOW',words:[['الثانية '],['توريه '],['اللي '],['يبيه:','','\n'],['المنتج، '],['و'],['الرقم','g'],[' اللي '],['يهمه.']],sc:'show'},
- {t0:23.78,t1:28.08,lab:'STORY 03 · ACT',words:[['الثالثة '],['تخليه '],['يطلب:','g','\n'],['زر '],['واحد، '],['ولا '],['تخليه '],['يفكر.']],sc:'act'},
- {t0:30.6,t1:34.6,lab:'THE RULE',words:[['3','g'],[' ستوريات…','','\n'],['كل '],['وحدة '],['تسوي '],['شغلها.']],sc:'trio'},
- {t0:38.18,t1:43.34,lab:'YOUR TURN',words:[['تبي '],['قوالب '],['ستوري','g','\n'],['جاهزة '],['لبراندك؟']],sc:'dm'},
+ {t0:0.252,t1:3.552,sp:[[0.252, 3.552]],lab:'THE 3-STORY RULE',words:[['لا '],['تنزل '],['ولا '],['ستوري '],['اليوم…','\n'],['قبل '],['لا '],['تشوف '],['الطريقة '],['الصحيحة.','g']],sc:'chaos'},
+ {t0:4.199,t1:6.159,sp:[[4.199, 6.159]],lab:'THE PROBLEM',words:[['الزبون '],['ما '],['يكمل','g'],[' كل '],['ستورياتك.']],sc:'leave'},
+ {t0:6.949,t1:9.469,sp:[[6.949, 7.739], [8.169, 9.469]],lab:'THE FIX',words:[['خلها '],['3','g'],['،','\n'],['وكل '],['وحدة '],['لها '],['شغلة.']],sc:'three'},
+ {t0:10.117,t1:12.997,sp:[[10.117, 11.067], [11.587, 12.997]],lab:'STORY 01 · STOP',words:[['الأولى '],['توقّفه:','g','\n'],['سؤال '],['يحس '],['إنك '],['تقصده.']],sc:'hook'},
+ {t0:13.655,t1:17.225,sp:[[13.655, 14.935], [15.505, 16.005], [16.365, 17.225]],lab:'STORY 02 · SHOW',words:[['الثانية '],['توريه '],['اللي '],['يبيه:','','\n'],['المنتج، '],['و'],['الرقم','g'],[' اللي '],['يهمه.']],sc:'show'},
+ {t0:17.879,t1:21.739,sp:[[17.879, 19.169], [19.799, 20.499], [20.889, 21.739]],lab:'STORY 03 · ACT',words:[['الثالثة '],['تخليه '],['يطلب:','g','\n'],['زر '],['واحد، '],['ولا '],['تخليه '],['يفكر.']],sc:'act'},
+ {t0:22.395,t1:25.505,sp:[[22.395, 23.345], [23.855, 24.515], [24.875, 25.505]],lab:'THE RULE',words:[['3','g'],[' ستوريات…','','\n'],['كل '],['وحدة '],['تسوي '],['شغلها.']],sc:'trio'},
+ {t0:26.16,t1:30.28,sp:[[26.16, 28.3], [28.81, 30.28]],lab:'YOUR TURN',words:[['تبي '],['قوالب '],['ستوري','g','\n'],['جاهزة '],['لبراندك؟']],sc:'dm'},
 ];
 const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
 const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 let cur=-1;
 function sceneAt(t){let k=0;for(let i=0;i<L.length;i++){if(t>=L[i].t0-0.25)k=i}return k}
+function wordTimes(s){
+ if(s._wt) return s._wt;
+ const ws=s.words.map(w=>Math.max(1,w[0].trim().length));const tot=ws.reduce((a,b)=>a+b,0);
+ const sp=s.sp, spl=sp.reduce((a,x)=>a+(x[1]-x[0]),0);
+ let acc=0; s._wt=ws.map(w=>{let pos=acc/tot*spl;acc+=w;for(const [a,b] of sp){if(pos<=b-a)return a+pos;pos-=b-a}return sp[sp.length-1][1]});
+ return s._wt}
 function renderHead(s,t){
- const n=s.words.length, span=Math.max(1.2,(s.t1-s.t0)*0.7);
- let html='';s.words.forEach((w,i)=>{const st=s.t0+span*i/n, p=ease((t-st)/0.35);
+ const wt=wordTimes(s);let html='';
+ s.words.forEach((w,i)=>{const p=ease((t-(wt[i]-0.06))/0.22);
   const cls=w[1]==='g'?'w g':'w'; const br=(w[1]==='\n'||w[2]==='\n')?'<br>':'';
   html+=`<span class="${cls}" style="opacity:${p};filter:blur(${(1-p)*10}px);transform:translateY(${(1-p)*18}px)">${w[0]}</span>${br}`});
  $('head').innerHTML=html;
@@ -105,9 +111,9 @@ function stage(s,t){
  if(s.sc==='dm'){const p=ease(lt/0.7);
   h+=`<div style="position:absolute;left:150px;right:150px;top:${120+(1-p)*60}px;opacity:${p};background:linear-gradient(160deg,#242424,#161616);border:1.5px solid #2E2E2E;border-radius:28px;padding:30px;box-shadow:0 40px 90px rgba(0,0,0,.6);transform:rotateX(${8*(1-p)}deg)">
    <div style="display:flex;align-items:center;gap:14px;direction:ltr"><img src="mark.svg" style="width:56px;height:56px;border-radius:50%;background:#0B0B0B;padding:8px"><div><div style="font:600 26px InterL">nori.dsgn</div><div style="font:400 20px Plex;color:#8A8A8A">نوري · تصميم سوشال ميديا</div></div></div>
-   <div style="margin-top:40px;display:flex;justify-content:flex-end;direction:ltr"><div style="background:#F2F0EB;color:#111;border-radius:22px;padding:14px 28px;font:700 34px Plex;opacity:${ease((lt-1.6)/0.4)}">ستوري</div></div>
+   <div style="margin-top:40px;display:flex;justify-content:flex-end;direction:ltr"><div style="background:#F2F0EB;color:#111;border-radius:22px;padding:14px 28px;font:700 34px Plex;opacity:${ease((t-s.sp[1][0]-0.6)/0.25)}">ستوري</div></div>
    <div style="margin-top:28px;border:1px solid #333;border-radius:30px;padding:16px 24px;font:400 22px Plex;color:#777">اكتب رسالة…</div></div>
-   <div style="position:absolute;left:0;right:0;top:560px;text-align:center;font:700 60px/1.4 Plex;opacity:${ease((lt-2.2)/0.5)};filter:blur(${(1-ease((lt-2.2)/0.5))*8}px)">أرسل لي «ستوري» بالدايركت.</div>`}
+   <div style="position:absolute;left:0;right:0;top:560px;text-align:center;font:700 60px/1.4 Plex;opacity:${ease((t-s.sp[1][0]+0.05)/0.25)};filter:blur(${(1-ease((t-s.sp[1][0]+0.05)/0.25))*8}px)">أرسل لي «ستوري» بالدايركت.</div>`}
  $('stage').innerHTML=h;
 }
 function sparks(t){let h='';for(let i=0;i<26;i++){const ph=(t*0.12+i*0.137)%1;const x=(i*389)%1080, y=1650-ph*1250;const o=Math.sin(ph*Math.PI)*.8;h+=`<i class="sp" style="left:${x}px;top:${y}px;width:${3+(i%3)}px;height:${3+(i%3)}px;opacity:${o}"></i>`}$('sparks').innerHTML=h}

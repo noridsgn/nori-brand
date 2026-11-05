@@ -39,7 +39,7 @@ Recording: one take, quiet room, ½ s pause between lines.
 Light, modern beat ~110 BPM with a soft "swipe" whoosh on each story change; ducked ≈ -22 dB under the voice.
 
 ## Caption
-تنزل 15 ستوري باليوم… ولا طلب واحد؟ المشكلة بالترتيب.
+لا تنزل ولا ستوري اليوم قبل لا تشوف الطريقة الصحيحة.
 
 شوف الريل للآخر ←
 
