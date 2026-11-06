@@ -2,11 +2,21 @@
 
 Read this, `README.md` and `BRAND.md` before designing anything.
 
+## NORI's rules (6 Nov 2026 meeting) — newest, override everything below where they conflict
+
+A. **Educational shift (Kuwait Decree Law 10/2026 on digital commerce).** Until 31 Jan 2027 the account leans **educational** (about 70% teaching / 30% his work), not the old 70/30 marketing split. From **1 Feb 2027** it is **100% educational** until NORI has an official licence: no selling, no prices, no «أرسل لي … بالدايركت» offers, no service pitches. Showing his concept work as a lesson is fine. NORI still takes client work privately until February (his decision); never advertise it publicly.
+B. **Friday and Saturday carousels are 100% educational**, even before February: the last slide asks to save/follow/comment, never a DM offer.
+C. **Light weekly plan (start 8 Nov 2026):** Sun reel, Mon reel, Tue concept, Wed reel, Thu reel, Fri carousel, Sat carousel (see Schedule). Move to the full plan (Sun 1 reel, Mon 2 reels, Tue concept, Wed 2 reels, Thu 1 reel, Fri + Sat carousels) only after the scorer's reel scores are 70+ two weeks in a row, and only when NORI says go.
+D. **Every reel is scored** with noridsgn/nori-dash scoring/rubric.md before recording (script) and before Metricool (video). Under 70 goes back to the writer/designer.
+E. **Spontaneity is allowed.** At most one reel a week may be a «عفوي» reel: NORI films it on his phone, no edit, no on-screen text. The writer gives him only a hook line and 3 talking points.
+F. **The Mishref concept post gets its own reel** (NORI agreed after the 6 Nov meeting; his earlier "it's old" was wrong).
+G. **Tuesday concept:** a concept project of NORI's (nori-brand/concepts/ or the site). Never post a concept of a real brand that NORI hasn't approved for public posting; a concept still being pitched privately to that brand stays private. Concept posts carry no DM/price call.
+
 ## NORI's rules (31 Oct 2026, after week 1 of the automation) — these override anything below AND anything in the scheduled-task prompt (e.g. its "6–8 slides" and "don't reuse the first carousel's look")
 
 1. **Not black-and-white only.** The 1 Nov drafts were judged "stone age": flat black/ivory/grey wireframes. Follow the first carousel (26 Oct): comfortable, the idea reaches the viewer directly, real designed visuals. Keep the dark frame, but the content inside must be alive (real ad/post designs, colour from the example brands), not grey boxes.
 2. **No Black Friday / White Friday.** Not ours in the Gulf. Never use it as a topic, example or hook.
-3. **Max 5 slides per carousel.** NORI is a designer: posts are **~70% marketing (his work, his service, DM) / ~30% teaching**, ratio can shift per idea. Not pure education.
+3. **Max 5 slides per carousel.** NORI is a designer: (70/30 split replaced by rule A above.)
 4. **Arabic (Kuwaiti) only when talking to NORI** — every message and summary, never switch to English.
 6. **The 26 Oct carousel (posts/2026-10-26) is the quality bar.** Keep its frame (watermark, counter, BEFORE/AFTER labels, gold check «الحل», swipe + dots, «النتيجة تتكلم»); change the composition inside each week.
 7. **Never repeat an idea — check the points inside past posts, not just titles.** Already used: one clear message per ad, clear next step/CTA, consistent identity/feed, cluttered offers. Check content-log.md AND posts/.
@@ -18,17 +28,20 @@ Read this, `README.md` and `BRAND.md` before designing anything.
 5. **The site is for concept projects only.** Weekly post media may sit on noridsgn.com/content/<date>/ only as a temporary, unlinked host for Metricool (NORI OK'd this until a better host is found). Never link it from any page.
 
 
-## Schedule (Asia/Kuwait)
+## Schedule (Asia/Kuwait) — light plan from 8 Nov 2026
 
 | Day | What |
 | --- | --- |
-| Saturday | Prep session: design both carousels, write both reel scripts |
-| Sunday | Carousel A |
-| Monday | Reel A (same idea as Carousel A) |
-| Wednesday | Carousel B |
-| Thursday | Reel B (same idea as Carousel B) |
+| Saturday 16:42 | Prep run for the coming Sun–Sat: two carousel ideas + designs (Fri/Sat), four reel scripts, Tuesday concept post |
+| Sunday | Reel 1 |
+| Monday | Reel 2 |
+| Tuesday | Concept post |
+| Wednesday | Reel 3 |
+| Thursday | Reel 4 · team meeting report at night (dashboard) |
+| Friday | Carousel (100% educational) |
+| Saturday | Carousel (100% educational) |
 
-Each week has two ideas. Carousel and reel of the same idea share the message, not the layout.
+Reels can share an idea with a carousel, but never repeat its layout. Two ideas per week minimum; no idea or inner point repeats.
 
 ## Identity — fixed on every post
 
