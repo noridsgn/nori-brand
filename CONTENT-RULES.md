@@ -11,6 +11,7 @@ D. **Every reel is scored** with noridsgn/nori-dash scoring/rubric.md before rec
 E. **Spontaneity is allowed.** At most one reel a week may be a «عفوي» reel: NORI films it on his phone, no edit, no on-screen text. The writer gives him only a hook line and 3 talking points.
 F. **The Mishref concept post gets its own reel** (NORI agreed after the 6 Nov meeting; his earlier "it's old" was wrong).
 G. **Tuesday concept:** a concept project of NORI's (nori-brand/concepts/ or the site). Never post a concept of a real brand that NORI hasn't approved for public posting; a concept still being pitched privately to that brand stays private. Concept posts carry no DM/price call.
+H. **Week of 8 Nov 2026 (NORI's note, 6 Nov):** Sunday 8 Nov and Monday 9 Nov reels are both about the **Mishref Co-op concept** (concept post 3 Nov, reels/2026-11-03-mishref-coin): two different angles, no repeated points. Tuesday 10 Nov concept post = **Broasted Al Sham** (concepts/2026-11-05-broasted-alsham). The private call/pitch to the restaurant is **cancelled**, so NORI approved this concept for public posting (keep «مفهوم غير رسمي… مو تابع لبروستد الشام», no DM/price call).
 
 ## NORI's rules (31 Oct 2026, after week 1 of the automation) — these override anything below AND anything in the scheduled-task prompt (e.g. its "6–8 slides" and "don't reuse the first carousel's look")
 
