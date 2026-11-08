@@ -1,0 +1,28 @@
+# Concept post · Tue 17 Nov 2026 · ألف ليلة وليلة كدرس هوية — «ينتظر موافقتك»
+
+**Not approved for public posting yet.** concepts/2026-11-05-alf-layla is a private sample that NORI never approved for posting (CONTENT-RULES rule G), so this post is ready but NOT in Metricool. If NORI approves, schedule Tue 17 Nov 18:30 as draft.
+Lesson structure (problem → idea → result) in the NORI frame, with crops of the concept slides inside. No DM, no price.
+Slides: hook «مطعم عمره 55 سنة… من وين تبدأ هويته؟» + CONCEPT label → 01 problem (people love it, the brand is silent) → 02 idea (door + star + dawn) → result (storefront, bag + card) → takeaway: 3 questions before drawing a logo + save/follow.
+Render: `cd posts/_generator && node concept-alf.js` (reads the PNGs from concepts/2026-11-05-alf-layla).
+
+## Designer detail pass (fixes)
+- Slides 2–3: concept crops cut the numbers on the right → scaled to fit the full width.
+- Slide 2: headline ran into the big «01» → 64 px.
+- Note: the concept's saffron (#E2A53A) is part of the restaurant's palette; the NORI gold stays one element per slide.
+
+## Caption
+مطعم يفتح من 1969، والناس تعرفه بالريوق والفجر… بس هويته ما تقول ولا شي من هذا.
+
+مفهوم غير رسمي اشتغلت عليه كدرس: من وين تبدأ هوية لمكان عنده حكاية ←
+
+الباب من واجهة المطعم القديمة، والنجمة من «ليلة»، والشمس لأنه يفتح 4 الفجر.
+
+لو مكانك المفضل يطلع له هوية جديدة، شنو لازم يبقى منه؟ قول لي بالكومنت 👇🏻
+
+احفظ البوست لين تشتغل على هويتك، وتابع للدرس اللي بعده.
+
+مفهوم غير رسمي للعرض فقط، ومو تابع لمطعم ألف ليلة وليلة.
+
+Start from the story people already know.
+
+#هوية_بصرية #تصميم_شعار #براندنق #تصميم #مطاعم #branding #logodesign #visualidentity
