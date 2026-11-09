@@ -70,6 +70,9 @@ async function render(slides, outDir, prefix) {
     fs.writeFileSync(path.join(outDir, `${prefix}-${i + 1}.html`), html);
     await pg.setContent(html, { waitUntil: 'load' });
     await pg.evaluate(() => document.fonts.ready);
+    // brand font guard: never render with a fallback font (install /fonts first)
+    const fontOk = await pg.evaluate(() => document.fonts.check('700 40px "IBM Plex Sans Arabic"', 'نوري') && document.fonts.check('600 40px "Inter"', 'NORI'));
+    if (!fontOk) throw new Error('Brand fonts missing: install nori-brand/fonts (IBM Plex Sans Arabic + Inter) before rendering');
     const out = await pg.evaluate(() => {
       const o = [];
       document.querySelectorAll('.s > *:not(.wm)').forEach(el => {
