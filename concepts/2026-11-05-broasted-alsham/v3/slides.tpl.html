@@ -1,0 +1,233 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:Kufam;src:url(node_modules/@fontsource/kufam/files/kufam-arabic-800-normal.woff2);font-weight:800}
+@font-face{font-family:Kufam;src:url(node_modules/@fontsource/kufam/files/kufam-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-400-normal.woff2);font-weight:400}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-800-normal.woff2);font-weight:800}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2);font-weight:700}
+:root{--red:#D7261E;--redd:#9F1610;--cream:#FFF4E2;--char:#1E1A17;--gold:#F2B53A;--grey:#8b8178;--paper:#FBF3E6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#444;font-family:Baloo,sans-serif;color:var(--char)}
+.slide{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--paper);margin-bottom:20px}
+.cnt{position:absolute;top:66px;left:80px;font:500 22px Inter;letter-spacing:.12em;color:var(--grey);direction:ltr}
+.lbl{position:absolute;top:58px;right:80px;font:600 28px Baloo;display:flex;align-items:center;gap:14px}
+.lbl::after{content:'';width:14px;height:14px;background:var(--red);order:-1}
+h2{position:absolute;top:140px;right:80px;left:80px;font:800 76px/1.25 Kufam}
+.sub{position:absolute;top:262px;right:80px;left:80px;font:400 31px/1.55 Baloo;color:#6d625a}
+.ablaq{position:absolute;left:0;right:0;bottom:0;height:120px;background:repeating-linear-gradient(180deg,var(--char) 0 30px,var(--cream) 30px 60px)}
+.nori{position:absolute;top:62px;left:80px;font:700 30px Inter;letter-spacing:.14em;direction:ltr}
+.pill{position:absolute;top:56px;right:80px;border:2px solid currentColor;border-radius:999px;padding:8px 22px;font:500 22px Inter;letter-spacing:.08em;direction:ltr}
+.pill b{font:600 22px Baloo;letter-spacing:0}
+.wm{font:800 120px/1.1 Kufam;white-space:nowrap}
+.card{background:#fff;border-radius:34px;box-shadow:0 20px 50px rgba(80,30,10,.08)}
+.dark{background:radial-gradient(110% 70% at 50% 35%,#3a1410 0%,#1E1A17 60%,#120f0d 100%);color:var(--cream)}
+.dark .cnt{color:#a99d92}.dark .lbl{color:var(--cream)}
+.tiles{background-image:linear-gradient(rgba(30,26,23,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(30,26,23,.07) 2px,transparent 2px);background-size:64px 64px}
+.ic{width:150px;height:150px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center}
+.ic svg{width:70px;height:70px;fill:none;stroke:var(--cream);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}
+.hl{display:flex;flex-direction:column;align-items:center;gap:18px;font:600 28px Baloo}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>{SYM}</defs></svg>
+
+<!-- 1 · cover -->
+<section class="slide dark" id="s1">
+ <div class="nori">NORI.</div><div class="pill" style="color:var(--gold)">• CONCEPT · <b>غير رسمي</b></div>
+ <div style="position:absolute;top:300px;left:0;right:0;display:flex;flex-direction:column;align-items:center">
+  <svg width="330" height="435" style="--body:var(--cream);--comb:var(--red)"><use href="#logo"/></svg>
+  <div class="wm" style="margin-top:56px">بروستد الشام</div>
+  <div style="font:600 38px Baloo;margin-top:14px;color:var(--gold)">قرمشة على أصولها</div>
+ </div>
+ <div style="position:absolute;bottom:170px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:flex-end">
+  <div style="font:400 24px Baloo;color:#a99d92">مفهوم غير رسمي، مو تابع لبروستد الشام</div>
+  <svg width="74" height="74" viewBox="0 0 74 74"><circle cx="37" cy="37" r="34" fill="none" stroke="#FFF4E2" stroke-width="3"/><path d="M43 24 30 37l13 13" fill="none" stroke="#FFF4E2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+ </div>
+ <div class="ablaq" style="height:90px"></div>
+</section>
+
+<!-- 2 · idea -->
+<section class="slide" id="s2">
+ <div class="cnt">02 / 10</div><div class="lbl">الفكرة</div>
+ <h2>واو وحدة، ديك كامل</h2>
+ <div class="sub">بدينا من حرف الواو بكلمة «بروستد»، ورسمناه بالكوفي المربع. زدنا عليه عرف ومنقار بس، وصار ديك.</div>
+ <div style="position:absolute;top:520px;right:80px;left:80px;display:flex;align-items:center;justify-content:space-between">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:26px">
+   <div class="card" style="width:270px;height:330px;display:flex;align-items:center;justify-content:center"><span style="font:800 190px/1 Kufam;color:var(--char)">و</span></div>
+   <b style="font:600 28px Baloo"><span style="font-family:Inter;color:var(--red)">1</span> الحرف</b></div>
+  <svg width="44" height="30" viewBox="0 0 60 40"><path d="M56 20H6m14-14L6 20l14 14" fill="none" stroke="var(--red)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:26px">
+   <div class="card tiles" style="width:270px;height:330px;display:flex;align-items:center;justify-content:center"><svg width="180" height="237" style="--body:var(--char)"><use href="#waw"/></svg></div>
+   <b style="font:600 28px Baloo"><span style="font-family:Inter;color:var(--red)">2</span> كوفي مربع</b></div>
+  <svg width="44" height="30" viewBox="0 0 60 40"><path d="M56 20H6m14-14L6 20l14 14" fill="none" stroke="var(--red)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:26px">
+   <div class="card" style="width:270px;height:330px;display:flex;align-items:center;justify-content:center;background:var(--red)"><svg width="180" height="237" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg></div>
+   <b style="font:600 28px Baloo"><span style="font-family:Inter;color:var(--red)">3</span> + عرف ومنقار</b></div>
+ </div>
+ <div style="position:absolute;top:1050px;right:80px;left:80px;font:400 29px/1.6 Baloo;color:#6d625a;display:flex;gap:16px"><i style="flex:none;width:14px;height:14px;background:var(--gold);margin-top:16px"></i><span>المربع الصغير بنص الواو صار عين الديك. ما زدنا شي ما له معنى.</span></div>
+ <div class="ablaq" style="height:90px"></div>
+</section>
+
+<!-- 3 · grid -->
+<section class="slide" id="s3" style="background:var(--char);color:var(--cream)">
+ <div class="cnt" style="color:#a99d92">03 / 10</div><div class="lbl">الشبكة</div>
+ <h2>مبني من حجر الشام</h2>
+ <div class="sub" style="color:#b9ada0">كل الشعار مربعات بنفس المقاس، مثل حجارة بيوت الشام القديمة. نفس المربع يطلع بالنقشة والأيقونات والعلب.</div>
+ <div style="position:absolute;top:480px;left:50%;transform:translateX(-50%);width:640px;height:780px">
+  <svg viewBox="250 180 410 540" width="580" height="764" style="position:absolute;top:0;left:30px;--body:var(--cream);--comb:var(--red)">
+   <g stroke="rgba(255,244,226,.18)" stroke-width="1.2" fill="none">
+    <path d="M328 180V720M391 180V720M451 180V720M518 180V720M584 180V720M647 180V720M250 323H660M250 386H660M250 452H660M250 515H660M250 586H660M250 642H660M250 710H660"/>
+   </g>
+   <use href="#logo" x="250" y="180" width="410" height="540"/>
+   <g fill="none" stroke="#F2B53A" stroke-width="2.5"><rect x="451" y="452" width="67" height="63"/></g>
+  </svg>
+  
+ </div>
+ <div style="position:absolute;bottom:80px;right:80px;left:80px;display:flex;justify-content:space-between;font:500 22px Inter;color:#a99d92;direction:ltr"><span>GRID 1 : 1</span><span style="font:600 24px Baloo;color:var(--gold)">المربع الذهبي = عين الديك</span><span>5 × 6 MODULES</span></div>
+</section>
+
+<!-- 4 · colours & type -->
+<section class="slide" id="s4">
+ <div class="cnt">04 / 10</div><div class="lbl">الألوان والخط</div>
+ <h2>أحمر، فحمي، وذهبي</h2>
+ <div class="sub">الأحمر للجوع، والفحمي للحجر، والذهبي للقرمشة. والخط كوفي يمشي مع مربعات الشعار.</div>
+ <div style="position:absolute;top:460px;right:80px;left:80px;display:grid;grid-template-columns:2fr 1fr;grid-template-rows:260px 200px;gap:18px">
+  <div style="grid-row:span 2;background:var(--red);border-radius:28px;padding:30px;color:var(--cream);display:flex;flex-direction:column;justify-content:space-between">
+   <svg width="120" height="158" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg>
+   <div><b style="font:600 34px Baloo">أحمر القرمشة</b><div style="font:500 20px Inter;direction:ltr;text-align:right;opacity:.85">#D7261E</div></div></div>
+  <div style="background:var(--char);border-radius:28px;padding:26px;color:var(--cream);display:flex;flex-direction:column;justify-content:flex-end"><b style="font:600 28px Baloo">حجر الشام</b><span style="font:500 20px Inter;direction:ltr;text-align:right">#1E1A17</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+   <div style="background:var(--gold);border-radius:28px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font:600 24px Baloo">ذهبي</b><span style="font:500 17px Inter;direction:ltr;text-align:right">#F2B53A</span></div>
+   <div style="background:var(--cream);border:2px solid #eadccb;border-radius:28px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font:600 24px Baloo">ياسمين</b><span style="font:500 17px Inter;direction:ltr;text-align:right">#FFF4E2</span></div>
+  </div>
+ </div>
+ <div class="card" style="position:absolute;top:960px;right:80px;left:80px;height:300px;padding:40px;display:flex;align-items:center;gap:44px">
+  <div style="width:200px;height:200px;border-radius:24px;background:var(--char);color:var(--cream);display:flex;align-items:center;justify-content:center;font:800 92px Kufam;flex:none">ب</div>
+  <div><div style="font:800 52px/1.3 Kufam">بروستد الشام</div>
+   <div style="font:400 28px/1.5 Baloo;color:#6d625a">قرمشة على أصولها، من أول لقمة.</div>
+   <div style="font:500 18px Inter;color:var(--grey);margin-top:12px;direction:ltr;text-align:right">Kufam · Baloo Bhaijaan 2</div></div>
+ </div>
+</section>
+
+<!-- 5 · highlights -->
+<section class="slide" id="s5">
+ <div class="cnt">05 / 10</div><div class="lbl">أغلفة الهايلايت</div>
+ <h2>نفس النظام بكل مكان</h2>
+ <div class="sub">دايرة حمرا، وخط واحد، وزوايا مربعة مثل الشعار.</div>
+ <div style="position:absolute;top:470px;right:110px;left:110px;display:grid;grid-template-columns:repeat(3,1fr);row-gap:70px">
+  <div class="hl"><div class="ic"><svg viewBox="0 0 64 64"><path d="M14 10h36v44H14zM22 22h20M22 32h20M22 42h12"/></svg></div>المنيو</div>
+  <div class="hl"><div class="ic"><svg viewBox="0 0 64 64"><path d="M8 42V24h28v18M36 30h10l8 8v4H36"/><circle cx="18" cy="46" r="5"/><circle cx="46" cy="46" r="5"/></svg></div>التوصيل</div>
+  <div class="hl"><div class="ic"><svg viewBox="0 0 64 64"><path d="M10 28 32 10l22 18v26H10zM26 54V38h12v16"/></svg></div>الفروع</div>
+  <div class="hl"><div class="ic"><svg viewBox="0 0 64 64"><path d="M12 12h22l18 18-22 22-18-18z"/><rect x="21" y="21" width="6" height="6"/></svg></div>العروض</div>
+  <div class="hl"><div class="ic"><svg viewBox="0 0 64 64"><path d="M32 8l7 15 16 2-12 11 3 16-14-8-14 8 3-16L9 25l16-2z"/></svg></div>التقييمات</div>
+  <div class="hl"><div class="ic"><svg viewBox="0 0 64 64"><path d="M10 12h44v30H30l-12 10V42h-8z"/></svg></div>تواصل</div>
+ </div>
+ <div style="position:absolute;bottom:200px;left:0;right:0;display:flex;justify-content:center;gap:30px">
+  <div style="width:150px;height:150px;border-radius:50%;background:var(--char);display:flex;align-items:center;justify-content:center"><svg width="70" height="92" style="--body:var(--cream);--comb:var(--red)"><use href="#logo"/></svg></div>
+ </div>
+ <div class="ablaq" style="height:90px"></div>
+</section>
+
+<!-- 6 · box -->
+<section class="slide" id="s6" style="background:linear-gradient(#FFF4E2,#f1dcc0)">
+ <div class="cnt">06 / 10</div><div class="lbl">البوكس</div>
+ <h2>البوكس يعرّف بنفسه</h2>
+ <div class="sub">من أي زاوية، بالسيارة أو على الطاولة: الديك والأبلق يقولون لك منو.</div>
+ <div style="position:absolute;top:520px;left:50%;transform:translateX(-50%);width:760px;height:700px">
+  <div style="position:absolute;top:0;left:110px;right:110px;height:220px">
+   <div style="position:absolute;left:20px;top:70px;width:210px;height:150px;border-radius:45% 55% 50% 40%;background:radial-gradient(circle at 35% 35%,#f6c46b,#d78a2c 70%,#a85a17)"></div>
+   <div style="position:absolute;left:190px;top:20px;width:230px;height:180px;border-radius:55% 45% 40% 60%;background:radial-gradient(circle at 40% 30%,#f8cf7a,#d98e2e 70%,#a65817)"></div>
+   <div style="position:absolute;right:10px;top:60px;width:200px;height:160px;border-radius:50% 40% 55% 45%;background:radial-gradient(circle at 40% 35%,#f6c46b,#d78a2c 70%,#a85a17)"></div>
+  </div>
+  <div style="position:absolute;top:190px;left:0;right:0;height:470px;background:var(--red);border-radius:12px 12px 26px 26px;box-shadow:0 50px 80px rgba(120,20,10,.3);overflow:hidden">
+   <div style="position:absolute;top:0;left:0;right:0;height:80px;background:repeating-linear-gradient(180deg,var(--char) 0 20px,var(--cream) 20px 40px)"></div>
+   <div style="position:absolute;top:130px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:40px;color:var(--cream)">
+    <svg width="170" height="224" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg>
+    <div><div style="font:800 76px/1.15 Kufam">بروستد<br>الشام</div><div style="font:600 28px Baloo;color:var(--cream);opacity:.85;margin-top:8px">قرمشة على أصولها</div></div>
+   </div>
+  </div>
+  <div style="position:absolute;bottom:0;left:60px;right:60px;height:40px;border-radius:50%;background:rgba(80,30,10,.18);filter:blur(16px)"></div>
+ </div>
+</section>
+
+<!-- 7 · wrap + cup + bag -->
+<section class="slide tiles" id="s7" style="background-color:var(--paper)">
+ <div class="cnt">07 / 10</div><div class="lbl">التغليف</div>
+ <h2>المربع صار نقشة</h2>
+ <div class="sub">ورق الساندويش والكوب والكيس كلهم من نفس المربعات. شي واحد، بس كل قطعة لها شكلها.</div>
+ <div style="position:absolute;top:500px;right:80px;left:80px;height:760px">
+  <!-- bag -->
+  <div style="position:absolute;right:0;top:80px;width:420px;height:600px;background:var(--char);border-radius:10px 10px 18px 18px;box-shadow:0 40px 70px rgba(30,20,10,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px">
+   <div style="position:absolute;top:-70px;width:160px;height:110px;border:14px solid #3b332d;border-bottom:none;border-radius:80px 80px 0 0"></div>
+   <svg width="190" height="250" style="--body:var(--cream);--comb:var(--red)"><use href="#logo"/></svg>
+   <div style="font:800 48px Kufam;color:var(--cream)">بروستد الشام</div>
+   <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:repeating-linear-gradient(180deg,var(--red) 0 15px,var(--cream) 15px 30px);border-radius:0 0 18px 18px"></div>
+  </div>
+  <!-- wrap paper -->
+  <div style="position:absolute;left:0;top:0;width:430px;height:430px;transform:rotate(-8deg);border-radius:8px;box-shadow:0 30px 60px rgba(30,20,10,.22);overflow:hidden;background-color:var(--cream);background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2286%22 height=%2286%22><rect x=%2210%22 y=%2210%22 width=%2230%22 height=%2230%22 fill=%22%23D7261E%22/><rect x=%2253%22 y=%2253%22 width=%2214%22 height=%2214%22 fill=%22%231E1A17%22/></svg>')">
+  </div>
+  <!-- cup -->
+  <div style="position:absolute;left:120px;top:400px;width:250px;height:330px;clip-path:polygon(0 0,100% 0,88% 100%,12% 100%);background:var(--red);box-shadow:0 30px 60px rgba(30,20,10,.25);display:flex;align-items:center;justify-content:center">
+   <svg width="110" height="145" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg>
+   <div style="position:absolute;top:0;left:0;right:0;height:40px;background:repeating-linear-gradient(180deg,var(--char) 0 10px,var(--cream) 10px 20px)"></div>
+  </div>
+  <div style="position:absolute;left:105px;top:385px;width:280px;height:28px;background:#2a2420;border-radius:10px"></div>
+ </div>
+</section>
+
+<!-- 8 · app -->
+<section class="slide" id="s8" style="background:linear-gradient(#efe4d4,#e3d3bd)">
+ <div class="cnt">08 / 10</div><div class="lbl">التطبيق</div>
+ <h2>الطلب بضغطتين</h2>
+ <div class="sub">أيقونة التطبيق هي الديك نفسه. يبين بين الأيقونات من أول نظرة.</div>
+ <div style="position:absolute;top:440px;left:50%;transform:translateX(-50%);width:470px;height:960px;border-radius:70px;background:#111;padding:16px;box-shadow:0 50px 90px rgba(40,20,10,.35)">
+  <div style="width:100%;height:100%;border-radius:56px;background:var(--paper);overflow:hidden;position:relative">
+   <div style="background:var(--red);height:300px;padding:70px 34px 0;color:var(--cream)">
+    <div style="display:flex;justify-content:space-between;align-items:center"><svg width="56" height="74" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg><span style="font:600 22px Baloo;opacity:.9">التوصيل: 25 دقيقة</span></div>
+    <div style="font:800 40px/1.3 Kufam;margin-top:28px">جوعان؟<br>القرمشة بالطريق</div>
+   </div>
+   <div style="position:absolute;top:270px;left:0;right:0;height:30px;background:repeating-linear-gradient(180deg,var(--char) 0 7px,var(--cream) 7px 14px)"></div>
+   <div style="padding:40px 28px 0;display:grid;grid-template-columns:1fr 1fr;gap:18px">
+    <div style="height:210px;border-radius:24px;background:var(--red);color:var(--cream);padding:20px;display:flex;flex-direction:column;justify-content:space-between"><div style="width:90px;height:70px;border-radius:50% 45% 50% 40%;background:radial-gradient(circle at 35% 35%,#f6c46b,#d78a2c 70%,#a85a17)"></div><b style="font:800 30px Kufam">بروستد</b></div>
+    <div style="height:210px;border-radius:24px;background:var(--gold);padding:20px;display:flex;flex-direction:column;justify-content:space-between"><div style="display:flex;gap:6px"><i style="width:16px;height:70px;background:#fbe3a0;border-radius:4px"></i><i style="width:16px;height:60px;background:#fbe3a0;border-radius:4px;margin-top:10px"></i><i style="width:16px;height:70px;background:#fbe3a0;border-radius:4px"></i></div><b style="font:800 30px Kufam">كرسبي</b></div>
+    <div style="height:210px;border-radius:24px;background:var(--char);color:var(--cream);padding:20px;display:flex;flex-direction:column;justify-content:space-between"><div style="width:110px;height:24px;border-radius:12px;background:#b8652a;margin-top:30px"></div><b style="font:800 30px Kufam">مشاوي</b></div>
+    <div style="height:210px;border-radius:24px;background:#fff;border:2px solid #eadccb;padding:20px;display:flex;flex-direction:column;justify-content:space-between"><div style="font:800 46px Kufam;color:var(--red)">+</div><b style="font:800 30px Kufam">إضافات</b></div>
+   </div>
+   <div style="position:absolute;bottom:30px;left:28px;right:28px;height:84px;border-radius:24px;background:var(--red);color:var(--cream);display:flex;align-items:center;justify-content:center;font:800 30px Kufam">اطلب الحين</div>
+  </div>
+ </div>
+</section>
+
+<!-- 9 · storefront -->
+<section class="slide" id="s9" style="background:#120f0d;color:var(--cream)">
+ <div class="cnt" style="color:#a99d92">09 / 10</div><div class="lbl">الواجهة</div>
+ <h2>تشوفه من آخر الشارع</h2>
+ <div class="sub" style="color:#b9ada0">لوحة حمرا مضوية، وتحتها الأبلق مثل حجر بيوت الشام.</div>
+ <div style="position:absolute;top:470px;left:0;right:0;height:970px;background:linear-gradient(#2a2420,#1a1613)">
+  <div style="position:absolute;top:60px;left:90px;right:90px;height:250px;background:var(--red);border-radius:12px;box-shadow:0 0 120px rgba(215,38,30,.55),0 0 30px rgba(215,38,30,.6);display:flex;align-items:center;justify-content:center;gap:44px;color:var(--cream)">
+   <svg width="150" height="198" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg>
+   <div class="wm" style="font-size:104px">بروستد الشام</div>
+  </div>
+  <div style="position:absolute;top:340px;left:0;right:0;height:120px;background:repeating-linear-gradient(180deg,#d9cbb6 0 30px,#1E1A17 30px 60px)"></div>
+  <div style="position:absolute;top:460px;left:90px;right:90px;bottom:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;padding-top:30px">
+   <div style="background:linear-gradient(#f3c66d33,#f2b53a22);border:6px solid #3a322c;border-bottom:none"></div>
+   <div style="background:linear-gradient(#f3c66d55,#f2b53a33);border:6px solid #3a322c;border-bottom:none;display:flex;align-items:flex-start;justify-content:center;padding-top:40px"><span style="font:600 30px Baloo;color:var(--gold)">مفتوح</span></div>
+   <div style="background:linear-gradient(#f3c66d33,#f2b53a22);border:6px solid #3a322c;border-bottom:none"></div>
+  </div>
+ </div>
+</section>
+
+<!-- 10 · closing -->
+<section class="slide dark" id="s10">
+ <div class="cnt">10 / 10</div>
+ <div style="position:absolute;top:250px;left:0;right:0;display:flex;flex-direction:column;align-items:center">
+  <svg width="200" height="264" style="--body:var(--cream);--comb:var(--red)"><use href="#logo"/></svg>
+  <div style="font:800 64px Kufam;margin-top:36px">بروستد الشام</div>
+ </div>
+ <div style="position:absolute;top:780px;right:80px;left:80px">
+  <div style="font:800 72px/1.35 Kufam">هذا مفهوم…<br><span style="color:var(--gold)">بس تخيل لو صار حقيقة.</span></div>
+  <div style="font:400 32px/1.6 Baloo;color:#cfc3b6;margin-top:36px">شنو أكثر شي عجبك: الديك، البوكس، ولا الواجهة؟ قول لي بالكومنت.</div>
+ </div>
+ <div style="position:absolute;bottom:130px;right:80px;left:80px;display:flex;justify-content:space-between;font:400 22px Baloo;color:#a99d92"><span>مفهوم غير رسمي للعرض فقط، مو تابع لبروستد الشام</span><span style="font:700 22px Inter;direction:ltr">NORI · @nori.dsgn</span></div>
+ <div class="ablaq" style="height:90px"></div>
+</section>
+</body></html>

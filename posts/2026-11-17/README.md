@@ -1,6 +1,6 @@
-# Concept post · Tue 17 Nov 2026 · ألف ليلة وليلة كدرس هوية — «ينتظر موافقتك»
+# Concept post · Tue 17 Nov 2026 · ألف ليلة وليلة كدرس هوية — معلّق لين السبت 14 نوفمبر
 
-**Not approved for public posting yet.** concepts/2026-11-05-alf-layla is a private sample that NORI never approved for posting (CONTENT-RULES rule G), so this post is ready but NOT in Metricool. If NORI approves, schedule Tue 17 Nov 18:30 as draft.
+**Approved for public posting as a lesson (NORI, 8 Nov, c901), then on hold until Sat 14 Nov (NORI, c904).** Not in Metricool. The posting date is set after Saturday; nothing gets scheduled without NORI's OK.
 Lesson structure (problem → idea → result) in the NORI frame, with crops of the concept slides inside. No DM, no price.
 Slides: hook «مطعم عمره 55 سنة… من وين تبدأ هويته؟» + CONCEPT label → 01 problem (people love it, the brand is silent) → 02 idea (door + star + dawn) → result (storefront, bag + card) → takeaway: 3 questions before drawing a logo + save/follow.
 Render: `cd posts/_generator && node concept-alf.js` (reads the PNGs from concepts/2026-11-05-alf-layla).
