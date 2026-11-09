@@ -1,0 +1,276 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:Kufam;src:url(node_modules/@fontsource/kufam/files/kufam-arabic-800-normal.woff2);font-weight:800}
+@font-face{font-family:Kufam;src:url(node_modules/@fontsource/kufam/files/kufam-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-400-normal.woff2);font-weight:400}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2);font-weight:700}
+/* v5: same 3 colours + gold for the eye only. Everything is square: no rounded corners anywhere. */
+:root{--red:#C8261D;--red2:#A51D15;--char:#1C1816;--char2:#2A2420;--cream:#F6EBDA;--mute:#A3958A;--gold:#E9B04A;--line:rgba(246,235,218,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#444;font-family:Baloo,sans-serif;color:var(--cream)}
+.slide{width:1080px;height:1440px;position:relative;overflow:hidden;margin-bottom:20px}
+.bg{position:absolute;inset:0;background:radial-gradient(90% 60% at 50% 58%,#2e221d 0%,var(--char) 72%)}
+/* faint stone grid, same on every slide */
+.bg::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(246,235,218,.045) 2px,transparent 2px),linear-gradient(90deg,rgba(246,235,218,.045) 2px,transparent 2px);background-size:64px 64px;background-position:28px 32px;-webkit-mask-image:radial-gradient(70% 48% at 50% 60%,#000 0%,transparent 100%)}
+.red .bg{background:radial-gradient(90% 60% at 50% 58%,#d8332a 0%,var(--red) 55%,var(--red2) 100%)}
+.red .bg::after{background-image:linear-gradient(rgba(28,24,22,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(28,24,22,.07) 2px,transparent 2px)}
+.cnt{position:absolute;top:60px;left:80px;font:500 22px Inter;letter-spacing:.14em;color:var(--mute);direction:ltr;display:flex;align-items:center;gap:18px}
+.cnt b{font:500 16px Inter;letter-spacing:.2em;border:1.5px solid rgba(246,235,218,.28);padding:6px 10px 5px;color:var(--mute)}
+.red .cnt,.red .kick{color:rgba(246,235,218,.8)}.red .cnt b{color:rgba(246,235,218,.8);border-color:rgba(246,235,218,.45)}
+.kick{position:absolute;top:60px;right:80px;font:600 26px Baloo;color:var(--mute);display:flex;gap:14px;align-items:center}
+.kick::before{content:'';width:14px;height:14px;background:var(--red)}
+.red .kick::before{background:var(--cream)}
+h2{position:absolute;top:150px;right:80px;left:80px;font:800 82px/1.28 Kufam}
+h2 em,.em{font-style:normal;color:var(--red)}
+.red h2 em{color:var(--char)}
+.sub{position:absolute;top:420px;right:80px;left:80px;font:400 32px/1.55 Baloo;color:var(--mute)}
+.tease{position:absolute;bottom:72px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--line);padding-top:30px}
+.tease span{font:600 34px Baloo;color:var(--cream)}
+.tease i{font:500 22px Inter;letter-spacing:.14em;color:var(--mute);font-style:normal;direction:ltr}
+.red .tease{border-color:rgba(246,235,218,.3)}.red .tease i{color:rgba(246,235,218,.75)}
+.ablaq{background:repeating-linear-gradient(180deg,var(--char) 0 22px,var(--cream) 22px 44px)}
+.abs{position:absolute}
+.tag{font:600 26px Baloo;padding:6px 18px 8px;display:inline-block}
+.go{width:64px;height:64px;background:var(--red);display:flex;align-items:center;justify-content:center;flex:none}
+.en{font-family:Inter;direction:ltr;unicode-bidi:isolate}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>{SYM}
+<filter id="fry" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+ <feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="2" seed="11" result="n1"/>
+ <feDisplacementMap in="SourceGraphic" in2="n1" scale="46" xChannelSelector="R" yChannelSelector="G" result="shape"/>
+ <feTurbulence type="turbulence" baseFrequency=".06" numOctaves="4" seed="8" result="n2"/>
+ <feDiffuseLighting in="n2" surfaceScale="4.5" diffuseConstant="1" lighting-color="#fff" result="lit"><feDistantLight azimuth="225" elevation="58"/></feDiffuseLighting>
+ <feComposite in="shape" in2="lit" operator="arithmetic" k1="1.05" k2="0.18" k3="0" k4="0" result="mix"/>
+ <feComposite in="mix" in2="shape" operator="in" result="tex"/>
+ <feDropShadow in="tex" dx="0" dy="10" stdDeviation="9" flood-color="#2a0c04" flood-opacity=".6"/>
+</filter>
+<radialGradient id="fryg" cx="38%" cy="30%" r="80%"><stop offset="0" stop-color="#f6c06a"/><stop offset=".5" stop-color="#d98f32"/><stop offset="1" stop-color="#93501a"/></radialGradient>
+<pattern id="wawpat" width="120" height="120" patternUnits="userSpaceOnUse">
+ <rect width="120" height="120" fill="#2A2420"/>
+ <svg x="14" y="10" width="34" height="45" style="--body:#C8261D"><use href="#waw"/></svg>
+ <svg x="74" y="68" width="34" height="45" style="--body:#F6EBDA"><use href="#waw"/></svg>
+ <rect x="82" y="22" width="14" height="14" fill="#F6EBDA" opacity=".5"/><rect x="24" y="82" width="14" height="14" fill="#C8261D" opacity=".7"/>
+</pattern>
+</defs></svg>
+
+<!-- 2 · the hidden letter -->
+<section class="slide" id="s2"><div class="bg"></div>
+ <div class="cnt">02 / 10<b>CONCEPT</b></div><div class="kick">قبل لا نرسم أي شي</div>
+ <h2>الشعار كان مخبّي<br>داخل <em>الاسم.</em></h2>
+ <div class="sub">ما رحنا ندوّر على رمز من برا. طالعنا بالكلمة نفسها… وحرف واحد طالعنا ورد.</div>
+ <div class="abs" style="top:660px;left:0;right:0;text-align:center;font:800 244px/1 Kufam;color:#4a3f39;white-space:nowrap">بر<span style="color:var(--red)">و</span>ستد</div>
+ <!-- selection frame around the waw, like a designer picked it -->
+ <svg class="abs" style="top:0;left:0" width="1080" height="1440" id="selsvg"></svg>
+ <div class="abs" id="seltag" style="text-align:center"><span class="tag" style="background:var(--cream);color:var(--char);font-size:34px;padding:8px 26px 12px">هالواو… فيها ديك.</span></div>
+ <div class="tease"><span>تبي تشوفه؟ اسحب ←</span><i>THE LETTER</i></div>
+</section>
+
+<!-- 3 · circles to squares -->
+<section class="slide" id="s3"><div class="bg"></div>
+ <div class="cnt">03 / 10<b>CONCEPT</b></div><div class="kick">الخطوة الأولى</div>
+ <h2>شلنا الدوائر…<br>وخليناها <em>مربعات.</em></h2>
+ <div class="sub">نفس الواو، بس بالكوفي المربع. كل منحنى صار زاوية، وكل زاوية صارت حجر.</div>
+ <div class="abs" style="top:590px;right:80px;left:80px;height:520px;display:flex;align-items:stretch;justify-content:space-between">
+  <div style="width:428px;border:2px solid var(--line);position:relative;display:flex;align-items:center;justify-content:center">
+   <svg class="abs" style="inset:0" width="424" height="516"><g fill="none" stroke="rgba(246,235,218,.2)" stroke-width="2" stroke-dasharray="7 8"><circle cx="212" cy="196" r="92"/><circle cx="212" cy="236" r="168"/></g></svg>
+   <span style="font:800 300px/1 Kufam;color:rgba(246,235,218,.42);margin-top:-70px">و</span>
+   <span class="tag abs" style="bottom:28px;right:28px;border:2px solid var(--line);color:var(--mute)">قبل · دوائر</span></div>
+  <div style="width:428px;background:var(--char2);position:relative;display:flex;align-items:center;justify-content:center;background-image:linear-gradient(rgba(246,235,218,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(246,235,218,.07) 2px,transparent 2px);background-size:43px 43px;background-position:-1px -1px">
+   <svg width="244" height="321" style="--body:var(--cream);margin-top:-56px"><use href="#waw"/></svg>
+   <span class="tag abs" style="bottom:28px;right:28px;background:var(--cream);color:var(--char)">بعد · مربعات</span></div>
+ </div>
+ <div class="go abs" style="top:818px;left:508px"><svg width="34" height="24" viewBox="0 0 60 40"><path d="M56 20H6m14-14L6 20l14 14" fill="none" stroke="#F6EBDA" stroke-width="6" stroke-linecap="square"/></svg></div>
+ <div class="abs" style="top:1150px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:baseline;font:400 28px Baloo;color:var(--mute)">
+  <span><b class="en" style="font:700 40px Inter;color:var(--cream);margin-left:12px">0</b>منحنيات</span>
+  <span><b class="en" style="font:700 40px Inter;color:var(--cream);margin-left:12px">90°</b>كل الزوايا</span>
+  <span><b class="en" style="font:700 40px Inter;color:var(--cream);margin-left:12px">20</b>مربع بس</span>
+ </div>
+ <div class="tease"><span>بس للحين ناقصها شي واحد ←</span><i>STEP 01</i></div>
+</section>
+
+<!-- 4 · the reveal (red) -->
+<section class="slide red" id="s4"><div class="bg"></div>
+ <div class="cnt">04 / 10<b>CONCEPT</b></div><div class="kick">الخطوة الثانية</div>
+ <h2>عرف ومنقار…<br><em>وصاح الديك.</em></h2>
+ <!-- square "sound" rings: the crow -->
+ <svg class="abs" style="top:0;left:0" width="1080" height="1440"><g fill="none" stroke="#F6EBDA" stroke-width="2">
+  <rect x="237" y="505" width="680" height="680" opacity=".2"/><rect x="157" y="425" width="840" height="840" opacity=".13"/><rect x="77" y="345" width="1000" height="1000" opacity=".08"/><rect x="-3" y="265" width="1160" height="1160" opacity=".05"/></g></svg>
+ <svg class="abs" style="top:500px;left:305px;filter:drop-shadow(0 34px 40px rgba(60,8,4,.35))" width="470" height="619"><g style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></g></svg>
+ <!-- callouts: the only two pieces we added -->
+ <svg class="abs" style="top:0;left:0" width="1080" height="1440"><g fill="none" stroke="#F6EBDA" stroke-width="2.5"><path d="M726 560H838"/><path d="M306 824H232"/></g><g fill="#F6EBDA"><rect x="716" y="553" width="14" height="14"/><rect x="302" y="817" width="14" height="14"/></g></svg>
+ <div class="abs" style="top:526px;left:854px;font:600 30px/1.2 Baloo;text-align:right;direction:rtl"><span class="en" style="font:500 18px Inter;letter-spacing:.14em;opacity:.75;display:block">01</span>العرف</div>
+ <div class="abs" style="top:790px;left:118px;width:100px;font:600 30px/1.2 Baloo;text-align:left"><span class="en" style="font:500 18px Inter;letter-spacing:.14em;opacity:.75;display:block;text-align:left">02</span>المنقار</div>
+ <div class="abs" style="top:1168px;left:0;right:0;text-align:center"><span class="tag" style="background:var(--char);color:var(--cream);font-size:32px;padding:10px 28px 14px">ما زدنا غير قطعتين. الباقي كان موجود من أول.</span></div>
+ <div class="tease"><span>والمربع الصغير بنصه؟ ←</span><i>STEP 02</i></div>
+</section>
+
+<!-- 5 · the eye + grid -->
+<section class="slide" id="s5"><div class="bg"></div>
+ <div class="cnt">05 / 10<b>CONCEPT</b></div><div class="kick">التفصيلة اللي محد ينتبه لها</div>
+ <h2>المربع الصغير…<br>صار <em>عين الديك.</em></h2>
+ <div class="sub">والشعار كله مبني على شبكة وحدة، مثل حجر بيوت الشام القديمة.</div>
+ <svg class="abs" style="top:548px;left:0" viewBox="37 182 900 598" width="1080" height="718">
+  <g stroke="rgba(246,235,218,.17)" stroke-width="1.2" fill="none">
+   <path d="M328 196V762M391 196V762M451 196V762M518 196V762M584 196V762M647 196V762M236 323H740M236 386H740M236 452H740M236 515H740M236 586H740M236 642H740M236 710H740"/></g>
+  <path d="{COMB}" fill="#C8261D"/>
+  <g fill="#F6EBDA" stroke="#1C1816" stroke-width="2.6">{STONES}</g>
+  <rect x="451" y="452" width="67" height="63" fill="#E9B04A" stroke="#1C1816" stroke-width="2.6"/>
+  <rect x="438" y="439" width="93" height="89" fill="none" stroke="#E9B04A" stroke-width="2" stroke-dasharray="7 6"/>
+  <g stroke="#A3958A" stroke-width="1.7" fill="none"><path d="M328 740H647M328 731v18M647 731v18"/><path d="M684 323V710M675 323h18M675 710h18"/></g>
+  <g fill="#A3958A" font-family="Inter" font-weight="500" font-size="19" letter-spacing="2"><text x="487" y="770" text-anchor="middle" style="direction:ltr">5</text><text x="702" y="523" style="direction:ltr">6</text></g>
+ </svg>
+ <div class="abs" style="top:1040px;left:80px;width:200px;font:400 28px/1.45 Baloo;color:var(--mute);text-align:right;direction:rtl"><b class="en" style="display:block;font:700 54px/1.1 Inter;color:var(--cream);text-align:right">20</b>مربع،<br>واحد منهم عين.</div>
+ <div class="tease"><span>ونفس الحجر يطلع بكل قطعة ←</span><i>THE GRID</i></div>
+</section>
+
+<!-- 6 · palette -->
+<section class="slide" id="s6"><div class="bg"></div>
+ <div class="cnt">06 / 10<b>CONCEPT</b></div><div class="kick">قاعدة الألوان</div>
+ <h2>ثلاث ألوان بس.<br>والرابع <em>ممنوع يتكرر.</em></h2>
+ <div class="abs" style="top:450px;right:80px;left:80px;height:690px;display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:16px">
+  <div style="grid-row:span 2;background:var(--red);padding:40px;display:flex;flex-direction:column;justify-content:flex-end;position:relative">
+   <svg class="abs" style="top:44px;right:44px;--body:var(--cream);--comb:var(--char)" width="236" height="311"><use href="#rooster"/></svg>
+   <svg class="abs" style="top:0;left:0" width="520" height="420"><path d="M366 240V392H338" fill="none" stroke="#1C1816" stroke-width="2.5"/><rect x="326" y="385" width="14" height="14" fill="#1C1816"/></svg>
+   <div class="abs" style="top:372px;left:20px;width:290px;font:600 28px/1.35 Baloo;text-align:right">الذهبي؟ هني وبس.<span style="display:block;font-weight:400;opacity:.85">عين الديك، ولا مكان ثاني.</span></div>
+   <b style="font:800 50px Kufam">أحمر القرمشة</b><div style="font:400 28px Baloo;opacity:.88">اللون اللي يجوّع</div><div class="en" style="font:500 22px Inter;text-align:right;opacity:.75;margin-top:6px;letter-spacing:.08em">#C8261D</div></div>
+  <div style="background:var(--char2);border:2px solid var(--line);padding:34px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font:800 38px Kufam">فحمي الحجر</b><div style="font:400 24px Baloo;color:var(--mute)">الأرضية اللي تبرّز الأحمر</div><span class="en" style="font:500 20px Inter;text-align:right;color:var(--mute);letter-spacing:.08em;margin-top:4px">#1C1816</span></div>
+  <div style="background:var(--cream);color:var(--char);padding:34px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font:800 38px Kufam">ياسمين الشام</b><div style="font:400 24px Baloo;color:#6f6156">للكتابة والهدوء</div><span class="en" style="font:500 20px Inter;text-align:right;color:#7a6c60;letter-spacing:.08em;margin-top:4px">#F6EBDA</span></div>
+ </div>
+ <!-- how much of each -->
+ <div class="abs" style="top:1172px;right:80px;left:80px;height:22px;display:flex;direction:ltr"><i style="flex:60;background:var(--char2);border:2px solid var(--line)"></i><i style="flex:27;background:var(--red)"></i><i style="flex:12;background:var(--cream)"></i><i style="flex:1;background:var(--gold)"></i></div>
+ <div class="abs" style="top:1206px;right:80px;left:80px;display:flex;direction:ltr;font:500 18px Inter;letter-spacing:.14em;color:var(--mute)"><span style="flex:60">60%</span><span style="flex:27">27%</span><span style="flex:13;white-space:nowrap">12% · 1%</span></div>
+ <div class="tease" style="padding-top:26px;bottom:60px"><span>تبي تشوفه على الأرض؟ ←</span><i>COLOUR</i></div>
+</section>
+
+<!-- 7 · box -->
+<section class="slide" id="s7"><div class="bg" style="background:radial-gradient(80% 50% at 50% 66%,#4a2018 0%,var(--char) 72%)"></div>
+ <div class="cnt">07 / 10<b>CONCEPT</b></div><div class="kick">البوكس</div>
+ <h2>تعرفه من بعيد…<br>قبل لا تقرا <em>الاسم.</em></h2>
+ <div class="abs" style="top:500px;left:140px;width:800px;height:760px">
+  <!-- floor shadow -->
+  <div class="abs" style="left:20px;right:20px;bottom:6px;height:70px;background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.6),transparent 70%)"></div>
+  <!-- back flap -->
+  <div class="abs" style="top:86px;left:34px;right:34px;height:240px;background:linear-gradient(#7d140e,#99190f)"></div>
+  <!-- chicken -->
+  <svg class="abs" style="top:-30px;left:0" width="800" height="450" viewBox="0 -30 800 450"><g fill="url(#fryg)">
+   <ellipse filter="url(#fry)" cx="196" cy="236" rx="128" ry="96"/><ellipse filter="url(#fry)" cx="612" cy="240" rx="122" ry="92"/>
+   <ellipse filter="url(#fry)" cx="405" cy="170" rx="150" ry="112"/>
+   <ellipse filter="url(#fry)" cx="296" cy="292" rx="96" ry="66"/><ellipse filter="url(#fry)" cx="522" cy="296" rx="102" ry="64"/></g></svg>
+  <!-- front -->
+  <div class="abs" style="top:300px;left:0;right:0;height:420px;background:linear-gradient(90deg,#b52219 0%,var(--red) 18%,var(--red) 82%,#b52219 100%);overflow:hidden">
+   <div class="ablaq abs" style="top:0;left:0;right:0;height:88px"></div>
+   <div class="abs" style="top:130px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:48px">
+    <svg width="176" height="232" style="--body:var(--cream);--comb:var(--char)"><use href="#rooster"/></svg>
+    <div style="font:800 84px/1.15 Kufam">بروستد<br>الشام</div>
+   </div>
+  </div>
+  <div class="abs" style="top:300px;left:0;right:0;height:10px;background:rgba(0,0,0,.28)"></div>
+ </div>
+ <div class="tease"><span>الخطوط فوق؟ لها قصة ←</span><i>THE BOX</i></div>
+</section>
+
+<!-- 8 · ablaq + packaging -->
+<section class="slide" id="s8"><div class="bg"></div>
+ <div class="cnt">08 / 10<b>CONCEPT</b></div><div class="kick">الأبلق</div>
+ <h2>أسود وأبيض…<br>صار <em>توقيع.</em></h2>
+ <div class="sub">بيوت الشام القديمة مبنية صف أسود وصف أبيض. أخذناه، وصار يلف كل قطعة.</div>
+ <div class="abs" style="top:580px;right:80px;left:80px;height:680px">
+  <!-- wrap paper -->
+  <svg class="abs" style="left:10px;top:20px;transform:rotate(-7deg);filter:drop-shadow(0 30px 40px rgba(0,0,0,.5))" width="380" height="380"><rect width="380" height="380" fill="url(#wawpat)"/></svg>
+  <!-- bag -->
+  <div class="abs" style="right:0;top:110px;width:420px;height:560px;background:linear-gradient(90deg,#fbf3e6 0%,var(--cream) 30%,#eadcc6 100%);box-shadow:0 40px 70px rgba(0,0,0,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px">
+   <div class="abs" style="top:-78px;width:170px;height:112px;border:12px solid #d8c9b1;border-bottom:none;border-radius:90px 90px 0 0"></div>
+   <div class="abs" style="top:0;left:0;right:0;height:34px;background:rgba(28,24,22,.07)"></div>
+   <svg width="184" height="243" style="--body:var(--char);--comb:var(--red);margin-top:-30px"><use href="#rooster"/></svg>
+   <div style="font:800 48px Kufam;color:var(--char)">بروستد الشام</div>
+   <div class="ablaq abs" style="bottom:0;left:0;right:0;height:88px"></div>
+  </div>
+  <!-- cup -->
+  <div class="abs" style="left:236px;top:286px;width:250px;height:384px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.5))">
+   <div class="abs" style="left:150px;top:-112px;width:20px;height:150px;transform:rotate(8deg);background:repeating-linear-gradient(180deg,var(--cream) 0 14px,var(--red) 14px 28px)"></div>
+   <div class="abs" style="inset:34px 10px 0 10px;clip-path:polygon(0 0,100% 0,88% 100%,12% 100%);background:linear-gradient(90deg,#b52219,var(--red) 30%,var(--red) 70%,#a51d15);display:flex;align-items:center;justify-content:center">
+    <svg width="110" height="145" style="--body:var(--cream);--comb:var(--char);margin-top:40px"><use href="#rooster"/></svg>
+    <div class="abs" style="top:0;left:0;right:0;height:44px;background:repeating-linear-gradient(180deg,var(--char) 0 11px,var(--cream) 11px 22px)"></div>
+   </div>
+   <div class="abs" style="left:0;right:0;top:14px;height:28px;background:#0f0c0b"></div>
+   <div class="abs" style="left:22px;right:22px;top:0;height:16px;background:#17130f"></div>
+  </div>
+ </div>
+ <div class="tease"><span>والحين… تخيله بالشارع ←</span><i>PACKAGING</i></div>
+</section>
+
+<!-- 9 · storefront -->
+<section class="slide" id="s9"><div class="bg" style="background:#0f0c0b"></div>
+ <div class="cnt">09 / 10<b>CONCEPT</b></div><div class="kick">الواجهة</div>
+ <h2>بالليل… <em>يناديك</em><br>من آخر الشارع.</h2>
+ <div class="abs" style="top:450px;left:0;right:0;bottom:0;background:linear-gradient(#241d1a,#16120f 70%)">
+  <!-- sign -->
+  <div class="abs" style="top:64px;left:80px;right:80px;height:250px;background:var(--red);box-shadow:0 0 150px rgba(200,38,29,.6),0 0 34px rgba(200,38,29,.7);display:flex;align-items:center;justify-content:center;gap:44px">
+   <svg width="150" height="198" style="--body:var(--cream);--comb:var(--char)"><use href="#rooster"/></svg>
+   <div style="font:800 108px Kufam;white-space:nowrap;text-shadow:0 0 40px rgba(246,235,218,.35)">بروستد الشام</div>
+  </div>
+  <!-- ablaq awning -->
+  <div class="abs" style="top:346px;left:0;right:0;height:132px;background:repeating-linear-gradient(180deg,var(--cream) 0 33px,var(--char) 33px 66px);box-shadow:0 26px 40px rgba(0,0,0,.55)"></div>
+  <!-- glass -->
+  <div class="abs" style="top:478px;left:80px;right:80px;height:330px;display:grid;grid-template-columns:1fr 250px 1fr;gap:18px;padding-top:26px">
+   <div style="position:relative;background:linear-gradient(rgba(255,208,150,.46),rgba(255,208,150,.18));border:6px solid #2e2723;border-bottom:none;overflow:hidden">
+    <i class="abs" style="top:0;left:70px;width:3px;height:70px;background:#1c1512"></i><i class="abs" style="top:70px;left:52px;width:40px;height:24px;background:#1c1512"></i>
+    <i class="abs" style="top:0;left:210px;width:3px;height:104px;background:#1c1512"></i><i class="abs" style="top:104px;left:192px;width:40px;height:24px;background:#1c1512"></i>
+    <i class="abs" style="bottom:0;left:0;right:0;height:96px;background:rgba(28,21,18,.72)"></i>
+    <i class="abs" style="bottom:96px;left:40px;width:60px;height:74px;background:rgba(28,21,18,.72)"></i>
+    <i class="abs" style="inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.07) 41%,rgba(255,255,255,.07) 52%,transparent 53%)"></i></div>
+   <div style="position:relative;background:linear-gradient(rgba(255,208,150,.6),rgba(255,208,150,.26));border:6px solid #2e2723;border-bottom:none">
+    <i class="abs" style="top:0;bottom:0;left:50%;width:6px;margin-left:-3px;background:#2e2723"></i>
+    <i class="abs" style="top:150px;left:86px;width:14px;height:56px;background:var(--cream)"></i>
+    <span class="abs" style="top:40px;right:18px;font:600 24px Baloo;background:var(--red);color:var(--cream);padding:2px 14px 6px;box-shadow:0 0 24px rgba(200,38,29,.8)">مفتوح</span></div>
+   <div style="position:relative;background:linear-gradient(rgba(255,208,150,.46),rgba(255,208,150,.18));border:6px solid #2e2723;border-bottom:none;overflow:hidden">
+    <i class="abs" style="top:0;left:110px;width:3px;height:86px;background:#1c1512"></i><i class="abs" style="top:86px;left:92px;width:40px;height:24px;background:#1c1512"></i>
+    <i class="abs" style="top:0;left:250px;width:3px;height:60px;background:#1c1512"></i><i class="abs" style="top:60px;left:232px;width:40px;height:24px;background:#1c1512"></i>
+    <i class="abs" style="bottom:0;left:0;right:0;height:96px;background:rgba(28,21,18,.72)"></i>
+    <i class="abs" style="bottom:96px;right:50px;width:120px;height:14px;background:rgba(28,21,18,.72)"></i>
+    <i class="abs" style="inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.07) 31%,rgba(255,255,255,.07) 40%,transparent 41%)"></i></div>
+  </div>
+  <!-- pavement + red glow on the ground -->
+  <div class="abs" style="top:808px;left:0;right:0;bottom:0;background:linear-gradient(#0d0a09,#0a0807)"></div>
+  <div class="abs" style="top:808px;left:0;right:0;height:8px;background:#2e2723"></div>
+  <div class="abs" style="top:816px;left:120px;right:120px;height:150px;background:radial-gradient(50% 100% at 50% 0%,rgba(200,38,29,.34),transparent 75%)"></div>
+ </div>
+ <div class="tease" style="border-color:rgba(246,235,218,.18)"><span>وهني السؤال ←</span><i>STOREFRONT</i></div>
+</section>
+
+<!-- 10 · closing -->
+<section class="slide" id="s10"><div class="bg"></div>
+ <div class="cnt">10 / 10<b>CONCEPT</b></div><div class="kick">الخلاصة</div>
+ <div class="abs" style="top:160px;right:80px;left:80px;height:330px;display:flex;justify-content:space-between;align-items:stretch">
+  <div style="width:266px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center"><span style="font:800 190px/1 Kufam;color:rgba(246,235,218,.42);margin-top:-46px">و</span></div>
+  <div style="width:266px;background:var(--char2);display:flex;align-items:center;justify-content:center;background-image:linear-gradient(rgba(246,235,218,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(246,235,218,.07) 2px,transparent 2px);background-size:38px 38px;background-position:-1px -1px"><svg width="150" height="198" style="--body:var(--cream)"><use href="#waw"/></svg></div>
+  <div style="width:266px;background:var(--red);display:flex;align-items:center;justify-content:center"><svg width="158" height="208" style="--body:var(--cream);--comb:var(--char)"><use href="#rooster"/></svg></div>
+ </div>
+ <div class="go abs" style="top:299px;left:719px;width:52px;height:52px"><svg width="28" height="20" viewBox="0 0 60 40"><path d="M56 20H6m14-14L6 20l14 14" fill="none" stroke="#F6EBDA" stroke-width="6" stroke-linecap="square"/></svg></div>
+ <div class="go abs" style="top:299px;left:392px;width:52px;height:52px"><svg width="28" height="20" viewBox="0 0 60 40"><path d="M56 20H6m14-14L6 20l14 14" fill="none" stroke="#F6EBDA" stroke-width="6" stroke-linecap="square"/></svg></div>
+ <div class="abs" style="top:508px;right:80px;left:80px;display:flex;justify-content:space-between;font:600 26px Baloo;color:var(--mute);text-align:center"><span style="width:266px">حرف</span><span style="width:266px">مربعات</span><span style="width:266px;color:var(--cream)">ديك</span></div>
+ <div class="abs" style="top:640px;right:80px;left:80px;font:800 88px/1.3 Kufam">حرف واحد،<br>صار <span class="em">مطعم كامل.</span></div>
+ <div class="abs" style="top:920px;right:80px;left:80px;font:400 34px/1.6 Baloo;color:var(--mute)">هذا مفهوم… بس تخيل لو صار حقيقة.</div>
+ <div class="abs" style="top:1020px;right:80px;left:80px;border:2px solid var(--line);padding:34px 36px 38px;display:flex;justify-content:space-between;align-items:center">
+  <span style="font:600 42px Baloo">لو مريت من جدامه، تدخل؟</span>
+  <span class="tag" style="background:var(--cream);color:var(--char);font-size:28px">قول لي بالكومنت 👇🏻</span></div>
+ <div class="abs" style="bottom:128px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:center;font:400 22px Baloo;color:var(--mute)"><span>مفهوم غير رسمي للعرض فقط، مو تابع لبروستد الشام</span><span class="en" style="font:700 22px Inter;letter-spacing:.06em">NORI · @nori.dsgn</span></div>
+ <div class="ablaq abs" style="left:0;right:0;bottom:0;height:88px"></div>
+</section>
+
+<script>
+/* slide 2: draw the selection frame exactly around the ink of the waw */
+(async()=>{await document.fonts.ready;
+ const s2=document.getElementById('s2'),sp=s2.querySelector('span[style*="--red"]'),o=s2.getBoundingClientRect(),r=sp.getBoundingClientRect();
+ const c=document.createElement('canvas').getContext('2d');c.font='800 244px Kufam';const m=c.measureText('و');
+ const base=r.top-o.top+(r.height+ (m.fontBoundingBoxAscent-m.fontBoundingBoxDescent))/2;
+ const pad=22,x=r.left-o.left-pad,w=r.width+pad*2,y=base-m.actualBoundingBoxAscent-pad,h=m.actualBoundingBoxAscent+m.actualBoundingBoxDescent+pad*2;
+ let g=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="#F6EBDA" stroke-width="2.5"/>`;
+ for(const[a,b]of[[x,y],[x+w,y],[x,y+h],[x+w,y+h]])g+=`<rect x="${a-9}" y="${b-9}" width="18" height="18" fill="#F6EBDA"/>`;
+ g+=`<path d="M${x+w/2} ${y+h}V${y+h+70}" stroke="#F6EBDA" stroke-width="2.5"/>`;
+ document.getElementById('selsvg').innerHTML=g;
+ const t=document.getElementById('seltag');t.style.top=(y+h+70)+'px';t.style.left=(x+w/2-300)+'px';t.style.width='600px';
+ document.body.dataset.ready=1;})();
+</script>
+</body></html>
