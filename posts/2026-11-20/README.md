@@ -1,9 +1,9 @@
-# Carousel E · Fri 20 Nov 2026 · «عين الزبون تقرا من وين؟»
+# Carousel E · PUBLISHED Mon 9 Nov 2026 (manual, by NORI) · was planned Fri 20 Nov · «عين الزبون تقرا من وين؟»
 
 100% educational (CONTENT-RULES rule B): no DM offer. Fictional brand «رَف» (coffee roastery).
 Slides: hook (a poster where everything is the same size) → 01 size ranking (one poster + numbered order 1-2-3) → 02 the Arabic reading path (before/after, dotted eye path) → save: golden ratio type scale (×1.618 / ÷1.618, 26/16/10px), replaced the 100/50/30 ladder on NORI request 9 Nov → try-it question + 3-column recap + save/follow.
 New composition vs C/D: numbered markers on the design, a drawn eye path, horizontal recap columns (not the vertical summary list).
-Render: `cd posts/_generator && node e-f.js`. Status: Metricool draft (draft: true), 20 Nov 18:30 Kuwait, waiting for NORI's approval.
+Render: `cd posts/_generator && node e-f.js`. Status: **published manually by NORI on 9 Nov 2026**. Metricool draft 421055630 is obsolete: do not schedule it.
 
 ## Designer detail pass (fixes)
 - Slide 1: rotated poster crossed the 80 px margin → smaller (400) and moved in.
