@@ -98,7 +98,7 @@ E.push(`
     <div style="font:700 ${x[3]}px/${Math.round(x[3] * 1.3)}px ${AR};color:${x[4]}">${x[1]}</div>
     <div style="text-align:left;direction:ltr"><div style="font:600 40px/52px Inter;color:#F2F0EB">${x[2]}</div><div style="font:500 26px/34px Inter;color:#8A8A8A">${x[0]}</div></div></div>`).join('')}
   <div style="border-top:1.5px solid #2C2C2C"></div>
-  <div class="sub" style="margin-top:36px;font-size:34px;line-height:52px">النص الأساسي <span class="n">16px</span>؟ العنوان <span class="n">16 × 1.618 ≈ 26px</span><br>والأصغر منه: اقسم على <span class="n">1.618</span><br><span style="color:#C9C6C0">بس بالجوال لا تنزل عن <span class="n">12px</span></span></div>
+  <div class="sub" style="margin-top:36px;font-size:34px;line-height:52px">النص الأساسي <span class="n">16px</span>؟ العنوان <span class="n">16 × 1.618 ≈ 26px</span><br>والأصغر منه: اقسم على <span class="n">1.618</span><br><span style="color:#C9C6C0">بس بالتلفون لا تنزل عن <span class="n">12px</span></span></div>
 </div>`);
 // 5 CTA: recap in three columns + comment question
 function finalSlide(q, cols, brand) {

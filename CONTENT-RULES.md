@@ -79,3 +79,5 @@ Caption: hook line, «اسحب…», question for comments, DM line, one English
 ## Approval
 
 Nothing publishes without NORI's approval. Carousels go to Metricool as posts for review.
+
+- Kuwaiti words only, no Saudi words: «تلفون» not «جوال».
