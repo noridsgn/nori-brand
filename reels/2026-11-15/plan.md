@@ -49,4 +49,4 @@ Warm, light lo-fi ~90 BPM, ducked ≈ −22 dB under the voice. SFX from sfx/: s
 
 Good light beats a new camera.
 
-#تصوير_منتجات #تصوير_جوال #تسويق #مشاريع_صغيرة #سوشال_ميديا #productphotography #smallbusiness
+#تصوير_منتجات #تصوير_تلفون #تسويق #مشاريع_صغيرة #سوشال_ميديا #productphotography #smallbusiness
