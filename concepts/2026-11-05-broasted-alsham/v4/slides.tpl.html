@@ -1,0 +1,191 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:Kufam;src:url(node_modules/@fontsource/kufam/files/kufam-arabic-800-normal.woff2);font-weight:800}
+@font-face{font-family:Kufam;src:url(node_modules/@fontsource/kufam/files/kufam-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-400-normal.woff2);font-weight:400}
+@font-face{font-family:Baloo;src:url(node_modules/@fontsource/baloo-bhaijaan-2/files/baloo-bhaijaan-2-arabic-600-normal.woff2);font-weight:600}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:Inter;src:url(node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2);font-weight:700}
+/* v4 palette: 3 colours only + gold reserved for the eye */
+:root{--red:#C8261D;--char:#1C1816;--char2:#2A2420;--cream:#F6EBDA;--mute:#A3958A;--gold:#E9B04A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#444;font-family:Baloo,sans-serif;color:var(--cream)}
+.slide{width:1080px;height:1440px;position:relative;overflow:hidden;background:radial-gradient(90% 60% at 50% 55%,#2b201c 0%,var(--char) 70%);margin-bottom:20px}
+.slide.red{background:radial-gradient(90% 60% at 50% 50%,#d63027 0%,var(--red) 55%,#a51d15 100%)}
+.cnt{position:absolute;top:66px;left:80px;font:500 22px Inter;letter-spacing:.14em;color:var(--mute);direction:ltr}
+.red .cnt,.red .kick{color:rgba(246,235,218,.75)}
+.kick{position:absolute;top:60px;right:80px;font:600 26px Baloo;color:var(--mute);display:flex;gap:14px;align-items:center}
+.kick::before{content:'';width:14px;height:14px;background:var(--red)}
+.red .kick::before{background:var(--cream)}
+h2{position:absolute;top:150px;right:80px;left:80px;font:800 82px/1.28 Kufam}
+h2 em{font-style:normal;color:var(--red)}
+.red h2 em{color:var(--char)}
+.sub{position:absolute;right:80px;left:80px;font:400 32px/1.55 Baloo;color:var(--mute)}
+.red .sub{color:rgba(246,235,218,.85)}
+.tease{position:absolute;bottom:72px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(246,235,218,.14);padding-top:30px}
+.tease span{font:600 34px Baloo;color:var(--cream)}
+.tease i{font:500 22px Inter;letter-spacing:.14em;color:var(--mute);font-style:normal;direction:ltr}
+.red .tease{border-color:rgba(246,235,218,.3)}.red .tease i{color:rgba(246,235,218,.7)}
+.ablaq{background:repeating-linear-gradient(180deg,var(--char) 0 22px,var(--cream) 22px 44px)}
+.callout{position:absolute;font:600 30px/1.4 Baloo;color:var(--cream);display:flex;align-items:center;gap:18px}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>{SYM}</defs></svg>
+
+<!-- 2 · the hidden letter -->
+<section class="slide" id="s2">
+ <div class="cnt">02 / 10</div><div class="kick">قبل لا نرسم أي شي</div>
+ <h2>الشعار كان مخبّي<br>داخل الاسم.</h2>
+ <div class="sub" style="top:420px">ما رحنا ندوّر على رمز من برا. طالعنا بالكلمة نفسها… وحرف واحد طالعنا ورد.</div>
+ <div style="position:absolute;top:640px;left:0;right:0;text-align:center;font:800 215px/1 Kufam;color:#3d3430">بر<span style="color:var(--red)">و</span>ستد</div>
+ <div class="callout" style="top:1000px;left:0;right:0;justify-content:center;color:var(--mute)"><svg width="20" height="60"><path d="M10 0V56" stroke="#C8261D" stroke-width="3"/></svg></div>
+ <div style="position:absolute;top:1080px;left:0;right:0;text-align:center;font:600 36px Baloo">هالواو… فيها ديك.</div>
+ <div class="tease"><span>تبي تشوفه؟ اسحب ←</span><i>THE LETTER</i></div>
+</section>
+
+<!-- 3 · circles to squares -->
+<section class="slide" id="s3">
+ <div class="cnt">03 / 10</div><div class="kick">الخطوة الأولى</div>
+ <h2>شلنا الدوائر…<br>وخليناها <em>مربعات.</em></h2>
+ <div class="sub" style="top:420px">نفس الواو، بس بالكوفي المربع. كل منحنى صار زاوية، وكل زاوية صارت حجر.</div>
+ <div style="position:absolute;top:620px;right:80px;left:80px;height:560px;display:flex;align-items:center;justify-content:space-between">
+  <div style="width:400px;height:520px;border-radius:30px;border:2px solid rgba(246,235,218,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px">
+   <span style="font:800 280px/1 Kufam;color:rgba(246,235,218,.35)">و</span>
+   <b style="font:600 28px Baloo;color:var(--mute)">قبل: دوائر</b></div>
+  <svg width="70" height="40" viewBox="0 0 60 40"><path d="M56 20H6m14-14L6 20l14 14" fill="none" stroke="#C8261D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div style="width:400px;height:520px;border-radius:30px;background:var(--char2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;background-image:linear-gradient(rgba(246,235,218,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(246,235,218,.06) 2px,transparent 2px);background-size:40px 40px">
+   <svg width="240" height="316" style="--body:var(--cream)"><use href="#waw"/></svg>
+   <b style="font:600 28px Baloo">بعد: مربعات</b></div>
+ </div>
+ <div class="tease"><span>بس للحين ناقصها شي واحد ←</span><i>STEP 01</i></div>
+</section>
+
+<!-- 4 · the reveal (red) -->
+<section class="slide red" id="s4">
+ <div class="cnt">04 / 10</div><div class="kick">الخطوة الثانية</div>
+ <h2>عرف ومنقار…<br><em>وصاح الديك.</em></h2>
+ <div style="position:absolute;top:500px;left:0;right:0;display:flex;justify-content:center">
+  <div style="position:relative">
+   <svg width="470" height="619" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg>
+  </div>
+ </div>
+ <div class="sub" style="top:1150px;text-align:center;color:var(--cream);font-weight:600">ما زدنا غير قطعتين. الباقي كان موجود من أول.</div>
+ <div class="tease"><span>والمربع الصغير بنصه؟ ←</span><i>STEP 02</i></div>
+</section>
+
+<!-- 5 · the eye + grid -->
+<section class="slide" id="s5">
+ <div class="cnt">05 / 10</div><div class="kick">التفصيلة اللي محد ينتبه لها</div>
+ <h2>المربع الصغير…<br>صار <span style="color:var(--gold)">عين الديك.</span></h2>
+ <div class="sub" style="top:420px">والشعار كله مبني على شبكة وحدة، مثل حجر بيوت الشام القديمة.</div>
+ <div style="position:absolute;top:560px;left:50%;transform:translateX(-50%);width:560px;height:738px">
+  <svg viewBox="250 180 410 540" width="560" height="738" style="position:absolute;inset:0;--body:var(--cream);--comb:var(--red)">
+   <g stroke="rgba(246,235,218,.16)" stroke-width="1.2" fill="none">
+    <path d="M328 180V720M391 180V720M451 180V720M518 180V720M584 180V720M647 180V720M250 323H660M250 386H660M250 452H660M250 515H660M250 586H660M250 642H660M250 710H660"/>
+   </g>
+   <use href="#logo" x="250" y="180" width="410" height="540"/>
+   <rect x="451" y="452" width="67" height="63" fill="#E9B04A"/>
+   <rect x="440" y="441" width="89" height="85" fill="none" stroke="#E9B04A" stroke-width="2" stroke-dasharray="6 5"/>
+  </svg>
+ </div>
+ <div class="tease"><span>ونفس الحجر يطلع بكل قطعة ←</span><i>THE GRID</i></div>
+</section>
+
+<!-- 6 · palette -->
+<section class="slide" id="s6">
+ <div class="cnt">06 / 10</div><div class="kick">قاعدة الألوان</div>
+ <h2>ثلاث ألوان بس.<br>والرابع <span style="color:var(--gold)">ممنوع يتكرر.</span></h2>
+ <div style="position:absolute;top:470px;right:80px;left:80px;height:700px;display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:20px">
+  <div style="grid-row:span 2;background:var(--red);border-radius:30px;padding:40px;display:flex;flex-direction:column;justify-content:space-between">
+   <svg width="150" height="198" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg>
+   <div><b style="font:800 44px Kufam">أحمر القرمشة</b><div style="font:400 28px Baloo;opacity:.85">اللون اللي يجوّع</div><div style="font:500 22px Inter;direction:ltr;text-align:right;opacity:.75;margin-top:6px">#C8261D</div></div></div>
+  <div style="background:var(--char2);border:2px solid rgba(246,235,218,.12);border-radius:30px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font:800 36px Kufam">فحمي الحجر</b><span style="font:500 20px Inter;direction:ltr;text-align:right;color:var(--mute)">#1C1816</span></div>
+  <div style="background:var(--cream);color:var(--char);border-radius:30px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;position:relative"><b style="font:800 36px Kufam">ياسمين الشام</b><span style="font:500 20px Inter;direction:ltr;text-align:right;color:#7a6c60">#F6EBDA</span>
+   <div style="position:absolute;top:30px;left:30px;width:56px;height:56px;background:var(--gold)"></div></div>
+ </div>
+ <div style="position:absolute;top:1210px;right:80px;left:80px;display:flex;gap:18px;align-items:center;font:600 30px Baloo"><i style="flex:none;width:22px;height:22px;background:var(--gold)"></i>الذهبي ما يطلع إلا بمكان واحد: عين الديك.</div>
+ <div class="tease" style="padding-top:24px;bottom:52px"><span>تبي تشوفه على الأرض؟ ←</span><i>COLOUR</i></div>
+</section>
+
+<!-- 7 · box (red) -->
+<section class="slide" id="s7" style="background:radial-gradient(80% 55% at 50% 62%,#3a1c16 0%,var(--char) 70%)">
+ <div class="cnt">07 / 10</div><div class="kick">البوكس</div>
+ <h2>تعرفه من بعيد…<br>قبل لا تقرا <em>الاسم.</em></h2>
+ <div style="position:absolute;top:560px;left:50%;transform:translateX(-50%);width:780px;height:700px">
+  <div style="position:absolute;top:0;left:120px;right:120px;height:220px">
+   <div style="position:absolute;left:20px;top:70px;width:210px;height:150px;border-radius:45% 55% 50% 40%;background:radial-gradient(circle at 35% 35%,#eebd68,#c9822b 70%,#8f4c14)"></div>
+   <div style="position:absolute;left:190px;top:20px;width:230px;height:180px;border-radius:55% 45% 40% 60%;background:radial-gradient(circle at 40% 30%,#f1c576,#cc862d 70%,#8f4c14)"></div>
+   <div style="position:absolute;right:10px;top:60px;width:200px;height:160px;border-radius:50% 40% 55% 45%;background:radial-gradient(circle at 40% 35%,#eebd68,#c9822b 70%,#8f4c14)"></div>
+  </div>
+  <div style="position:absolute;top:190px;left:0;right:0;height:470px;background:var(--red);border-radius:12px 12px 26px 26px;box-shadow:0 60px 90px rgba(0,0,0,.5);overflow:hidden">
+   <div class="ablaq" style="position:absolute;top:0;left:0;right:0;height:88px"></div>
+   <div style="position:absolute;top:140px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:44px">
+    <svg width="170" height="224" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg>
+    <div style="font:800 78px/1.15 Kufam">بروستد<br>الشام</div>
+   </div>
+  </div>
+ </div>
+ <div class="tease"><span>الخطوط فوق؟ لها قصة ←</span><i>THE BOX</i></div>
+</section>
+
+<!-- 8 · ablaq + packaging -->
+<section class="slide" id="s8">
+ <div class="cnt">08 / 10</div><div class="kick">الأبلق</div>
+ <h2>أسود وأبيض…<br>صار <em>توقيع.</em></h2>
+ <div class="sub" style="top:420px">بيوت الشام القديمة مبنية صف أسود وصف أبيض. أخذناه، وصار يلف كل قطعة.</div>
+ <div style="position:absolute;top:600px;right:80px;left:80px;height:640px">
+  <!-- bag -->
+  <div style="position:absolute;right:20px;top:90px;width:390px;height:540px;background:var(--cream);border-radius:10px 10px 18px 18px;box-shadow:0 40px 70px rgba(0,0,0,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px">
+   <div style="position:absolute;top:-70px;width:150px;height:105px;border:14px solid #cdbfa9;border-bottom:none;border-radius:80px 80px 0 0"></div>
+   <svg width="170" height="224" style="--body:var(--char);--comb:var(--red)"><use href="#logo"/></svg>
+   <div style="font:800 44px Kufam;color:var(--char)">بروستد الشام</div>
+   <div class="ablaq" style="position:absolute;bottom:0;left:0;right:0;height:66px;border-radius:0 0 18px 18px"></div>
+  </div>
+  <!-- cup -->
+  <div style="position:absolute;left:250px;top:250px;width:230px;height:330px;clip-path:polygon(0 0,100% 0,88% 100%,12% 100%);background:var(--red);display:flex;align-items:center;justify-content:center">
+   <svg width="104" height="137" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg>
+   <div class="ablaq" style="position:absolute;top:0;left:0;right:0;height:44px;background:repeating-linear-gradient(180deg,var(--char) 0 11px,var(--cream) 11px 22px)"></div>
+  </div>
+  <div style="position:absolute;left:236px;top:236px;width:258px;height:26px;background:#0f0c0b;border-radius:10px"></div>
+  <!-- wrap -->
+  <div style="position:absolute;left:0;top:0;width:330px;height:330px;transform:rotate(-8deg);border-radius:8px;box-shadow:0 30px 60px rgba(0,0,0,.45);background-color:var(--char2);background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect x=%2210%22 y=%2210%22 width=%2228%22 height=%2228%22 fill=%22%23C8261D%22/><rect x=%2250%22 y=%2250%22 width=%2214%22 height=%2214%22 fill=%22%23F6EBDA%22/></svg>')"></div>
+ </div>
+ <div class="tease"><span>والحين… تخيله بالشارع ←</span><i>PACKAGING</i></div>
+</section>
+
+<!-- 9 · storefront -->
+<section class="slide" id="s9" style="background:#100d0c">
+ <div class="cnt">09 / 10</div><div class="kick">الواجهة</div>
+ <h2>بالليل… <em>يناديك</em><br>من آخر الشارع.</h2>
+ <div style="position:absolute;top:470px;left:0;right:0;bottom:0;background:linear-gradient(#221c19,#141110)">
+  <div style="position:absolute;top:70px;left:90px;right:90px;height:250px;background:var(--red);border-radius:12px;box-shadow:0 0 140px rgba(200,38,29,.55),0 0 30px rgba(200,38,29,.6);display:flex;align-items:center;justify-content:center;gap:44px">
+   <svg width="150" height="198" style="--body:var(--cream);--comb:var(--char)"><use href="#logo"/></svg>
+   <div style="font:800 104px Kufam;white-space:nowrap">بروستد الشام</div>
+  </div>
+  <div style="position:absolute;top:350px;left:0;right:0;height:132px;background:repeating-linear-gradient(180deg,var(--cream) 0 33px,var(--char) 33px 66px);opacity:.9"></div>
+  <div style="position:absolute;top:482px;left:90px;right:90px;height:350px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;padding-top:30px">
+   <div style="background:linear-gradient(rgba(233,176,74,.18),rgba(233,176,74,.06));border:6px solid #2e2723;border-bottom:none"></div>
+   <div style="background:linear-gradient(rgba(233,176,74,.28),rgba(233,176,74,.1));border:6px solid #2e2723;border-bottom:none;display:flex;justify-content:center;padding-top:40px"><span style="font:600 30px Baloo;color:var(--cream)">مفتوح</span></div>
+   <div style="background:linear-gradient(rgba(233,176,74,.18),rgba(233,176,74,.06));border:6px solid #2e2723;border-bottom:none"></div>
+  </div>
+  <div class="tease" style="bottom:72px"><span>وهني السؤال ←</span><i>STOREFRONT</i></div>
+ </div>
+</section>
+
+<!-- 10 · closing -->
+<section class="slide" id="s10">
+ <div class="cnt">10 / 10</div>
+ <div style="position:absolute;top:210px;left:0;right:0;display:flex;justify-content:center;gap:28px;align-items:center">
+  <span style="font:800 150px/1 Kufam;color:rgba(246,235,218,.3)">و</span>
+  <svg width="50" height="34" viewBox="0 0 60 40"><path d="M56 20H6m14-14L6 20l14 14" fill="none" stroke="#A3958A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <svg width="130" height="171" style="--body:var(--cream)"><use href="#waw"/></svg>
+  <svg width="50" height="34" viewBox="0 0 60 40"><path d="M56 20H6m14-14L6 20l14 14" fill="none" stroke="#A3958A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <svg width="150" height="198" style="--body:var(--cream);--comb:var(--red)"><use href="#logo"/></svg>
+ </div>
+ <div style="position:absolute;top:560px;right:80px;left:80px">
+  <div style="font:800 80px/1.35 Kufam">حرف واحد،<br>صار <em style="font-style:normal;color:var(--red)">مطعم كامل.</em></div>
+  <div style="font:600 36px/1.6 Baloo;margin-top:40px">هذا مفهوم… بس تخيل لو صار حقيقة.</div>
+  <div style="font:400 32px/1.6 Baloo;color:var(--mute);margin-top:18px">لو مريت من جدامه، تدخل؟ قول لي بالكومنت 👇🏻</div>
+ </div>
+ <div style="position:absolute;bottom:150px;right:80px;left:80px;display:flex;justify-content:space-between;font:400 22px Baloo;color:var(--mute)"><span>مفهوم غير رسمي للعرض فقط، مو تابع لبروستد الشام</span><span style="font:700 22px Inter;direction:ltr">NORI · @nori.dsgn</span></div>
+ <div class="ablaq" style="position:absolute;left:0;right:0;bottom:0;height:88px"></div>
+</section>
+</body></html>
