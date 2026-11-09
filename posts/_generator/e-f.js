@@ -85,20 +85,20 @@ E.push(`
   <div style="width:440px"><div class="lab on"><span class="ar">بعد</span><span class="en">AFTER</span></div><div style="margin-top:24px">${pathPoster(440, true)}</div></div>
 </div>
 <div class="abs" style="right:80px;left:80px;top:1150px">${fixLine('خل الزر بآخر المسار: تحت على اليسار.')}</div>`);
-// 4 save: size ladder 100 / 50 / 30
+// 4 save: golden ratio 1.618 type scale
 E.push(`
 <div class="abs" style="right:80px;left:80px;top:220px;display:flex;justify-content:space-between;align-items:flex-start">
   <div><div class="kick"><span class="ar">احفظها</span><span class="ln"></span><span class="en">Save this</span></div>
-  <div class="big" style="margin-top:32px">سلّم الأحجام</div></div>
+  <div class="big" style="margin-top:32px">القاعدة الذهبية</div></div>
   <svg width="56" height="72" viewBox="0 0 56 72" style="margin-top:8px"><path d="M4 4h48v64L28 50 4 68z" fill="none" stroke="${GOLD}" stroke-width="5" stroke-linejoin="round"/></svg>
 </div>
-<div class="abs" style="right:80px;left:80px;top:540px">
-  ${[['100%', 'العنوان', 120, '#F2F0EB'], ['50%', 'المنتج والسطر الثاني', 60, '#D8D5CF'], ['30%', 'التفاصيل والزر', 36, '#B5B2AC']].map(x => `
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-top:1.5px solid #2C2C2C">
-    <div style="font:700 ${x[2]}px/${Math.round(x[2] * 1.3)}px ${AR};color:${x[3]}">${x[1]}</div>
-    <div style="font:600 40px/56px Inter;color:#8A8A8A;direction:ltr">${x[0]}</div></div>`).join('')}
+<div class="abs" style="right:80px;left:80px;top:500px">
+  ${[['× 1.618', 'العنوان', '26px', 110, '#F2F0EB'], ['الأساس', 'نص الفقرة', '16px', 68, '#D8D5CF'], ['÷ 1.618', 'التسميات والهوامش', '10px', 42, '#B5B2AC']].map(x => `
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-top:1.5px solid #2C2C2C">
+    <div style="font:700 ${x[3]}px/${Math.round(x[3] * 1.3)}px ${AR};color:${x[4]}">${x[1]}</div>
+    <div style="text-align:left;direction:ltr"><div style="font:600 40px/52px Inter;color:#F2F0EB">${x[2]}</div><div style="font:500 26px/34px Inter;color:#8A8A8A">${x[0]}</div></div></div>`).join('')}
   <div style="border-top:1.5px solid #2C2C2C"></div>
-  <div class="sub" style="margin-top:36px;font-size:34px;line-height:52px">كل مستوى تقريباً نص اللي فوقه.<br>إذا مستويين صاروا نفس الحجم، العين تضيع.</div>
+  <div class="sub" style="margin-top:36px;font-size:34px;line-height:52px">النص الأساسي <span class="n">16px</span>؟ العنوان <span class="n">16 × 1.618 ≈ 26px</span><br>والأصغر منه: اقسم على <span class="n">1.618</span></div>
 </div>`);
 // 5 CTA: recap in three columns + comment question
 function finalSlide(q, cols, brand) {
@@ -118,7 +118,7 @@ function finalSlide(q, cols, brand) {
   <div style="text-align:left"><div style="font:600 32px/40px Inter;direction:ltr">@nori.dsgn</div><div style="font:400 24px/34px ${AR};color:#8A8A8A">«${brand}» براند وهمي للتوضيح</div></div>
 </div>`;
 }
-E.push(finalSlide('شنو أول شي شفته<br>بآخر بوست لك؟', [['الحجم', 'أهم شي أكبر شي'], ['المسار', 'من فوق يمين لتحت يسار'], ['السلّم', '100 · 50 · 30', 1]], 'رَف'));
+E.push(finalSlide('شنو أول شي شفته<br>بآخر بوست لك؟', [['الحجم', 'أهم شي أكبر شي'], ['المسار', 'من فوق يمين لتحت يسار'], ['الذهبية', '× 1.618', 1]], 'رَف'));
 
 /* ---------- F · «لُجين» (fictional silver jewellery) — white space ---------- */
 const NV = '#1E2A44', SV = '#D9DCE1', BL = '#E8B4A8', IV = '#F7F3EE';
