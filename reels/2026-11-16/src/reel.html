@@ -70,7 +70,7 @@ function renderHead(s,t){let h='';
 }
 // flyer elements: A = flat (everything same size), B = ordered
 const E={
- logo:{A:{x:330,y:60,w:250,h:150,fs:46},B:{x:40,y:36,w:150,h:50,fs:30}},
+ logo:{A:{x:330,y:60,w:250,h:150,fs:46},B:{x:430,y:36,w:150,h:50,fs:30}},
  head:{A:{x:40,y:60,w:270,h:150,fs:44},B:{x:40,y:96,w:540,h:200,fs:80}},
  plate:{A:{x:330,y:300,w:250,h:250},B:{x:155,y:310,w:310,h:310}},
  offer:{A:{x:40,y:300,w:270,h:250,fs:42},B:{x:40,y:640,w:540,h:40,fs:24}},
@@ -101,10 +101,10 @@ function flyer(t){
  const gl=cl((t-T(42)+0.05)/0.25)*cl(1-(t-T(42)-0.9)/1.2);
  let h='';
  h+=`<div style="position:absolute;left:${bt.x-70}px;top:${bt.y-70}px;width:${bt.w+140}px;height:${bt.h+140}px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,164,92,${.85*gl}),rgba(201,164,92,0));transform:scale(${.7+.5*gl})"></div>`;
- h+=box(lo,`<div style="font:700 ${lo.fs}px Plex;color:${RED}">سُفرة</div>`,`border:${pL<1?2:0}px dashed rgba(142,44,30,${.35*(1-pL)})`);
- h+=box(hd,`<div style="font:700 ${hd.fs}px/1.2 Plex;color:${INK}">أكل البيت<br>يوصلك حار</div>`,`justify-content:${pH>.5?'flex-end':'center'};text-align:${pH>.5?'right':'center'}`);
+ h+=box(lo,`<div style="font:700 ${lo.fs}px Plex;color:${RED}">سُفرة</div>`,`justify-content:${pL>.5?'flex-start':'center'};border:${pL<1?2:0}px dashed rgba(142,44,30,${.35*(1-pL)})`);
+ h+=box(hd,`<div style="font:700 ${hd.fs}px/1.2 Plex;color:${INK}">أكل البيت<br>يوصلك حار</div>`,`justify-content:${pH>.5?'flex-start':'center'};text-align:${pH>.5?'right':'center'}`);
  h+=box(pl,plate(pl.w));
- h+=box(of,`<div style="font:500 ${of.fs}px/1.35 Plex;color:${INK}">طبخ يومي<br>من <span style="font-family:InterL">12</span> الظهر</div>`.replace('<br>',pO>.5?' ':'<br>'),`justify-content:${pO>.5?'flex-end':'center'}`);
+ h+=box(of,`<div style="font:500 ${of.fs}px/1.35 Plex;color:${INK}">طبخ يومي<br>من <span style="font-family:InterL">12</span> الظهر</div>`.replace('<br>',pO>.5?' ':'<br>'),`justify-content:${pO>.5?'flex-end':'center'};text-align:${pO>.5?'left':'center'}`);
  h+=box(bt,`<div style="font:700 ${bt.fs}px Plex;color:${CRM}">اطلب الحين</div>`,`background:${RED};border-radius:${lerp(18,34,pB)}px`);
  // eye paths (svg)
  let sv='<svg viewBox="0 0 620 830">';
@@ -124,7 +124,7 @@ function flyer(t){
  // numbers
  const n=(v,x,y,tt)=>{const p=ease((t-tt)/0.25);const pop=1+0.25*Math.sin(cl((t-tt)/0.35)*Math.PI);
   return `<div class="num" style="left:${x}px;top:${y}px;opacity:${p};transform:scale(${p*pop})">${v}</div>`};
- h+=n(1,hd.x+hd.w-40,hd.y-38,T(22));
+ h+=n(1,hd.x+20,hd.y+hd.h/2-31,T(22));
  h+=n(2,pl.x+pl.w-46,pl.y-14,T(25));
  h+=n(3,bt.x+bt.w-30,bt.y-34,T(33));
  // ÷1.6 tag

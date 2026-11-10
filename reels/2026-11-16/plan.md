@@ -59,3 +59,4 @@ Make one thing big. Let the eye do the rest.
 - `src/reel.html` + `node render.js full 29.34` → frames; SFX: pop_soft on 1/2/3, whoosh_soft on the reorder and the outro, sparkle on «لهناك».
 - Cover `cover.png` designed separately (not a frame).
 - Scorer on the video: **75/100** — hook 20 · watch 21 · sends 13 · saves 13 · CTA 8. Verdict: good, small edit. Lift: cut to ~25 s.
+- v2 (NORI, 10 Nov 16:03): headline and logo right-aligned; line under the product aligned with the button (left); number 1 moved off the logo.
