@@ -4,3 +4,5 @@ package-lock.json
 layers/
 out/
 slides.html
+mockups/out/
+mockups/designs.html
