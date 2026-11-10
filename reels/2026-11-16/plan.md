@@ -52,3 +52,10 @@ Calm modern beat ~100 BPM, ducked ≈ −22 dB. A soft "pop" on each number 1-2-
 Make one thing big. Let the eye do the rest.
 
 #تصميم #تصميم_جرافيك #سوشال_ميديا #تسويق #انستقرام #graphicdesign #visualhierarchy
+
+## Build (10 Nov 2026)
+- NORI's voice (`src/vo.wav`, 40 s) → pauses tightened to 0.32–0.45 s → `src/voice-tight.wav` (29.3 s), `src/cut.py` holds the cut map; word times from faster-whisper (`src/words.json`).
+- He followed the script; differences kept on screen as he said them: «رتّبه 3 مستويات», «… على 1.6 تقريباً», «تصميمك الياي».
+- `src/reel.html` + `node render.js full 29.34` → frames; SFX: pop_soft on 1/2/3, whoosh_soft on the reorder and the outro, sparkle on «لهناك».
+- Cover `cover.png` designed separately (not a frame).
+- Scorer on the video: **75/100** — hook 20 · watch 21 · sends 13 · saves 13 · CTA 8. Verdict: good, small edit. Lift: cut to ~25 s.

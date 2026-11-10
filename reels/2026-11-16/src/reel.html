@@ -1,0 +1,162 @@
+<!doctype html><html lang="ar"><head><meta charset="utf-8"><style>
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-Bold.ttf);font-weight:700}
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-SemiBold.ttf);font-weight:600}
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-Medium.ttf);font-weight:500}
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-Regular.ttf);font-weight:400}
+@font-face{font-family:InterL;src:url(/home/claude/nori-brand/fonts/Inter-SemiBold.otf);font-weight:600}
+@font-face{font-family:InterL;src:url(/home/claude/nori-brand/fonts/Inter-Regular.otf);font-weight:400}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:#0B0B0B;overflow:hidden}
+#s{position:relative;width:1080px;height:1920px;background:#0B0B0B;color:#F2F0EB;font-family:Plex;direction:rtl;overflow:hidden}
+#bgwrap{position:absolute;left:-300px;right:-300px;top:380px;height:1500px;perspective:1400px;filter:blur(8px) brightness(.26) saturate(.75)}
+#wall{position:absolute;left:0;top:0;width:1680px;height:1700px;transform-origin:50% 0;display:grid;grid-template-columns:repeat(7,1fr);gap:26px}
+#wall i{display:block;border-radius:18px;height:300px}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 50% 55%,rgba(11,11,11,0) 0%,rgba(11,11,11,.55) 60%,rgba(11,11,11,.95) 100%),linear-gradient(#0B0B0B 0%,rgba(11,11,11,.9) 17%,rgba(11,11,11,0) 32%,rgba(11,11,11,0) 82%,#0B0B0B 100%)}
+#label{position:absolute;left:0;right:0;top:250px;text-align:center;font:400 25px/30px InterL;letter-spacing:.32em;color:#8A8A8A;direction:ltr}
+#head{position:absolute;left:50px;right:50px;top:310px;text-align:center;font:700 64px/96px Plex}
+.w{display:inline-block;white-space:pre}
+.g{color:#C9A45C}
+#stage{position:absolute;left:0;right:0;top:560px;height:1100px;perspective:1700px}
+#fly{position:absolute;left:230px;top:40px;width:620px;height:830px;border-radius:22px;background:#FBF3E4;overflow:hidden;box-shadow:0 60px 120px rgba(0,0,0,.65);transform-origin:50% 50%}
+.el{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center}
+#fly svg{position:absolute;inset:0;width:620px;height:830px;overflow:visible}
+.num{position:absolute;width:62px;height:62px;border-radius:50%;background:#0E0E0E;color:#F2F0EB;font:600 32px/62px InterL;text-align:center;box-shadow:0 10px 24px rgba(0,0,0,.4);border:2px solid #F2F0EB}
+#rows{position:absolute;left:0;right:0;top:1520px;display:flex;justify-content:center;gap:54px;font:600 34px Plex;direction:rtl}
+#rows div{display:flex;align-items:center;gap:14px;border-bottom:2px solid #3a3a3a;padding-bottom:12px}
+#rows b{font:600 30px InterL;color:#8A8A8A}
+#mark{position:absolute;left:50%;top:1770px;width:62px;margin-left:-31px;opacity:.85}
+.sp{position:absolute;border-radius:50%;background:#E3C27A;box-shadow:0 0 12px 3px rgba(201,164,92,.7)}
+#cap{position:absolute;left:0;right:0;top:1700px;text-align:center;font:400 22px Plex;color:#6f6f6f}
+</style></head><body><div id="s">
+<div id="bgwrap"><div id="wall"></div></div><div id="vig"></div>
+<div id="sparks"></div>
+<div id="label"></div><div id="head"></div>
+<div id="stage"><div id="fly"></div></div>
+<div id="rows"></div>
+<div id="cap">«سُفرة» براند وهمي سويته للتوضيح</div>
+<img id="mark" src="mark.svg">
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const SAF='#E9A23B',RED='#8E2C1E',CRM='#FBF3E4',INK='#2A1810';
+const cols=['#3a2a4a','#4a2a2a','#2a3a4a','#4a3a20','#203a30','#3a3a3a','#4a2040'];
+$('wall').innerHTML=Array.from({length:42},(_,i)=>`<i style="background:${cols[(i*3)%7]}"></i>`).join('');
+const W=[["أول", 0.25], ["شي", 1.07], ["شفته", 1.27], ["بهالإعلان", 1.55], ["مو", 2.19], ["اللي", 2.35], ["يبيه", 2.59], ["صاحبه", 2.79], ["لأن", 3.81], ["كل", 3.95], ["شي", 4.17], ["بنفس", 4.41], ["الحجم", 4.75], ["والعين", 5.25], ["ما", 5.83], ["تعرف", 6.01], ["من وين", 6.33], ["تبدأ", 6.83], ["رتّبه", 7.8], ["3", 8.0], ["مستويات", 8.54], ["العنوان", 9.16], ["أكبر", 9.92], ["شي", 10.32], ["بعده", 11.13], ["المنتج", 11.29], ["أصغر", 12.05], ["اقسم", 13.0], ["حجم", 13.36], ["العنوان", 13.7], ["على", 14.18], ["1.6", 14.4], ["تقريباً", 15.28], ["والزر", 16.48], ["آخر", 16.88], ["شي", 17.3], ["تحت", 17.56], ["على اليسار", 17.88], ["لأن", 18.58], ["العين", 18.96], ["بالعربي", 19.28], ["تنزل", 19.62], ["لهناك", 20.12], ["كبّر", 21.11], ["الأهم", 21.5], ["وصغّر", 21.88], ["الباقي", 22.48], ["والعين", 22.94], ["تمشي", 23.46], ["بالترتيب", 23.8], ["احفظ", 25.08], ["الريل", 25.54], ["وطبقه", 25.98], ["على", 26.54], ["تصميمك", 26.74], ["الياي", 27.18]];
+const T=i=>W[i][1];
+const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
+const eio=x=>x<0?0:x>1?1:x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const lerp=(a,b,p)=>a+(b-a)*p;
+// scenes: word index ranges, label, line-break-after index, gold indexes
+const S=[
+ {a:0,b:7,lab:'WHERE DOES THE EYE GO?',br:[3],g:[7],end:3.3},
+ {a:8,b:17,lab:'THE PROBLEM',br:[12],g:[16],end:7.3},
+ {a:18,b:23,lab:'LEVEL 01 · HEADLINE',br:[20],g:[19],end:10.7},
+ {a:24,b:32,lab:'LEVEL 02 · PRODUCT',br:[26],g:[31],end:16.0},
+ {a:33,b:42,lab:'LEVEL 03 · BUTTON',br:[37],g:[36,37],end:20.7},
+ {a:43,b:49,lab:'THE RULE',br:[46],g:[49],end:24.6},
+ {a:50,b:55,lab:'SAVE IT',br:[51],g:[50],end:99},
+];
+const punct={1:'',3:'…',7:'.',12:'،',17:'.',20:':',23:'.',26:':',32:'',36:'،',37:'…',42:'.',44:'،',46:'،',49:'.',51:'،',55:'.'};
+function sceneAt(t){let k=0;for(let i=0;i<S.length;i++){if(t>=T(S[i].a)-0.3)k=i}return k}
+function renderHead(s,t){let h='';
+ for(let i=s.a;i<=s.b;i++){const p=ease((t-(T(i)-0.06))/0.22);
+  let txt=W[i][0]+(punct[i]||'');
+  if(W[i][0]==='3'||W[i][0]==='1.6') txt=`<span style="font-family:InterL">${W[i][0]}</span>`+(punct[i]||'');
+  h+=`<span class="w${s.g.includes(i)?' g':''}" style="opacity:${p};filter:blur(${(1-p)*10}px);transform:translateY(${(1-p)*18}px)">${txt}</span>`;
+  h+=s.br.includes(i)?'<br>':(i<s.b?' ':'');}
+ $('head').innerHTML=h;
+ $('head').style.fontSize=(s.b-s.a>8?60:66)+'px';
+}
+// flyer elements: A = flat (everything same size), B = ordered
+const E={
+ logo:{A:{x:330,y:60,w:250,h:150,fs:46},B:{x:40,y:36,w:150,h:50,fs:30}},
+ head:{A:{x:40,y:60,w:270,h:150,fs:44},B:{x:40,y:96,w:540,h:200,fs:80}},
+ plate:{A:{x:330,y:300,w:250,h:250},B:{x:155,y:310,w:310,h:310}},
+ offer:{A:{x:40,y:300,w:270,h:250,fs:42},B:{x:40,y:640,w:540,h:40,fs:24}},
+ btn:{A:{x:40,y:620,w:540,h:150,fs:44},B:{x:40,y:720,w:230,h:68,fs:27}},
+};
+function st(k,p){const a=E[k].A,b=E[k].B;const o={};for(const q in a)o[q]=lerp(a[q],b[q],p);return o}
+function plate(w){const k=w/310;return `<div style="position:relative;width:${w}px;height:${w}px">
+ <div style="position:absolute;inset:0;border-radius:50%;background:#fff;box-shadow:0 ${14*k}px ${30*k}px rgba(42,24,16,.25)"></div>
+ <div style="position:absolute;inset:${28*k}px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#F4C46A,${SAF} 55%,#C77A1E)"></div>
+ <div style="position:absolute;left:${80*k}px;top:${90*k}px;width:${70*k}px;height:${48*k}px;border-radius:40%;background:${RED};transform:rotate(-18deg)"></div>
+ <div style="position:absolute;left:${165*k}px;top:${150*k}px;width:${76*k}px;height:${52*k}px;border-radius:40%;background:#A63A26;transform:rotate(22deg)"></div>
+ <div style="position:absolute;left:${105*k}px;top:${185*k}px;width:${46*k}px;height:${34*k}px;border-radius:40%;background:#6B8E3A;transform:rotate(10deg)"></div>
+ <div style="position:absolute;left:${190*k}px;top:${85*k}px;width:${30*k}px;height:${22*k}px;border-radius:40%;background:#6B8E3A"></div></div>`}
+function box(o,inner,extra=''){return `<div class="el" style="left:${o.x}px;top:${o.y}px;width:${o.w}px;height:${o.h}px;${extra}">${inner}</div>`}
+const pts=(arr)=>arr.map(p=>p.join(',')).join(' ');
+// path helpers
+function pathPoly(P,p){ // returns partial polyline + head point
+ let L=[0];for(let i=1;i<P.length;i++)L.push(L[i-1]+Math.hypot(P[i][0]-P[i-1][0],P[i][1]-P[i-1][1]));
+ const tot=L[L.length-1],d=p*tot;const out=[P[0]];let hd=P[0];
+ for(let i=1;i<P.length;i++){if(L[i]<=d){out.push(P[i]);hd=P[i]}else{const f=(d-L[i-1])/(L[i]-L[i-1]);hd=[lerp(P[i-1][0],P[i][0],f),lerp(P[i-1][1],P[i][1],f)];out.push(hd);break}}
+ return {d:pts(out),hd}}
+const RANDP=[[455,135],[175,425],[455,425],[175,135],[310,695],[455,135],[175,425]];
+const GOODP=[[560,190],[310,465],[155,754]];
+function flyer(t){
+ const pH=eio((t-T(22))/0.55), pP=eio((t-T(25))/0.6), pO=eio((t-T(25)-0.2)/0.6), pB=eio((t-T(33))/0.6), pL=eio((t-T(22)-0.15)/0.6);
+ const lo=st('logo',pL),hd=st('head',pH),pl=st('plate',pP),of=st('offer',pO),bt=st('btn',pB);
+ // gold glow behind button at «لهناك»
+ const gl=cl((t-T(42)+0.05)/0.25)*cl(1-(t-T(42)-0.9)/1.2);
+ let h='';
+ h+=`<div style="position:absolute;left:${bt.x-70}px;top:${bt.y-70}px;width:${bt.w+140}px;height:${bt.h+140}px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,164,92,${.85*gl}),rgba(201,164,92,0));transform:scale(${.7+.5*gl})"></div>`;
+ h+=box(lo,`<div style="font:700 ${lo.fs}px Plex;color:${RED}">سُفرة</div>`,`border:${pL<1?2:0}px dashed rgba(142,44,30,${.35*(1-pL)})`);
+ h+=box(hd,`<div style="font:700 ${hd.fs}px/1.2 Plex;color:${INK}">أكل البيت<br>يوصلك حار</div>`,`justify-content:${pH>.5?'flex-end':'center'};text-align:${pH>.5?'right':'center'}`);
+ h+=box(pl,plate(pl.w));
+ h+=box(of,`<div style="font:500 ${of.fs}px/1.35 Plex;color:${INK}">طبخ يومي<br>من <span style="font-family:InterL">12</span> الظهر</div>`.replace('<br>',pO>.5?' ':'<br>'),`justify-content:${pO>.5?'flex-end':'center'}`);
+ h+=box(bt,`<div style="font:700 ${bt.fs}px Plex;color:${CRM}">اطلب الحين</div>`,`background:${RED};border-radius:${lerp(18,34,pB)}px`);
+ // eye paths (svg)
+ let sv='<svg viewBox="0 0 620 830">';
+ const s1=cl((t-0.2)/2.6), f1=1-cl((t-T(15))/0.4);
+ if(f1>0&&t<7.6){const r=pathPoly(RANDP,s1);
+  sv+=`<polyline points="${r.d}" fill="none" stroke="${INK}" stroke-width="5" stroke-dasharray="2 14" stroke-linecap="round" opacity="${.8*f1}"/>`;
+  sv+=`<circle cx="${r.hd[0]}" cy="${r.hd[1]}" r="18" fill="${INK}" opacity="${f1}"/><circle cx="${r.hd[0]}" cy="${r.hd[1]}" r="7" fill="${CRM}" opacity="${f1}"/>`;
+  // question marks wobble while lost
+  if(t>T(13)) sv+=`<text x="${r.hd[0]+24}" y="${r.hd[1]-18}" font-family="InterL" font-size="40" font-weight="600" fill="${RED}" opacity="${f1*cl((t-T(13))/0.3)}">?</text>`;
+ }
+ const s2=eio((t-T(39))/(T(42)-T(39)+0.1));
+ if(t>T(39)-0.1&&t<24.9){const r=pathPoly(GOODP,s2);const fo=1-cl((t-24.3)/0.5);
+  sv+=`<polyline points="${r.d}" fill="none" stroke="${INK}" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round" opacity="${.85*fo}"/>`;
+  sv+=`<circle cx="${r.hd[0]}" cy="${r.hd[1]}" r="18" fill="${INK}" opacity="${fo}"/><circle cx="${r.hd[0]}" cy="${r.hd[1]}" r="7" fill="${CRM}" opacity="${fo}"/>`;}
+ sv+='</svg>';
+ h+=sv;
+ // numbers
+ const n=(v,x,y,tt)=>{const p=ease((t-tt)/0.25);const pop=1+0.25*Math.sin(cl((t-tt)/0.35)*Math.PI);
+  return `<div class="num" style="left:${x}px;top:${y}px;opacity:${p};transform:scale(${p*pop})">${v}</div>`};
+ h+=n(1,hd.x+hd.w-40,hd.y-38,T(22));
+ h+=n(2,pl.x+pl.w-46,pl.y-14,T(25));
+ h+=n(3,bt.x+bt.w-30,bt.y-34,T(33));
+ // ÷1.6 tag
+ const tg=ease((t-T(31))/0.3)*(1-cl((t-21)/0.4));
+ h+=`<div style="position:absolute;left:${pl.x-150}px;top:${pl.y+pl.w/2-34}px;opacity:${tg};transform:translateX(${(1-tg)*20}px);background:#0E0E0E;color:#F2F0EB;border-radius:14px;padding:8px 18px;font:600 36px InterL;direction:ltr">÷ 1.6</div>`;
+ $('fly').innerHTML=h;
+ // 3D tilt / camera
+ const face=eio((t-T(43))/1.0);
+ const ry=lerp(-16+Math.sin(t*.7)*2.5,0,face), rx=lerp(7,0,face);
+ const out=eio((t-T(50)+0.2)/0.7);
+ const sc=lerp(lerp(.94,1.0,face),.78,out)*(1+0.03*cl((t-T(43))/3.5)), ty=lerp(0,-40,face)+lerp(0,90,out);
+ $('fly').style.transform=`translateY(${ty}px) scale(${sc}) rotateY(${ry}deg) rotateX(${rx}deg)`;
+ $('fly').style.opacity=lerp(1,.45,out);
+ $('fly').style.filter=`blur(${out*3}px)`;
+ // intro: moving already at frame 0
+ const intro=ease(t/0.35);
+ $('stage').style.opacity=intro;
+}
+function rows(t){const p=k=>ease((t-T(43)-0.25-k*0.28)/0.35);const out=1-eio((t-T(50)+0.2)/0.5);
+ if(t<T(43)){$('rows').innerHTML='';return}
+ const r=[['1','العنوان'],['2','المنتج'],['3','الزر']];
+ $('rows').innerHTML=r.map((x,k)=>`<div style="opacity:${p(k)*out};transform:translateY(${(1-p(k))*20}px)"><b>${x[0]}</b>${x[1]}</div>`).join('');}
+function sparks(t){let h='';for(let i=0;i<26;i++){const ph=(t*0.12+i*0.137)%1;const x=(i*389)%1080, y=1650-ph*1250;const o=Math.sin(ph*Math.PI)*.8;h+=`<i class="sp" style="left:${x}px;top:${y}px;width:${3+(i%3)}px;height:${3+(i%3)}px;opacity:${o}"></i>`}$('sparks').innerHTML=h}
+function frame(t){
+ const k=sceneAt(t), s=S[k];
+ $('label').textContent=s.lab;
+ renderHead(s,t); flyer(t); rows(t); sparks(t);
+ $('wall').style.transform=`rotateX(52deg) translateY(${-t*14}px)`;
+ const nx=S[k+1]; let o=1; if(nx&&t>T(nx.a)-0.5) o=cl((T(nx.a)-0.3-t)/0.2);
+ const fi=k===0?1:cl((t-(T(s.a)-0.3))/0.22);
+ $('head').style.opacity=Math.min(o,fi); $('label').style.opacity=Math.min(o,fi);
+ $('cap').style.opacity=t>T(50)?0.0+1:1;
+}
+window.frame=frame;
+</script></body></html>
