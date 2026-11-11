@@ -60,3 +60,7 @@ From Claude to Figma in 3 steps.
 ## Rebuild
 
 `src/`: `timeline.py` (cut list + voice) → `captions.py` (words from `asr.json` → `data.js`) → `shoot.py all <dir>` (transparent overlay frames from `reel.html`) → `mix.sh` → `base.py all | ffmpeg` (card + background, overlay, audio). The raw clips (IMG_2317…2328, 830 MB) are not in the repo; `base.py` reads tone-mapped copies from a local `mez/` folder.
+
+## «برومت» lead file (11 Nov)
+
+`guide/nori-claude-figma-guide.pdf` (13 pages, phone-sized, dark NORI identity) + `guide/prompt-claude-figma.txt` (copy-friendly text: Arabic copied out of a PDF can break). Built from NORI's own guide (`guide/source-mishref-prompts.pdf`): the editable template prompt + the SVG export add-on, without the Mishref-specific prompt; steps, fill-in table (fictional «دلّة»), Figma expectations, troubleshooting, checklist. NORI shares it through a Google Drive link in the ManyChat «برومت» reply. Rebuild: `python3 build.py && python3 render.py`.
