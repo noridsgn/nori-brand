@@ -1,6 +1,6 @@
 # Reel 1 · Sun 15 Nov 2026 · صورة منتجك بالتلفون
 
-> **Scored 11 Nov 2026: 74/100 → after edits ≈ 81/100.** Hook 21/25 · Retention 22/25 · Sends 15/20 · Value 12/15 · DM 4/10. Edits applied (NORI approved): line 6 stronger contrast, line 7 single DM ask «مشروع» (ManyChat), caption English line removed and CTA matched.
+> **Scored 11 Nov 2026: 74/100 → after edits ≈ 76/100.** Hook 21/25 · Retention 22/25 · Sends 15/20 · Value 12/15 · DM 4/10. Edits applied (NORI approved): line 6 stronger contrast, line 7 kept as save CTA by NORI's choice (no DM ask), caption English line removed and CTA matched.
 
 1080×1920, ~24.5 s, dark NORI reel style (CONTENT-RULES rules 9, 11, 12). New idea (product photos with a phone); no carousel shares it. Fictional brand «وَرد» (candles), colours: sage #8FA68E, cream #F4EDE1, clay #B76E4B.
 
@@ -17,7 +17,7 @@ First frame already busy: a bad «وَرد» candle photo (flash glare, hard bla
 | 4 | 9.5–13.5 s | الثانية: خلفية سادة. ورقة بيضا أو لوح، مو طاولة المطبخ. |
 | 5 | 13.5–18.0 s | الثالثة: نزّل التلفون لمستوى المنتج، لا تصوّر من فوق. |
 | 6 | 18.0–21.5 s | نفس الشمعة، نفس التلفون… بس شوف الفرق. |
-| 7 | 21.5–24.5 s | تبي أشوف صورة منتجك؟ أرسل لي كلمة «مشروع». |
+| 7 | 21.5–24.5 s | احفظ الريل، وجربه على صورة منتجك. |
 
 ## Storyboard
 
@@ -29,7 +29,7 @@ First frame already busy: a bad «وَرد» candle photo (flash glare, hard bla
 | 4 | 9.5–13.5 | row 02 «خلفية سادة»: messy counter slides out, cream sheet slides in | slide on «سادة» | — |
 | 5 | 13.5–18 | row 03 «بمستوى المنتج»: camera icon drops from top view to eye level, candle becomes a hero shot | tilt animation on «نزّل» | — |
 | 6 | 18–21.5 | before / after side by side, tilted, «نفس الشمعة… شوف الفرق» | after card pushes forward | the word «الفرق» |
-| 7 | 21.5–24.5 | «أرسل: مشروع» + NORI mark bottom centre | hold 1 s | — |
+| 7 | 21.5–24.5 | «احفظ الريل» + NORI mark bottom centre | hold 1 s | — |
 
 Gold: one gold word per scene (shots 1 and 6), sparks stay BEHIND the candle (shot 3). The three rows stay written and aligned (label + line), never floating chips.
 
@@ -43,7 +43,7 @@ Warm, light lo-fi ~90 BPM, ducked ≈ −22 dB under the voice. SFX from sfx/: s
 2. خلفية سادة
 3. التلفون بمستوى المنتج
 
-جربها اليوم، وتبي أشوف صورة منتجك؟ أرسل لي كلمة «مشروع» بالدايركت.
+احفظ الريل، وجربه على صورة منتجك.
 
 «وَرد» براند وهمي سويته للتوضيح.
 
