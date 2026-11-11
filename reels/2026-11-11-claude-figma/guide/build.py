@@ -104,7 +104,7 @@ P.append(page(11,ch("06","بفيجما: شنو تتوقع؟")+'''
 chk=[("الشاشة","393×852، بدون قص أو تداخل"),("الهوية","الألوان مثل ما كتبتها بالضبط"),("الهيدر","الشعار يمين، والجرس يسار، والترحيب صح"),("البطاقة","الرقم يمين، والزر يسار"),("الخدمات","6 دوائر بأيقونات بيضاء، وترتيبها من اليمين"),("العروض","الثانوي يمين، والأساسي يسار"),("التنقل","4 عناصر، والأيمن هو النشط"),("التفاعل","البحث والأزرار والتنقل تشتغل بالمعاينة"),("SVG","كامل، وطبقاته منفصلة، وينلصق بفيجما"),("الخط العربي","بدون مربعات، ولا حروف مقلوبة أو مقطوعة")]
 P.append(page(12,ch("07","قبل لا تعتمد التصميم","مرّ على هالقائمة بكلود، وبعدها بفيجما.")+'<ul class="chk">'+''.join(f'<li><i></i><b>{a}</b><span>{fx(b)}</span></li>' for a,b in chk)+'</ul>'))
 # 13 end
-P.append(f'''<section class="pg cover end"><h1 class="e">جرّبتها؟</h1><p class="lead">نزّل تصميمك ستوري ومنشن<br><bdi class="h">@nori.dsgn</bdi><br>أبي أشوف شنو طلع معاك.</p><img class="logo" src="logo.svg"><p class="tag">النتيجة تتكلم · <bdi>Results speak.</bdi></p></section>''')
+P.append(f'''<section class="pg cover end"><h1 class="e">يلا، جرّبها</h1><p class="lead">احفظ الملف، وارجع له<br>كل ما تبي تسوي شاشة جديدة.</p><img class="logo" src="logo.svg"><p class="tag"><bdi>@nori.dsgn</bdi> · النتيجة تتكلم</p></section>''')
 
 CSS=open("style.css").read().replace("FONTS",F)
 open("guide.html","w").write(f'<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>واجهة تطبيق بـ 3 خطوات · نوري</title><style>{CSS}</style></head><body>{"".join(P)}</body></html>')
