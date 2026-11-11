@@ -48,3 +48,8 @@ Warm, light lo-fi ~90 BPM, ducked ≈ −22 dB under the voice. SFX from sfx/: s
 «وَرد» براند وهمي سويته للتوضيح.
 
 #تصوير_منتجات #تصوير_تلفون #تسويق #مشاريع_صغيرة #سوشال_ميديا #productphotography #smallbusiness
+
+## As recorded (11 Nov 2026) — on-screen text follows this, not the script
+دايماً نسأل: المنتج جزء من التصميم… بس شلون نصوّره؟ · ما تحتاج كاميرا. 3 تعديلات بتلفونك بس، ويطلّع لك المنتج. · الأولى: طفّ الفلاش، وحط المنتج يم الدريشة، أو يم لايت يكون إضاءته زينة. · الثانية: خلفية سادة، ورقة بيضا أو لوح أبيض، مو طاولة مطبخ. · الثالثة: نزّل التلفون لمستوى المنتج، لا تصوّر من فوق، أو اختار زاوية زينة. · نفس الشمعة ونفس التلفون… بس شوف الفرق. · احفظ الريل وجرّب على صورة منتجك.
+
+Video: reel-product-photo.mp4 (36.5 s, pauses tightened to 0.42 s, SFX from sfx/, no music) · cover.png designed separately · source in src/ (cut.py → voice-tight.wav, asr words, reel.html, render.js, mix.py). Video score (rubric): ≈74 — hook 18, watch 21, sends 15, value 13, CTA 7. Waiting for NORI's approval before Metricool.

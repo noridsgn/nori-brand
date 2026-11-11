@@ -1,0 +1,127 @@
+<!doctype html><html lang="ar"><head><meta charset="utf-8"><style>
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-Bold.ttf);font-weight:700}
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-SemiBold.ttf);font-weight:600}
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-Medium.ttf);font-weight:500}
+@font-face{font-family:Plex;src:url(/home/claude/nori-brand/fonts/IBMPlexSansArabic-Regular.ttf);font-weight:400}
+@font-face{font-family:InterL;src:url(/home/claude/nori-brand/fonts/Inter-SemiBold.otf);font-weight:600}
+@font-face{font-family:InterL;src:url(/home/claude/nori-brand/fonts/Inter-Regular.otf);font-weight:400}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:#0B0B0B;overflow:hidden}
+#s{position:relative;width:1080px;height:1920px;background:#0B0B0B;color:#F2F0EB;font-family:Plex;direction:rtl;overflow:hidden}
+#bgwrap{position:absolute;left:-300px;right:-300px;top:380px;height:1500px;perspective:1400px;filter:blur(8px) brightness(.26) saturate(.75)}
+#wall{position:absolute;left:0;top:0;width:1680px;height:1700px;transform-origin:50% 0;display:grid;grid-template-columns:repeat(7,1fr);gap:26px}
+#wall i{display:block;border-radius:18px;height:300px}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 50% 55%,rgba(11,11,11,0) 0%,rgba(11,11,11,.55) 60%,rgba(11,11,11,.95) 100%),linear-gradient(#0B0B0B 0%,rgba(11,11,11,.9) 15%,rgba(11,11,11,0) 30%,rgba(11,11,11,0) 82%,#0B0B0B 100%)}
+#label{position:absolute;left:0;right:0;top:215px;text-align:center;font:400 25px/30px InterL;letter-spacing:.32em;color:#8A8A8A;direction:ltr}
+#head{position:absolute;left:60px;right:60px;top:270px;text-align:center;font:700 60px/88px Plex}
+.w{display:inline-block;white-space:pre}
+.g{color:#C9A45C}
+#stage{position:absolute;left:0;right:0;top:590px;height:1000px;perspective:1800px}
+.phone{position:absolute;left:310px;top:20px;width:460px;height:900px;border-radius:64px;background:#161616;box-shadow:0 60px 120px rgba(0,0,0,.7),inset 0 0 0 3px #2c2c2c;transform-origin:50% 50%}
+.scr{position:absolute;left:16px;top:16px;width:428px;height:868px;border-radius:50px;overflow:hidden;background:#222}
+.tag{position:absolute;top:-62px;left:0;right:0;text-align:center;font:600 24px InterL;letter-spacing:.3em;color:#8A8A8A;direction:ltr}
+#rows{position:absolute;left:0;right:0;top:1560px;display:flex;justify-content:center;gap:46px;font:600 34px Plex;direction:rtl}
+#rows div{display:flex;align-items:center;gap:14px;border-bottom:2px solid #3a3a3a;padding-bottom:12px;min-width:200px}
+#rows b{font:600 28px InterL;color:#8A8A8A}
+#mark{position:absolute;left:50%;top:1775px;width:62px;margin-left:-31px;opacity:.85}
+.sp{position:absolute;border-radius:50%;background:#E3C27A;box-shadow:0 0 12px 3px rgba(201,164,92,.7)}
+#cap{position:absolute;left:0;right:0;top:1710px;text-align:center;font:400 22px Plex;color:#6f6f6f}
+</style><style>
+#ct{position:absolute;left:60px;right:60px;top:300px;text-align:center;font:700 112px/140px Plex}
+#cs{position:absolute;left:0;right:0;top:600px;text-align:center;font:500 44px Plex;color:#8A8A8A}
+</style></head><body><div id="s">
+<div id="bgwrap"><div id="wall"></div></div><div id="vig"></div>
+<div id="label" style="top:240px">PRODUCT PHOTO</div>
+<div id="ct">صورة منتجك<br><span class="g">بالتلفون</span></div>
+<div id="cs"><span style="font-family:InterL">3</span> تعديلات بس</div>
+<div id="stage" style="top:740px"><div class="phone" id="pA" style="left:120px;transform:scale(.78) rotateY(14deg) rotate(-4deg)"><div class="scr" id="sA"></div></div><div class="phone" id="pB" style="left:500px;transform:scale(.86) rotateY(-12deg) rotate(3deg)"><div class="scr" id="sB"></div></div></div>
+<img id="mark" src="mark.svg">
+</div><script>const $=id=>document.getElementById(id);
+const SAGE='#8FA68E',CRM='#F4EDE1',CLAY='#B76E4B';
+const cols=['#3a2a4a','#4a2a2a','#2a3a4a','#4a3a20','#203a30','#3a3a3a','#4a2040'];
+$('wall').innerHTML=Array.from({length:42},(_,i)=>`<i style="background:${cols[(i*3)%7]}"></i>`).join('');
+const RAW=`دايماً|0 نسأل:|0.48 المنتج|1.14 جزء|1.92 من|2.32 التصميم…|2.44 بس|3.22 شلون|3.56 نصوّره؟|3.94
+ما|4.89 تحتاج|5.1 كاميرا.|5.55 3|6.32 تعديلات|6.8 بتلفونك|7.42 بس،|8.08 ويطلّع|8.52 لك|9.04 المنتج.|9.26
+الأولى:|10.18 طفّ|10.96 الفلاش،|11.3 وحط|11.86 المنتج|12.24 يم|12.76 الدريشة،|12.98 أو|13.78 يم|14.18 لايت|14.54 يكون|14.9 إضاءته|15.2 زينة.|15.68
+الثانية:|16.4 خلفية|17.26 سادة،|17.84 ورقة|18.38 بيضا|18.84 أو|19.42 لوح|19.7 أبيض،|20.14 مو|20.98 طاولة|21.4 مطبخ.|21.74
+الثالثة:|22.52 نزّل|23.46 التلفون|23.92 لمستوى|24.46 المنتج،|25.04 لا|25.52 تصوّر|25.78 من|26.14 فوق،|26.28 أو|26.78 اختار|26.98 زاوية|27.34 زينة.|27.68
+نفس|28.39 الشمعة|28.98 ونفس|29.56 التلفون…|30.14 بس|30.92 شوف|31.12 الفرق.|31.4
+احفظ|32.26 الريل|32.8 وجرّب|33.22 على|33.66 صورة|33.86 منتجك.|34.3`;
+const W=RAW.split(/\s+/).map(x=>{const [w,t]=x.split('|');return [w,+t+0.08]});W[0][1]=0.12;
+const T=i=>W[i][1];
+const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
+const eio=x=>x<0?0:x>1?1:x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const lerp=(a,b,p)=>a+(b-a)*p;
+const S=[
+ {a:0,b:8,lab:'PRODUCT PHOTO',br:[5],g:[8]},
+ {a:9,b:18,lab:'3 FIXES · PHONE ONLY',br:[11,15],g:[12]},
+ {a:19,b:31,lab:'FIX 01 · LIGHT',br:[21,25],g:[25]},
+ {a:32,b:42,lab:'FIX 02 · BACKGROUND',br:[34,39],g:[34]},
+ {a:43,b:55,lab:'FIX 03 · ANGLE',br:[47,51],g:[46]},
+ {a:56,b:62,lab:'BEFORE / AFTER',br:[59],g:[62]},
+ {a:63,b:68,lab:'SAVE IT',br:[64],g:[63]},
+];
+function sceneAt(t){let k=0;for(let i=0;i<S.length;i++){if(t>=T(S[i].a)-0.3)k=i}return k}
+function renderHead(s,t){let h='';
+ for(let i=s.a;i<=s.b;i++){const p=ease((t-(T(i)-0.06))/0.22);
+  let txt=W[i][0]; if(txt==='3') txt='<span style="font-family:InterL">3</span>';
+  h+=`<span class="w${s.g.includes(i)?' g':''}" style="opacity:${p};filter:blur(${(1-p)*10}px);transform:translateY(${(1-p)*18}px)">${txt}</span>`;
+  h+=s.br.includes(i)?'<br>':(i<s.b?' ':'');}
+ $('head').innerHTML=h;}
+// ---------- the photo on the phone screen ----------
+// f = flash on (1) / off (0), win = window light, B = plain background, A = eye level angle
+function photo(f,win,B,A,t){
+ const Wd=428,H=868;let h='';
+ // plain cream sweep (slides in from the right)
+ h+=`<div style="position:absolute;inset:0;transform:translateX(${(1-B)*Wd}px);background:linear-gradient(180deg,#EFE6D6 0%,${CRM} 55%,#E8DDCB 100%)"></div>`;
+ // messy kitchen counter (slides out to the left)
+ if(B<1){h+=`<div style="position:absolute;inset:0;transform:translateX(${-B*Wd}px)">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,#9a9a92 0%,#8b8a82 38%,#5b4a3a 38%,#6e5844 100%)"></div>
+  <div style="position:absolute;left:0;right:0;top:0;height:330px;background:repeating-linear-gradient(90deg,transparent 0 104px,rgba(255,255,255,.35) 104px 107px),repeating-linear-gradient(0deg,transparent 0 80px,rgba(255,255,255,.35) 80px 83px)"></div>
+  <div style="position:absolute;left:24px;top:250px;width:70px;height:150px;border-radius:14px 14px 8px 8px;background:#2f6f8f"></div>
+  <div style="position:absolute;left:40px;top:225px;width:38px;height:34px;border-radius:6px;background:#e8e8e8"></div>
+  <div style="position:absolute;right:26px;top:300px;width:96px;height:96px;border-radius:12px;background:#c43d3d"></div>
+  <div style="position:absolute;right:112px;top:330px;width:30px;height:46px;border-radius:0 18px 18px 0;border:8px solid #c43d3d;border-left:none"></div>
+  <div style="position:absolute;left:40px;bottom:120px;width:120px;height:44px;border-radius:10px;background:#E5C83A;transform:rotate(-12deg)"></div>
+  <div style="position:absolute;right:30px;bottom:150px;width:150px;height:14px;border-radius:7px;background:#bdbdbd;transform:rotate(24deg)"></div>
+  <div style="position:absolute;left:150px;top:410px;width:260px;height:60px;border-radius:50%;background:rgba(255,255,255,.12)"></div>
+ </div>`}
+ // candle (jar) — A: 0 = shot from the top, 1 = eye level
+ const cx=Wd/2, bw=210, bh=lerp(70,300,A), ry=lerp(100,24,A), base=lerp(560,640,A);
+ const top=base-bh;
+ // hard flash shadow (behind, offset, sharp)
+ h+=`<div style="position:absolute;left:${cx-bw/2+34}px;top:${top+30}px;width:${bw+14}px;height:${bh+ry+20}px;border-radius:${bw/2}px/${ry+10}px;background:rgba(0,0,0,${.85*f});filter:blur(2px)"></div>`;
+ // soft window shadow (long, to the left)
+ h+=`<div style="position:absolute;left:${cx-bw/2-150}px;top:${base-ry*0.6}px;width:${bw+140}px;height:${ry*1.6+20}px;border-radius:50%;background:rgba(70,50,35,${.38*win});filter:blur(18px);transform:skewX(30deg)"></div>`;
+ // jar body
+ h+=`<div style="position:absolute;left:${cx-bw/2}px;top:${top}px;width:${bw}px;height:${bh+ry}px;border-radius:0 0 ${bw/2}px ${bw/2}px/0 0 ${ry}px ${ry}px;background:linear-gradient(90deg,#5d6e5c 0%,${SAGE} 40%,#a9bda7 70%,#6f826e 100%)"></div>`;
+ // label
+ const lo=cl((A-0.25)/0.5)*1+0.25*(1-A);
+ h+=`<div style="position:absolute;left:${cx-bw/2}px;top:${top+bh*0.28}px;width:${bw}px;height:${Math.max(0,bh*0.42)}px;background:${CRM};opacity:${lo};display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden">
+  <div style="font:700 ${lerp(20,46,A)}px Plex;color:${CLAY};line-height:1.1">وَرد</div><div style="font:400 ${lerp(8,15,A)}px InterL;letter-spacing:.3em;color:#7b6a5a;direction:ltr">SOY CANDLE</div></div>`;
+ // top rim + wax
+ h+=`<div style="position:absolute;left:${cx-bw/2}px;top:${top-ry}px;width:${bw}px;height:${ry*2}px;border-radius:50%;background:#6c7f6b"></div>`;
+ h+=`<div style="position:absolute;left:${cx-bw/2+12}px;top:${top-ry+lerp(10,5,A)}px;width:${bw-24}px;height:${ry*2-lerp(20,10,A)}px;border-radius:50%;background:radial-gradient(#fbf4e6,#e9dcc4)"></div>`;
+ // wick + flame
+ const fl=1+0.06*Math.sin(t*9);
+ h+=`<div style="position:absolute;left:${cx-2}px;top:${top-lerp(6,22,A)}px;width:4px;height:${lerp(8,22,A)}px;background:#2a2018"></div>`;
+ h+=`<div style="position:absolute;left:${cx-lerp(9,14,A)}px;top:${top-lerp(22,72,A)}px;width:${lerp(18,28,A)}px;height:${lerp(18,52,A)*fl}px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(ellipse at 50% 70%,#fff6d0,#F7B547 60%,rgba(247,140,40,0) 100%)"></div>`;
+ // window light from the right + soft highlight on jar
+ h+=`<div style="position:absolute;inset:0;background:linear-gradient(270deg,rgba(255,236,200,${.42*win}) 0%,rgba(255,236,200,0) 55%)"></div>`;
+ h+=`<div style="position:absolute;inset:-100px;background:repeating-linear-gradient(115deg,rgba(255,240,215,0) 0 120px,rgba(255,240,215,${.16*win}) 120px 180px);transform:translateX(${(1-win)*300}px)"></div>`;
+ h+=`<div style="position:absolute;left:${cx+bw*0.18}px;top:${top}px;width:${bw*0.16}px;height:${bh}px;background:rgba(255,250,240,${.35*win});filter:blur(6px)"></div>`;
+ // flash: hot spot glare + overexposure
+ h+=`<div style="position:absolute;left:${cx-170}px;top:${top-ry-110}px;width:340px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,${f}) 0%,rgba(255,255,255,${.9*f}) 35%,rgba(255,255,255,0))"></div>`;
+ h+=`<div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,${.25*f}),rgba(0,0,0,${.35*f}) 90%)"></div>`;
+ // camera UI
+ h+=`<div style="position:absolute;left:0;right:0;top:0;height:120px;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,0))"></div>`;
+ h+=`<div style="position:absolute;left:0;right:0;bottom:0;height:170px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.55))"></div>`;
+ h+=`<div style="position:absolute;left:50%;bottom:40px;width:86px;height:86px;margin-left:-43px;border-radius:50%;border:6px solid #fff;padding:6px"><div style="width:100%;height:100%;border-radius:50%;background:#fff"></div></div>`;
+ return h;}
+
+$('wall').innerHTML=Array.from({length:42},(_,i)=>`<i style="background:${cols[(i*3)%7]}"></i>`).join('');
+$('wall').style.transform='rotateX(52deg)';
+$('sA').innerHTML=photo(1,0,0,0,0);$('sB').innerHTML=photo(0,1,1,1,0);
+$('pA').style.filter='saturate(.6) brightness(.8)';
+</script></body></html>
