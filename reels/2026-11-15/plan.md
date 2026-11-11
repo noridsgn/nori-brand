@@ -1,6 +1,6 @@
 # Reel 1 · Sun 15 Nov 2026 · صورة منتجك بالتلفون
 
-> **Scored 11 Nov 2026: 74/100 → after edits ≈ 76/100.** Hook 21/25 · Retention 22/25 · Sends 15/20 · Value 12/15 · DM 4/10. Edits applied (NORI approved): line 6 stronger contrast, line 7 kept as save CTA by NORI's choice (no DM ask), caption English line removed and CTA matched.
+> **Scored 11 Nov 2026: 74/100 → after edits ≈ 72/100 (hook line 1 changed by NORI to «دايماً نسأل…»).** Hook 21/25 · Retention 22/25 · Sends 15/20 · Value 12/15 · DM 4/10. Edits applied (NORI approved): line 6 stronger contrast, line 7 kept as save CTA by NORI's choice (no DM ask), caption English line removed and CTA matched.
 
 1080×1920, ~24.5 s, dark NORI reel style (CONTENT-RULES rules 9, 11, 12). New idea (product photos with a phone); no carousel shares it. Fictional brand «وَرد» (candles), colours: sage #8FA68E, cream #F4EDE1, clay #B76E4B.
 
@@ -11,8 +11,8 @@ First frame already busy: a bad «وَرد» candle photo (flash glare, hard bla
 
 | # | Target | Line |
 |---|---|---|
-| 1 | 0.0–1.8 s | صورتك هذي… تخسرك طلبات. |
-| 2 | 1.8–5.0 s | ما تحتاج كاميرا. تحتاج 3 تعديلات بتلفونك بس. |
+| 1 | 0.0–1.8 s | دايماً نسأل: المنتج جزء من التصميم… بس شلون نصوّره؟ |
+| 2 | 1.8–5.0 s | ما تحتاج كاميرا. 3 تعديلات بتلفونك بس. |
 | 3 | 5.0–9.5 s | الأولى: طفّ الفلاش، وحط المنتج جنب الدريشة. الضوء يجي من الجنب. |
 | 4 | 9.5–13.5 s | الثانية: خلفية سادة. ورقة بيضا أو لوح، مو طاولة المطبخ. |
 | 5 | 13.5–18.0 s | الثالثة: نزّل التلفون لمستوى المنتج، لا تصوّر من فوق. |
