@@ -1,6 +1,6 @@
 # Reel 1 · Sun 15 Nov 2026 · صورة منتجك بالتلفون
 
-> **Predicted score: not scored yet.** The scorer could not read `nori-dash/scoring/rubric.md` in this run (the nori-dash repo was not reachable from this session). Score it with the rubric before NORI records; under 70 goes back to the writer.
+> **Scored 11 Nov 2026: 74/100 → after edits ≈ 81/100.** Hook 21/25 · Retention 22/25 · Sends 15/20 · Value 12/15 · DM 4/10. Edits applied (NORI approved): line 6 stronger contrast, line 7 single DM ask «مشروع» (ManyChat), caption English line removed and CTA matched.
 
 1080×1920, ~24.5 s, dark NORI reel style (CONTENT-RULES rules 9, 11, 12). New idea (product photos with a phone); no carousel shares it. Fictional brand «وَرد» (candles), colours: sage #8FA68E, cream #F4EDE1, clay #B76E4B.
 
@@ -16,8 +16,8 @@ First frame already busy: a bad «وَرد» candle photo (flash glare, hard bla
 | 3 | 5.0–9.5 s | الأولى: طفّ الفلاش، وحط المنتج جنب الدريشة. الضوء يجي من الجنب. |
 | 4 | 9.5–13.5 s | الثانية: خلفية سادة. ورقة بيضا أو لوح، مو طاولة المطبخ. |
 | 5 | 13.5–18.0 s | الثالثة: نزّل التلفون لمستوى المنتج، لا تصوّر من فوق. |
-| 6 | 18.0–21.5 s | نفس الشمعة… بس الحين تنباع. |
-| 7 | 21.5–24.5 s | احفظ الريل، وصوّر منتجك اليوم. |
+| 6 | 18.0–21.5 s | نفس الشمعة، نفس التلفون… بس شوف الفرق. |
+| 7 | 21.5–24.5 s | تبي أشوف صورة منتجك؟ أرسل لي كلمة «مشروع». |
 
 ## Storyboard
 
@@ -28,8 +28,8 @@ First frame already busy: a bad «وَرد» candle photo (flash glare, hard bla
 | 3 | 5–9.5 | row 01 «الضوء من الجنب»: flash icon crossed, window light sweeps the candle, shadow softens | light sweep timed to «الدريشة» | spark behind the candle on «الجنب» |
 | 4 | 9.5–13.5 | row 02 «خلفية سادة»: messy counter slides out, cream sheet slides in | slide on «سادة» | — |
 | 5 | 13.5–18 | row 03 «بمستوى المنتج»: camera icon drops from top view to eye level, candle becomes a hero shot | tilt animation on «نزّل» | — |
-| 6 | 18–21.5 | before / after side by side, tilted, «نفس الشمعة… بس تنباع» | after card pushes forward | the word «تنباع» |
-| 7 | 21.5–24.5 | «احفظ الريل» + NORI mark bottom centre | hold 1 s | — |
+| 6 | 18–21.5 | before / after side by side, tilted, «نفس الشمعة… شوف الفرق» | after card pushes forward | the word «الفرق» |
+| 7 | 21.5–24.5 | «أرسل: مشروع» + NORI mark bottom centre | hold 1 s | — |
 
 Gold: one gold word per scene (shots 1 and 6), sparks stay BEHIND the candle (shot 3). The three rows stay written and aligned (label + line), never floating chips.
 
@@ -43,10 +43,8 @@ Warm, light lo-fi ~90 BPM, ducked ≈ −22 dB under the voice. SFX from sfx/: s
 2. خلفية سادة
 3. التلفون بمستوى المنتج
 
-جربها اليوم، واحفظ الريل عشان ترجع له.
+جربها اليوم، وتبي أشوف صورة منتجك؟ أرسل لي كلمة «مشروع» بالدايركت.
 
 «وَرد» براند وهمي سويته للتوضيح.
-
-Good light beats a new camera.
 
 #تصوير_منتجات #تصوير_تلفون #تسويق #مشاريع_صغيرة #سوشال_ميديا #productphotography #smallbusiness
