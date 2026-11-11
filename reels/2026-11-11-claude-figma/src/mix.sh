@@ -1,0 +1,4 @@
+#!/bin/bash
+# voice-clean.wav (DeepFilterNet + EQ, pauses tightened by timeline.py) + sfx 14-18 dB under the voice -> mix.wav
+S="../../../sfx"
+ffmpeg -loglevel error -y -i voice-clean.wav -i "$S/01 انتقالات - Transitions/whoosh_soft.wav" -i "$S/04 واجهات ونقرات - UI & Clicks/pop_soft.wav" -i "$S/05 نغمات - Chimes & Tones/soft_chime.wav" -filter_complex "[0]apad=whole_dur=43.4,aformat=channel_layouts=stereo[v];[1]asplit=5[w1][w2][w3][w4][w5];[2]asplit=2[p1][p2];[w1]adelay=1620:all=1,volume=0.16[a1];[w2]adelay=12270:all=1,volume=0.16[a2];[w3]adelay=18220:all=1,volume=0.16[a3];[w4]adelay=24560:all=1,volume=0.16[a4];[w5]adelay=37900:all=1,volume=0.16[a5];[p1]adelay=5380:all=1,volume=0.22[b1];[p2]adelay=38880:all=1,volume=0.22[b2];[3]adelay=41900:all=1,volume=0.20[c1];[v][a1][a2][a3][a4][a5][b1][b2][c1]amix=inputs=9:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[o]" -map "[o]" -ar 48000 mix.wav

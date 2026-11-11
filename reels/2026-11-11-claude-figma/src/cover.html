@@ -1,0 +1,57 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Plex;font-weight:400;src:url(../../../fonts/IBMPlexSansArabic-Regular.ttf)}
+@font-face{font-family:Plex;font-weight:600;src:url(../../../fonts/IBMPlexSansArabic-SemiBold.ttf)}
+@font-face{font-family:Plex;font-weight:700;src:url(../../../fonts/IBMPlexSansArabic-Bold.ttf)}
+@font-face{font-family:Inter;font-weight:600;src:url(../../../fonts/Inter-SemiBold.otf)}
+@font-face{font-family:Inter;font-weight:400;src:url(../../../fonts/Inter-Regular.otf)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;background:#0E0E0E;overflow:hidden;font-family:Plex;color:#F2F0EB;position:relative}
+.glow{position:absolute;left:140px;top:670px;width:800px;height:800px;background:radial-gradient(closest-side,rgba(74,58,224,.28),rgba(14,14,14,0));}
+.grid{position:absolute;inset:0;background-image:radial-gradient(rgba(242,240,235,.07) 1.5px,transparent 1.6px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse 60% 42% at 50% 60%,#000 30%,transparent 100%)}
+#en{position:absolute;top:280px;width:1080px;text-align:center;font:600 24px Inter;letter-spacing:.34em;color:#8A8A8A;direction:ltr}
+h1{position:absolute;top:332px;width:1080px;text-align:center;font-weight:700;font-size:112px;line-height:150px}
+h1 b{color:#C9A45C;font-weight:700} h1 i{font-style:normal;font-family:Inter;font-weight:600}
+#sub{position:absolute;top:650px;width:1080px;text-align:center;font-size:40px;color:#8A8A8A}
+/* the frame, as it sits selected on a design canvas */
+#sel{position:absolute;left:330px;top:770px;width:420px;height:760px;border:2px solid #F2F0EB}
+#sel u{position:absolute;width:14px;height:14px;background:#0E0E0E;border:2px solid #F2F0EB}
+#sel u:nth-child(1){left:-8px;top:-8px}#sel u:nth-child(2){right:-8px;top:-8px}#sel u:nth-child(3){left:-8px;bottom:-8px}#sel u:nth-child(4){right:-8px;bottom:-8px}
+#fl{position:absolute;left:330px;top:732px;font:400 22px Inter;color:#8A8A8A;direction:ltr}
+#dim{position:absolute;left:470px;top:1548px;width:140px;height:38px;background:#F2F0EB;color:#0E0E0E;font:600 20px Inter;text-align:center;line-height:38px;direction:ltr}
+#app{position:absolute;left:330px;top:770px;width:420px;height:760px;background:#F4F4F8;overflow:hidden}
+#hd{height:250px;background:#3F2FD6;border-radius:0 0 34px 34px;padding:40px 30px 0;position:relative}
+#hd .r{display:flex;justify-content:space-between;align-items:center}
+#hd .lg{width:36px;height:36px;border-radius:50%;background:#F4B323}
+#hd .bl{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.18)}
+#hd .a{margin-top:26px;width:90px;height:10px;border-radius:5px;background:rgba(255,255,255,.45)}
+#hd .b{margin-top:14px;width:190px;height:22px;border-radius:11px;background:#fff}
+#pts{position:absolute;left:24px;top:196px;width:372px;height:108px;border-radius:22px;background:#fff;box-shadow:0 10px 30px rgba(30,20,120,.16);display:flex;justify-content:space-between;align-items:center;padding:0 26px;direction:ltr}
+#pts .p{width:120px;height:42px;border-radius:21px;background:#F4B323}
+#pts .n{font:600 40px Inter;color:#241B7A}
+#ic{position:absolute;top:346px;left:24px;width:372px;display:grid;grid-template-columns:repeat(3,1fr);row-gap:26px;justify-items:center}
+#ic s{display:block;width:64px;height:64px;border-radius:50%;background:#3F2FD6;position:relative}
+#ic s::after{content:"";position:absolute;left:20px;top:20px;width:24px;height:24px;border-radius:7px;border:3px solid #fff}
+#of{position:absolute;left:24px;top:560px;width:372px;display:flex;gap:14px;direction:ltr}
+#of div{flex:1;height:136px;border-radius:20px;padding:76px 18px 0;font:600 34px Inter}
+#of .x{background:#3F2FD6;color:#F4B323}#of .y{background:#F4B323;color:#241B7A}
+#chip{position:absolute;left:92px;top:960px;height:64px;padding:0 24px;border:1.5px solid rgba(242,240,235,.3);background:#1C1C1C;font:600 28px Inter;line-height:62px;color:#F2F0EB;direction:ltr;border-radius:32px}
+#arr{position:absolute;left:246px;top:991px;width:70px;height:0;border-top:2px dashed rgba(242,240,235,.45)}
+#cur{position:absolute;left:770px;top:1200px}
+#mark{position:absolute;left:504px;top:1618px;width:72px}
+</style></head><body>
+<div class="glow"></div><div class="grid"></div>
+<div id="en">CLAUDE → FIGMA</div>
+<h1>واجهة تطبيق<br>بـ <b><i>3</i> خطوات</b></h1>
+<div id="sub">من كلود لفيجما</div>
+<div id="fl">Frame</div>
+<div id="app"><div id="hd"><div class="r"><div class="lg"></div><div class="bl"></div></div><div class="a"></div><div class="b"></div></div>
+<div id="pts"><div class="p"></div><div class="n">2,480</div></div>
+<div id="ic"><s></s><s></s><s></s><s></s><s></s><s></s></div>
+<div id="of"><div class="x">-15%</div><div class="y">-25%</div></div></div>
+<div id="sel"><u></u><u></u><u></u><u></u></div>
+<div id="dim">393 × 852</div>
+<div id="chip">&lt;/&gt; SVG</div><div id="arr"></div>
+<svg id="cur" width="54" height="60" viewBox="0 0 54 60"><path d="M6 4 L6 46 L17 36 L25 54 L33 50 L25 33 L40 33 Z" fill="#F2F0EB" stroke="#0E0E0E" stroke-width="3" stroke-linejoin="round"/></svg>
+<img id="mark" src="mark.svg">
+</body></html>

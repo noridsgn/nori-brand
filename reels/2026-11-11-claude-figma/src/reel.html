@@ -1,0 +1,55 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Plex;font-weight:400;src:url(../../../fonts/IBMPlexSansArabic-Regular.ttf)}
+@font-face{font-family:Plex;font-weight:600;src:url(../../../fonts/IBMPlexSansArabic-SemiBold.ttf)}
+@font-face{font-family:Plex;font-weight:700;src:url(../../../fonts/IBMPlexSansArabic-Bold.ttf)}
+@font-face{font-family:Inter;font-weight:600;src:url(../../../fonts/Inter-SemiBold.otf)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:transparent;overflow:hidden;font-family:Plex,sans-serif;color:#F2F0EB}
+.shade{position:absolute;left:0;width:1080px}
+#st{top:0;height:300px;background:linear-gradient(#0E0E0E 0%,rgba(14,14,14,.86) 55%,rgba(14,14,14,0) 100%)}
+#sb{top:1370px;height:550px;background:linear-gradient(rgba(14,14,14,0) 0%,rgba(14,14,14,.9) 22%,#0E0E0E 60%)}
+#en{position:absolute;top:112px;left:0;width:1080px;text-align:center;font:600 23px Inter;letter-spacing:.34em;color:#8A8A8A;direction:ltr}
+.title{position:absolute;top:150px;left:0;width:1080px;text-align:center;font-weight:600;font-size:54px;line-height:84px;white-space:nowrap}
+.title .n{font-family:Inter;font-weight:600;color:#8A8A8A;margin-inline-end:18px}
+.title .d{color:#8A8A8A;margin-inline-end:18px}
+#bars{position:absolute;top:252px;left:0;width:1080px;display:flex;justify-content:center;gap:10px;direction:rtl}
+#bars i{display:block;width:64px;height:4px;background:#333;position:relative;overflow:hidden}
+#bars i b{position:absolute;right:0;top:0;height:4px;background:#F2F0EB;width:0}
+#card{position:absolute;left:40px;top:290px;width:1000px;height:1090px;border:1.5px solid rgba(242,240,235,.16)}
+.cap{position:absolute;top:1408px;left:0;width:1080px;text-align:center;font-weight:700;font-size:62px;line-height:110px;white-space:nowrap}
+.cap span{display:inline-block;margin:0 9px}
+.cap span.l{direction:ltr;unicode-bidi:isolate}
+#mark{position:absolute;left:504px;top:1596px;width:72px}
+</style></head><body>
+<div class="shade" id="st"></div><div class="shade" id="sb"></div>
+<div id="en">CLAUDE → FIGMA</div>
+<div id="titles"></div>
+<div id="bars"><i><b></b></i><i><b></b></i><i><b></b></i></div>
+<div id="card"></div>
+<div id="caps"></div>
+<img id="mark" src="mark.svg">
+<script src="data.js"></script>
+<script>
+const D=window.DATA, IV='#F2F0EB', GO='#C9A45C';
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), eo=x=>1-Math.pow(1-cl(x),3);
+const T=document.getElementById('titles'), C=document.getElementById('caps');
+D.steps.forEach((s,i)=>{const d=document.createElement('div');d.className='title';
+  d.innerHTML=(s.n?`<span class="n">${s.n}</span><span class="d">·</span>`:'')+s.x.replace(/(\d+)/g,'<span style="font-family:Inter">$1</span>');T.appendChild(d);s.el=d;});
+D.chunks.forEach(c=>{const d=document.createElement('div');d.className='cap';
+  c.w.forEach(w=>{const s=document.createElement('span');s.textContent=w.x;if(/^[A-Za-z]/.test(w.x)){s.className='l';s.style.fontFamily='Inter';s.style.fontWeight=600;s.style.fontSize='58px'}d.appendChild(s);w.el=s;});C.appendChild(d);c.el=d;});
+const bars=[...document.querySelectorAll('#bars b')];
+function frame(t){
+  D.steps.forEach((s,i)=>{const e=i+1<D.steps.length?D.steps[i+1].t:1e9;
+    const a=i==0?1:eo((t-s.t)/0.32), o=1-cl((t-(e-0.12))/0.12);
+    const on=t>=s.t-0.001&&t<e;
+    s.el.style.opacity=on?a*o:0;s.el.style.transform=`translateY(${(1-a)*14}px)`;s.el.style.filter=a<1?`blur(${(1-a)*8}px)`:'none';});
+  let cur=0;D.steps.forEach((s,i)=>{if(t>=s.t)cur=i});
+  const p=D.steps[cur].p, e=cur+1<D.steps.length?D.steps[cur+1].t:D.dur, f=cl((t-D.steps[cur].t)/(e-D.steps[cur].t));
+  bars.forEach((b,i)=>{b.style.width=(p>i+1?100:p==i+1?Math.max(6,f*100):0)+'%'});
+  D.chunks.forEach(c=>{const on=t>=c.t&&t<c.e;if(!on){c.el.style.opacity=0;return}
+    const a=c.t<0?1:eo((t-c.t)/0.16);c.el.style.opacity=a;c.el.style.transform=`translateY(${(1-a)*10}px)`;c.el.style.filter=a<1?`blur(${(1-a)*6}px)`:'none';
+    c.w.forEach(w=>{const k=cl((t-w.t)/0.1);w.el.style.color=w.g?GO:IV;w.el.style.opacity=0.3+0.7*k;});});
+}
+frame(0);
+</script></body></html>
