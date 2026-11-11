@@ -5,7 +5,7 @@ NORI filmed this himself on his phone (7 clips of his monitor, his own words, no
 - **Video:** `reel-claude-figma.mp4` · 1080×1920 · 30 fps · 43.4 s · −14 LUFS
 - **Cover:** `cover.png` (designed separately in `src/cover.html`; safe inside the 3:4 profile crop)
 - **Preview page:** https://claude.ai/artifact/My1JbcKfipo645LhrBb5nS
-- **Status:** waiting for NORI's approval. Not in Metricool. Not scored with the rubric yet.
+- **Status:** NORI posts it manually on Wed 11 Nov (dashboard note c907). He fixes the voice himself in Adobe Podcast; he got the raw voice cut to the reel timing as MP3. Never schedule it in Metricool. Not scored yet.
 
 ## What he says (on-screen text follows this, as recorded)
 
