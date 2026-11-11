@@ -37,11 +37,11 @@ Gold: one gold word per scene (shots 1 and 6), sparks stay BEHIND the candle (sh
 Warm, light lo-fi ~90 BPM, ducked ≈ −22 dB under the voice. SFX from sfx/: soft "click" on the flash cross (shot 3), paper slide (shot 4), 12–18 dB under the voice.
 
 ## Caption (one call to action)
-صورتك تخسرك طلبات؟ 3 تعديلات بتلفونك بس.
+المنتج جزء من التصميم… بس شلون تصوّره؟ 3 تعديلات بتلفونك بس.
 
-1. طف الفلاش، والضوء من الدريشة على الجنب
-2. خلفية سادة
-3. التلفون بمستوى المنتج
+1. طف الفلاش، وحط المنتج يم الدريشة أو يم لايت إضاءته زينة
+2. خلفية سادة: ورقة بيضا أو لوح أبيض، مو طاولة المطبخ
+3. نزّل التلفون لمستوى المنتج، أو اختار زاوية زينة
 
 احفظ الريل، وجربه على صورة منتجك.
 
