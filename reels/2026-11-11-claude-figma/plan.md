@@ -30,8 +30,8 @@ NORI filmed this himself on his phone (7 clips of his monitor, his own words, no
 ## Sound
 
 - iPhone HDR clips (HLG) tone-mapped to SDR.
-- Voice: stereo track → DeepFilterNet 0.5.6 (`deep-filter`) → EQ/de-ess/compressor → each clip levelled to −16 LUFS → `src/voice-clean.wav`.
-- **Adobe Podcast was asked for but not used:** it needs a signed-in browser and none was connected (NORI was on his phone).
+- Voice (final): `src/voice-adobe.mp3`, NORI cleaned the synced raw voice himself in Adobe Podcast (Enhance Speech v2). The earlier DeepFilterNet version stays as `src/voice-clean.wav`.
+- Adobe Podcast: done by NORI on 11 Nov, put back on the reel at the same timing (checked: 0 ms offset).
 - SFX from `sfx/` (whoosh_soft on step changes, pop_soft on «برومت», soft_chime at the end), about 14–16 dB under the voice (`src/mix.sh`). No music.
 
 ## Caption
