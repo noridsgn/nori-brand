@@ -1,6 +1,6 @@
-# Concept post · Tue 17 Nov 2026 · ألف ليلة وليلة كدرس هوية — معلّق لين السبت 14 نوفمبر
+# Concept post · Tue 17 Nov 2026 · ألف ليلة وليلة كدرس هوية
 
-**Approved for public posting as a lesson (NORI, 8 Nov, c901), then on hold until Sat 14 Nov (NORI, c904).** Not in Metricool. The posting date is set after Saturday; nothing gets scheduled without NORI's OK.
+**Approved for public posting as a lesson (NORI, 8 Nov, c901); the hold (c904) ended Sat 14 Nov.** Metricool DRAFT for Tue 17 Nov (14 Nov run): nothing publishes without NORI's OK.
 Lesson structure (problem → idea → result) in the NORI frame, with crops of the concept slides inside. No DM, no price.
 Slides: hook «مطعم عمره 55 سنة… من وين تبدأ هويته؟» + CONCEPT label → 01 problem (people love it, the brand is silent) → 02 idea (door + star + dawn) → result (storefront, bag + card) → takeaway: 3 questions before drawing a logo + save/follow.
 Render: `cd posts/_generator && node concept-alf.js` (reads the PNGs from concepts/2026-11-05-alf-layla).
