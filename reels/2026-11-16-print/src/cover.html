@@ -1,0 +1,13 @@
+<!doctype html><html lang="ar"><head><meta charset="utf-8"><link rel="stylesheet" href="../../../tools/reel-base.css"><style>
+.card{width:600px;height:360px;border-radius:26px;overflow:hidden;direction:rtl;position:absolute;background:var(--cb);box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.card .nm{position:absolute;right:46px;top:86px;font-weight:700;font-size:104px;line-height:1;color:var(--ci)}.card .sb{position:absolute;right:50px;top:222px;font-weight:600;font-size:30px;color:var(--ci);opacity:.8}
+.card .ln{position:absolute;right:50px;bottom:40px;width:120px;height:8px;border-radius:8px;background:var(--ci)}.card svg{position:absolute;left:-10px;top:10px;width:300px;height:340px}
+.bright{--cb:#1FF07A;--cl:#0BC95C;--ci:#07361F;box-shadow:0 0 120px rgba(31,240,122,.45),0 40px 80px rgba(0,0,0,.6)}.dull{--cb:#86AE92;--cl:#74997F;--ci:#34503F}
+h1{position:absolute;left:0;width:1080px;top:1000px;text-align:center;direction:rtl;font-size:150px;line-height:1.15;font-weight:700}
+.tg{position:absolute;font:700 34px Inter;letter-spacing:6px;padding:10px 26px;border-radius:999px}
+</style></head><body><div id="bg"></div><div id="dots"></div>
+<div class="card bright" id="a" style="left:120px;top:420px;transform:rotate(-7deg) scale(1.05)"></div><div class="card dull" id="b" style="left:380px;top:620px;transform:rotate(6deg) scale(1.05)"></div>
+<div class="tg" style="left:130px;top:330px;background:rgba(31,240,122,.14);color:#1FF07A;border:2px solid #1FF07A">RGB</div><div class="tg" style="left:760px;top:1010px;background:#2A1414;color:#FF5A52;border:2px solid #FF5A52;top:548px;left:800px">CMYK</div>
+<h1>ليش المطبوع<br>طلع <span class="gold">باهت</span>؟</h1><img src="mark.svg" style="position:absolute;left:492px;top:1480px;width:96px"><div id="vig"></div>
+<script>const leaf='<svg viewBox="0 0 300 340"><path d="M150 320 C150 220 60 200 60 110 C60 50 110 20 150 20 C190 20 240 50 240 110 C240 200 150 220 150 320Z" fill="var(--cl)"/><path d="M150 320 L150 60" stroke="var(--cb)" stroke-width="7" fill="none"/><path d="M150 150 L205 100 M150 200 L95 150 M150 110 L110 78" stroke="var(--cb)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>';
+for(const i of ['a','b'])document.getElementById(i).innerHTML=leaf+'<div class="nm">نَبتة</div><div class="sb">نباتات داخلية</div><div class="ln"></div>';function frame(){}</script></body></html>

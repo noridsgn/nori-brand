@@ -1,0 +1,217 @@
+<!doctype html><html lang="ar"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../../tools/reel-base.css">
+<style>
+/* ---------- the reel cover (fictional bakery «تنّور»), 432x768 = 9:16 ---------- */
+#hero{left:0;top:0;width:0;height:0}
+#cv{position:absolute;left:-216px;top:-384px;width:432px;height:768px;border-radius:26px;overflow:hidden;background:#C89B63;box-shadow:0 40px 80px rgba(0,0,0,.6)}
+#cv>*{position:absolute}
+#bgB{inset:0;background:radial-gradient(circle at 50% 55%,#C24A26,#96341A)}
+#glow{left:16px;top:230px;width:400px;height:400px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,214,120,.75),transparent);opacity:0}
+.cl{transform-origin:50% 50%}
+#ttl{left:26px;width:380px;text-align:center;direction:rtl;color:#FFF4E2;font-weight:700;line-height:1.25;white-space:nowrap}
+#tbox{position:absolute;inset:-8px -6px;border:3px solid var(--gold);border-radius:6px;opacity:0}
+#tbox i{position:absolute;width:16px;height:16px;background:#fff;border:3px solid var(--gold);border-radius:3px}
+#cnt{position:absolute;left:-4px;top:-50px;font-size:22px;font-weight:700;border-radius:999px;padding:3px 16px;direction:rtl;opacity:0;white-space:nowrap}
+#face{width:200px;height:220px;left:0;top:0;transform-origin:0 0}
+#wm{left:0;width:432px;top:626px;text-align:center;color:#FFF4E2;font-weight:700;font-size:34px;letter-spacing:1px;opacity:0}
+.band{left:0;width:432px;height:96px;background:repeating-linear-gradient(120deg,rgba(255,90,82,.5) 0 12px,rgba(40,8,6,.78) 12px 24px);opacity:0}
+#bT{top:0}#bB{bottom:0}
+.dash{left:0;width:432px;height:0;border-top:4px dashed var(--gold);opacity:0}
+#safe{left:10px;top:100px;width:412px;height:568px;border:4px dashed var(--gold);border-radius:14px;opacity:0}
+#safe b{position:absolute;left:50%;transform:translateX(-50%);bottom:-2px;background:var(--gold);color:#17130A;font-size:19px;padding:2px 14px;border-radius:10px 10px 0 0;white-space:nowrap}
+#marq{border:3px dashed var(--gold);background:rgba(230,184,76,.14);border-radius:6px;opacity:0;z-index:30}
+/* dimension labels (scene B) */
+.dim{font:700 44px Inter;white-space:nowrap}
+#d916{left:112px;top:716px;color:#9A9AA2;transform-origin:50% 50%}
+#d34{left:842px;top:700px;color:var(--gold);font-size:76px}
+#d34s{left:818px;top:800px;font:600 28px Inter;color:#B9B9C0}
+#d916s{left:60px;top:780px;font:600 26px Inter;color:#7D7D85}
+.brk{width:26px;border:4px solid;border-right:0;border-radius:12px 0 0 12px}
+#brL{left:216px;border-color:#6E6E76}
+#brR{left:800px;border-color:var(--gold);transform:scaleX(-1)}
+.cutlab{font-size:34px;font-weight:700;color:var(--bad);background:#2A1414;border:2px solid var(--bad);padding:6px 26px;z-index:12}
+/* profile window */
+#prof{left:80px;top:270px;width:920px;height:1050px}
+#phd{height:200px;display:flex;align-items:center;gap:30px;direction:ltr;padding:0 40px}
+#av{width:124px;height:124px;border-radius:50%;background:#A63D1F;border:4px solid var(--gold);display:flex;align-items:center;justify-content:center;color:#FFF4E2;font-size:40px;font-weight:700}
+#phd .n{font:700 38px Inter}#phd .s{font:500 26px Inter;color:var(--grey);margin-top:8px}
+#tabs{height:60px;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);display:flex;justify-content:space-around;align-items:center}
+#tabs i{width:38px;height:6px;border-radius:6px;background:#3A3A42}#tabs i:first-child{background:var(--ivory)}
+#grid{position:absolute;left:25px;top:346px;display:grid;grid-template-columns:repeat(3,280px);gap:15px}
+.tile{width:280px;height:373px;border-radius:12px;background:#202026;position:relative;overflow:hidden}
+.tile u{position:absolute;left:50%;top:44%;width:110px;height:110px;margin:-55px;border-radius:50%;background:#2E2E36}
+.tile s{position:absolute;left:60px;right:60px;top:70%;height:16px;border-radius:8px;background:#2E2E36}
+#tile0{background:#141418;border:2px dashed rgba(255,255,255,.12)}
+#okPill{left:140px;top:1040px;background:rgba(18,40,26,.95);border:2px solid var(--ok);color:var(--ok);font-size:40px;z-index:12}
+#cutPill{left:150px;top:560px}
+/* checklist */
+#list{left:676px;top:520px;width:340px}
+.li{height:118px;border-radius:26px;margin-bottom:20px;display:flex;align-items:center;gap:18px;direction:rtl;padding:0 22px;background:var(--p1);border:2px solid var(--line);font-size:36px;font-weight:700;color:#77777F}
+.li em{font:700 30px Inter;font-style:normal;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#26262D;color:#8D8D93;flex:none}
+/* swatches + keys */
+#sws{left:230px;top:1226px;display:flex;gap:26px}
+#sws i{width:84px;height:84px;border-radius:50%;border:4px solid rgba(255,255,255,.2);display:block}
+#keys{position:absolute;left:0;top:1236px;width:1080px;display:flex;justify-content:center;z-index:61}
+.key{height:110px;padding:0 44px;border-radius:26px;background:linear-gradient(180deg,#2A2A31,#1B1B20);border:1.5px solid rgba(255,255,255,.14);box-shadow:0 12px 0 #0A0A0C,0 26px 40px rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;font:700 46px Inter}
+#fitPill{left:560px;top:1010px;background:rgba(18,40,26,.95);border:2px solid var(--ok);color:var(--ok);font-size:38px}
+/* closing */
+#bm{left:440px;top:440px;width:200px;height:260px}
+#q1{left:0;top:760px;width:1080px;text-align:center;direction:rtl;font-size:124px;font-weight:700}
+#q2{left:0;top:940px;width:1080px;text-align:center;direction:rtl;font-size:44px;font-weight:500;color:var(--grey)}
+.grp{left:0;top:0;width:1080px;height:1920px}.grp>*{position:absolute}
+</style></head><body>
+<div id="bg"></div><div id="dots"></div>
+<div id="lab">NORI · <b>REEL COVER</b> · 3:4</div>
+<div id="stage">
+ <div id="gP" class="grp">
+  <div id="prof" class="win"><div class="tb"><i></i><i></i><i></i><span>Profile</span></div>
+   <div id="phd"><div id="av">ت</div><div><div class="n">tannour.bakery</div><div class="s">128 posts · 9,420 followers</div></div></div>
+   <div id="tabs"><i></i><i></i><i></i></div>
+   <div id="grid"><div class="tile" id="tile0"></div><div class="tile"><u></u><s></s></div><div class="tile"><u></u><s></s></div><div class="tile"><u></u><s></s></div><div class="tile"><u></u><s></s></div><div class="tile"><u></u><s></s></div></div></div>
+ </div>
+ <div id="gB" class="grp">
+  <div class="brk" id="brL"></div><div class="dim" id="d916">9:16</div><div id="d916s">1080 × 1920</div>
+  <div class="brk" id="brR"></div><div class="dim" id="d34">3:4</div><div id="d34s">1080 × 1440</div>
+ </div>
+ <div id="gL" class="grp"><div id="list">
+  <div class="li" id="li0"><em>01</em><span>بالنص</span></div><div class="li" id="li1"><em>02</em><span>4 كلمات</span></div><div class="li" id="li2"><em>03</em><span>شي واحد</span></div></div>
+  <div id="sws"><i style="background:#C89B63"></i><i style="background:#E9DFC8"></i><i id="swT" style="background:#A63D1F"></i></div>
+  <div id="fitPill" class="pill">ينقرا من القريد ✓</div>
+ </div>
+ <div id="gH" class="grp">
+  <svg id="bm" viewBox="0 0 200 260"><path id="bmF" d="M26 14 H174 V244 L100 186 L26 244 Z" fill="#E6B84C"/><path d="M26 14 H174 V244 L100 186 L26 244 Z" fill="none" stroke="#E6B84C" stroke-width="14" stroke-linejoin="round"/></svg>
+  <div id="q1">احفظ <span class="gold">الريل</span></div><div id="q2">وارجع له قبل الريل الياي</div><img id="mark" src="mark.svg">
+ </div>
+ <!-- hero cover -->
+ <div id="hero"><div id="cv">
+  <div id="bgB"></div><div id="glow"></div>
+  <div id="clut"></div>
+  <svg id="face" viewBox="0 0 200 220"><ellipse cx="100" cy="212" rx="70" ry="8" fill="rgba(0,0,0,.18)"/><circle cx="100" cy="138" r="70" fill="#F3CDA2"/><path d="M40 92 Q30 40 70 44 Q76 14 108 22 Q146 12 150 50 Q178 52 160 92 Z" fill="#FFF8EC"/><rect x="42" y="84" width="116" height="24" rx="8" fill="#F0E4CC"/><circle cx="76" cy="132" r="7" fill="#3A2416"/><circle cx="124" cy="132" r="7" fill="#3A2416"/><path d="M62 158 Q82 146 100 158 Q118 146 138 158 Q120 176 100 164 Q80 176 62 158Z" fill="#3A2416"/><path d="M84 180 Q100 192 116 180" stroke="#3A2416" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="56" cy="152" r="9" fill="#EFA98A" opacity=".7"/><circle cx="144" cy="152" r="9" fill="#EFA98A" opacity=".7"/></svg>
+  <div id="ttl"><span id="ttx"></span><div id="tbox"><i style="left:-10px;top:-10px"></i><i style="right:-10px;top:-10px"></i><i style="left:-10px;bottom:-10px"></i><i id="hdl" style="right:-10px;bottom:-10px"></i><div id="cnt"></div></div></div>
+  <div id="wm">تنّور</div>
+  <div class="band" id="bT"></div><div class="band" id="bB"></div><div class="dash" id="dT" style="top:94px"></div><div class="dash" id="dB" style="top:670px"></div>
+  <div id="safe"><b>المنطقة الآمنة 3:4</b></div>
+ </div></div>
+ <div id="cutPill" class="pill cutlab">انقص ✕</div>
+ <div id="cutT" class="pill cutlab">من فوق ✂</div><div id="cutB" class="pill cutlab">من تحت ✂</div>
+ <div id="okPill" class="pill">كل شي واضح ✓</div>
+ <div id="marq"></div>
+ <svg id="cur" viewBox="0 0 64 64"><path d="M8 5 L8 49 L20 38 L28 57 L37 53 L29 35 L46 35 Z" fill="#fff" stroke="#0C0C0E" stroke-width="4" stroke-linejoin="round"/></svg>
+</div>
+<div id="keys"><div class="key" id="kD">Delete</div></div>
+<div id="capbox"></div><div id="vig"></div>
+<script src="../../../tools/reel-engine.js"></script>
+<script>
+const L=0.25;
+// clutter on the bad cover: [x,y,rot,html]
+const loaf=(w)=>`<svg width="${w}" viewBox="0 0 120 70"><ellipse cx="60" cy="38" rx="56" ry="28" fill="#E8B04A"/><path d="M30 24 l10 22 M54 18 l10 26 M78 20 l10 24" stroke="#B9782A" stroke-width="6" stroke-linecap="round"/></svg>`;
+const CL=[[18,150,-18,loaf(110)],[300,128,22,loaf(96)],[292,330,-10,loaf(120)],[10,380,14,loaf(90)],
+ [300,520,8,'<div style="width:112px;height:112px;border-radius:50%;background:#D8342A;color:#fff;font-weight:700;font-size:38px;display:flex;align-items:center;justify-content:center;transform:rotate(-12deg)">عرض</div>'],
+ [150,236,-6,'<div style="background:#FFF4E2;color:#8A3A1C;font-weight:700;font-size:26px;border-radius:10px;padding:4px 18px">جديد!</div>'],
+ [196,560,-14,'<div style="font:700 60px Inter;color:#FFF4E2">★</div>'],[120,470,10,'<div style="font:700 44px Inter;color:#8A5A2A">★</div>'],
+ [30,560,0,'<div style="width:150px;height:10px;border-radius:8px;background:#8A5A2A"></div>'],[250,690,0,'<div style="background:#3A2416;color:#FFF4E2;font-weight:700;font-size:24px;border-radius:999px;padding:6px 20px">اطلب الحين</div>']];
+$('clut').innerHTML=CL.map((c,i)=>`<div class="cl abs" id="cl${i}" style="left:${c[0]}px;top:${c[1]}px">${c[3]}</div>`).join('');
+const WORDS=['خبز','البيت','الطازج','كل','صباح','من','تنّورنا'];
+const CAP=[
+ {a:0,w:[['غلافك',0],['حلو',0.82,1]]},
+ {a:1.58,w:[['بس',1.58],['انقص',1.7,1],['نصه',2.06],['بالبروفايل',2.46]]},
+ {a:3.34,w:[['لأن',3.34],['انستقرام',3.74],['يقص',4.58,1],['غلاف',5.14],['الريل',5.68]]},
+ {a:6.14,w:[['من',6.14],['فوق',6.62,1],['ومن',7.06],['تحت',7.24,1]]},
+ {a:7.88,w:[['ويخليه',7.88],['<span class="ltr">3:4</span>',8.6,1]]},
+ {a:9.6,w:[['أول',9.6],['شي:',10.36]]},
+ {a:10.82,w:[['الكلام',10.82],['والويه',11.52],['بالنص',12.02,1]]},
+ {a:12.9,w:[['بعيد',12.9],['عن',13.36],['الطرف',13.52]]},
+ {a:14.16,w:[['ثاني',14.16],['شي:',14.62]]},
+ {a:15.0,w:[['4',15.0,1],['كلمات',15.46,1],['بالكثير',16.1]]},
+ {a:16.84,w:[['كبيرة',16.84,1],['وتنقرا',17.42],['من',18.08],['القريد',18.24]]},
+ {a:19.08,w:[['ثالث',19.08],['شي:',19.44]]},
+ {a:20.06,w:[['شي',20.06,1],['واحد',20.36,1],['بالصورة',20.96]]},
+ {a:21.62,w:[['وخلفية',21.62],['تبين',22.38,1],['عليه',22.82]]},
+ {a:23.46,w:[['افتح',23.46],['بروفايلك',23.92],['الحين',24.62]]},
+ {a:25.08,w:[['وشوف',25.08],['بنفسك',25.6,1]]},
+ {a:26.56,w:[['احفظ',26.56,1],['الريل',26.96]]},
+ {a:27.44,b:31.4,w:[['وارجع',27.44],['له',28.02],['قبل',28.26],['الريل',28.64],['الياي',29.24]]}];
+let CUR,CLICKS,CAM,HERO,T={};
+const HX=390,HY=760,HS=1.12;                          // hero while editing
+const cvp=(u,v)=>[HX+(u-216)*HS,HY+(v-384)*HS];        // cover px -> stage px
+function init(){mkCaps(CAP);
+ T.tile=C('tile0');T.sw=C('swT');T.bm=C('bm');
+ const a=cvp(14,8),b=cvp(418,118),tc=cvp(216,60),tc2=cvp(216,190),f0=cvp(70,650),f1=cvp(216,470),hd=cvp(400,232),hd2=cvp(420,262),m0=cvp(4,120),m1=cvp(428,764);
+ T.a=a;T.b=b;T.m0=m0;T.m1=m1;
+ CUR=[[0,820,1180],[0.7,820,1180],[1.3,700,900],[1.6,700,900],[2.1,T.tile[0]+60,T.tile[1]+80],[3.3,T.tile[0]+60,T.tile[1]+80],[3.9,900,1130],
+  [6.2,900,1130],[6.65,560,330],[7.0,560,330],[7.3,560,1190],[9.4,560,1190],
+  [10.0,a[0],a[1]],[10.3,a[0],a[1]],[10.75,b[0],b[1]],[10.82,b[0],b[1]],[11.0,tc[0],tc[1]],[11.45,tc2[0],tc2[1]],[11.55,tc2[0],tc2[1]],
+  [11.9,f0[0],f0[1]],[12.0,f0[0],f0[1]],[12.55,f1[0],f1[1]],[13.0,f1[0]+120,f1[1]+60],[14.6,f1[0]+120,f1[1]+60],
+  [15.0,tc2[0]+40,tc2[1]+10],[16.5,tc2[0]+40,tc2[1]+10],[16.82,hd[0],hd[1]],[17.4,hd2[0],hd2[1]],[18.0,hd2[0]+60,hd2[1]+120],[19.1,hd2[0]+60,hd2[1]+120],
+  [19.45,m0[0],m0[1]],[19.5,m0[0],m0[1]],[20.02,m1[0],m1[1]],[21.2,m1[0],m1[1]],[21.66,T.sw[0]+8,T.sw[1]+10],[23.3,T.sw[0]+8,T.sw[1]+10],
+  [23.9,860,1240],[26.4,860,1240],[26.92,T.bm[0]+20,T.bm[1]+30],[40,T.bm[0]+20,T.bm[1]+30]];
+ CLICKS=[1.62,10.32,11.02,12.02,15.02,16.84,19.5,21.7,26.98];mkRings(CLICKS.length);
+ CAM=[[0,1.08,540,760],[1.5,1,540,760],[2.2,1,540,760],[2.9,1.25,T.tile[0]+120,T.tile[1]+60],[3.3,1.25,T.tile[0]+120,T.tile[1]+60],[3.8,1,540,760],
+  [9.9,1,540,760],[10.5,1.12,540,700],[13.0,1.12,540,720],[13.7,1,540,760],[14.7,1,540,760],[15.2,1.15,540,680],[17.6,1.15,540,690],[18.1,1,540,760],
+  [19.3,1,540,760],[19.8,1.1,540,780],[23.2,1.1,540,800],[23.5,1,540,760],[24.4,1,540,760],[26.2,1.22,T.tile[0]+140,T.tile[1]+40],[26.5,1,540,760],[40,1,540,760]];
+ // t,x,y,scale,crop(0..1)
+ HERO=[[0,540,740,1.26,0],[1.52,540,740,1.26,0],[2.08,T.tile[0],T.tile[1],.648,1],[3.3,T.tile[0],T.tile[1],.648,1],[3.95,540,760,1.2,0],[9.3,540,760,1.2,0],[9.85,HX,HY,HS,0],
+  [17.95,HX,HY,HS,0],[18.3,HX,HY,.5,1],[18.75,HX,HY,.5,1],[19.1,HX,HY,HS,0],[23.4,HX,HY,HS,0],[23.98,T.tile[0],T.tile[1],.648,1],[40,T.tile[0],T.tile[1],.648,1]];
+}
+function frame(tv){const t=tv-L;camera(t,CAM);cursor(t,CUR,CLICKS);caps(t,CAP);
+ // ---------- profile (A and F)
+ if(t<10)G('gP',t,1.9,3.75,'whipL','pop');else G('gP',t,23.8,26.52,'whipL','whipL');
+ S('cutPill',(()=>{const p=pop(t,2.06,3.4,{dy:40,s0:.4});p.r=-7;return p;})());
+ S('okPill',pop(t,25.1,26.35,{dy:40,s0:.5}));
+ // ---------- B: the crop explained
+ G('gB',t,4.3,9.45,'pop','pop');
+ const hTop=760-384*1.2,hBot=760+384*1.2,sT=760-288*1.2,sB=760+288*1.2;
+ const bl=$('brL'),br=$('brR');bl.style.top=hTop+'px';bl.style.height=(hBot-hTop)+'px';br.style.top=sT+'px';br.style.height=(sB-sT)+'px';
+ const pb=eo(P(t,4.58,.5));bl.style.clipPath=`inset(${50-50*pb}% 0)`;S('d916',pop(t,4.7,undefined,{dx:-60,dy:0}));S('d916s',pop(t,4.85,undefined,{dx:-60,dy:0}));
+ const pr=eo(P(t,7.9,.5));br.style.clipPath=`inset(${50-50*pr}% 0)`;S('d34',pop(t,8.55,undefined,{dx:80,dy:0,s0:.3,d:.5}));S('d34s',pop(t,8.9,undefined,{dx:60,dy:0}));
+ const dsh=eo(P(t,4.58,.35))*(1-eo(P(t,9.2,.3)));$('dT').style.opacity=dsh;$('dB').style.opacity=dsh;
+ // bands: scene A crop tint (in tile hidden by clip), scene B cut
+ const bt=eo(P(t,6.62,.3))*(1-eo(P(t,9.2,.3))),bb=eo(P(t,7.24,.3))*(1-eo(P(t,9.2,.3)));$('bT').style.opacity=bt;$('bB').style.opacity=bb;
+ const ct=pop(t,6.62,9.2,{dx:120,dy:0,s0:.5});S('cutT',ct);$('cutT').style.left='610px';$('cutT').style.top=(hTop+20)+'px';
+ const cb=pop(t,7.24,9.2,{dx:120,dy:0,s0:.5});S('cutB',cb);$('cutB').style.left='610px';$('cutB').style.top=(hBot-96)+'px';
+ // ---------- checklist
+ G('gL',t,9.75,23.75,'pop','pop');
+ [[9.6,13.6],[14.16,18.5],[19.08,23.0]].forEach((r,i)=>{const e=$('li'+i),on=eo(P(t,r[0],.3)),dn=eo(P(t,r[1],.3));const en=pop(t,9.7+i*.09,undefined,{dx:160,dy:0});
+  e.style.opacity=en.o;e.style.transform=`translateX(${en.x}px) scale(${1+.05*Math.sin(cl(P(t,r[0],.5))*Math.PI)})`;
+  e.style.borderColor=dn>0?mixc('#E6B84C','#45D483',dn):(on>0?`rgba(230,184,76,${on})`:'');e.style.color=dn>0?mixc('#F2F0EB','#45D483',dn):mixc('#77777F','#F2F0EB',on);
+  const em=e.querySelector('em');em.textContent=dn>.5?'✓':'0'+(i+1);em.style.background=dn>0?mixc('#E6B84C','#1E4A30',dn):mixc('#26262D','#E6B84C',on);em.style.color=dn>.5?'#45D483':mixc('#8D8D93','#17130A',on);});
+ S('sws',pop(t,21.1,23.3,{dy:50}));$('swT').style.borderColor=t>21.7?'#E6B84C':'';$('swT').style.transform=`scale(${1+.18*Math.sin(cl(P(t,21.7,.4))*Math.PI)})`;
+ S('fitPill',pop(t,18.3,18.95,{dy:30,s0:.5}));
+ // ---------- cover internals
+ // title: position, text, size
+ const up=ee(P(t,11.0,.45));const ty=lerp(22,150,up);
+ let n=7;[15.12,15.32,15.52,15.72,15.92].forEach(x=>{if(t>=x)n--;});
+ const big=ee(P(t,16.84,.56));const fs=lerp(n>4?30:34,84,big);
+ const tt=$('ttl');tt.style.top=ty+'px';tt.style.fontSize=fs+'px';
+ const txt=WORDS.slice(0,n);$('ttx').innerHTML=n>4?txt.slice(0,4).join(' ')+'<br>'+txt.slice(4).join(' '):txt.join(' ');
+ const sel=(t>=10.75&&t<11.6)||(t>=15.02&&t<17.75);$('tbox').style.opacity=sel?1:0;
+ const cn=$('cnt');cn.style.opacity=(t>=15.02&&t<17.75)?1:0;cn.textContent=n+' كلمات';cn.style.background=n>4?'#D8342A':'#1E8A4C';cn.style.color='#fff';cn.style.transformOrigin='0 100%';
+ // face: drag to middle, then grows as the one subject
+ const fd=ee(P(t,12.0,.55)),fg=ee(P(t,20.3,.6));
+ const fx=lerp(lerp(8,146,fd),76,fg),fy=lerp(lerp(600,418,fd),300,fg),fsc=lerp(lerp(.62,.7,fd),1.4,fg);
+ $('face').style.transform=`translate(${fx}px,${fy}px) scale(${fsc})`;
+ // clutter out
+ CL.forEach((c,i)=>{const p=ein(P(t,20.06+i*.035,.28));const e=$('cl'+i);e.style.transform=`rotate(${c[2]+p*40}deg) scale(${1-p})`;e.style.opacity=1-p;});
+ // background swap: circle wipe from the bottom (swatch side)
+ const bw=ee(P(t,21.7,.7));$('bgB').style.clipPath=`circle(${bw*1000}px at 70% 100%)`;
+ $('glow').style.opacity=eo(P(t,22.38,.5))*.9;$('wm').style.opacity=eo(P(t,22.6,.4));
+ // safe frame
+ const sf=eo(P(t,10.3,.3))*(1-eo(P(t,13.75,.3)));const se=$('safe');se.style.opacity=sf;se.style.transform=`scale(${1+.03*Math.sin(cl(P(t,12.9,.6))*Math.PI)})`;se.style.borderColor=t>13.4&&t<13.8?'#45D483':'';
+ // marquee
+ const mq=$('marq');let m=null;
+ if(t>=10.32&&t<10.9){const p=ee(P(t,10.32,.43));m=[T.a[0],T.a[1],lerp(T.a[0],T.b[0],p),lerp(T.a[1],T.b[1],p),1-eo(P(t,10.78,.12))];}
+ if(t>=19.5&&t<20.2){const p=ee(P(t,19.5,.52));m=[T.m0[0],T.m0[1],lerp(T.m0[0],T.m1[0],p),lerp(T.m0[1],T.m1[1],p),1-eo(P(t,20.06,.14))];}
+ if(m){mq.style.left=m[0]+'px';mq.style.top=m[1]+'px';mq.style.width=(m[2]-m[0])+'px';mq.style.height=(m[3]-m[1])+'px';mq.style.opacity=m[4];mq.style.visibility='visible';}else{mq.style.opacity=0;mq.style.visibility='hidden';}
+ // Delete key
+ const kin=P(t,19.9,.25),kout=P(t,20.7,.3),kp=eo(P(t,20.06,.1))*(1-eo(P(t,20.4,.14)));const kk=$('keys');kk.style.opacity=cl(kin*3)*(1-eo(kout));kk.style.transform=`translateY(${(1-back(kin))*60}px)`;
+ const kd=$('kD');kd.style.transform=`translateY(${10*kp}px)`;kd.style.background=kp>.05?`linear-gradient(180deg,${mixc('#2A2A31','#E6B84C',kp)},${mixc('#1B1B20','#B98F2E',kp)})`:'';kd.style.color=mixc('#F2F0EB','#17130A',kp);
+ // ---------- closing
+ G('gH',t,26.62,undefined,'whipL','pop');
+ S('bm',pop(t,26.6,undefined,{dy:-80,s0:.5,d:.6}));$('bmF').style.opacity=eo(P(t,26.98,.3));$('bm').style.transform+=` scale(${1+.16*Math.sin(cl(P(t,26.98,.45))*Math.PI)})`;
+ S('q1',pop(t,26.75,undefined,{dy:60}));S('q2',pop(t,27.44,undefined,{dy:40}));S('mark',{o:eo(P(t,27.6,.6))*.95,y:(1-eo(P(t,27.6,.6)))*30});
+ // ---------- hero transform
+ const [hx,hy,hs,hc]=keysE(t,HERO);const inn=back(P(t,-0.25,.7));const wout=ein(P(t,26.32,.2));
+ S('hero',{o:wout>=1?0:1,x:hx-1500*wout,y:hy+(1-inn)*500,s:hs*lerp(.8,1,inn)*(1+.14*wout),blur:smear(t,HERO)+wout*26});
+ $('cv').style.clipPath=`inset(${12.5*hc}% 0 round ${lerp(26,14,hc)}px)`;
+}
+</script></body></html>
