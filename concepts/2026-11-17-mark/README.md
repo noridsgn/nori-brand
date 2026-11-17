@@ -2,17 +2,24 @@
 
 كافيه وهمي. الاسم «علامة» اقترحه واحد من المتابعين، ونوري اختار MARK وسوّى اللوقو («M شايل القهوة») بنفسه (`logo/`).
 
-- `mark-01.jpg` لين `mark-10.jpg`: 10 صور 1080×1440 (الغلاف، الاسم، اللوقو، الألوان والخط، الكوب، التيك أواي، الواجهة، الأكياس، الفريق والزباين، الخلاصة).
+- `mark-01.jpg` لين `mark-10.jpg`: 10 صور 1080×1440 (الغلاف، الاسم، اللوقو، الألوان والخط، الكوب، التيك أواي، اللوحة، الأكياس، التفاصيل، الخلاصة).
 - `caption.md`: الكابشن (دعوة وحدة: كومنت. بدون دايركت أو أسعار).
 - `mockups/`: نتيجة تركيب الهوية على الموكابات (JPG بس).
 - `logo/`: ملفات اللوقو من نوري (PNG) + `mark-icon.svg` (الرمز فيكتور، مرسوم من قياسات الـ PNG).
 - الألوان: #EAE0D5 كريمة، #C6AC8F لاتيه، #5E503F بُن، #22333B ليل، #0A0908 إسبريسو. الخط: Montserrat + Tajawal للنصوص (الكوفي داخل اللوقو صورة من ملف نوري).
 
 ## الموكابات
-ملفات PSD جابها نوري (mockups-design.com، Mr.Mockup، Pixpine، ls.graphics). **ما تنرفع هني**: رخصها تمنع نشر الـ PSD. `src/comp.py` و`src/m_all.py` و`src/m_window.py` يركبون التصاميم عليها (يقرون الطبقات والـ smart object box)، ويحتاجون مجلد الـ PSD محلي.
+ملفات PSD جابها نوري (mockups-design.com، Mr.Mockup، Pixpine، ls.graphics). **ما تنرفع هني**: رخصها تمنع نشر الـ PSD. `src/comp.py` و`src/m_all.py` و`src/m2.py` يركبون التصاميم عليها (يقرون الطبقات والـ smart object box)، ويحتاجون مجلد الـ PSD محلي.
 
 ## الإعادة
-`npm i @fontsource/montserrat @fontsource/reem-kufi @fontsource/tajawal playwright-core` · `python3 mklogo.py` · `node shot.js designs.html designs` · `python3 m_all.py` و`m_window.py` · `node shot.js slides.html out`.
+`npm i @fontsource/montserrat @fontsource/reem-kufi @fontsource/tajawal playwright-core` · `python3 mklogo.py` · `node shot.js designs.html designs` · `python3 m_all.py bags pouch tote sticker` و`python3 m2.py hand espresso cupcream sign2 apron` · `./build.sh slides` · `node shot.js slides.html out 2` · `python3 fin.py`.
+
+## النسخة 2 (17 نوفمبر، بعد ملاحظات نوري)
+- الأكواب كانت ممطوطة: اللف القديم ما يحافظ على النسبة. `cyl2` في `comp.py` يحسب المقياس من نص قطر الكوب بكل صف ومن ميلان الكاميرا.
+- الصور تنرندر 2× وتنزل 1080 (JPG 95)، وكل موكاب ياخذ مساحة أكبر بدل كروت صغيرة.
+- اللوحة: الرمز بروحه بدون اسم («العلامة تكفي») بدل فكرة «تعرفه من بعيد» اللي تكررت بكونسبتات قبل.
+- آخر سلايد: انشال موكاب المنيو، وصار سؤال الكومنت بس.
+- النصوص كويتي: بدون «جا/الجاي».
 
 ## الحالة
 ينتظر موافقة نوري. ما انجدول على Metricool.

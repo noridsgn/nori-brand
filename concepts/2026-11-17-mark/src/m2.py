@@ -1,0 +1,63 @@
+from comp import *
+import sys
+def one(a): return 1 if a is None else a
+def flat(m): return m.full(m.psd.topil().convert('RGB'),(0,0)+m.psd.size)
+def hand():
+    m=M("cup-mockup_3/cup-mockup.psd",.5)
+    out=flat(m);ma=m.mask('Change This')
+    d,da=m.cyl2('cup_hand',ma,cy=1310,tilt=.13,fit=(.1,.3),zoom=.86)
+    c=over(np.broadcast_to(SLATE*1.12,out.shape).copy(),d,da)
+    ra=m.shape('Change Color');c=over(c,np.broadcast_to(np.clip(CREAM*1.06,0,1),out.shape),ra);ma=np.maximum(ma,ra)
+    s,sa=m.px('Shadow');c=mul(c,s,sa*.8)
+    r,ra=m.px('Reflection');c=screen(c,r,ra*.5)
+    out=over(out,c,ma)
+    q,qa=m.px('Liquid');out=over(out,q,qa)
+    save(out,'hand')
+def espresso():
+    m=M("coffee-cup-mockup_2/coffee-cup-mockup.psd",.5)
+    out=flat(m);L=list(m.psd);ma=m.mask(L[1])
+    d,da=m.cyl2('cup_esp',ma,cy=2550*.5,dbg=True)
+    c=over(np.broadcast_to(CREAM,out.shape).copy(),d,da)
+    ra=m.shape(L[2]);alla=np.maximum(ma,ra)
+    s,sa=m.px(L[3]);c=mul(c,s,sa)
+    r,ra2=m.px(L[4]);c=screen(c,r,ra2)
+    out=over(out,c,alla)
+    q,qa=m.px(L[5]);out=over(out,q,qa)
+    save(out,'espresso')
+def cupcream():
+    m=M("MD356_Free_Paper_Coffee_Cup_Mockup_3/MD356_Free_Paper_Coffee_Cup_Mockup/Coffee_Cup_Mockup_1.psd",.75)
+    out=np.broadcast_to(SLATE,(m.H,m.W,3)).copy()
+    s,sa=m.px('Mockup/Shadows/Shadows');out=burn(out,s,sa*179/255*.8)
+    cap,ca=m.px('Mockup/Cap/Cap');out=over(out,cap*BROWN*1.15,ca)
+    cup,ua=m.px('Mockup/Cup/Cup')
+    d,da=m.cyl2('cup_to',ua,cy=1700*.75,dbg=True)
+    top,ta=m.px('Mockup/Cup/Top')
+    tint=np.broadcast_to(np.clip(CREAM*1.1,0,1),out.shape)
+    body=over(cup*tint,d*cup*1.15,da*ua);body=over(body,top*tint,ta);ba=np.maximum(ua,ta)
+    out=over(out,body,ba)
+    cf,fa=m.px('Mockup/Coffee/Coffee');out=over(out,cf,fa)
+    h,ha=m.px('Mockup/Highlights/Highlights');out=screen(out,h,ha)
+    save(out,'cupcream')
+def sign2():
+    m=M("MD1247_Signboard_Mockup_2/MD1247_Signboard_Mockup/Signboard_Mockup_2.psd",.75)
+    out,_=m.px('Background/Background')
+    out=burn(out,np.broadcast_to(hexc('#3a3f42'),out.shape),m.shape('Sign color'))
+    G=m.get('Mockup/Design');so=list(G)[0];sh=list(G)[1]
+    d,da=m.persp('sign2',m.tb(so));da=da*one(m.mask(G))
+    s,sa=m.px(sh);d=mul(d,s,sa)
+    out=over(out,d,da)
+    h,ha=m.px('Mockup/Highlights/Highlights');out=screen(out,h,ha*one(m.mask('Mockup/Highlights'))*.8)
+    save(out,'sign2')
+def apron():
+    m=M("free-apron-mockup_3/Free Apron Mockup.psd",.65)
+    out=np.broadcast_to(CREAM,(m.H,m.W,3)).copy()
+    s,sa=m.px('Shadow');out=over(out,s,sa)
+    e,ea=m.px('Elements');out=over(out,e,ea)
+    for n,c in (('Tag',CREAM*.97),('Stitches Strap',TAN),('Stitches Apron',TAN),('Strap',BROWN),('Apron',SLATE)):
+        out=over(out,np.broadcast_to(c,out.shape),m.shape('COLOR/'+n))
+    for n,dsg in (('Tag','aprontag'),('Apron','apron2')):
+        so=m.get('DESIGN/'+n);d,da=m.persp(dsg,m.tb(so));out=over(out,d,da*one(m.mask(so)))
+    s,sa=m.px('Shadows');out=mul(out,s,sa)
+    h,ha=m.px('Highlights');out=screen(out,h,ha*.3)
+    save(out,'apron')
+for f in sys.argv[1:]: globals()[f]()

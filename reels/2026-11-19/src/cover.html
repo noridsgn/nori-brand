@@ -7,11 +7,12 @@
 .fl{position:absolute;left:-360px;top:-450px;width:720px;height:900px;background:#FAF1DC;border-radius:30px;overflow:hidden;box-shadow:0 50px 100px rgba(0,0,0,.65);direction:rtl;font-family:Taj;color:#3D3B1F}
 .fe{position:absolute;left:0;top:0;transform-origin:0 0;white-space:nowrap}
 .ti{width:420px;text-align:right;font:800 96px/1.1 Taj}
-.tgl{width:300px;text-align:right;font:500 40px/1.2 Taj;color:#8A6A12}
-.bd{width:140px;height:140px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font:800 32px/1.1 Taj;white-space:normal;color:#FAF1DC}
+.tgl{width:300px;text-align:right;font:500 40px/1.2 Taj,Inter;color:#8A6A12}
+.bd{width:140px;height:140px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font:800 32px/1.1 Taj,Inter;white-space:normal;color:#FAF1DC}
+.st{width:720px;height:64px;font:800 30px/64px Taj;text-align:center;background:#3D3B1F;color:#FAF1DC}.st.g{background:#EBCB7A;color:#3D3B1F}
 .sd{font:500 30px Taj;background:#3D3B1F;color:#FAF1DC;padding:8px 18px;border-radius:10px}
 .jar{width:150px;height:190px}
-.pr{width:300px;text-align:right;font:800 60px/1.1 Taj;color:#D98E04}
+.pr{width:300px;text-align:right;font:800 60px/1.1 Taj,Inter;color:#D98E04}
 .pr small{font:500 30px Taj;color:#3D3B1F}
 .bt{width:300px;height:84px;border-radius:42px;background:#3D3B1F;color:#FAF1DC;font:800 38px/84px Taj;text-align:center}
 .ov{position:absolute;pointer-events:none}
@@ -42,23 +43,27 @@ h1{position:absolute;left:0;width:1080px;top:1060px;text-align:center;direction:
 <div class="h0" style="left:700px;top:680px;transform:rotate(5deg) scale(.72)"><div class="fl" id="flA" style="box-shadow:0 0 140px rgba(230,184,76,.3),0 50px 100px rgba(0,0,0,.7)"></div></div>
 <div class="tg2" style="left:120px;top:330px;background:#2A1414;border:2px solid #FF5A52;color:#FF5A52">زحمة ✕</div><div class="tg2" style="left:770px;top:310px;background:#10261A;border:2px solid #45D483;color:#45D483">فراغ ✓</div>
 <h1>الفراغ <span class="gold">يبيع</span></h1><img src="mark.svg" style="position:absolute;left:492px;top:1480px;width:96px"><div id="vig"></div>
-<script src="../../../tools/reel-engine.js"></script><script>const jar='<svg viewBox="0 0 150 190"><rect x="34" y="6" width="82" height="30" rx="8" fill="#3D3B1F"/><rect x="14" y="34" width="122" height="150" rx="30" fill="#D98E04"/><rect x="26" y="50" width="16" height="110" rx="8" fill="#F4B63A" opacity=".8"/><rect x="34" y="84" width="82" height="64" rx="10" fill="#FAF1DC"/><path d="M75 96l17 10v20l-17 10-17-10v-20z" fill="none" stroke="#3D3B1F" stroke-width="6" stroke-linejoin="round"/></svg>';
-// element states: [x,y,scale,rot] crowded -> margins -> grouped -> final; out=[dx,dy,rot] for clutter that leaves in step 3
+<script src="../../../tools/reel-engine.js"></script><script>const jarS=(c,h)=>`<svg viewBox="0 0 150 190"><rect x="34" y="6" width="82" height="30" rx="8" fill="#3D3B1F"/><rect x="14" y="34" width="122" height="150" rx="30" fill="${c}"/><rect x="26" y="50" width="16" height="110" rx="8" fill="${h}" opacity=".8"/><rect x="34" y="84" width="82" height="64" rx="10" fill="#FAF1DC"/><path d="M75 96l17 10v20l-17 10-17-10v-20z" fill="none" stroke="#3D3B1F" stroke-width="6" stroke-linejoin="round"/></svg>`;
+const jar=jarS('#D98E04','#F4B63A');
+// a believable crowded ad: tidy type, but edge-to-edge, three products, two strips, three badges, nothing leads.
+// element states: [x,y,scale,rot] crowded -> margins -> grouped -> final; out=[dx,dy,rot] for what leaves in step 3
 const E=[
- {c:'ti',h:'عسل خلية',p:[[292,4,1,0],[250,50,1,0],[250,56,1,0],[250,60,.95,0]]},
- {c:'tgl',h:'طبيعي 100%',p:[[6,338,1,-7],[50,338,1,-7],[370,172,1,0],[370,170,1,0]]},
- {c:'bd',h:'جديد',bg:'#D98E04',p:[[-26,-26,1,0],[50,50,1,0],[50,50,1,0]],out:[-420,-200,-90]},
- {c:'bd',h:'خصم',bg:'#3D3B1F',p:[[600,236,1,0],[530,250,1,0],[530,250,1,0]],out:[460,-120,80]},
- {c:'bd',h:'توصيل مجاني',bg:'#B4530A',p:[[606,632,1,0],[530,600,1,0],[60,650,1,0]],out:[-480,160,-120]},
- {c:'sd',h:'سدر · زهور · شمع',p:[[-6,560,1,0],[50,560,1,0],[50,560,1,0]],out:[-520,60,-20]},
- {c:'jar',h:jar,p:[[-14,410,1,0],[50,410,1,0],[50,410,1,0]],out:[-460,-80,-70]},
- {c:'jar',h:jar,p:[[130,410,1,0],[170,410,1,0],[170,410,1,0]],out:[-420,260,-110]},
- {c:'jar',h:jar,main:1,p:[[285,410,1,0],[285,410,1,0],[285,410,1,0],[229,285,1.75,0]]},
- {c:'jar',h:jar,p:[[440,410,1,0],[400,410,1,0],[400,410,1,0]],out:[440,240,100]},
- {c:'jar',h:jar,p:[[584,410,1,0],[520,410,1,0],[520,410,1,0]],out:[470,-60,70]},
- {c:'jar',h:jar,p:[[285,216,1,0],[285,222,1,0],[285,222,1,0]],out:[60,-520,40]},
- {c:'pr',h:'4.500 <small>د.ك</small>',p:[[2,806,1,4],[50,770,1,4],[370,676,1,0],[370,676,1,0]]},
- {c:'bt',h:'اطلب الحين',p:[[426,820,1,0],[370,766,1,0],[370,766,1,0],[370,766,1,0]]}];
+ {c:'ti',h:'عسل خلية',p:[[292,6,1,0],[250,50,1,0],[250,56,1,0],[250,60,.95,0]]},
+ {c:'tgl',h:'طبيعي 100%',p:[[404,108,1,0],[364,150,1,0],[370,172,1,0],[370,170,1,0]]},
+ {c:'bd',h:'جديد',bg:'#D98E04',p:[[10,10,.8,0],[50,50,.8,0],[50,50,.8,0]],out:[-420,-200,-90]},
+ {c:'st',h:'سدر · زهور · جبلي · شمع العسل',p:[[0,166,1,0],[50,205,.861,0],[50,228,.861,0]],out:[-760,0,0]},
+ {c:'jar',h:jarS('#B86F0A','#DDA03A'),p:[[20,250,1.35,0],[50,285,1.2,0],[50,285,1.2,0]],out:[-460,-80,-70]},
+ {c:'jar',h:jar,main:1,p:[[259,250,1.35,0],[270,285,1.2,0],[270,285,1.2,0],[229,285,1.75,0]]},
+ {c:'jar',h:jarS('#E8B23A','#F7D477'),p:[[498,250,1.35,0],[490,285,1.2,0],[490,285,1.2,0]],out:[470,-60,70]},
+ {c:'sd',h:'سدر',p:[[84,512,1,0],[102,522,1,0],[102,522,1,0]],out:[-420,260,-40]},
+ {c:'sd',h:'زهور',p:[[316,512,1,0],[316,522,1,0],[316,522,1,0]],out:[0,420,10]},
+ {c:'sd',h:'جبلي',p:[[556,512,1,0],[536,522,1,0],[536,522,1,0]],out:[440,240,40]},
+ {c:'bd',h:'خصم<br>20%',bg:'#B4530A',p:[[572,206,.9,0],[556,250,.8,0],[556,262,.8,0]],out:[460,-160,80]},
+ {c:'st g',h:'✓ بدون سكر مضاف &nbsp; ✓ من المنحل لبيتك',p:[[0,586,1,0],[50,586,.861,0],[50,586,.861,0]],out:[760,0,0]},
+ {c:'bd',h:'توصيل مجاني',bg:'#3D3B1F',p:[[286,668,.8,0],[300,655,.78,0],[56,640,.8,0]],out:[-480,160,-120]},
+ {c:'sd',h:'الكمية محدودة!',p:[[12,836,1,0],[50,798,1,0],[56,792,1,0]],out:[-520,60,-20]},
+ {c:'pr',h:'4.500 <small>د.ك</small>',p:[[-100,690,1.25,0],[-70,680,1.1,0],[370,676,1,0],[370,676,1,0]]},
+ {c:'bt',h:'اطلب الحين',p:[[410,806,1,0],[370,766,1,0],[370,766,1,0],[370,766,1,0]]}];
 function build(id){const f=$(id);f.innerHTML=E.map((e,i)=>`<div class="fe ${e.c}" data-i="${i}" style="${e.bg?'background:'+e.bg:''}">${e.h}</div>`).join('')+
  '<div class="ov mg"></div><div class="ov tk" style="left:330px;top:8px">50</div><div class="ov tk" style="left:330px;bottom:8px">50</div><div class="ov tk" style="left:4px;top:430px">50</div><div class="ov tk" style="right:4px;top:430px">50</div>'+
  '<div class="ov gb" style="left:236px;top:46px;width:450px;height:190px"></div><div class="ov gb" style="left:350px;top:662px;width:336px;height:204px"></div>'+

@@ -77,3 +77,34 @@ def save(a,name,maxw=2400):
     im=Image.fromarray((np.clip(a,0,1)*255+.5).astype(np.uint8))
     if im.width>maxw: im=im.resize((maxw,int(im.height*maxw/im.width)),Image.LANCZOS)
     im.save(f'mock/{name}.jpg',quality=93);print(name,im.size,flush=True)
+
+def cyl2(s,design,alpha,cy,span=1.0,tilt=None,fit=(.25,.7),zoom=1.0,dbg=False):
+    """aspect-true wrap of flat art round an upright cup. design width = span*half circumference.
+    cy = screen row (canvas px) where the design's vertical centre lands; tilt = ellipse minor/major (sin of camera pitch)."""
+    d=np.asarray(Image.open(f'designs/{design}.png').convert('RGBA')).astype(np.float32)/255;h,w=d.shape[:2]
+    a=alpha[...,0]>.5;rows=np.where(a.any(1))[0];y0,y1=rows.min(),rows.max()
+    ym=np.arange(int(y0+fit[0]*(y1-y0)),int(y0+fit[1]*(y1-y0)))
+    xl=np.array([np.where(a[y])[0].min() for y in ym]);xr=np.array([np.where(a[y])[0].max()+1 for y in ym])
+    pl=np.polyfit(ym,xl,1);pr=np.polyfit(ym,xr,1)
+    ys=np.arange(s.H,dtype=np.float32);Rrow=np.maximum((np.polyval(pr,ys)-np.polyval(pl,ys))/2,1)
+    if tilt is None:
+        Lb,Rb=np.polyval(pl,y1),np.polyval(pr,y1);cx=(Lb+Rb)/2
+        yc=np.where(a[:,int(cx)])[0].max();ye=np.where(a[:,int(Lb+.12*(Rb-Lb))])[0].max()
+        tilt=(yc-ye)/(1-np.sqrt(1-.76**2))/((Rb-Lb)/2)
+    cosT=np.sqrt(max(1-tilt**2,.05))
+    sc=w/(np.pi*span*Rrow)/zoom           # design px per screen px on each row
+    vrow=np.cumsum(sc/cosT);vrow=vrow-np.interp(cy,ys,vrow)+h/2
+    yy,xx=np.mgrid[0:s.H,0:s.W].astype(np.float32)
+    L=np.polyval(pl,yy);R=np.polyval(pr,yy)
+    sx=np.clip((xx-L)/(R-L)*2-1,-1,1);th=np.arcsin(sx)
+    ycen=np.clip(yy+tilt*(R-L)/2*(1-np.cos(th)),0,s.H-1)
+    v=np.interp(ycen.ravel(),ys,vrow).reshape(yy.shape).astype(np.float32)
+    u=(.5+th/np.pi/span/zoom)*w
+    o=cv2.remap(d,u.astype(np.float32),v,cv2.INTER_LINEAR,borderValue=0)
+    if dbg: print('tilt',tilt,'R@cy',Rrow[int(cy)])
+    return o[...,:3],o[...,3:]
+def save(a,name,maxw=3000):
+    im=Image.fromarray((np.clip(a,0,1)*255+.5).astype(np.uint8))
+    if im.width>maxw: im=im.resize((maxw,int(im.height*maxw/im.width)),Image.LANCZOS)
+    im.save(f'mock/{name}.jpg',quality=95,subsampling=0);print(name,im.size,flush=True)
+M.cyl2=cyl2
