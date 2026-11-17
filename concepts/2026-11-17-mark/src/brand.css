@@ -1,0 +1,22 @@
+@font-face{font-family:Mont;font-weight:500;src:url(node_modules/@fontsource/montserrat/files/montserrat-latin-500-normal.woff2)}
+@font-face{font-family:Mont;font-weight:700;src:url(node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2)}
+@font-face{font-family:Mont;font-weight:800;src:url(node_modules/@fontsource/montserrat/files/montserrat-latin-800-normal.woff2)}
+@font-face{font-family:Kufi;font-weight:400;src:url(node_modules/@fontsource/reem-kufi/files/reem-kufi-arabic-400-normal.woff2)}
+@font-face{font-family:Kufi;font-weight:700;src:url(node_modules/@fontsource/reem-kufi/files/reem-kufi-arabic-700-normal.woff2)}
+@font-face{font-family:Taj;font-weight:400;src:url(node_modules/@fontsource/tajawal/files/tajawal-arabic-400-normal.woff2)}
+@font-face{font-family:Taj;font-weight:500;src:url(node_modules/@fontsource/tajawal/files/tajawal-arabic-500-normal.woff2)}
+@font-face{font-family:Taj;font-weight:700;src:url(node_modules/@fontsource/tajawal/files/tajawal-arabic-700-normal.woff2)}
+:root{--cream:#EAE0D5;--tan:#C6AC8F;--brown:#5E503F;--slate:#22333B;--ink:#0A0908}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#777;font-family:Taj,Mont,sans-serif}
+.en{font-family:Mont;letter-spacing:.3em;font-weight:700;text-transform:uppercase;direction:ltr}
+.ku{font-family:Taj,Mont;font-weight:700}
+/* two-part lockups: A = M + MARK, B = circle + علامة */
+.lk{position:relative;display:block}
+.lk i{position:absolute;inset:0;-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.lk i.a{background:var(--a,var(--ink))}.lk i.b{background:var(--b,var(--brown))}
+.lk.vert{aspect-ratio:777/1299}.lk.vert .a{-webkit-mask-image:url(assets/vert-A.png)}.lk.vert .b{-webkit-mask-image:url(assets/vert-B.png)}
+.lk.horiz{aspect-ratio:1351/457}.lk.horiz .a{-webkit-mask-image:url(assets/horiz-A.png)}.lk.horiz .b{-webkit-mask-image:url(assets/horiz-B.png)}
+.lk.word{aspect-ratio:1007/429}.lk.word .a{-webkit-mask-image:url(assets/word-A.png)}.lk.word .b{-webkit-mask-image:url(assets/word-B.png)}
+svg.ic{display:block;aspect-ratio:258/272.1}
+svg.ic .m{fill:var(--a,var(--ink))}svg.ic .c{fill:var(--b,var(--brown))}

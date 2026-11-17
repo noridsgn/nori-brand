@@ -1,0 +1,76 @@
+<!doctype html><html lang="ar"><head><meta charset="utf-8"><link rel="stylesheet" href="../../../tools/reel-base.css"><style>
+@font-face{font-family:Taj;font-weight:800;src:url(tajawal-arabic-800-normal.woff2)}
+@font-face{font-family:Taj;font-weight:500;src:url(tajawal-arabic-500-normal.woff2)}
+.grp{left:0;top:0;width:1080px;height:1920px}.grp>*{position:absolute}
+.h0{position:absolute;width:0;height:0}
+/* fictional honey shop «خلية» */
+.fl{position:absolute;left:-360px;top:-450px;width:720px;height:900px;background:#FAF1DC;border-radius:30px;overflow:hidden;box-shadow:0 50px 100px rgba(0,0,0,.65);direction:rtl;font-family:Taj;color:#3D3B1F}
+.fe{position:absolute;left:0;top:0;transform-origin:0 0;white-space:nowrap}
+.ti{width:420px;text-align:right;font:800 96px/1.1 Taj}
+.tgl{width:300px;text-align:right;font:500 40px/1.2 Taj;color:#8A6A12}
+.bd{width:140px;height:140px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font:800 32px/1.1 Taj;white-space:normal;color:#FAF1DC}
+.sd{font:500 30px Taj;background:#3D3B1F;color:#FAF1DC;padding:8px 18px;border-radius:10px}
+.jar{width:150px;height:190px}
+.pr{width:300px;text-align:right;font:800 60px/1.1 Taj;color:#D98E04}
+.pr small{font:500 30px Taj;color:#3D3B1F}
+.bt{width:300px;height:84px;border-radius:42px;background:#3D3B1F;color:#FAF1DC;font:800 38px/84px Taj;text-align:center}
+.ov{position:absolute;pointer-events:none}
+.mg{inset:50px;border:5px dashed #E6B84C;border-radius:8px}
+.gb{border:5px solid #E6B84C;border-radius:22px;background:rgba(230,184,76,.14)}
+.th{left:0;right:0;height:0;border-top:5px dashed #E6B84C}
+.tk{font:700 30px Inter;color:#17130A;background:#E6B84C;border-radius:8px;padding:0 10px;direction:ltr}
+.jr{left:180px;top:240px;width:360px;height:420px;border-radius:50%;border:10px solid #E6B84C;box-shadow:0 0 60px rgba(230,184,76,.6)}
+.sp{font:800 34px Taj;color:#8A6A12;border:4px dashed #C9A45C;border-radius:16px;padding:6px 22px;background:rgba(230,184,76,.16)}
+/* stage bits */
+#ord{left:110px;top:1215px;font-size:46px;padding:12px 34px;background:#2A1414;border:2px solid var(--bad);color:var(--bad);direction:rtl}
+.chip{left:0;top:226px;width:1080px;display:flex;justify-content:center}
+.chip div{display:flex;align-items:center;gap:20px;direction:rtl;background:#17171B;border:1.5px solid var(--line);border-radius:60px;padding:12px 40px 12px 14px;font-size:54px;font-weight:700;box-shadow:0 24px 50px rgba(0,0,0,.5)}
+.chip b{width:76px;height:76px;border-radius:50%;background:var(--gold);color:#17130A;font:700 46px Inter;display:flex;align-items:center;justify-content:center}
+#eye{left:390px;top:226px;width:300px;height:96px;border-radius:50px;background:#17171B;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;gap:16px;font-size:46px;font-weight:700;color:var(--gold);direction:rtl}
+.lb{font-size:44px;padding:8px 32px;direction:rtl}
+#lbB{left:110px;top:400px;background:#2A1414;border:2px solid var(--bad);color:var(--bad)}
+#lbA{left:790px;top:400px;background:#10261A;border:2px solid var(--ok);color:var(--ok)}
+#q1{left:0;top:420px;width:1080px;text-align:center;direction:rtl;font-weight:700;font-size:136px;line-height:1.2}
+#sv{left:290px;top:860px;width:500px;height:120px;border-radius:60px;border:3px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;gap:18px;font-size:50px;font-weight:700;direction:rtl;overflow:hidden}
+#svF{position:absolute;inset:0;background:var(--gold);opacity:0;z-index:-1}
+#mark{top:1090px}
+
+h1{position:absolute;left:0;width:1080px;top:1060px;text-align:center;direction:rtl;font-size:190px;line-height:1.1;font-weight:700}
+.tg2{position:absolute;font-size:44px;padding:8px 32px;direction:rtl;border-radius:99px;font-weight:700}
+</style></head><body><div id="bg"></div><div id="dots"></div>
+<div class="h0" style="left:330px;top:640px;transform:rotate(-8deg) scale(.6)"><div class="fl" id="flB"></div></div>
+<div class="h0" style="left:700px;top:680px;transform:rotate(5deg) scale(.72)"><div class="fl" id="flA" style="box-shadow:0 0 140px rgba(230,184,76,.3),0 50px 100px rgba(0,0,0,.7)"></div></div>
+<div class="tg2" style="left:120px;top:330px;background:#2A1414;border:2px solid #FF5A52;color:#FF5A52">زحمة ✕</div><div class="tg2" style="left:770px;top:310px;background:#10261A;border:2px solid #45D483;color:#45D483">فراغ ✓</div>
+<h1>الفراغ <span class="gold">يبيع</span></h1><img src="mark.svg" style="position:absolute;left:492px;top:1480px;width:96px"><div id="vig"></div>
+<script src="../../../tools/reel-engine.js"></script><script>const jar='<svg viewBox="0 0 150 190"><rect x="34" y="6" width="82" height="30" rx="8" fill="#3D3B1F"/><rect x="14" y="34" width="122" height="150" rx="30" fill="#D98E04"/><rect x="26" y="50" width="16" height="110" rx="8" fill="#F4B63A" opacity=".8"/><rect x="34" y="84" width="82" height="64" rx="10" fill="#FAF1DC"/><path d="M75 96l17 10v20l-17 10-17-10v-20z" fill="none" stroke="#3D3B1F" stroke-width="6" stroke-linejoin="round"/></svg>';
+// element states: [x,y,scale,rot] crowded -> margins -> grouped -> final; out=[dx,dy,rot] for clutter that leaves in step 3
+const E=[
+ {c:'ti',h:'عسل خلية',p:[[292,4,1,0],[250,50,1,0],[250,56,1,0],[250,60,.95,0]]},
+ {c:'tgl',h:'طبيعي 100%',p:[[6,338,1,-7],[50,338,1,-7],[370,172,1,0],[370,170,1,0]]},
+ {c:'bd',h:'جديد',bg:'#D98E04',p:[[-26,-26,1,0],[50,50,1,0],[50,50,1,0]],out:[-420,-200,-90]},
+ {c:'bd',h:'خصم',bg:'#3D3B1F',p:[[600,236,1,0],[530,250,1,0],[530,250,1,0]],out:[460,-120,80]},
+ {c:'bd',h:'توصيل مجاني',bg:'#B4530A',p:[[606,632,1,0],[530,600,1,0],[60,650,1,0]],out:[-480,160,-120]},
+ {c:'sd',h:'سدر · زهور · شمع',p:[[-6,560,1,0],[50,560,1,0],[50,560,1,0]],out:[-520,60,-20]},
+ {c:'jar',h:jar,p:[[-14,410,1,0],[50,410,1,0],[50,410,1,0]],out:[-460,-80,-70]},
+ {c:'jar',h:jar,p:[[130,410,1,0],[170,410,1,0],[170,410,1,0]],out:[-420,260,-110]},
+ {c:'jar',h:jar,main:1,p:[[285,410,1,0],[285,410,1,0],[285,410,1,0],[229,285,1.75,0]]},
+ {c:'jar',h:jar,p:[[440,410,1,0],[400,410,1,0],[400,410,1,0]],out:[440,240,100]},
+ {c:'jar',h:jar,p:[[584,410,1,0],[520,410,1,0],[520,410,1,0]],out:[470,-60,70]},
+ {c:'jar',h:jar,p:[[285,216,1,0],[285,222,1,0],[285,222,1,0]],out:[60,-520,40]},
+ {c:'pr',h:'4.500 <small>د.ك</small>',p:[[2,806,1,4],[50,770,1,4],[370,676,1,0],[370,676,1,0]]},
+ {c:'bt',h:'اطلب الحين',p:[[426,820,1,0],[370,766,1,0],[370,766,1,0],[370,766,1,0]]}];
+function build(id){const f=$(id);f.innerHTML=E.map((e,i)=>`<div class="fe ${e.c}" data-i="${i}" style="${e.bg?'background:'+e.bg:''}">${e.h}</div>`).join('')+
+ '<div class="ov mg"></div><div class="ov tk" style="left:330px;top:8px">50</div><div class="ov tk" style="left:330px;bottom:8px">50</div><div class="ov tk" style="left:4px;top:430px">50</div><div class="ov tk" style="right:4px;top:430px">50</div>'+
+ '<div class="ov gb" style="left:236px;top:46px;width:450px;height:190px"></div><div class="ov gb" style="left:350px;top:662px;width:336px;height:204px"></div>'+
+ '<div class="ov th" style="top:300px"></div><div class="ov th" style="top:600px"></div><div class="ov jr"></div>'+
+ '<div class="ov sp" style="left:70px;top:150px">فراغ</div><div class="ov sp" style="left:500px;top:640px">فراغ</div>';}
+function lay(id,t,m1,m2,m3,dim,jit){const f=$(id);const ov=f.querySelectorAll('.ov');
+ f.querySelectorAll('.fe').forEach((el,i)=>{const e=E[i];const p=e.p;const last=p[p.length-1];
+  let a=p[0].map((v,k)=>lerp(v,p[1][k],m1));a=a.map((v,k)=>lerp(v,p[2][k],m2));
+  let o=1;if(p[3])a=a.map((v,k)=>lerp(v,p[3][k],m3));
+  if(e.out){const q=ein(m3);a[0]+=e.out[0]*q;a[1]+=e.out[1]*q;a[3]+=e.out[2]*q;o=1-cl((m3-.55)*2.4);o*=1-.82*dim;}
+  if(jit){a[0]+=Math.sin(t*23+i*2.1)*3.2*jit;a[1]+=Math.cos(t*19+i*1.3)*3.2*jit;}
+  el.style.opacity=o;el.style.transform=`translate(${a[0]}px,${a[1]}px) rotate(${a[3]}deg) scale(${a[2]})`;el.style.filter=e.out&&m3>0&&m3<1?`blur(${(ein(m3)*8).toFixed(1)}px)`:'';});
+ return ov;}
+
+build('flA');build('flB');lay('flB',0,0,0,0,0,0).forEach(o=>o.style.opacity=0);lay('flA',0,1,1,1,0,0).forEach(o=>o.style.opacity=0);function frame(){}</script></body></html>
