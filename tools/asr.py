@@ -7,7 +7,7 @@ import subprocess, numpy as np
 raw=subprocess.run(['ffmpeg','-loglevel','error','-i',sys.argv[1],'-ac','1','-ar','16000','-f','f32le','-'],capture_output=True).stdout
 audio=np.frombuffer(raw,np.float32)
 segs,info=m.transcribe(audio, language="ar", word_timestamps=True, vad_filter=False,
-  initial_prompt="عندك خمس ثواني بس. البايو، صورة البروفايل، الهايلايتس، المنيو، الأسعار، شلون تطلب، الزباين، الدايركت، بروفايل، ستوري")
+  initial_prompt=sys.argv[3] if len(sys.argv)>3 else "عندك خمس ثواني بس. البايو، صورة البروفايل، الهايلايتس، المنيو، الأسعار، شلون تطلب، الزباين، الدايركت، بروفايل، ستوري")
 out=[]
 for s in segs:
     out.append({'start':round(s.start,2),'end':round(s.end,2),'text':s.text,'words':[{'w':w.word,'s':round(w.start,2),'e':round(w.end,2),'p':round(w.probability,2)} for w in s.words]})

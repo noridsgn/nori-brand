@@ -1,0 +1,156 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../../tools/reel-base.css">
+<style>
+#amb{position:absolute;inset:-120px;background:url(booth-wide.jpg) center/cover;filter:blur(70px) brightness(.32) saturate(1.2);opacity:.9}
+#lab{top:150px}
+#ttl{position:absolute;left:0;top:196px;width:1080px;height:120px;z-index:20}
+.h{position:absolute;left:0;top:0;width:1080px;text-align:center;direction:rtl;font-weight:700;font-size:86px;line-height:1.2;white-space:nowrap;opacity:0}
+.h .n{font-family:Inter;font-weight:700;color:var(--gold);font-size:58px;letter-spacing:2px;margin-left:22px;vertical-align:12px}
+#card{position:absolute;left:140px;top:340px;width:800px;height:1000px;border-radius:36px;overflow:hidden;z-index:10;
+ box-shadow:0 60px 120px rgba(0,0,0,.7),0 0 0 1.5px rgba(255,255,255,.10),0 0 90px rgba(230,184,76,.10);transform-origin:50% 0}
+#rim{position:absolute;inset:0;border-radius:36px;z-index:5;pointer-events:none;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.16),inset 0 0 0 1.5px rgba(230,184,76,.18);
+ background:linear-gradient(180deg,rgba(0,0,0,0) 70%,rgba(12,12,14,.55))}
+.ph{position:absolute;left:0;top:0;transform-origin:0 0}
+.ph img{position:absolute;left:0;top:0;filter:contrast(1.06) saturate(1.06)}
+.ph svg{position:absolute;left:0;top:0;overflow:visible}
+.hl{fill:none;stroke:var(--gold);stroke-width:5;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 6px rgba(230,184,76,.95)) drop-shadow(0 0 16px rgba(230,184,76,.6))}
+.hf{fill:rgba(230,184,76,.16)}
+#pins .pin{position:absolute;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;background:var(--gold);color:#17130A;font:700 38px Inter;display:flex;align-items:center;justify-content:center;
+ box-shadow:0 0 0 8px rgba(230,184,76,.22),0 12px 30px rgba(0,0,0,.6);opacity:0}
+.cnt{position:absolute;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:#17130A;border:3px solid var(--gold);color:var(--gold);font:700 32px Inter;display:flex;align-items:center;justify-content:center;opacity:0;z-index:8;box-shadow:0 8px 24px rgba(0,0,0,.6)}
+#stk{position:absolute;left:470px;top:560px;width:330px;height:190px;border:4px dashed var(--bad);border-radius:20px;background:rgba(42,20,20,.72);z-index:15;display:flex;align-items:center;justify-content:center;
+ color:var(--bad);font-weight:700;font-size:44px;direction:rtl;opacity:0}
+#stk b{position:absolute;right:-26px;top:-26px;width:64px;height:64px;border-radius:50%;background:var(--bad);color:#2A1414;font:700 40px Inter;display:flex;align-items:center;justify-content:center}
+.tag{position:absolute;z-index:15;direction:rtl;font-weight:700;font-size:36px;padding:10px 28px;border-radius:999px;white-space:nowrap;opacity:0}
+#tagL{background:rgba(23,19,10,.92);border:2px solid var(--gold);color:var(--gold)}
+#tagX{background:rgba(23,19,10,.92);border:2px solid var(--gold);color:var(--gold);font-family:Inter;direction:ltr}
+#list{position:absolute;left:300px;top:1062px;width:560px;z-index:12}
+.row{height:84px;margin-bottom:14px;border-radius:24px;background:rgba(23,23,27,.92);border:1.5px solid var(--line);display:flex;align-items:center;direction:rtl;padding:0 30px;gap:22px;font-weight:700;font-size:42px;opacity:0}
+.row i{flex:1;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.16))}
+.row u{text-decoration:none;width:52px;height:52px;border-radius:50%;border:3px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font:700 30px Inter;color:#0C0C0E}
+#endq{position:absolute;left:0;top:470px;width:1080px;text-align:center;direction:rtl;font-weight:700;font-size:128px;opacity:0;z-index:20}
+#ends{position:absolute;left:0;top:640px;width:1080px;text-align:center;direction:rtl;font-weight:500;font-size:56px;color:var(--grey);opacity:0;z-index:20}
+#cbtn{position:absolute;left:390px;top:1250px;width:300px;height:96px;border-radius:999px;background:var(--gold);display:flex;align-items:center;justify-content:center;opacity:0;z-index:20;box-shadow:0 0 0 10px rgba(230,184,76,.16),0 24px 50px rgba(0,0,0,.6)}
+#mark{left:504px;top:1588px;width:72px;opacity:.0;z-index:30}
+#grain{position:absolute;inset:0;opacity:.05;z-index:70;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>")}
+#fade{position:absolute;inset:0;background:#0C0C0E;z-index:90}
+</style></head><body>
+<div id="bg"></div><div id="amb"></div><div id="dots"></div>
+<div id="stage">
+ <div id="lab">B R A N D &nbsp; <b>S T O R Y</b></div>
+ <div id="ttl">
+  <div class="h" id="h1">قطعة من <span class="gold">لندن</span></div>
+  <div class="h" id="h2">نفس <span class="gold">القصة</span></div>
+  <div class="h" id="h3"><span class="n">01</span>الشكل</div>
+  <div class="h" id="h4"><span class="n">02</span>الكلام</div>
+  <div class="h" id="h5"><span class="n">03</span>الشعار</div>
+  <div class="h" id="h6">قصة <span class="gold">كاملة</span></div>
+  <div class="h" id="h7"><span class="gold">صج</span> البراند</div>
+ </div>
+ <div id="card">
+  <div class="ph" id="pw"><img src="booth-wide.jpg" width="1512" height="2016">
+   <svg width="1512" height="2016" viewBox="0 0 1512 2016">
+    <g id="lon"><rect class="hl hf" x="560" y="1430" width="85" height="35" rx="6"/><rect class="hl hf" x="785" y="1430" width="80" height="30" rx="6"/><rect class="hl hf" x="920" y="1423" width="75" height="27" rx="6"/><rect class="hl hf" x="1075" y="1403" width="75" height="32" rx="6"/><rect class="hl hf" x="1195" y="1390" width="72" height="35" rx="6"/></g>
+   </svg>
+   <div id="pins"><div class="pin" id="pin1" style="left:860px;top:640px">1</div><div class="pin" id="pin2" style="left:1240px;top:870px">2</div><div class="pin" id="pin3" style="left:1150px;top:600px">3</div></div>
+  </div>
+  <div class="ph" id="pc"><img src="booth-close.jpg" width="1932" height="2576">
+   <svg width="1932" height="2576" viewBox="0 0 1932 2576">
+    <path id="roof" class="hl" style="stroke-width:10" d="M 330 825 C 620 722, 1060 672, 1390 782 L 1665 995"/>
+    <g id="tel"><rect class="hl hf" x="390" y="1022" width="265" height="90" rx="12"/><rect class="hl hf" x="735" y="1066" width="240" height="90" rx="12"/><rect class="hl hf" x="1100" y="1114" width="236" height="88" rx="12"/><rect class="hl hf" x="1412" y="1144" width="218" height="86" rx="12"/></g>
+    <rect id="crown" class="hl" style="stroke-width:7" x="700" y="690" width="660" height="330" rx="26"/>
+   </svg>
+   <div class="cnt" id="n1" style="left:522px;top:990px">1</div><div class="cnt" id="n2" style="left:855px;top:1034px">2</div><div class="cnt" id="n3" style="left:1218px;top:1082px">3</div><div class="cnt" id="n4" style="left:1521px;top:1112px">4</div>
+  </div>
+  <div id="rim"></div>
+ </div>
+ <div id="stk">ستيكر؟<b>✕</b></div>
+ <div class="tag" id="tagL">لوحة الكابينة</div>
+ <div class="tag" id="tagX">TELEPHONE × 4</div>
+ <div id="list">
+  <div class="row" id="r1">الشكل<i></i><u>✓</u></div>
+  <div class="row" id="r2">الكلام<i></i><u>✓</u></div>
+  <div class="row" id="r3">الشعار<i></i><u>✓</u></div>
+ </div>
+ <div id="endq"><span class="gold">وبراندك؟</span></div>
+ <div id="ends">عنده قصة؟</div>
+ <div id="cbtn"><svg width="62" height="62" viewBox="0 0 24 24"><path d="M12 3.5c-4.9 0-8.5 3.3-8.5 7.6 0 2.2 1 4.2 2.6 5.6L5.4 20.5l4.3-2c.7.2 1.5.3 2.3.3 4.9 0 8.5-3.3 8.5-7.6S16.9 3.5 12 3.5z" fill="#17130A"/></svg></div>
+ <img id="mark" class="abs" src="mark.svg">
+</div>
+<div id="capbox"></div><div id="vig"></div><div id="grain"></div><div id="fade"></div>
+<script src="../../../tools/reel-engine.js"></script>
+<script>
+const DUR=43.07;
+const CAP=[
+ {a:0.25,w:[['شفت',0.25],['هالبوث؟',0.6,1]]},
+ {a:1.2,w:[['ليش',1.2],['أي',1.6],['أحد',1.8],['يمر',2.08],['يوقف',2.34,1],['يطالعه؟',2.74]]},
+ {a:3.7,w:[['لأن',3.7],['<span class="ltr">WOW</span>',4.18,1],['ما',4.56],['سوّوا',5.18],['بوث…',5.8]]},
+ {a:6.45,w:[['سوّوا',6.45],['قطعة',6.98],['من',7.42],['لندن',7.6,1]]},
+ {a:8.47,w:[['وكل',8.47],['تفصيلة',8.8,1],['فيه',9.55],['تكمّل',10.1],['نفس',10.5],['القصة',10.74,1]]},
+ {a:11.68,w:[['أول',11.68],['شي:',12.0],['الشكل',12.22,1]]},
+ {a:13.23,w:[['مثل',13.23],['كابينة',13.52],['التلفون',14.0],['الحمرا',14.6,1]]},
+ {a:15.15,w:[['بسقفها',15.15],['المقوّس',16.04,1]]},
+ {a:17.44,w:[['ثنين:',17.44],['الكلام',17.8,1]]},
+ {a:18.97,w:[['<span class="ltr">TELEPHONE</span>',18.97,1],['مكررة',19.56],['4',20.72,1],['مرات',21.25]]},
+ {a:21.66,w:[['وتحت',21.66],['مكتوب',22.1],['<span class="ltr">LONDON</span>',22.58,1]]},
+ {a:23.47,w:[['ثلاثة:',23.47],['الشعار',24.04,1]]},
+ {a:25.08,w:[['ما',25.12],['لزقوه',25.3,1],['وبس…',25.9]]},
+ {a:26.26,w:[['حطّوه',26.26],['مكان',26.96],['لوحة',27.24,1],['الكابينة',27.86]]},
+ {a:28.85,w:[['وإنت',28.85],['ما',29.16],['تشتري',29.3],['كوكيز',29.7,1],['بس…',30.04]]},
+ {a:30.54,w:[['إنت',30.54],['قاعد',30.74],['تعيش',31.24,1],['قصة',31.7,1],['كاملة',32.14,1]]},
+ {a:32.58,b:34.1,w:[['قاعدين',32.58],['يقولون',32.9],['لك',33.22],['إياها',33.42]]},
+ {a:34.29,w:[['وهذا',34.29],['صج',34.76,1],['البراند',35.18]]},
+ {a:35.88,w:[['لما',35.88],['يقول',36.34],['لك',36.68],['القصة',36.9,1]]},
+ {a:37.48,b:39.1,w:[['وتفهم',37.48],['كل',38.04],['شي',38.44,1]]},
+ {a:39.33,w:[['وبراندك؟',39.33,1]]},
+ {a:40.3,b:43.0,w:[['عنده',40.3],['قصة؟',40.86,1]]}];
+// photo crops: [t, cx, cy, w]  (h = w*1.25), in photo px
+const CW=[[0,1000,1090,1180],[3.6,1010,1065,1020],[4.05,1010,1065,1000],[4.5,1036,760,560],[6.6,1036,760,540],[7.2,1012,1060,780],[8.4,1012,1060,760],[11.5,1010,1060,880],
+          [21.5,920,1310,800],[21.9,920,1300,780],[23.3,920,1290,760],[28.7,960,1060,1300],[29.2,960,1060,1180],[34.0,1010,1060,900],[43,1010,1050,840]];
+const CC=[[0,1000,1250,1700],[11.6,1000,1250,1700],[12.0,1010,1210,1640],[17.2,1000,1180,1520],[17.5,1010,1130,1420],[21.6,1010,1120,1360],[23.3,1020,880,860],[23.8,1030,860,820],[28.7,1030,850,780]];
+// which photo is on: [from, to] for the close one (crossfade with whip)
+const CLOSE=[[11.68,21.64],[23.47,28.85]];
+function crop(id,K,t){const [cx,cy,w]=keysE(t,K);const s=800/w,h=w*1.25;$(id).style.transform=`translate(${-(cx-w/2)*s}px,${-(cy-h/2)*s}px) scale(${s})`;}
+function hh(id,t,a,b){S(id,pop(t,a,b,{dy:30,s0:.92}));}
+function init(){mkCaps(CAP);const L=$('roof').getTotalLength();$('roof').style.strokeDasharray=L;$('roof').dataset.L=L;}
+function frame(t){
+ caps(t,CAP);
+ $('fade').style.opacity=1-eo(P(t,0,.35))+ein(P(t,DUR-.45,.45));
+ // gentle global camera
+ const cs=1+.012*Math.sin(t*.35);$('stage').style.transform=`translate(${540-540*cs}px,${760-760*cs}px) scale(${cs})`;
+ // card: in at 0.25, shrinks for the checklist at 34.3, out at 39.3
+ const cin=back(P(t,.15,.7)),csh=ee(P(t,34.3,.6)),cout=ein(P(t,39.1,.4));
+ const cdy=lerp(80,0,cin),csc=lerp(.9,1,cin)*lerp(1,.68,csh);
+ $('card').style.opacity=cl(cin*2)*(1-cout);$('card').style.transform=`translateY(${cdy-cout*60}px) scale(${csc*(1-cout*.08)})`;
+ $('card').style.filter=(1-cl(P(t,.15,.5)))*14+cout*14>0.3?`blur(${((1-cl(P(t,.15,.5)))*14+cout*14).toFixed(1)}px)`:'';
+ crop('pw',CW,t);crop('pc',CC,t);
+ // close/wide crossfade + whip blur on switches
+ let co=0,wb=0;CLOSE.forEach(([a,b])=>{co=Math.max(co,cl((t-a+.12)/.24)*(1-cl((t-b+.12)/.24)));[a,b].forEach(x=>{const d=Math.abs(t-x);if(d<.22)wb=Math.max(wb,(1-d/.22));});});
+ $('pc').style.opacity=co;
+ const sw=t>=28.6&&t<29.1?1-Math.abs(t-28.85)/.25:0;wb=Math.max(wb,sw);
+ $('card').style.filter=(wb>0.02?`blur(${(wb*16).toFixed(1)}px) `:'')+$('card').style.filter;
+ // titles
+ hh('h1',t,6.98,8.3);hh('h2',t,10.6,11.5);hh('h3',t,11.75,17.25);hh('h4',t,17.5,23.3);hh('h5',t,23.55,28.7);hh('h6',t,31.7,34.1);hh('h7',t,34.76,39.1);
+ // pins (8.8 تفصيلة)
+ ['pin1','pin2','pin3'].forEach((p,i)=>S(p,pop(t,8.85+i*.2,11.45,{dy:30,s0:.3})));
+ // roof trace on «بسقفها»
+ const rp=ee(P(t,15.1,1.3)),ro=1-cl(P(t,17.2,.3));const R=$('roof');R.style.strokeDashoffset=R.dataset.L*(1-rp);R.style.opacity=rp>0?ro:0;
+ // TELEPHONE x4 on «أربع»
+ [...$('tel').children].forEach((r,i)=>{const a=20.0+i*.27;const p=P(t,a,.25);r.style.opacity=cl(p*3)*(1-cl(P(t,21.5,.25)));});
+ ['n1','n2','n3','n4'].forEach((n,i)=>S(n,pop(t,20.0+i*.27,21.5,{dy:20,s0:.3})));
+ const tx=pop(t,20.95,21.55,{dy:30,s0:.7});tx.x=0;S('tagX',tx);$('tagX').style.left='560px';$('tagX').style.top='1240px';
+ // LONDON on «لندن»
+ [...$('lon').children].forEach((r,i)=>{const p=P(t,22.15+i*.1,.25);r.style.opacity=cl(p*3)*(1-cl(P(t,23.3,.2)));});
+ // sticker? (25.1) then the crown frame (26.26)
+ const sk=pop(t,25.12,26.1,{dx:260,dy:0,s0:.8});sk.r=-6+3*Math.sin(t*9)*cl(P(t,25.4,.2))*(1-cl(P(t,26.0,.1)));S('stk',sk);
+ $('crown').style.opacity=cl(P(t,26.26,.25))*(1-cl(P(t,28.6,.25)));$('crown').style.strokeWidth=7;
+ const tg=pop(t,26.5,28.6,{dy:30,s0:.7});S('tagL',tg);$('tagL').style.left='380px';$('tagL').style.top='940px';
+ // checklist 35.9 / 36.6 / 37.4
+ ['r1','r2','r3'].forEach((r,i)=>{S(r,pop(t,34.7+i*.14,39.1,{dy:40,s0:.92}));const a=36.0+i*.65,p=P(t,a,.3);const u=$(r).lastChild;
+   u.style.background=p>0?mixc('#17171B','#45D483',cl(p*2)):'transparent';u.style.borderColor=p>0?'#45D483':'rgba(255,255,255,.2)';u.style.color=p>0?'#0C0C0E':'transparent';u.style.transform=`scale(${p>0?lerp(.5,1,back(p)):1})`;});
+ // ending
+ S('endq',pop(t,39.4,undefined,{dy:50,s0:.85}));
+ S('cbtn',pop(t,41.0,undefined,{dy:40,s0:.5}));
+ S('mark',{o:.55*cl(P(t,.6,.6))*(1-cl(P(t,39.1,.3)))});
+}
+</script></body></html>
