@@ -9,3 +9,9 @@ Idea (NORI): the WOW cookies booth is built as a red London telephone box. Lesso
 - Unsure words (check with NORI): «قاعدين يقولون لك إياها», «لما يقول لك القصة وتفهم كل شي».
 - Cover: `src/cover.html` + ن → `cover.png` (designed separately, text inside the 3:4 crop).
 Status: v1 waiting for NORI's review. Not scored, nothing scheduled.
+
+## v2 (19 Nov, NORI's note: "the ن doesn't feel like it's the one talking")
+Reference he sent: a character big in the middle with the content above it, its body moving with every syllable. Choice (tappable): body only, no mouth, and the ن big in the centre.
+- Layout: photo card scaled to 0.65 at the top, the ن centred (540, 1250, scale 0.58) the whole reel, captions moved under it (top 1462), sticker/tags moved inside the card, NORI mark top-left.
+- Talking: `comp.py` reads `voice-tight.wav` as a 100 Hz loudness envelope (fast attack, soft release) and drives squash/stretch, tilt, a hop, eye size, the dot (a beat later) and the glow from NORI's voice. Expressions from v1 stay on top.
+- Output: `reel-wow-v2.mp4` (v1 kept as `reel-wow.mp4`).

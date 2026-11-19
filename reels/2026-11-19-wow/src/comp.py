@@ -27,7 +27,7 @@ nun.keys = (
     + hold(8.5, 11.4, look(0.8, -0.3))
     + hold(11.7, 17.2, dict(lx=0.7, ly=-0.95, eh=0.85, tipR=44, rot=-6))          # looks up at the roof, tip raised
     + [K(17.45, lx=0.2, ly=-0.4), K(19.9, lx=-0.1, ly=-0.6), K(20.5, lx=0.3, ly=-0.6, ew=1.15, eh=1.15), K(21.2, lx=0.95, ly=-0.6, ew=1.15, eh=1.15)]
-    + hold(21.7, 23.3, look(0.7, 0.75))                                            # looks down at LONDON
+    + hold(21.7, 23.3, look(0.1, -0.95, ew=1.15, eh=1.15))                          # looks up at LONDON in the card
     + hold(23.5, 24.9, dict(lx=0.6, ly=-0.95, eh=0.85, tipR=40, rot=-5))
     + hold(25.15, 26.1, WARN)
     + hold(26.3, 28.6, OK)
@@ -43,21 +43,37 @@ def blink(t):
         if d < 0.09: return 0.1 + 0.9 * (d / 0.09) ** 1.5
     return 1.0
 # position: [t, cx, cy, scale]
-POS = [[0, -260, 1170, .46], [0.3, -260, 1170, .46], [1.15, 215, 1170, .46], [34.2, 215, 1170, .46], [34.8, 150, 1205, .36],
-       [39.1, 150, 1205, .36], [39.8, 540, 1000, .66], [DUR + 1, 540, 1000, .66]]
+POS = [[0, -300, 1250, .58], [0.3, -300, 1250, .58], [1.2, 540, 1250, .58], [39.1, 540, 1250, .58], [39.8, 540, 1210, .66], [DUR + 1, 540, 1210, .66]]
 def ee(x): x = min(max(x, 0), 1); return 16 * x ** 5 if x < .5 else 1 - (-2 * x + 2) ** 5 / 2
 def pos(t):
     for a, b in zip(POS[:-1], POS[1:]):
         if a[0] <= t <= b[0]:
             x = ee((t - a[0]) / (b[0] - a[0])); return [a[i] + (b[i] - a[i]) * x for i in (1, 2, 3)]
     return POS[-1][1:]
+# NORI's voice drives the body (he talks through the ن): 100 Hz envelope, fast attack / soft release
+import wave
+_w = wave.open(os.path.join(HERE, "voice-tight.wav")); _sr = _w.getframerate(); _ch = _w.getnchannels()
+_a = np.frombuffer(_w.readframes(_w.getnframes()), np.int16).astype(float).reshape(-1, _ch).mean(1) / 32768
+_hop = _sr // 100; _n = len(_a) // _hop
+_rms = np.sqrt((_a[:_n * _hop].reshape(_n, _hop) ** 2).mean(1))
+_db = 20 * np.log10(_rms + 1e-6); _lv = np.clip((_db + 31) / 19, 0, 1)
+ENV = np.zeros(_n); e = 0
+for i, v in enumerate(_lv):
+    e = e + (v - e) * (0.6 if v > e else 0.12); ENV[i] = e
+def amp(t):
+    i = int(t * 100); return float(ENV[i]) if 0 <= i < _n else 0.0
 def draw(fr, t):
-    p = nun.params(min(t, DUR)); cx, cy, sc = pos(t)
+    p = dict(nun.params(min(t, DUR))); cx, cy, sc = pos(t)
+    A = amp(t); A2 = amp(t - 0.05)                       # A2: the dot follows a beat later
+    p["b"] *= 1 - 0.10 * A; p["a"] *= 1 + 0.07 * A
+    p["rot"] += 6 * A * math.sin(t * 7.3)
+    p["dy"] -= 55 * A2; p["eh"] *= 1 + 0.15 * A; p["lx"] *= 0.4
+    cy -= 22 * A
     hop = abs(math.sin(t * 9)) * 26 if 0.3 < t < 1.15 else 0                     # little hops while walking in
     hop += abs(math.sin((t - 39.1) * 7)) * 30 if 39.1 < t < 39.8 else 0
     bob = 7 * math.sin(t * 2.3)
     shake = 6 * math.sin(t * 70) if 25.2 < t < 26.05 else 0
-    layer.composite(fr, p, t, blink(t), cx + shake, cy + bob - hop + p["oy"] * sc, sc, glow_k=0.75,
+    layer.composite(fr, p, t, blink(t), cx + shake, cy + bob - hop + p["oy"] * sc, sc, glow_k=0.55 + 0.9 * A,
                     opacity=1 - min(1, max(0, (t - (DUR - .45)) / .45)))
 def load(d, i, sub):
     a = [np.asarray(Image.open(f"{d}/f{i * sub + k:06d}.jpg"), float) for k in range(sub)]
