@@ -61,7 +61,7 @@
 | 2026-11-24 | Concept post (proposal, ينتظر موافقتك) | «دلّة»: fictional gahwa delivery brand; problem (gahwa brands all look the same: brown + calligraphy) → idea (the dallah spout makes the «د») → result (cup, thermos, van, app icon) | concepts/2026-11-24-dalla/README.md · NOT in Metricool until NORI approves |
 | 2026-11-24 | Figma reel (planned) | Claude → Figma: 5 story-highlight covers with one icon style (fictional gym «نبض») | reels/2026-11-24-b/plan.md |
 | 2026-11-25 | Voice reel (planned, Adobe method) | «صورة الستوك تفضحك»: real place, real hands using the product, one fixed edit for all photos | reels/2026-11-25-a/plan.md · different points from «صورة منتجك بالتلفون» (light/background/height) |
-| 2026-11-25 | Figma reel (planned) | Claude → Figma: a website hero section (fictional bakery «سنبلة») | reels/2026-11-25-b/plan.md |
+| 2026-11-25 | Figma reel (planned) | Claude → Figma: a website hero section (fictional bakery «رغيف») | reels/2026-11-25-b/plan.md |
 | 2026-11-26 | Voice reel (planned, «عفوي») | «لا تلحق الترند بلوقوك»: a logo lives 10 years; the 5-year test; trends go in posts, not in the logo | phone, no edit, no text · reels/2026-11-26-a/plan.md |
 | 2026-11-26 | Figma reel (planned) | Claude → Figma: an opening invitation card (fictional plant shop «صبّار») | reels/2026-11-26-b/plan.md |
 | 2026-11-27 | Voice reel (planned, «ن» mascot) | «الكشيدة مو حل»: stretching Arabic words to fill a line; fix with size, line break or space; tatweel only on purpose | reels/2026-11-27-a/plan.md |
