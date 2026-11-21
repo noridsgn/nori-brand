@@ -63,8 +63,8 @@
 | 2026-11-25 | Voice reel (planned, Adobe method) | «صورة الستوك تفضحك»: real place, real hands using the product, one fixed edit for all photos | reels/2026-11-25-a/plan.md · different points from «صورة منتجك بالتلفون» (light/background/height) |
 | 2026-11-25 | Figma reel (planned) | Claude → Figma: a website hero section (fictional bakery «سنبلة») | reels/2026-11-25-b/plan.md |
 | 2026-11-26 | Voice reel (planned, «عفوي») | «لا تلحق الترند بلوقوك»: a logo lives 10 years; the 5-year test; trends go in posts, not in the logo | phone, no edit, no text · reels/2026-11-26-a/plan.md |
-| 2026-11-26 | Figma reel (planned) | Claude → Figma: an opening invitation card (fictional flower shop «زهرة الصبّار») | reels/2026-11-26-b/plan.md |
+| 2026-11-26 | Figma reel (planned) | Claude → Figma: an opening invitation card (fictional plant shop «صبّار») | reels/2026-11-26-b/plan.md |
 | 2026-11-27 | Voice reel (planned, «ن» mascot) | «الكشيدة مو حل»: stretching Arabic words to fill a line; fix with size, line break or space; tatweel only on purpose | reels/2026-11-27-a/plan.md |
-| 2026-11-27 | Figma reel (planned) | Claude → Figma: a honey jar label (fictional «سدرة») | reels/2026-11-27-b/plan.md |
+| 2026-11-27 | Figma reel (planned) | Claude → Figma: a honey jar label (fictional «نحّال») | reels/2026-11-27-b/plan.md |
 | 2026-11-28 | Carousel K (planned, 18:30) | «أرقامك تلخبط الإعلان؟»: one numeral system per design (٣ or 3), phone numbers and dates break in RTL (keep them one LTR block), the number is the hero (big number, small unit) (fictional delivery «بوصلة») | 5 slides, 100% educational (no DM) · posts/2026-11-28/K · Metricool draft after review |
 | 2026-11-28 | Figma reel (planned) | Claude → Figma: a loyalty stamp card, 10 stamps (fictional juice bar «عصارة») | reels/2026-11-28-b/plan.md |
