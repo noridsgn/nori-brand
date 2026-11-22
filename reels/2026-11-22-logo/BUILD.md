@@ -10,4 +10,6 @@ Idea (NORI, replaced the marketing idea «لا تبدي الريل بلوقوك�
 - Words to confirm with NORI: «الإعلان عن الرسالة الموجودة», «بس مو مسيطر يعني».
 - Cover: `src/cover.html` + ن (shocked, looking at the big-logo poster) → `cover.png`, designed separately, text inside the 3:4 crop.
 
+Review page: https://claude.ai/artifact/7NWr9bWF22mFvHLd68qfPQ (`page/index.html`).
+
 Status: v1 waiting for NORI's review. Not scored, nothing scheduled.
