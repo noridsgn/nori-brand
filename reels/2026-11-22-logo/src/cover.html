@@ -1,0 +1,62 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../tools/reel-base.css">
+<style>
+#amb{position:absolute;inset:-120px;background:radial-gradient(700px 600px at 50% 52%,rgba(150,92,50,.35),transparent 70%);filter:blur(30px)}
+.post{position:absolute;left:0;top:0;width:800px;height:1000px;overflow:hidden;direction:rtl;font-family:Plex}
+.pbg{position:absolute;inset:0;background:radial-gradient(520px 600px at 62% 72%,#6A3E24,transparent 70%),radial-gradient(500px 400px at 15% 10%,#4A2A1A,transparent 70%),linear-gradient(170deg,#3A2216,#1C100A)}
+.pgr{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.018) 0 2px,transparent 2px 9px)}
+.plogo{position:absolute}.phd{position:absolute;right:60px;color:#F6E7D2;font-weight:700;line-height:1.12;white-space:nowrap;text-align:right}.phd em{font-style:normal;color:#E7B27A}
+.psub{position:absolute;right:62px;color:rgba(246,231,210,.72);font-weight:500;white-space:nowrap}
+.pcup{position:absolute;left:290px;top:370px;width:380px;height:580px;transform-origin:50% 100%}
+.poff{position:absolute;left:62px;top:575px;width:218px;height:218px;border-radius:50%;background:#E7B27A;color:#2A170D;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.poff b{font:700 84px Inter;line-height:1;direction:ltr}.poff span{font-weight:700;font-size:28px;margin-top:6px}
+.pfoot{position:absolute;left:0;bottom:34px;width:800px;text-align:center;color:rgba(246,231,210,.55);font-weight:500;font-size:24px}
+#card{position:absolute;left:330px;top:660px;width:800px;height:1000px;border-radius:44px;overflow:hidden;transform:scale(.58) rotate(-4deg);transform-origin:0 0;box-shadow:0 60px 120px rgba(0,0,0,.7),0 0 0 2px rgba(255,255,255,.1),0 0 120px rgba(230,184,76,.16)}
+#sel{position:absolute;border:4px solid var(--gold);box-shadow:0 0 22px rgba(230,184,76,.5)}
+#sel i{position:absolute;width:24px;height:24px;background:#0C0C0E;border:4px solid var(--gold);border-radius:5px}
+#sel i:nth-child(1){left:-14px;top:-14px}#sel i:nth-child(2){right:-14px;top:-14px}#sel i:nth-child(3){left:-14px;bottom:-14px}#sel i:nth-child(4){right:-14px;bottom:-14px}
+#szl{position:absolute;left:50%;top:-74px;transform:translateX(-50%);background:var(--gold);color:#17130A;font:700 34px Inter;padding:6px 18px;border-radius:12px}
+#k{position:absolute;left:0;top:300px;width:1080px;text-align:center;font:600 24px Inter;letter-spacing:10px;color:rgba(242,240,235,.55)}#k b{color:var(--gold);font-weight:600}
+#t{position:absolute;left:0;top:350px;width:1080px;text-align:center;direction:rtl;font-weight:700;font-size:116px;line-height:1.15}
+#s{position:absolute;left:0;top:492px;width:1080px;text-align:center;direction:rtl;font-weight:500;font-size:44px;color:var(--grey)}
+</style></head><body><div id="bg"></div><div id="amb"></div><div id="dots"></div>
+<div id="k">D E S I G N &nbsp; <b>N O T E S</b></div>
+<div id="t"><span class="gold">كبّر</span> اللوقو</div>
+<div id="s">ليش اللوقو الكبير يخرّب إعلانك؟</div>
+<div id="card"><div class="post" id="pA"></div><div id="sel"><i></i><i></i><i></i><i></i><div id="szl">260%</div></div></div>
+<div id="vig"></div>
+<script src="../../../tools/reel-engine.js"></script><script>
+const LOGO=`<svg viewBox="0 0 300 110" width="100%" height="100%" style="direction:ltr"><g transform="translate(232 55) rotate(-28)"><ellipse rx="38" ry="50" fill="#E7B27A"/><path d="M0 -46 C-16 -20 16 18 0 46" fill="none" stroke="#2A170D" stroke-width="8" stroke-linecap="round"/></g>
+ <text x="176" y="64" text-anchor="end" font-family="Plex" font-weight="700" font-size="66" fill="#F6E7D2" >حبّة</text>
+ <text x="176" y="96" text-anchor="end" font-family="Inter" font-weight="600" font-size="19" letter-spacing="6" fill="#E7B27A">COFFEE</text></svg>`;
+const CUP=`<svg viewBox="0 0 380 580" width="380" height="580"><defs>
+ <linearGradient id="cf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9895A"/><stop offset=".45" stop-color="#8A5131"/><stop offset="1" stop-color="#4E2A17"/></linearGradient>
+ <linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="rgba(255,255,255,.28)"/><stop offset=".18" stop-color="rgba(255,255,255,.04)"/><stop offset=".8" stop-color="rgba(255,255,255,0)"/><stop offset="1" stop-color="rgba(255,255,255,.16)"/></linearGradient>
+ <clipPath id="cp"><path d="M70 150 L310 150 L282 560 L98 560 Z"/></clipPath></defs>
+ <ellipse cx="190" cy="566" rx="120" ry="14" fill="rgba(0,0,0,.45)"/>
+ <rect x="226" y="0" width="22" height="300" rx="8" transform="rotate(10 237 150)" fill="#E7B27A"/>
+ <g clip-path="url(#cp)"><rect x="60" y="150" width="270" height="420" fill="rgba(240,226,206,.10)"/>
+  <path d="M60 268 C120 248 180 290 330 258 L330 570 L60 570 Z" fill="url(#cf)"/>
+  <path d="M60 268 C120 248 180 290 330 258 L330 300 C200 330 140 290 60 316 Z" fill="rgba(246,231,210,.55)"/>
+  <rect x="110" y="186" width="70" height="66" rx="12" fill="rgba(255,255,255,.30)" transform="rotate(-12 145 219)"/>
+  <rect x="190" y="200" width="66" height="62" rx="12" fill="rgba(255,255,255,.26)" transform="rotate(14 223 231)"/>
+  <rect x="140" y="300" width="62" height="58" rx="12" fill="rgba(255,255,255,.16)" transform="rotate(8 171 329)"/>
+  <rect x="60" y="150" width="270" height="420" fill="url(#gl)"/></g>
+ <path d="M70 150 L310 150 L282 560 L98 560 Z" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+ <path d="M52 150 Q190 70 328 150 Z" fill="rgba(246,231,210,.22)" stroke="rgba(255,255,255,.45)" stroke-width="3"/>
+ <rect x="46" y="142" width="288" height="18" rx="9" fill="#F6E7D2"/>
+ <g transform="translate(190 420)"><circle r="44" fill="#F6E7D2" opacity=".92"/><g transform="rotate(-28)"><ellipse rx="15" ry="20" fill="#6A3E24"/><path d="M0 -18 C-7 -8 7 8 0 18" fill="none" stroke="#F6E7D2" stroke-width="3.5"/></g></g>
+</svg>`;
+function mkPost(id){$(id).innerHTML=`<div class="pbg"></div><div class="pgr"></div><div class="plogo">${LOGO}</div>
+ <div class="phd">صبحك يبدا<br><em>من هني</em></div><div class="psub">أيس لاتيه بحليب الشوفان</div>
+ <div class="pcup">${CUP}</div><div class="poff"><b>1+1</b><span>كل صباح</span></div><div class="pfoot">اطلب من التطبيق · 7–11 الصبح</div>`;}
+// k: 0 = clean, 1 = "big logo" (realistic: ~2.6x, not a cartoon)
+function LB(k){const w=lerp(170,440,k),h=w*110/300,right=lerp(744,400+w/2,k);return {x:right-w,y:lerp(52,42,k),w,h};}
+function poster(id,k){const r=$(id),L=LB(k);const lg=r.querySelector('.plogo');lg.style.left=L.x+'px';lg.style.top=L.y+'px';lg.style.width=L.w+'px';lg.style.height=L.h+'px';
+ const hd=r.querySelector('.phd'),fs=lerp(86,52,k),ht=lerp(170,L.y+L.h+34,k);hd.style.top=ht+'px';hd.style.fontSize=fs+'px';
+ const sb=r.querySelector('.psub');sb.style.top=(ht+fs*2.3+12)+'px';sb.style.fontSize=lerp(34,24,k)+'px';
+ r.querySelector('.pcup').style.transform=`translate(${lerp(0,20,k)}px,0) scale(${lerp(1,.68,k)})`;
+ r.querySelector('.poff').style.transform=`translate(${lerp(0,8,k)}px,${lerp(0,90,k)}px) scale(${lerp(1,.66,k)})`;}
+
+function init(){mkPost('pA');poster('pA',1);const L=LB(1);const s=$('sel');s.style.left=(L.x-10)+'px';s.style.top=(L.y-10)+'px';s.style.width=(L.w+20)+'px';s.style.height=(L.h+20)+'px';}
+function frame(t){}
+</script></body></html>

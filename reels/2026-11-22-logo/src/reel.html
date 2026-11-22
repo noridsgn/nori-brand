@@ -1,0 +1,292 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../../tools/reel-base.css">
+<style>
+#amb{position:absolute;inset:-120px;background:radial-gradient(700px 520px at 50% 34%,rgba(150,92,50,.30),transparent 70%);filter:blur(30px)}
+#lab{top:150px}
+#ttl{position:absolute;left:0;top:196px;width:1080px;height:120px;z-index:20}
+.h{position:absolute;left:0;top:0;width:1080px;text-align:center;direction:rtl;font-weight:700;font-size:80px;line-height:1.2;white-space:nowrap;opacity:0}
+#card{position:absolute;left:140px;top:320px;width:800px;height:1000px;border-radius:40px;overflow:hidden;z-index:10;transform-origin:50% 0;
+ box-shadow:0 60px 120px rgba(0,0,0,.7),0 0 0 1.5px rgba(255,255,255,.10),0 0 90px rgba(230,184,76,.10)}
+#rim{position:absolute;inset:0;border-radius:40px;z-index:30;pointer-events:none;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.16),inset 0 0 0 1.5px rgba(230,184,76,.16)}
+/* ---------- the fictional brand poster «حبّة» (800x1000) ---------- */
+.post{position:absolute;left:0;top:0;width:800px;height:1000px;overflow:hidden;direction:rtl;font-family:Plex}
+.pbg{position:absolute;inset:0;background:radial-gradient(520px 600px at 62% 72%,#6A3E24,transparent 70%),radial-gradient(500px 400px at 15% 10%,#4A2A1A,transparent 70%),linear-gradient(170deg,#3A2216,#1C100A)}
+.pgr{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.018) 0 2px,transparent 2px 9px)}
+.plogo{position:absolute;transform-origin:0 0}
+.phd{position:absolute;right:60px;color:#F6E7D2;font-weight:700;line-height:1.12;white-space:nowrap;text-align:right}
+.phd em{font-style:normal;color:#E7B27A}
+.psub{position:absolute;right:62px;color:rgba(246,231,210,.72);font-weight:500;white-space:nowrap}
+.pcup{position:absolute;left:290px;top:370px;width:380px;height:580px;transform-origin:50% 100%}
+.poff{position:absolute;left:62px;top:575px;width:218px;height:218px;border-radius:50%;background:#E7B27A;color:#2A170D;display:flex;flex-direction:column;align-items:center;justify-content:center;transform-origin:50% 50%;
+ box-shadow:0 18px 40px rgba(0,0,0,.45),inset 0 0 0 6px rgba(42,23,13,.12)}
+.poff b{font:700 84px Inter;line-height:1;direction:ltr}
+.poff span{font-weight:700;font-size:28px;margin-top:6px}
+.pfoot{position:absolute;left:0;bottom:34px;width:800px;text-align:center;color:rgba(246,231,210,.55);font-weight:500;font-size:24px;letter-spacing:.5px}
+/* selection box (free transform) */
+#sel{position:absolute;border:3px solid var(--gold);z-index:20;opacity:0;box-shadow:0 0 18px rgba(230,184,76,.35)}
+#sel i{position:absolute;width:20px;height:20px;background:#0C0C0E;border:3px solid var(--gold);border-radius:4px}
+#sel i:nth-child(1){left:-12px;top:-12px}#sel i:nth-child(2){right:-12px;top:-12px}#sel i:nth-child(3){left:-12px;bottom:-12px}#sel i:nth-child(4){right:-12px;bottom:-12px}
+#szl{position:absolute;left:50%;top:-62px;transform:translateX(-50%);background:var(--gold);color:#17130A;font:700 26px Inter;padding:6px 16px;border-radius:10px;white-space:nowrap}
+/* marks */
+.mk{position:absolute;border-radius:50%;border:6px solid var(--bad);z-index:21;opacity:0;box-shadow:0 0 24px rgba(255,90,82,.45),inset 0 0 24px rgba(255,90,82,.25)}
+.tg{position:absolute;z-index:22;direction:rtl;font-weight:700;font-size:46px;padding:10px 34px;border-radius:999px;white-space:nowrap;opacity:0}
+.tg.bad{background:rgba(42,16,14,.94);border:2.5px solid var(--bad);color:var(--bad)}
+.tg.gd{background:rgba(23,19,10,.94);border:2.5px solid var(--gold);color:var(--gold)}
+#eye{position:absolute;left:0;top:0;width:110px;height:110px;margin:-55px 0 0 -55px;z-index:24;opacity:0}
+#trail{position:absolute;left:0;top:0;z-index:23;overflow:visible}
+#trail path{fill:none;stroke:rgba(242,240,235,.75);stroke-width:5;stroke-dasharray:2 16;stroke-linecap:round}
+.q{position:absolute;z-index:24;font:700 70px Plex;color:var(--ivory);opacity:0;text-shadow:0 6px 20px rgba(0,0,0,.7)}
+#msg{position:absolute;left:30px;top:150px;width:740px;height:820px;border-radius:30px;border:5px solid var(--gold);z-index:21;opacity:0;box-shadow:0 0 40px rgba(230,184,76,.45),inset 0 0 40px rgba(230,184,76,.12)}
+/* paper (signature) */
+#paper{position:absolute;inset:0;z-index:25;background:linear-gradient(180deg,#F3EDE2,#E7DED0);direction:rtl;opacity:0}
+#paper .pl{position:absolute;right:80px;height:16px;border-radius:8px;background:rgba(40,30,20,.13)}
+#paper .pt{position:absolute;right:80px;top:96px;font-weight:700;font-size:46px;color:#2A2018}
+#paper .ln{position:absolute;left:80px;top:850px;width:330px;height:3px;background:rgba(40,30,20,.35)}
+#paper .lb{position:absolute;left:80px;top:866px;font-weight:500;font-size:26px;color:rgba(40,30,20,.55)}
+#sig{position:absolute;left:70px;top:690px;overflow:visible}
+#sig path{fill:none;stroke:#1E2A55;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+#stamp{position:absolute;left:470px;top:700px;width:250px;opacity:0;transform-origin:50% 50%}
+/* checklist */
+#list{position:absolute;left:250px;top:842px;width:580px;z-index:12}
+.row{height:66px;margin-bottom:10px;border-radius:22px;background:rgba(23,23,27,.94);border:1.5px solid var(--line);display:flex;align-items:center;direction:rtl;padding:0 28px;gap:20px;font-weight:700;font-size:38px;opacity:0}
+.row i{flex:1;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.16))}
+.row u{text-decoration:none;width:48px;height:48px;border-radius:50%;border:3px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font:700 28px Inter;color:#0C0C0E}
+#clear{position:absolute;z-index:20;border:3px dashed var(--gold);border-radius:8px;opacity:0;background:rgba(230,184,76,.07)}
+#clear b{position:absolute;font:700 22px Inter;color:var(--gold);white-space:nowrap}
+#brk{position:absolute;z-index:20;opacity:0;border:3px solid var(--ok);border-top:none;height:22px}
+#brk b{position:absolute;left:50%;top:26px;transform:translateX(-50%);font:700 24px Inter;color:var(--ok);white-space:nowrap}
+/* client chat bubble */
+#chat{position:absolute;left:190px;top:470px;width:700px;z-index:40;direction:rtl;opacity:0}
+#chat .who{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+#chat .av{width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,#3B3B44,#24242A);border:2px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center}
+#chat .nm{font-weight:700;font-size:34px;color:var(--ivory)}#chat .st{font:500 22px Plex;color:var(--grey)}
+.bub{display:inline-block;background:#F2F0EB;color:#141418;border-radius:40px 40px 40px 12px;padding:26px 42px;font-weight:700;font-size:56px;box-shadow:0 30px 60px rgba(0,0,0,.6);position:relative;white-space:nowrap}
+.bub small{display:block;text-align:left;font:500 20px Inter;color:#8A8A90;margin-top:6px}
+#typing{display:inline-flex;gap:12px;background:#F2F0EB;border-radius:40px 40px 40px 12px;padding:30px 38px;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+#typing i{width:18px;height:18px;border-radius:50%;background:#8A8A90}
+#b1,#b2{position:absolute;right:0;top:82px}
+/* duo */
+#duo{position:absolute;left:0;top:0;width:1080px;height:1100px;z-index:11}
+.mini{position:absolute;top:380px;width:340px;height:425px;border-radius:26px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.65),0 0 0 1.5px rgba(255,255,255,.12)}
+.mini .post{transform:scale(.425);transform-origin:0 0}
+.ml{position:absolute;top:300px;width:340px;text-align:center;font:700 44px Inter;color:var(--grey);letter-spacing:6px}
+#mA{left:170px}#mB{left:570px}#lA{left:170px}#lB{left:570px}
+#ok{position:absolute;left:870px;top:350px;width:92px;height:92px;border-radius:50%;background:var(--ok);color:#0C0C0E;font:700 50px Inter;display:flex;align-items:center;justify-content:center;opacity:0;box-shadow:0 0 0 10px rgba(69,212,131,.2),0 14px 30px rgba(0,0,0,.5);z-index:13}
+#okr{position:absolute;left:560px;top:370px;width:360px;height:445px;border-radius:32px;border:6px solid var(--ok);opacity:0;z-index:12;box-shadow:0 0 40px rgba(69,212,131,.4)}
+/* end */
+#endq{position:absolute;left:0;top:470px;width:1080px;text-align:center;direction:rtl;font-weight:700;font-size:124px;opacity:0;z-index:20}
+#ends{position:absolute;left:0;top:640px;width:1080px;text-align:center;direction:rtl;font-weight:600;font-size:58px;color:var(--grey);opacity:0;z-index:20}
+#cbtn{position:absolute;left:390px;top:780px;width:300px;height:96px;border-radius:999px;background:var(--gold);display:flex;align-items:center;justify-content:center;opacity:0;z-index:20;box-shadow:0 0 0 10px rgba(230,184,76,.16),0 24px 50px rgba(0,0,0,.6)}
+#mark{left:80px;top:136px;width:56px;opacity:0;z-index:30}
+#capbox{top:1462px}
+.cap{font-size:52px}
+.cur{position:absolute;left:0;top:0;width:64px;height:64px;transform-origin:8px 6px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.6));z-index:50;opacity:0}
+#cur1{width:98px;height:98px}
+.rg{position:absolute;left:0;top:0;width:120px;height:120px;border-radius:50%;border:5px solid var(--gold);opacity:0;z-index:49;box-shadow:0 0 30px rgba(230,184,76,.5)}
+#grain{position:absolute;inset:0;opacity:.05;z-index:70;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>")}
+#fade{position:absolute;inset:0;background:#0C0C0E;z-index:90}
+</style></head><body>
+<div id="bg"></div><div id="amb"></div><div id="dots"></div>
+<div id="stage">
+ <div id="lab">D E S I G N &nbsp; <b>N O T E S</b></div>
+ <div id="ttl">
+  <div class="h" id="h0"><span class="gold">كبّر</span> اللوقو</div>
+  <div class="h" id="h1">كل شي <span class="gold">يصغر</span></div>
+  <div class="h" id="h2">وين <span class="gold">أطالع؟</span></div>
+  <div class="h" id="h3">الإعلان = <span class="gold">الرسالة</span></div>
+  <div class="h" id="h4">اللوقو <span class="gold">توقيع</span></div>
+  <div class="h" id="h5">مكانه <span class="gold">الصح</span></div>
+  <div class="h" id="h6">العميل <span class="gold">يختار</span></div>
+ </div>
+ <div id="card">
+  <div class="post" id="pA"></div>
+  <div id="sel"><i></i><i></i><i></i><i></i><div id="szl">100%</div></div>
+  <div id="clear"><b style="left:50%;top:-34px;transform:translateX(-50%)">مساحة</b></div>
+  <div id="brk"><b>حجم واضح</b></div>
+  <div class="mk" id="mk1" style="left:42px;top:555px;width:258px;height:258px"></div>
+  <div class="mk" id="mk2" style="left:330px;top:560px;width:300px;height:400px;border-radius:44%"></div>
+  <div class="tg bad" id="t1" style="left:60px;top:470px">العرض ✕</div>
+  <div class="tg bad" id="t2" style="left:420px;top:470px">المنتج ✕</div>
+  <svg id="trail" width="800" height="1000"><path id="tp" d=""/></svg>
+  <svg id="eye" viewBox="0 0 110 110"><circle cx="55" cy="55" r="52" fill="rgba(12,12,14,.82)" stroke="#F2F0EB" stroke-width="4"/><path d="M20 55 Q55 22 90 55 Q55 88 20 55Z" fill="#F2F0EB"/><circle id="pupil" cx="55" cy="55" r="13" fill="#0C0C0E"/></svg>
+  <div class="q" id="q1" style="left:640px;top:90px">؟</div><div class="q" id="q2" style="left:96px;top:420px">؟</div><div class="q" id="q3" style="left:660px;top:600px">؟</div>
+  <div id="msg"></div>
+  <div class="tg gd" id="t3" style="left:270px;top:880px">الرسالة</div>
+  <div id="paper">
+   <div class="pt">عرض سعر</div>
+   <div class="pl" style="top:200px;width:640px"></div><div class="pl" style="top:240px;width:560px"></div><div class="pl" style="top:280px;width:610px"></div>
+   <div class="pl" style="top:360px;width:640px"></div><div class="pl" style="top:400px;width:480px"></div><div class="pl" style="top:440px;width:600px"></div><div class="pl" style="top:480px;width:380px"></div>
+   <div class="pl" style="top:560px;width:300px;background:rgba(40,30,20,.22)"></div>
+   <svg id="sig" width="360" height="170" viewBox="0 0 360 170"><path id="sigp" d="M18 120 C40 60 62 30 74 52 C86 76 56 128 70 132 C88 136 104 70 120 76 C134 82 118 122 134 120 C152 118 160 88 176 92 C192 96 180 124 198 122 C224 118 238 80 262 84 C282 88 270 118 290 114 C312 110 330 96 346 90"/></svg>
+   <div class="ln"></div><div class="lb">التوقيع</div>
+   <div id="stamp"></div>
+  </div>
+  <div id="rim"></div>
+  <img id="cur1" class="cur" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M8 6 L8 50 L20 39 L28 57 L36 53 L28 36 L44 36 Z' fill='%23F2F0EB' stroke='%230C0C0E' stroke-width='3' stroke-linejoin='round'/></svg>">
+ </div>
+ <div id="list">
+  <div class="row" id="r1">مكان ثابت<i></i><u>✓</u></div>
+  <div class="row" id="r2">مساحة نظيفة<i></i><u>✓</u></div>
+  <div class="row" id="r3">حجم واضح<i></i><u>✓</u></div>
+ </div>
+ <div id="duo">
+  <div class="ml" id="lA">A</div><div class="ml" id="lB">B</div>
+  <div class="mini" id="mA"><div class="post" id="pD1"></div></div>
+  <div class="mini" id="mB"><div class="post" id="pD2"></div></div>
+  <div id="okr"></div><div id="ok">✓</div>
+ </div>
+ <div id="chat">
+  <div class="who"><div class="av"><svg width="34" height="34" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.2" fill="#8D8D93"/><path d="M3.5 21c.8-4.4 4.2-6.6 8.5-6.6s7.7 2.2 8.5 6.6" fill="#8D8D93"/></svg></div><div><div class="nm">العميل</div><div class="st" id="st">يكتب…</div></div></div>
+  <div id="typing"><i></i><i></i><i></i></div>
+  <div class="bub" id="b1">كبّر اللوقو شوي 🙏<small>9:41</small></div>
+  <div class="bub" id="b2">لا… كبّره 😅<small>9:44</small></div>
+ </div>
+ <div id="endq"><span class="gold">وانت شرايك؟</span></div>
+ <div id="ends">تحس اللوقو لازم يتكبّر؟</div>
+ <div id="cbtn"><svg width="62" height="62" viewBox="0 0 24 24"><path d="M12 3.5c-4.9 0-8.5 3.3-8.5 7.6 0 2.2 1 4.2 2.6 5.6L5.4 20.5l4.3-2c.7.2 1.5.3 2.3.3 4.9 0 8.5-3.3 8.5-7.6S16.9 3.5 12 3.5z" fill="#17130A"/></svg></div>
+ <div class="rg" id="rg2"></div>
+ <img id="cur2" class="cur" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M8 6 L8 50 L20 39 L28 57 L36 53 L28 36 L44 36 Z' fill='%23F2F0EB' stroke='%230C0C0E' stroke-width='3' stroke-linejoin='round'/></svg>">
+ <img id="mark" class="abs" src="mark.svg">
+</div>
+<div id="capbox"></div><div id="vig"></div><div id="grain"></div><div id="fade"></div>
+<script src="../../../tools/reel-engine.js"></script>
+<script>
+const DUR=40.07;
+const CAP=[
+ {a:0.32,w:[['كل',0.32],['مرة',0.74],['العميل',1.0],['يقول',1.4],['لك',1.74],['"كبّر',1.92,1],['اللوقو"…',2.32]]},
+ {a:3.0,w:[['وانت',3.0],['تكبّره…',3.6],['يصغر',4.18,1],['كل',4.72],['شي',4.96],['ثاني',5.16]]},
+ {a:5.82,w:[['العرض',5.82],['يضيع',6.38,1]]},
+ {a:7.08,w:[['المنتج',7.08],['يصغر',7.68,1]]},
+ {a:8.46,w:[['والعين',8.46],['ما',9.18],['تعرف',9.38]]},
+ {a:9.74,b:10.9,w:[['وين',9.74,1],['تطالع',9.98],['أول',10.42]]},
+ {a:11.06,w:[['الإعلان',11.06],['مو',11.62],['عن',12.04],['اللوقو',12.2,1]]},
+ {a:12.9,b:14.85,w:[['الإعلان',12.9],['عن',13.4],['الرسالة',13.54,1],['الموجودة',14.16]]},
+ {a:15.22,b:17.2,w:[['اللوقو',15.22],['دوره',15.9],['نفس',16.3],['التوقيع',16.54,1]]},
+ {a:17.6,w:[['يعني',17.6],['يقول',18.12],['"هذا',18.56],['منّي"',18.8,1]]},
+ {a:19.6,b:20.95,w:[['ومو',19.6],['من',19.92],['أحد',20.06],['ثاني',20.34,1]]},
+ {a:21.1,w:[['حطه',21.1],['بمكان',21.48],['ثابت',21.78,1]]},
+ {a:22.32,b:24.3,w:[['بمساحة',22.32],['نظيفة',22.94,1],['حوله',23.58]]},
+ {a:24.69,w:[['وبحجم',24.69],['واضح',25.31,1]]},
+ {a:25.89,b:27.9,w:[['بس',25.89],['مو',26.29],['مسيطر',26.51,1],['يعني',27.31]]},
+ {a:28.03,w:[['وإذا',28.03],['العميل',28.33],['أصر',28.81,1]]},
+ {a:29.7,w:[['وريه',29.7],['نسختين',30.0,1]]},
+ {a:31.1,w:[['جنب',31.1],['بعض',31.3]]},
+ {a:32.07,w:[['وهو',32.07],['يختار',32.35,1]]},
+ {a:33.14,b:35.1,w:[['صدقني',33.14],['راح',33.8],['يختار',33.98],['الأنظف',34.56,1]]},
+ {a:35.34,w:[['وانت',35.34],['شرايك؟',35.8,1]]},
+ {a:36.67,b:39.9,w:[['تحس',36.67],['اللوقو',37.23],['لازم',37.65],['يتكبّر؟',38.0,1]]}];
+
+const LOGO=`<svg viewBox="0 0 300 110" width="100%" height="100%" style="direction:ltr"><g transform="translate(232 55) rotate(-28)"><ellipse rx="38" ry="50" fill="#E7B27A"/><path d="M0 -46 C-16 -20 16 18 0 46" fill="none" stroke="#2A170D" stroke-width="8" stroke-linecap="round"/></g>
+ <text x="176" y="64" text-anchor="end" font-family="Plex" font-weight="700" font-size="66" fill="#F6E7D2" >حبّة</text>
+ <text x="176" y="96" text-anchor="end" font-family="Inter" font-weight="600" font-size="19" letter-spacing="6" fill="#E7B27A">COFFEE</text></svg>`;
+const CUP=`<svg viewBox="0 0 380 580" width="380" height="580"><defs>
+ <linearGradient id="cf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9895A"/><stop offset=".45" stop-color="#8A5131"/><stop offset="1" stop-color="#4E2A17"/></linearGradient>
+ <linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="rgba(255,255,255,.28)"/><stop offset=".18" stop-color="rgba(255,255,255,.04)"/><stop offset=".8" stop-color="rgba(255,255,255,0)"/><stop offset="1" stop-color="rgba(255,255,255,.16)"/></linearGradient>
+ <clipPath id="cp"><path d="M70 150 L310 150 L282 560 L98 560 Z"/></clipPath></defs>
+ <ellipse cx="190" cy="566" rx="120" ry="14" fill="rgba(0,0,0,.45)"/>
+ <rect x="226" y="0" width="22" height="300" rx="8" transform="rotate(10 237 150)" fill="#E7B27A"/>
+ <g clip-path="url(#cp)"><rect x="60" y="150" width="270" height="420" fill="rgba(240,226,206,.10)"/>
+  <path d="M60 268 C120 248 180 290 330 258 L330 570 L60 570 Z" fill="url(#cf)"/>
+  <path d="M60 268 C120 248 180 290 330 258 L330 300 C200 330 140 290 60 316 Z" fill="rgba(246,231,210,.55)"/>
+  <rect x="110" y="186" width="70" height="66" rx="12" fill="rgba(255,255,255,.30)" transform="rotate(-12 145 219)"/>
+  <rect x="190" y="200" width="66" height="62" rx="12" fill="rgba(255,255,255,.26)" transform="rotate(14 223 231)"/>
+  <rect x="140" y="300" width="62" height="58" rx="12" fill="rgba(255,255,255,.16)" transform="rotate(8 171 329)"/>
+  <rect x="60" y="150" width="270" height="420" fill="url(#gl)"/></g>
+ <path d="M70 150 L310 150 L282 560 L98 560 Z" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+ <path d="M52 150 Q190 70 328 150 Z" fill="rgba(246,231,210,.22)" stroke="rgba(255,255,255,.45)" stroke-width="3"/>
+ <rect x="46" y="142" width="288" height="18" rx="9" fill="#F6E7D2"/>
+ <g transform="translate(190 420)"><circle r="44" fill="#F6E7D2" opacity=".92"/><g transform="rotate(-28)"><ellipse rx="15" ry="20" fill="#6A3E24"/><path d="M0 -18 C-7 -8 7 8 0 18" fill="none" stroke="#F6E7D2" stroke-width="3.5"/></g></g>
+</svg>`;
+function mkPost(id){$(id).innerHTML=`<div class="pbg"></div><div class="pgr"></div><div class="plogo">${LOGO}</div>
+ <div class="phd">صبحك يبدا<br><em>من هني</em></div><div class="psub">أيس لاتيه بحليب الشوفان</div>
+ <div class="pcup">${CUP}</div><div class="poff"><b>1+1</b><span>كل صباح</span></div><div class="pfoot">اطلب من التطبيق · 7–11 الصبح</div>`;}
+// k: 0 = clean, 1 = "big logo" (realistic: ~2.6x, not a cartoon)
+function LB(k){const w=lerp(170,440,k),h=w*110/300,right=lerp(744,400+w/2,k);return {x:right-w,y:lerp(52,42,k),w,h};}
+function poster(id,k){const r=$(id),L=LB(k);const lg=r.querySelector('.plogo');lg.style.left=L.x+'px';lg.style.top=L.y+'px';lg.style.width=L.w+'px';lg.style.height=L.h+'px';
+ const hd=r.querySelector('.phd'),fs=lerp(86,52,k),ht=lerp(170,L.y+L.h+34,k);hd.style.top=ht+'px';hd.style.fontSize=fs+'px';
+ const sb=r.querySelector('.psub');sb.style.top=(ht+fs*2.3+12)+'px';sb.style.fontSize=lerp(34,24,k)+'px';
+ r.querySelector('.pcup').style.transform=`translate(${lerp(0,20,k)}px,0) scale(${lerp(1,.68,k)})`;
+ r.querySelector('.poff').style.transform=`translate(${lerp(0,8,k)}px,${lerp(0,90,k)}px) scale(${lerp(1,.66,k)})`;}
+function hh(id,t,a,b){S(id,pop(t,a,b,{dy:30,s0:.92}));}
+const EYE=[[8.5,400,140],[8.95,480,770],[9.4,600,300],[9.85,170,690],[10.3,420,140],[10.75,470,760]];
+function init(){mkCaps(CAP);mkPost('pA');mkPost('pD1');mkPost('pD2');poster('pD1',1);poster('pD2',0);
+ const sp=$('sigp');const L=sp.getTotalLength();sp.style.strokeDasharray=L;sp.dataset.L=L;
+ $('stamp').innerHTML=`<div style="background:#2A170D;border-radius:24px;padding:18px 20px;box-shadow:0 12px 30px rgba(0,0,0,.3)">${LOGO}</div>`;
+ $('tp').setAttribute('d','M'+EYE.map(e=>e[1]+' '+e[2]).join(' L'));const tl=$('tp').getTotalLength();$('tp').dataset.L=tl;}
+function kAt(t){return ee(P(t,3.45,1.5))*(1-ee(P(t,21.15,.75)));}
+function frame(t){
+ caps(t,CAP);
+ $('fade').style.opacity=1-eo(P(t,0,.3))+ein(P(t,DUR-.45,.45));
+ const cs=1+.012*Math.sin(t*.35);$('stage').style.transform=`translate(${540-540*cs}px,${760-760*cs}px) scale(${cs})`;
+ // ---- card: in 0, whip to paper 15.0, back 21.0, shrink for list 21.9, out 29.45
+ const k=kAt(t);poster('pA',k);
+ const cin=back(P(t,.05,.6)),csh=ee(P(t,21.9,.6))*(1-ee(P(t,27.9,.5))),cout=ein(P(t,29.3,.35));
+ let csc=lerp(.9,1,cin)*.65*lerp(1,.78,csh);
+ // punch when logo grows, punch on "مسيطر"
+ csc*=1+.025*Math.sin(cl(P(t,4.1,.4))*Math.PI);
+ $('card').style.opacity=cl(cin*2)*(1-cout);$('card').style.transform=`translateY(${lerp(70,0,cin)-cout*60}px) scale(${csc*(1-cout*.1)})`;
+ let wb=0;[15.0,21.0].forEach(x=>{const d=Math.abs(t-x);if(d<.2)wb=Math.max(wb,1-d/.2);});
+ 
+ // client bubble: S1 (0-3.0) and "أصر" (28.0-29.4)
+ const c1=cl(P(t,.15,.3))*(1-cl(P(t,2.85,.25))),c2=cl(P(t,27.95,.3))*(1-cl(P(t,29.25,.25)));
+ const ch=Math.max(c1,c2);{const cb=(1-cl(P(t,.05,.45)))*14+cout*16+wb*18+ch*9;$('card').style.filter=(cb>.3?`blur(${cb.toFixed(1)}px) `:'')+(ch>0?`brightness(${1-.5*ch})`:'');}$('chat').style.opacity=ch;$('chat').style.visibility=ch>0?'visible':'hidden';
+ $('chat').style.transform=`translateY(${t<15?lerp(40,0,eo(P(t,.15,.4))):lerp(40,0,eo(P(t,27.95,.4)))}px)`;
+ const typ=(t<1.8)||(t>27.95&&t<28.75);S('typing',{o:typ?1:0,s:1});
+ [...$('typing').children].forEach((d,i)=>d.style.transform=`translateY(${-8*Math.max(0,Math.sin(t*9-i*.9))}px)`);
+ $('st').textContent=typ?'يكتب…':'متصل';
+ S('b1',t<15?pop(t,1.82,undefined,{dy:24,s0:.7}):{o:0});S('b2',t>15?pop(t,28.75,undefined,{dy:24,s0:.7}):{o:0});
+ // title
+ hh('h0',t,1.92,2.85);hh('h1',t,4.18,5.6);hh('h2',t,9.74,10.95);hh('h3',t,13.54,14.95);hh('h4',t,16.54,20.9);hh('h5',t,21.78,27.9);hh('h6',t,32.35,34.9);
+ // ---- S2 free transform: cursor drags the bottom-left handle
+ const L=LB(k);const so=cl(P(t,2.95,.25))*(1-cl(P(t,5.5,.3)));const sel=$('sel');
+ sel.style.opacity=so;sel.style.left=(L.x-8)+'px';sel.style.top=(L.y-8)+'px';sel.style.width=(L.w+16)+'px';sel.style.height=(L.h+16)+'px';
+ $('szl').textContent=Math.round(100*L.w/170)+'%';
+ const cu=$('cur1');const co=cl(P(t,2.9,.25))*(1-cl(P(t,5.35,.3)));cu.style.opacity=co;
+ const press=t>3.3&&t<5.0?0.86:1;const hx=L.x-8,hy=L.y+L.h+8;const arr=eo(P(t,2.9,.45));
+ cu.style.transform=`translate(${lerp(hx-160,hx-6,arr)}px,${lerp(hy+180,hy-4,arr)}px) scale(${press})`;
+ // ---- S3 red marks
+ [['mk1',5.82,8.3],['mk2',7.08,8.3]].forEach(([id,a,b])=>{const p=pop(t,a,b,{dy:0,s0:1.4});S(id,p);});
+ [['t1',5.95,8.3],['t2',7.2,8.3]].forEach(([id,a,b])=>S(id,pop(t,a,b,{dy:26,s0:.7})));
+ // offer gets lost: dims at "يضيع"
+ const off=$('pA').querySelector('.poff');off.style.opacity=1-.45*cl(P(t,6.38,.4))*(1-cl(P(t,21.1,.5)));
+ // eye path 8.46 - 10.95
+ const eo1=cl(P(t,8.46,.25))*(1-cl(P(t,10.85,.2)));$('eye').style.opacity=eo1;
+ if(eo1>0){const [ex,ey]=keysE(t,EYE.map(e=>[e[0]+.0,e[1],e[2]]));$('eye').style.transform=`translate(${ex}px,${ey}px) rotate(${6*Math.sin(t*12)}deg)`;
+  $('pupil').setAttribute('cx',55+10*Math.sin(t*14));const tp=$('tp');const tl=+tp.dataset.L;tp.style.strokeDashoffset=0;
+  tp.style.opacity=eo1;tp.parentNode.style.opacity=1;tp.style.clipPath='';tp.setAttribute('stroke-dasharray','2 16');
+  tp.style.strokeDasharray=`2 16`;tp.parentNode.style.clipPath=`inset(0 0 0 0)`;tp.style.opacity=eo1*cl(P(t,8.6,.3));}
+ else $('tp').style.opacity=0;
+ [['q1',9.2],['q2',9.7],['q3',10.2]].forEach(([id,a])=>S(id,pop(t,a,10.9,{dy:30,s0:.4})));
+ // ---- S4 logo is not the hero: dim logo at "مو عن اللوقو", gold frame on the message
+ const dimL=cl(P(t,11.62,.4))*(1-cl(P(t,14.9,.2)));const lg=$('pA').querySelector('.plogo');lg.style.opacity=1-.75*dimL;lg.style.filter=dimL>.01?`grayscale(${dimL}) blur(${(dimL*3).toFixed(1)}px)`:'';
+ const ms=pop(t,13.54,14.95,{dy:0,s0:1.08});S('msg',ms);S('t3',pop(t,13.7,14.95,{dy:26,s0:.7}));
+ // ---- S5 paper + signature
+ const po=t>14.85&&t<21.0?1:0;$('paper').style.opacity=po;$('paper').style.visibility=po?'visible':'hidden';
+ const sp=$('sigp');sp.style.strokeDashoffset=sp.dataset.L*(1-ee(P(t,16.5,.95)));
+ sp.style.stroke=t<18.75?'#1E2A55':mixc('#1E2A55','#E6B84C',cl(P(t,18.75,.3)));
+ const st=pop(t,18.8,undefined,{dy:0,s0:1.8});st.r=lerp(-14,-6,cl(P(t,18.8,.4)));S('stamp',st);
+ // ---- S6 rules: clear space + size bracket around the (now small) logo
+ const L0=LB(0);const cpad=40;const cl0=$('clear');cl0.style.left=(L0.x-cpad)+'px';cl0.style.top=(L0.y-cpad)+'px';cl0.style.width=(L0.w+cpad*2)+'px';cl0.style.height=(L0.h+cpad*2)+'px';
+ S('clear',pop(t,22.32,27.9,{dy:0,s0:1.25}));
+ const bk=$('brk');bk.style.left=L0.x+'px';bk.style.top=(L0.y+L0.h+52)+'px';bk.style.width=L0.w+'px';S('brk',pop(t,24.69,27.9,{dy:-10,s0:.6}));
+ ['r1','r2','r3'].forEach((r,i)=>{S(r,pop(t,22.0+i*.12,28.0,{dy:40,s0:.92}));const a=[21.78,22.94,25.31][i],p=P(t,a,.3);const u=$(r).lastChild;
+   u.style.background=p>0?mixc('#17171B','#45D483',cl(p*2)):'transparent';u.style.borderColor=p>0?'#45D483':'rgba(255,255,255,.2)';u.style.color=p>0?'#0C0C0E':'transparent';u.style.transform=`scale(${p>0?lerp(.5,1,back(p)):1})`;});
+ // ---- S7 duo A/B
+ const din=P(t,29.6,.5),dout=P(t,34.95,.3);const dmA=$('mA'),dmB=$('mB');
+ const sep=lerp(90,0,ee(P(t,31.1,.6)));
+ [[dmA,'lA',-1,0],[dmB,'lB',1,.12]].forEach(([e,l,dir,dl])=>{const p=back(cl((t-29.6-dl)/.5));const o=cl((t-29.6-dl)*3)*(1-eo(dout));
+   e.style.opacity=o;e.style.visibility=o>0?'visible':'hidden';e.style.transform=`translate(${dir*sep+lerp(dir*200,0,p)}px,${lerp(60,0,p)}px) scale(${lerp(.85,1,p)})`;
+   const lp=$(l);lp.style.opacity=o;lp.style.transform=`translate(${dir*sep}px,0)`;});
+ const pick=P(t,33.98,.3);$('mA').style.filter=pick>0?`grayscale(${pick}) brightness(${1-.45*pick})`:'';$('lA').style.color='#8D8D93';$('lB').style.color=pick>0?mixc('#8D8D93','#45D483',pick):'#8D8D93';
+ const okp=pop(t,34.02,undefined,{dy:0,s0:.3});okp.o*=(1-eo(dout));S('ok',okp);
+ const okr=pop(t,33.98,undefined,{dy:0,s0:1.1});okr.o*=(1-eo(dout));S('okr',okr);
+ // stage cursor for the choice
+ const c2o=cl(P(t,32.1,.25))*(1-cl(P(t,34.7,.3)));const C2=[[32.1,560,1180],[32.6,360,700],[33.2,780,700],[33.6,560,690],[33.95,760,640]];
+ const [qx,qy]=keysE(t,C2);const pr=t>33.92&&t<34.1?.82:1;$('cur2').style.opacity=c2o;$('cur2').style.transform=`translate(${qx}px,${qy}px) scale(${pr})`;
+ const rp=P(t,33.98,.5);$('rg2').style.opacity=rp>0&&rp<1?(1-rp)*.9:0;$('rg2').style.transform=`translate(${760-60}px,${640-60}px) scale(${lerp(.25,1.3,eo(rp))})`;
+ // ---- end
+ S('endq',pop(t,35.4,undefined,{dy:50,s0:.85}));S('ends',pop(t,36.7,undefined,{dy:30,s0:.92}));
+ S('cbtn',pop(t,38.0,undefined,{dy:40,s0:.5}));
+ S('mark',{o:.55*cl(P(t,.4,.6))});
+}
+</script></body></html>
