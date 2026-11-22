@@ -12,4 +12,4 @@ Idea (NORI, replaced the marketing idea «لا تبدي الريل بلوقوك�
 
 Review page: https://claude.ai/artifact/7NWr9bWF22mFvHLd68qfPQ (`page/index.html`).
 
-Status: v1 waiting for NORI's review. Not scored, nothing scheduled.
+Status: approved by NORI (22 Nov 15:45). Scheduled on Metricool 437532063, Sun 22 Nov 18:30 Kuwait, auto-publish, custom cover. Not scored (rubric not reachable this run).
