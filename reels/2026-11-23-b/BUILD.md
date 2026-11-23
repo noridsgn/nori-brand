@@ -5,6 +5,7 @@ NORI filmed 4 clips of his monitor with his own voice (no script): the finished 
 - **Video:** `reel-kart.mp4` · 1080×1920 · 30 fps · 17.85 s · −14 LUFS
 - **Cover:** `cover.png` (designed separately: the two card faces drawn in `src/cover.html`, not a frame from the reel; text inside the 3:4 crop; ن happy, looking up at the cards)
 - **Caption:** `caption.md`
+- **Review page:** https://claude.ai/artifact/WRwiuF9zV2sKBms1CwhgYB (`page/index.html`)
 - **Status:** **posted manually by NORI on Mon 23 Nov 2026** (his words: «انا بنشره يدوي»). Never schedule it in Metricool. Link + numbers on the next pull. Not scored.
 
 ## What he says (on-screen text follows this)

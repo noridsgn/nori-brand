@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ريل كرت بزنس</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap">
+<style>
+/* VOICE calm studio review sheet · IDEA the reel as an object on a dark desk · PICTURE the video itself
+   COLOUR NORI dark #0C0C0E + gold #E6B84C · TYPE IBM Plex Sans Arabic · LAYOUT video + cover side by side, caption under */
+:root{color-scheme:dark;--bg:#0C0C0E;--p:#17171B;--ink:#F2F0EB;--mut:#8D8D93;--g:#E6B84C;--ln:rgba(255,255,255,.09)}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:radial-gradient(900px 600px at 50% -10%,rgba(230,184,76,.10),transparent 70%),var(--bg);color:var(--ink);font:16px/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif;overflow-x:clip}
+.wrap{max-width:1100px;margin:0 auto;padding:clamp(24px,4vw,56px) max(5vw,16px)}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.1;margin:0 0 6px}
+.sub{color:var(--mut);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:start}
+.card{background:var(--p);border:1px solid var(--ln);border-radius:24px;padding:16px}
+.card h2{font-size:18px;margin:4px 6px 12px;color:var(--mut);font-weight:500}
+video,img{display:block;width:100%;border-radius:16px;background:#000}
+video{aspect-ratio:9/16}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--g);color:#17130A;font-weight:700;text-decoration:none;border:0;font:inherit;font-weight:700;cursor:pointer;margin-top:12px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ln)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.cap{white-space:pre-wrap;background:#111114;border:1px solid var(--ln);border-radius:16px;padding:18px;margin:0;font:inherit}
+ul{margin:0;padding-inline-start:20px;color:var(--mut)}li b{color:var(--ink)}
+.note{font-size:14px;color:var(--mut);margin-top:10px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<h1>كرت بزنس: من كلود لفيجما</h1>
+<p class="sub">ريل فيجما · تصويرك وصوتك + «ن» · 17.9 ثانية · 1080×1920 · جاهز، وانت تنشره يدوي</p>
+<div class="grid">
+ <div class="card"><h2>الريل</h2><video src="reel-kart.mp4" controls playsinline preload="metadata" poster="cover.png"></video>
+  <div class="row"><a class="btn" href="https://raw.githubusercontent.com/noridsgn/nori-brand/main/reels/2026-11-23-b/reel-kart.mp4">تحميل الريل</a></div></div>
+ <div>
+  <div class="card"><h2>الغلاف (مصمم بروحه، النص داخل قص 3:4)</h2><img src="cover.png" alt="غلاف الريل: كرتك بدقيقة">
+   <div class="row"><a class="btn" href="https://raw.githubusercontent.com/noridsgn/nori-brand/main/reels/2026-11-23-b/cover.png">تحميل الغلاف</a></div></div>
+  <div class="card" style="margin-top:24px"><h2>الكلام اللي قلته (عليه الكابشن بالفيديو)</h2><ul>
+   <li>تبي تصمم كرت سريع، <b>بطن وظهر</b>؟</li>
+   <li>روح لكلود وعطه البرومت. علّق بكلمة <b>«كرت»</b> عشان يوصلك البرومت</li>
+   <li>كالعادة بعد ما يخلص يعطيك نسختين، بطن وظهر. سوّ لهم <b>كوبي</b> ثنينهم</li>
+   <li>ومجرد ما تطق <b>Ctrl + V</b>، صار عندك تصميم الكرت جاهز إنك تطبعه</li></ul></div>
+ </div>
+</div>
+<div class="card" style="margin-top:24px"><h2>الكابشن</h2><pre class="cap" id="cap"></pre>
+ <div class="row"><button class="btn ghost" id="cp">نسخ الكابشن</button></div>
+ <p class="note">«ورشة خشب» براند وهمي. كلمات أبي أتأكد منها معاك: «تطق» (ولا «تضغط»؟)، «ثنينهم».</p></div>
+</div>
+<script>{
+const C=`تبي تصمم كرت بزنس سريع؟ بطن وظهر، وجاهز للطباعة.
+
+1. عط كلود البرومت
+2. بعد ما يخلص يعطيك نسختين SVG، بطن وظهر… سوّ لهم كوبي
+3. الصقهم بفيجما بـ Ctrl + V، وعدّل الاسم والرقم براحتك
+
+المقاس 85 × 55 مم.
+
+تبي البرومت؟ علّق بكلمة «كرت» ويوصلك.
+
+«ورشة خشب» براند وهمي للتوضيح.
+
+#تصميم #فيجما #كرت_بزنس #مصمم_جرافيك #ذكاء_اصطناعي #figma #claude #businesscard`;
+document.getElementById('cap').textContent=C;
+const b=document.getElementById('cp');b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(C);b.textContent='انتسخ ✓';}catch(e){b.textContent='ظلل النص وانسخه';}});
+}</script></body></html>
