@@ -2,6 +2,13 @@
 
 Read this, `README.md` and `BRAND.md` before designing anything.
 
+## NORI's rule (23 Nov 2026): our work supports the DESIGNER, not the marketer or the merchant — overrides everything below
+
+- The audience is designers. Every idea must teach a designer something they apply in their design or in their work with a client: type, colour, layout, identity, print, tools, convincing the client.
+- No ad copywriting, offers, sales tactics or tips for shop owners. «لا تقول شنو فيه… قول شنو يسوي لك» (Mon 23 Nov) was rejected for exactly this.
+- Talk to the designer, not the merchant: «لعميلك» not «لمحلك/لوقوك»; no #مشاريع_صغيرة / #تسويق hashtags.
+- Every post in the dashboard week plan must be linked to its full idea (what it is, the points, what the designer gets) so NORI understands it from the dashboard alone. Before any new idea, check the dashboard ideas (upcoming + used) and this log; compare the points inside, not just titles.
+
 ## NORI's rules (6 Nov 2026 meeting) — newest, override everything below where they conflict
 
 A. **Educational shift (Kuwait Decree Law 10/2026 on digital commerce).** Until 31 Jan 2027 the account leans **educational** (about 70% teaching / 30% his work), not the old 70/30 marketing split. From **1 Feb 2027** it is **100% educational** until NORI has an official licence: no selling, no prices, no «أرسل لي … بالدايركت» offers, no service pitches. Showing his concept work as a lesson is fine. NORI still takes client work privately until February (his decision); never advertise it publicly.
