@@ -29,3 +29,6 @@ Words to confirm with NORI (ASR unsure): «تطق» (could be «تضغط»), «�
 
 ## Before / after posting
 - ManyChat must answer the keyword «كرت» with the prompt (+ guide), or commenters get nothing.
+
+## v2 audio (23 Nov, 15:45): NORI's Adobe Podcast voice
+NORI cleaned the synced raw voice himself in Adobe Podcast (`src/voice-adobe.mp3`, Enhance Speech v2, 0 ms offset checked against `voice-raw.wav`). Same sfx re-mixed on it → `src/mix.wav`, muxed on the same picture → `reel-kart.mp4` (−14.4 LUFS). Previous version kept as `reel-kart-v1.mp4` + `src/mix-v1.wav`.
