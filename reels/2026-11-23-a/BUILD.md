@@ -5,7 +5,8 @@ NORI's voice (Adobe Podcast enhanced, `src/vo.wav`, 42.2 s) → full animation, 
 - **Video:** `reel-text-photo.mp4` · 1080×1920 · 30 fps · 28.68 s · −14 LUFS
 - **Cover:** `cover.png` (designed separately: the poster split in half, قبل lost / بعد fixed, «ما ينقرا؟», ن under it, all inside the 3:4 crop)
 - **Caption:** `caption.md`
-- **Status:** Metricool draft for Mon 23 Nov 18:00 Kuwait, waiting for NORI's approval. Not scored.
+- **Review page:** https://claude.ai/artifact/X7go7AsPNtuNnGUAKmttSG (`page/index.html`)
+- **Status:** Metricool draft 438774060 (draft: true) for Mon 23 Nov 18:00 Kuwait, waiting for NORI's approval. Not scored.
 
 ## What he said (on-screen text follows this)
 شوف البوستر… الكلام موجود، بس محد قراه · الصورة زحمة، والكلام ضاع فيها · أول حل: دوّر مكان هادي بالصورة، وحط الكلام فيه · ثاني حل: تدرج غامق تحت الكلام، يطلع من تحت لفوق · ثالث حل: ضبّب الصورة ورا الكلام بس، مو كلها · وستروك حول الحروف؟ لا، يبين قديم · انت شنو تستخدم؟ اكتب لي بالتعليقات
