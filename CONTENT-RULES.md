@@ -4,9 +4,9 @@ Read this, `README.md` and `BRAND.md` before designing anything.
 
 ## NORI's rule (23 Nov 2026): our work supports the DESIGNER, not the marketer or the merchant — overrides everything below
 
-- The audience is designers. Every idea must teach a designer something they apply in their design or in their work with a client: type, colour, layout, identity, print, tools, convincing the client.
-- No ad copywriting, offers, sales tactics or tips for shop owners. «لا تقول شنو فيه… قول شنو يسوي لك» (Mon 23 Nov) was rejected for exactly this.
-- Talk to the designer, not the merchant: «لعميلك» not «لمحلك/لوقوك»; no #مشاريع_صغيرة / #تسويق hashtags.
+- The TOPIC must be design: type, colour, layout, identity/logo, photos, print, tools, the designer's work with a client.
+- No marketing topics: ad copywriting, offers, sales tactics. «لا تقول شنو فيه… قول شنو يسوي لك» (Mon 23 Nov) was rejected for exactly this.
+- Talking to a shop or brand owner is fine as long as the topic itself is design (NORI, 23 Nov: Wed «صورة الستوك» and Thu «الترند باللوقو» stay as they are).
 - Every post in the dashboard week plan must be linked to its full idea (what it is, the points, what the designer gets) so NORI understands it from the dashboard alone. Before any new idea, check the dashboard ideas (upcoming + used) and this log; compare the points inside, not just titles.
 
 ## NORI's rules (6 Nov 2026 meeting) — newest, override everything below where they conflict
