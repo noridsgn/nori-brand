@@ -15,7 +15,7 @@
 .blurL .ph img{filter:blur(16px) brightness(.82) saturate(.9)}
 .grad{position:absolute;left:0;bottom:0;width:640px;height:0;background:linear-gradient(0deg,rgba(6,6,8,.94) 0%,rgba(6,6,8,.82) 38%,rgba(6,6,8,0) 100%)}
 .hd{position:absolute;left:0;width:640px;text-align:center;direction:rtl;color:#fff;white-space:nowrap}
-.hd b{display:block;font-weight:600;font-size:64px;line-height:1.15}
+.hd b{display:block;font-weight:600;font-size:80px;line-height:1.15}
 .hd i{display:block;font-style:normal;font-weight:500;font-size:30px;margin-top:6px}
 .hd.stroke b,.hd.stroke i{-webkit-text-stroke:9px #111;paint-order:stroke fill}
 .wm{position:absolute;left:28px;top:26px;font:700 26px Plex;color:#fff;direction:rtl}
@@ -57,8 +57,8 @@
    <div class="ph" id="ph"><img src="street.jpg"></div>
    <div class="blurL" id="blurL"><div class="ph" id="ph2"><img src="street.jpg"></div></div>
    <div class="grad" id="grad"></div>
-   <div class="wm">فنار</div>
-   <div class="hd" id="hd"><b>افتتاح فنار</b><i>الخميس · 7 المسا</i></div>
+   
+   <div class="hd" id="hd"><b>افتتاح</b><i>الخميس · 7 المسا</i></div>
   </div>
   <div class="ring2" id="k1" style="left:465px;top:560px"></div><div class="ring2" id="k2" style="left:320px;top:300px"></div>
   <div class="ring2" id="k3" style="left:102px;top:555px"></div><div class="ring2" id="k4" style="left:284px;top:100px"></div><div class="ring2" id="k5" style="left:560px;top:360px"></div>
@@ -105,7 +105,7 @@ const CROP=[[0,640,540,760],[0.6,640,520,704],[6.3,640,520,704],[6.9,640,520,704
 function setCrop(el,cx,cy,w,W=640){const s=W/w,h=w*1.25;el.style.transform=`translate(${-(cx-w/2)*s}px,${-(cy-h/2)*s}px) scale(${s})`;}
 // headline y (centre, card px) over time
 const HY=[[0,300],[6.9,300],[7.2,330],[7.9,712],[10.2,712],[10.6,600],[15.9,600],[16.2,330],[28.7,330]];
-function buildMini(id,v){const m=$(id);m.innerHTML=`<div class="poster"><div class="ph"><img src="street.jpg"></div>${v==3?'<div class="blurL" style="clip-path:inset(236px 52px 374px 52px round 26px)"><div class="ph"><img src="street.jpg"></div></div>':''}${v==2?'<div class="grad" style="height:500px"></div>':''}<div class="wm">فنار</div><div class="hd" style="top:${(v==1?712:v==2?600:330)-62}px"><b>افتتاح فنار</b><i>الخميس · 7 المسا</i></div></div><div class="mok">✓</div>`;
+function buildMini(id,v){const m=$(id);m.innerHTML=`<div class="poster"><div class="ph"><img src="street.jpg"></div>${v==3?'<div class="blurL" style="clip-path:inset(236px 52px 374px 52px round 26px)"><div class="ph"><img src="street.jpg"></div></div>':''}${v==2?'<div class="grad" style="height:500px"></div>':''}<div class="hd" style="top:${(v==1?712:v==2?600:330)-62}px"><b>افتتاح</b><i>الخميس · 7 المسا</i></div></div><div class="mok">✓</div>`;
  m.querySelectorAll('.ph').forEach(p=>setCrop(p,640,520,704));}
 function init(){mkCaps(CAP);[1,2,3].forEach(v=>buildMini('m'+v,v));}
 function hh(id,t,a,b){S(id,pop(t,a,b,{dy:30,s0:.92}));}

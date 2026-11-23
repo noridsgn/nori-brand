@@ -15,7 +15,10 @@ NORI's voice (Adobe Podcast enhanced, `src/vo.wav`, 42.2 s) → full animation, 
 
 ## Build
 - `cut.py`: pauses > 0.5 s → 0.42 s (the 6.9 s gap before «وستروك» removed) → `voice-tight.wav` → `tools/asr.py` large-v3-turbo → `voice-tight.wav.words.json`.
-- Photo: `street.jpg` = «Market Street East» (Wikimedia Commons, CC0, see `src/CREDITS.txt`); fictional brand «فنار».
+- Photo: `street.jpg` = «Market Street East» (Wikimedia Commons, CC0, see `src/CREDITS.txt`); fictional brand بدون اسم براند (نوري شال «فنار» 23 Nov، العنوان «افتتاح» بس).
 - `reel.html` (frame(t)) → `node tools/render.js reel.html <dir> 28.68 30 2 2` → `comp.py <dir> 2 out.mp4 k 2` (ن at 540,1290 scale .5; body from the voice envelope; expressions: تحذّر on «محد قراه» and «لا», تنصدم on «زحمة», تفكّر on each «حل», تمام on each fix, تضحك on «مو كلها», «يبين قديم» and the ending) → concat + `mix.wav`.
 - Sound: `tools/reel-mix.py` (error on the red frame and «لا», pop on «زحمة», whoosh + tick on each «حل», chime on each fix, click on the button). No music.
 - Cover: render `cover.html` → `cover_bg.png` → `python3 cover.py`.
+
+## v2 (23 Nov, 16:48): NORI's note «شيل فنار اكتب بس افتتاح بروحها»
+Poster headline is now «افتتاح» only (bigger, 80 px), the small «فنار» name on the poster is gone, the cover the same, and the caption's «فنار براند وهمي» line removed. Same voice, timing and mix. Output `reel-text-photo-v2.mp4` + `cover.png` (v1 kept: `reel-text-photo.mp4`, `cover-v1.png`). Metricool draft 438774060 updated to v2.
