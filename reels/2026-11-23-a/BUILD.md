@@ -21,4 +21,4 @@ NORI's voice (Adobe Podcast enhanced, `src/vo.wav`, 42.2 s) → full animation, 
 - Cover: render `cover.html` → `cover_bg.png` → `python3 cover.py`.
 
 ## v2 (23 Nov, 16:48): NORI's note «شيل فنار اكتب بس افتتاح بروحها»
-Poster headline is now «افتتاح» only (bigger, 80 px), the small «فنار» name on the poster is gone, the cover the same, and the caption's «فنار براند وهمي» line removed. Same voice, timing and mix. Output `reel-text-photo-v2.mp4` + `cover.png` (v1 kept: `reel-text-photo.mp4`, `cover-v1.png`). Metricool draft 438774060 updated to v2.
+Poster headline is now «افتتاح» only (bigger, 80 px), the small «فنار» name on the poster is gone, the cover the same, and the caption's «فنار براند وهمي» line removed. Same voice, timing and mix. Output `reel-text-photo-v2.mp4` + `cover.png` (v1 kept: `reel-text-photo.mp4`, `cover-v1.png`). Metricool draft 438774060 updated to v2 (new id 438832872, same uuid).
