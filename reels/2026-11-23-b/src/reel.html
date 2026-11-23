@@ -1,0 +1,58 @@
+<!doctype html><html lang="ar"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../../tools/reel-base.css">
+<style>
+html,body{background:transparent}
+#lab{top:150px}
+#mk{position:absolute;left:72px;top:132px;width:62px;opacity:.9}
+#rim{position:absolute;left:130px;top:262px;width:820px;height:810px;border-radius:36px;
+ box-shadow:inset 0 1.5px 0 rgba(255,255,255,.18),inset 0 0 0 1.5px rgba(230,184,76,.22);
+ background:linear-gradient(180deg,rgba(0,0,0,0) 78%,rgba(12,12,14,.45))}
+#lb{position:absolute;left:0;top:1028px;width:1080px;height:90px;z-index:30}
+.lp{direction:rtl;position:absolute;left:50%;top:0;transform:translateX(-50%);display:flex;align-items:center;gap:14px;white-space:nowrap;opacity:0;
+ background:rgba(23,19,10,.94);border:2px solid var(--gold);color:var(--gold);border-radius:999px;padding:12px 34px;font-weight:700;font-size:40px;
+ box-shadow:0 18px 40px rgba(0,0,0,.6),0 0 30px rgba(230,184,76,.18)}
+.lp .en{font-family:Inter;font-weight:600;direction:ltr}
+.lp.ok{border-color:var(--ok);color:var(--ok);background:rgba(10,26,18,.94);box-shadow:0 18px 40px rgba(0,0,0,.6),0 0 30px rgba(69,212,131,.2)}
+.kc{display:inline-flex;align-items:center;justify-content:center;min-width:86px;height:76px;padding:0 22px;border-radius:16px;background:linear-gradient(#2A2A31,#1A1A1F);
+ border:2px solid rgba(255,255,255,.16);border-bottom-width:6px;color:var(--ivory);font:600 36px Inter}
+.lp.keys{direction:ltr;background:none;border:none;box-shadow:none;padding:0;gap:16px;color:var(--grey);font:600 40px Inter}
+.bub{width:44px;height:40px;border:3.5px solid var(--gold);border-radius:12px 12px 12px 3px;position:relative}
+#capbox{top:1530px}
+.cap{font-size:56px}
+</style></head><body>
+<img id="mk" src="mark.svg">
+<div id="lab">CLAUDE &nbsp;→&nbsp; <b>FIGMA</b></div>
+<div id="rim"></div>
+<div id="lb">
+ <div class="lp" id="L_claude"><span class="en">Claude</span><span>+ البرومت</span></div>
+ <div class="lp" id="L_comment"><svg width="42" height="40" viewBox="0 0 42 40"><path d="M8 4h26a5 5 0 0 1 5 5v15a5 5 0 0 1-5 5H17l-8 7v-7H8a5 5 0 0 1-5-5V9a5 5 0 0 1 5-5z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></svg><span>علّق:</span><span style="color:var(--ivory)">كرت</span></div>
+ <div class="lp" id="L_sides"><span>بطن</span><span style="color:var(--grey)">+</span><span>ظهر</span></div>
+ <div class="lp" id="L_copy"><span class="en">Copy SVG</span><span class="en" style="color:var(--ivory)">×2</span></div>
+ <div class="lp keys" id="L_keys"><span class="kc">Ctrl</span><span>+</span><span class="kc" style="color:var(--gold)">V</span></div>
+ <div class="lp ok" id="L_print"><span class="en">85 × 55 mm</span><svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="17" fill="none" stroke="currentColor" stroke-width="3.5"/><path d="M11 19.5l5.5 5.5L27.5 13.5" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>جاهز للطباعة</span></div>
+</div>
+<div id="capbox"></div>
+<script src="data.js"></script>
+<script>
+const D=window.DATA,IV='#F2F0EB',GO='#E6B84C',OK='#45D483';
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),eo=x=>1-Math.pow(1-cl(x),3);
+const back=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const C=document.getElementById('capbox');
+D.chunks.forEach(c=>{const d=document.createElement('div');d.className='cap';
+ c.w.forEach((w,i)=>{const s=document.createElement('span');s.textContent=w.x;if(/[A-Za-z]/.test(w.x)){s.className='ltr';s.style.fontWeight=700}
+  if(i)d.appendChild(document.createTextNode(' '));d.appendChild(s);w.el=s;});C.appendChild(d);c.el=d;});
+D.labels.forEach(l=>l.el=document.getElementById('L_'+l.k));
+function frame(t){
+ D.chunks.forEach(c=>{const on=t>=c.t&&t<c.e;if(!on){c.el.style.opacity=0;return}
+  const a=eo((t-c.t)/0.14),o=1-cl((t-(c.e-0.08))/0.08);c.el.style.opacity=a*o;
+  c.el.style.transform=`translateX(-50%) translateY(${(1-a)*14}px) scale(${0.96+0.04*a})`;
+  c.w.forEach(w=>{const k=cl((t-w.t)/0.09);w.el.style.color=w.g=='g'?GO:w.g=='ok'?OK:IV;w.el.style.opacity=0.28+0.72*k;
+   w.el.style.transform=`translateY(${(1-k)*6}px)`;});});
+ D.labels.forEach(l=>{const on=t>=l.t-0.01&&t<l.e;if(!on){l.el.style.opacity=0;return}
+  const a=back((t-l.t)/0.32),o=1-cl((t-(l.e-0.12))/0.12);
+  l.el.style.opacity=cl((t-l.t)/0.1)*o;l.el.style.transform=`translateX(-50%) translateY(${(1-a)*30}px) scale(${0.7+0.3*a})`;
+  if(l.k=='keys'){const p=t>13.5&&t<13.75;l.el.children[2].style.transform=p?'translateY(5px)':'none';l.el.children[2].style.borderBottomWidth=p?'2px':'6px';
+   l.el.children[0].style.transform=t>13.42&&t<13.85?'translateY(5px)':'none';l.el.children[0].style.borderBottomWidth=t>13.42&&t<13.85?'2px':'6px';}});
+}
+frame(0);
+</script></body></html>
