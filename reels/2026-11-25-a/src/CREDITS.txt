@@ -1,3 +1,3 @@
-stock.jpg: Pexels photo id 50855 (Pexels License, free to use), via HF dataset ujin-song/pexels-image-60k. Chosen 26 Nov after NORI rejected two earlier stock faces (Pexels 8770665, 19747887).
+stock.jpg: photo NORI sent in chat on 26 Nov 17:07 (smiling man, blue t-shirt, arms crossed, white background), upscaled 540×360 → 1350×900. NORI rejected Pexels 8770665, 19747887 and 50855 before this.
 real.jpg: photo NORI sent in chat on 26 Nov (elderly potter in a workshop), cropped and upscaled. Replaces the first real photo (Pexels 4706141).
 bg.jpg: generated concrete texture (numpy); animated light layers come from tools/reel-bgfx.js.

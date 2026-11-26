@@ -21,4 +21,4 @@ Cover: `src/cover.html` (rendered with Chrome, 1080×1920, content inside the 3:
 ## v2 (26 Nov, 16:05 · NORI's notes)
 - Background "doesn't move and isn't beautiful" → new animated background `tools/reel-bgfx.js`: drifting warm light pools, slow god-rays, floating gold dust + soft bokeh, a light sweep across the wall on key words, slow pan/zoom of the concrete. The whole stage is scaled to 0.8 (around 540,200) to make room for the ن.
 - «ن» added: big in the centre under the content (540,1290, scale .5), body talks from his voice (`src/comp.py`, expressions timed per word, hop on «اكتب لي»). Visible from frame 0 (no fade-in).
-- Stock photo: NORI rejected the first man (Pexels 8770665) and the second (19747887) → now Pexels 50855 (smiling businessman pointing, the classic stock look). Real photo: the elderly potter photo NORI sent in chat (replaces Pexels 4706141). See src/CREDITS.txt.
+- Stock photo: NORI rejected three (Pexels 8770665, 19747887, 50855) and sent his own (blue t-shirt, arms crossed). Real photo: the elderly potter photo NORI sent (replaces Pexels 4706141). See src/CREDITS.txt.

@@ -16,7 +16,7 @@
 .av div{width:100%;height:100%;border-radius:50%;background:#EAD9C3;border:3px solid #101013;display:flex;align-items:center;justify-content:center}
 .nm{font:600 28px Inter;color:#F2F0EB;direction:ltr}.sp{flex:1}.dots{font:700 34px Inter;color:#8D8D93;letter-spacing:2px}
 .igi{position:relative;width:720px;height:900px;overflow:hidden;background:#222}
-.igi img{position:absolute;left:0;top:0;width:720px;height:1080px;transform-origin:0 0}
+.igi img{position:absolute;left:0;top:0;width:1350px;height:900px;transform-origin:0 0}
 .igf{height:96px;display:flex;align-items:center;gap:30px;padding:0 28px;direction:ltr}
 .igf svg{width:44px;height:44px}
 /* stock post layers */
@@ -195,7 +195,7 @@ function init(){mkCaps(CAP);bgfxInit([5.76,11.75,17.85,26.21,32.56]);
 function setImg(s,fx,fy){$('sto').style.transform=`translate(${360-fx*s}px,${450-fy*s}px) scale(${s})`;}
 function hh(id,t,a,b){S(id,pop(t,a,b,{dy:30,s0:.92}));}
 const CUR=[[1.3,820,1500],[1.85,560,760],[2.05,560,760],[2.2,600,1010],[2.42,600,1010],[2.7,660,1150],
- [19.2,940,1420],[19.75,864,1277],[20.6,689,1148],[20.95,689,1148],[21.2,900,1380],
+ [19.2,940,1420],[19.75,864,1277],[20.6,725,1058],[20.95,725,1058],[21.2,900,1380],
  [21.8,940,1380],[22.3,782,621],[22.6,782,621],[23.2,940,1380]];
 const CLK=[1.95,2.42,19.75,22.45];
 function frame(t){
@@ -220,7 +220,7 @@ function frame(t){
  const pe=$('post');const hid=(t>5.42&&t<11.5)?0:1;pe.style.opacity=cl(pin*2.5)*pop_*hid*(t>=11.5&&t<12.2?cl(P(t,11.5,.15)):1);pe.style.visibility=pe.style.opacity<.01?'hidden':'visible';
  pe.style.transform=`translate(${px}px,${py}px) scale(${ps})`;pe.style.filter=(pblur>.3?`blur(${pblur.toFixed(1)}px) `:'')+(tS>0?`brightness(${1-.45*tS})`:'')+(aside>0?` grayscale(${aside*.8}) brightness(${1-.35*aside})`:'');
  // image framing: base -> crop (20.95..21.6)
- const ck=ee(P(t,20.85,.75));setImg(lerp(1,1.75,ck),lerp(360,320,ck),lerp(470,520,ck));
+ const ck=ee(P(t,20.85,.75));setImg(lerp(1,1.75,ck),lerp(665,665,ck),lerp(450,400,ck));
  // watermark sweep at "الستوك" 12.33 -> off 16.0
  const wmo=ee(P(t,12.2,.5))*(1-ee(P(t,15.95,.4)));$('wm').style.opacity=wmo;$('wm').style.transform=`translate(${lerp(-260,0,eo(P(t,12.2,.9)))}px,0)`;
  $('sto').style.filter=`grayscale(${.85*ee(P(t,14.8,.4))*(1-ee(P(t,16.0,.4)))}) brightness(${1-.25*ee(P(t,14.8,.4))*(1-ee(P(t,16.0,.4)))})`;
@@ -228,7 +228,7 @@ function frame(t){
  // crop UI 19.29..21.6
  const cr=$('crop');const cro=cl(P(t,19.3,.25))*(1-cl(P(t,21.45,.2)));cr.style.opacity=cro;cr.style.visibility=cro>0?'visible':'hidden';
  const sh=ee(P(t,19.75,.85));const ex=ee(P(t,20.85,.6));
- const R0=[0,0,720,900],R1=[114,243,412,514];
+ const R0=[0,0,720,900],R1=[154,143,412,514];
  let rr=R0.map((v,i)=>lerp(v,R1[i],sh));rr=rr.map((v,i)=>lerp(v,R0[i],ex));
  cr.style.left=rr[0]+'px';cr.style.top=rr[1]+'px';cr.style.width=rr[2]+'px';cr.style.height=rr[3]+'px';
  // colour 21.65..: swatches + tint at 22.45
