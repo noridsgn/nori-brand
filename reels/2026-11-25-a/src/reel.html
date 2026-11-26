@@ -1,7 +1,7 @@
 <!doctype html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../../tools/reel-base.css">
 <style>
-#bgimg{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;background:url(bg.jpg) center/cover;filter:brightness(.78)}
+#bgimg{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;background:url(bg.jpg) center/cover;filter:brightness(.58)}
 #bgdim{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 38%,rgba(12,12,14,.0),rgba(12,12,14,.55) 100%)}
 #beam{position:absolute;left:-200px;top:-300px;width:900px;height:1700px;background:linear-gradient(100deg,transparent 30%,rgba(255,214,150,.07) 48%,transparent 62%);transform:rotate(-8deg);pointer-events:none}
 #lab{top:150px}
@@ -16,7 +16,7 @@
 .av div{width:100%;height:100%;border-radius:50%;background:#EAD9C3;border:3px solid #101013;display:flex;align-items:center;justify-content:center}
 .nm{font:600 28px Inter;color:#F2F0EB;direction:ltr}.sp{flex:1}.dots{font:700 34px Inter;color:#8D8D93;letter-spacing:2px}
 .igi{position:relative;width:720px;height:900px;overflow:hidden;background:#222}
-.igi img{position:absolute;left:0;top:0;width:1350px;height:900px;transform-origin:0 0}
+.igi img{position:absolute;left:0;top:0;width:720px;height:1080px;transform-origin:0 0}
 .igf{height:96px;display:flex;align-items:center;gap:30px;padding:0 28px;direction:ltr}
 .igf svg{width:44px;height:44px}
 /* stock post layers */
@@ -43,10 +43,10 @@
 #ctx hr{border:none;height:1.5px;background:rgba(255,255,255,.1);margin:8px 10px}
 #ctx .hi{color:#17130A}
 /* search window */
-#srch{position:absolute;left:90px;top:340px;width:900px;height:1020px;z-index:30;opacity:0}
+#srch{position:absolute;left:90px;top:340px;width:900px;height:960px;z-index:30;opacity:0}
 #srch .body{padding:26px 30px;direction:rtl}
 .sq{display:flex;align-items:center;gap:22px;background:#0F0F12;border:1.5px solid rgba(255,255,255,.1);border-radius:24px;padding:16px}
-.sq .th{width:110px;height:110px;border-radius:14px;background-size:cover;background-position:62% 40%}
+.sq .th{width:110px;height:110px;border-radius:14px;background-size:cover;background-position:center 22%}
 .sq b{font-weight:700;font-size:36px}.sq small{display:block;font-weight:500;font-size:24px;color:var(--grey);margin-top:4px}
 #cnt{margin-right:auto;text-align:center}#cnt b{font:700 56px Inter;color:var(--gold);display:block;line-height:1}#cnt small{font-size:22px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
@@ -58,7 +58,7 @@
 .rs .m{position:absolute;right:10px;top:10px;background:rgba(255,90,82,.95);color:#fff;font:700 18px Inter;border-radius:8px;padding:3px 9px}
 /* trio */
 .mp{position:absolute;top:470px;width:300px;height:440px;border-radius:26px;overflow:hidden;z-index:12;box-shadow:0 40px 80px rgba(0,0,0,.7),0 0 0 1.5px rgba(255,255,255,.12);direction:rtl;opacity:0}
-.mp .ph{position:absolute;left:0;top:0;width:300px;height:280px;background:url(stock.jpg) 64% 40%/auto 300px no-repeat}
+.mp .ph{position:absolute;left:0;top:0;width:300px;height:280px;background:url(stock.jpg) center 22%/cover no-repeat}
 .mp .bn{position:absolute;right:22px;top:300px;font-weight:700;font-size:40px;line-height:1}
 .mp .hl{position:absolute;right:22px;top:352px;font-weight:600;font-size:24px;white-space:nowrap}
 .mp .lg{position:absolute;left:18px;top:300px;width:48px;height:48px;border-radius:50%}
@@ -94,7 +94,7 @@
 .ch .lb{position:absolute;left:0;right:0;bottom:0;height:110px;background:linear-gradient(transparent,rgba(0,0,0,.85));display:flex;align-items:flex-end;justify-content:center;padding-bottom:22px;font-weight:700;font-size:46px}
 #vs{position:absolute;left:490px;top:770px;width:100px;height:100px;border-radius:50%;background:#0C0C0E;border:3px solid var(--gold);color:var(--gold);font:700 38px Inter;display:flex;align-items:center;justify-content:center;z-index:21;opacity:0}
 #cbtn{position:absolute;left:250px;top:1150px;width:580px;height:110px;border-radius:999px;background:var(--gold);display:flex;align-items:center;justify-content:center;gap:18px;direction:rtl;opacity:0;z-index:20;color:#17130A;font-weight:700;font-size:44px;box-shadow:0 0 0 10px rgba(230,184,76,.16),0 24px 50px rgba(0,0,0,.6)}
-#mark{left:80px;top:136px;width:56px;opacity:0;z-index:30}
+#mark{left:-35px;top:136px;width:56px;opacity:0;z-index:30}
 #capbox{top:1462px}.cap{font-size:52px}
 .cur{position:absolute;left:0;top:0;width:78px;height:78px;transform-origin:8px 6px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.6));z-index:50;opacity:0}
 .rgc{position:absolute;left:0;top:0;width:120px;height:120px;border-radius:50%;border:5px solid var(--gold);opacity:0;z-index:49;box-shadow:0 0 30px rgba(230,184,76,.5)}
@@ -102,7 +102,7 @@
 #flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:80}
 #fade{position:absolute;inset:0;background:#0C0C0E;z-index:90}
 </style></head><body>
-<div id="bgimg"></div><div id="bgdim"></div><div id="beam"></div>
+<div id="bgimg"></div><div id="bgfx"></div><div id="bgdim"></div><div id="beam"></div>
 <div id="stage">
  <div id="lab">D E S I G N &nbsp; <b>N O T E S</b></div>
  <div id="ttl">
@@ -165,7 +165,7 @@
  <div id="tools"><div class="tl" id="tl1"><em>1</em>قص</div><div class="tl" id="tl2"><em>2</em>لون</div><div class="tl" id="tl3"><em>3</em>هوية</div></div>
 
  <div id="endq"><span class="gold">ستوك</span> ولا <span class="gold">حقيقية؟</span></div>
- <div class="ch" id="e1" style="left:110px"><div class="im" style="background-image:url(stock.jpg);background-position:64% 40%"></div><div class="lb">ستوك</div></div>
+ <div class="ch" id="e1" style="left:110px"><div class="im" style="background-image:url(stock.jpg);background-position:center 22%"></div><div class="lb">ستوك</div></div>
  <div class="ch" id="e2" style="left:590px"><div class="im" style="background-image:url(real.jpg);background-position:50% 30%"></div><div class="lb">حقيقية</div></div>
  <div id="vs">VS</div>
  <div id="cbtn"><svg width="52" height="52" viewBox="0 0 24 24"><path d="M12 3.5c-4.9 0-8.5 3.3-8.5 7.6 0 2.2 1 4.2 2.6 5.6L5.4 20.5l4.3-2c.7.2 1.5.3 2.3.3 4.9 0 8.5-3.3 8.5-7.6S16.9 3.5 12 3.5z" fill="#17130A"/></svg>اكتب لي بالتعليقات</div>
@@ -175,7 +175,7 @@
  <img id="mark" class="abs" src="mark.svg">
 </div>
 <div id="capbox"></div><div id="vig"></div><div id="grain"></div><div id="flash"></div><div id="fade"></div>
-<script src="../../../tools/reel-engine.js"></script>
+<script src="../../../tools/reel-engine.js"></script><script src="../../../tools/reel-bgfx.js"></script>
 <script>
 const DUR=38.08;
 const CAP=[{"a": 0.32, "w": [["ابحث", 0.32], ["عن", 0.98], ["صورة", 1.14], ["بوستك", 1.54], ["بقوقل", 2.02, 1]]}, {"a": 2.7, "w": [["ولا", 2.7], ["تنصدم", 2.98], ["لما", 3.62], ["تشوف", 3.98], ["منو", 4.54], ["مستخدمها", 4.88, 1]]}, {"a": 5.76, "w": [["مطعم،", 5.76], ["وعيادة،", 6.48], ["ومكتب", 7.4], ["عقارات…", 7.96, 1]]}, {"a": 8.98, "w": [["كلهم", 8.98], ["حاطين", 9.68], ["نفس", 10.2, 1], ["الريّال", 10.54], ["اللي", 11.06], ["يضحك", 11.22]]}, {"a": 11.75, "w": [["صورة", 11.75], ["الستوك", 12.33, 1], ["تخلي", 12.87], ["الناس", 13.31]]}, {"a": 13.72, "w": [["تحس", 13.72], ["إن", 14.04], ["البراند", 14.18], ["مو", 14.8, 1], ["حقيقي", 15.16, 1]]}, {"a": 16.03, "w": [["إذا", 16.03], ["لازم", 16.35], ["تستخدمها", 16.63]]}, {"a": 17.85, "w": [["سوّ", 17.85], ["3", 18.47, 1], ["أشياء", 18.77]]}, {"a": 19.29, "w": [["قصّها", 19.29], ["بزاوية", 19.73, 1], ["غير", 20.37], ["عن", 20.77], ["الكل", 20.91]]}, {"a": 21.65, "w": [["لوّنها", 21.65], ["على", 22.23], ["ألوان", 22.45, 1], ["البراند", 22.83]]}, {"a": 23.96, "w": [["حط", 23.96], ["عليها", 24.46], ["عنصر", 24.9, 1], ["من", 25.32], ["هويتك", 25.44]]}, {"a": 26.21, "w": [["وأحسن", 26.21], ["من", 26.77], ["هذا", 26.87], ["كله", 27.15]]}, {"a": 27.85, "w": [["صورة", 27.85], ["حقيقية", 28.53, 1], ["لمحلك", 29.21], ["ومنتجك", 29.85]]}, {"a": 30.69, "w": [["حتى", 30.69], ["لو", 31.29], ["كان", 31.45], ["بتلفونك", 31.71, 1]]}, {"a": 32.56, "w": [["انت", 32.56], ["تستخدم", 33.06], ["ستوك", 33.58, 1], ["ولا", 34.02], ["صورة", 34.22], ["حقيقية؟", 34.56, 1]]}, {"a": 35.33, "w": [["اكتب", 35.33], ["لي", 35.87], ["بالتعليقات", 35.91, 1]]}];
@@ -185,24 +185,24 @@ const ICONS=`<svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.1C4.5 7.
 <span style="flex:1"></span><svg viewBox="0 0 24 24"><path d="M6 3.5h12v17l-6-4.2-6 4.2z" fill="none" stroke="#F2F0EB" stroke-width="1.8" stroke-linejoin="round"/></svg>`;
 const AV=`<svg width="30" height="30" viewBox="0 0 30 30"><path d="M9 4h12v3c0 2-2 3-2 5 0 3 5 4 5 10 0 3-3 5-9 5s-9-2-9-5c0-6 5-7 5-10 0-2-2-3-2-5z" fill="#C2643A"/></svg>`;
 // result thumbs: [bg-position, extra filter, flip, site]
-const RES=[['64% 40%','',0,'malh.menu'],['40% 30%','grayscale(1)',0,'lulu.clinic'],['70% 50%','',1,'muftah.homes'],['55% 35%','saturate(1.4)',0,'blog-ads.net'],['64% 60%','',0,'shop.example'],['30% 40%','contrast(1.2)',1,'agency.site'],['60% 45%','sepia(.4)',0,'news.local'],['50% 40%','',0,'app.promo'],['68% 38%','hue-rotate(-15deg)',0,'offers.web']];
-function init(){mkCaps(CAP);
+const RES=[['center 20%','',0,'malh.menu'],['center 15%','grayscale(1)',0,'lulu.clinic','180%'],['center 30%','',1,'muftah.homes'],['center 25%','saturate(1.4)',0,'blog-ads.net','150%'],['center 40%','',0,'shop.example'],['center 18%','contrast(1.2)',1,'agency.site','140%'],['center 22%','sepia(.4)',0,'news.local'],['center 35%','',0,'app.promo','130%'],['center 20%','hue-rotate(-15deg)',0,'offers.web']];
+function init(){mkCaps(CAP);bgfxInit([5.76,11.75,17.85,26.21,32.56]);
  document.querySelectorAll('.av div').forEach(d=>d.innerHTML=AV);
  $('pf').innerHTML=ICONS;$('rf').innerHTML=ICONS;
- $('grid').innerHTML=RES.map((r,i)=>`<div class="rs" id="rs${i}"><div class="t" style="background-image:url(stock.jpg);background-size:auto 260px;background-position:${r[0]};filter:${r[1]};${r[2]?'transform:scaleX(-1)':''}"><div class="m" style="${r[2]?'transform:scaleX(-1)':''}">100%</div></div><div class="l1"></div><div class="l2">${r[3]}</div></div>`).join('');
+ $('grid').innerHTML=RES.map((r,i)=>`<div class="rs" id="rs${i}"><div class="t" style="background-image:url(stock.jpg);background-size:${r[4]||'cover'};background-position:${r[0]};filter:${r[1]};${r[2]?'transform:scaleX(-1)':''}"><div class="m" style="${r[2]?'transform:scaleX(-1)':''}">100%</div></div><div class="l1"></div><div class="l2">${r[3]}</div></div>`).join('');
  let w='';for(let r=0;r<9;r++)for(let c=0;c<4;c++)w+=`<div class="wt" style="left:${c*420-80+(r%2)*210}px;top:${r*190}px">STOCK</div>`;$('wm').innerHTML=w;}
 // stock image framing: [s, fx, fy] -> image point fx,fy at frame centre (360,450)
 function setImg(s,fx,fy){$('sto').style.transform=`translate(${360-fx*s}px,${450-fy*s}px) scale(${s})`;}
 function hh(id,t,a,b){S(id,pop(t,a,b,{dy:30,s0:.92}));}
 const CUR=[[1.3,820,1500],[1.85,560,760],[2.05,560,760],[2.2,600,1010],[2.42,600,1010],[2.7,660,1150],
- [19.2,940,1420],[19.75,864,1277],[20.6,806,1229],[20.95,806,1229],[21.2,900,1380],
+ [19.2,940,1420],[19.75,864,1277],[20.6,689,1148],[20.95,689,1148],[21.2,900,1380],
  [21.8,940,1380],[22.3,782,621],[22.6,782,621],[23.2,940,1380]];
 const CLK=[1.95,2.42,19.75,22.45];
 function frame(t){
  caps(t,CAP);
  $('fade').style.opacity=ein(P(t,DUR-.45,.45));
- const cs=1+.014*Math.sin(t*.33);$('stage').style.transform=`translate(${540-540*cs}px,${760-760*cs}px) scale(${cs})`;
- $('bgimg').style.transform=`translate(${-18*Math.sin(t*.12)}px,${-30*P(t,0,DUR)}px) scale(${1.02+.03*P(t,0,DUR)})`;
+ const cs=1+.014*Math.sin(t*.33);const KS=cs*.8;$('stage').style.transform=`translate(${540-540*KS}px,${200-200*KS}px) scale(${KS})`;bgfx(t);
+ $('bgimg').style.transform=`translate(${-18*Math.sin(t*.12)}px,${-30*P(t,0,DUR)}px) scale(${1.04+.07*P(t,0,DUR)}) rotate(${.6*Math.sin(t*.15)}deg)`;
  $('beam').style.transform=`translateX(${lerp(-120,520,P(t,0,DUR))}px) rotate(-8deg)`;
  // ---------- main post timeline
  // in 0 -> pushed back 2.6 (search) -> back 5.5? no: trio 5.6..11.5 -> stock focus 11.6..26.1 -> aside 27.3
@@ -220,7 +220,7 @@ function frame(t){
  const pe=$('post');const hid=(t>5.42&&t<11.5)?0:1;pe.style.opacity=cl(pin*2.5)*pop_*hid*(t>=11.5&&t<12.2?cl(P(t,11.5,.15)):1);pe.style.visibility=pe.style.opacity<.01?'hidden':'visible';
  pe.style.transform=`translate(${px}px,${py}px) scale(${ps})`;pe.style.filter=(pblur>.3?`blur(${pblur.toFixed(1)}px) `:'')+(tS>0?`brightness(${1-.45*tS})`:'')+(aside>0?` grayscale(${aside*.8}) brightness(${1-.35*aside})`:'');
  // image framing: base -> crop (20.95..21.6)
- const ck=ee(P(t,20.85,.75));setImg(lerp(1,1.75,ck),lerp(900,990,ck),lerp(450,590,ck));
+ const ck=ee(P(t,20.85,.75));setImg(lerp(1,1.75,ck),lerp(360,320,ck),lerp(470,520,ck));
  // watermark sweep at "الستوك" 12.33 -> off 16.0
  const wmo=ee(P(t,12.2,.5))*(1-ee(P(t,15.95,.4)));$('wm').style.opacity=wmo;$('wm').style.transform=`translate(${lerp(-260,0,eo(P(t,12.2,.9)))}px,0)`;
  $('sto').style.filter=`grayscale(${.85*ee(P(t,14.8,.4))*(1-ee(P(t,16.0,.4)))}) brightness(${1-.25*ee(P(t,14.8,.4))*(1-ee(P(t,16.0,.4)))})`;
@@ -228,7 +228,7 @@ function frame(t){
  // crop UI 19.29..21.6
  const cr=$('crop');const cro=cl(P(t,19.3,.25))*(1-cl(P(t,21.45,.2)));cr.style.opacity=cro;cr.style.visibility=cro>0?'visible':'hidden';
  const sh=ee(P(t,19.75,.85));const ex=ee(P(t,20.85,.6));
- const R0=[0,0,720,900],R1=[244,333,412,514];
+ const R0=[0,0,720,900],R1=[114,243,412,514];
  let rr=R0.map((v,i)=>lerp(v,R1[i],sh));rr=rr.map((v,i)=>lerp(v,R0[i],ex));
  cr.style.left=rr[0]+'px';cr.style.top=rr[1]+'px';cr.style.width=rr[2]+'px';cr.style.height=rr[3]+'px';
  // colour 21.65..: swatches + tint at 22.45

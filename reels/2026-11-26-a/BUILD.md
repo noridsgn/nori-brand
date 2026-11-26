@@ -15,3 +15,7 @@ Planned as «عفوي» (phone, no edit), but NORI could only record his voice t
 ## Build
 Same pipeline as reels/2026-11-25-a (cut.py → asr → caps.json → build.py → render.js 28.89 s → tmix + mix.wav).
 Fictional brand «قارب» (a dhow, neutral object name). Scenes: artboard window, the logo changes on each trend word (gradient, 3D, glass) and the file name grows (logo_FINAL_final.svg) → 4 versions 2021–2024 → «اللي ببالهم» vs «اللي يشوفونه» ≠, «منو هذا؟» → memory meter 0→100% + year counter + the logo on cup, bag, sign, profile → 3 trendy posts, same small logo ringed in gold → logo locked, gold glow on «ثابت» → small evolution 2021 → 2026 → 2031, green ticks «يعرفونه» → end question + button.
+
+## v2 (26 Nov, 16:05 · NORI's notes)
+- Background "doesn't move and isn't beautiful" → new animated background `tools/reel-bgfx.js`: drifting warm light pools, slow god-rays, floating gold dust + soft bokeh, a light sweep across the wall on key words, slow pan/zoom of the concrete. The whole stage is scaled to 0.8 (around 540,200) to make room for the ن.
+- «ن» added: big in the centre under the content (540,1290, scale .5), body talks from his voice (`src/comp.py`, expressions timed per word, hop on «اكتب لي»). Visible from frame 0 (no fade-in).
