@@ -32,9 +32,9 @@ video,img{display:block;width:100%;border-radius:16px;background:#000}video{aspe
  <div class="hd"><h2>صورة الستوك تفضحك</h2><p class="sub">38 ثانية · أنيميشن على صوتك + «ن» · خلفية متحركة · صورة الستوك والفخّاري من اختيارك</p></div>
  <div class="grid">
   <div class="card"><h3>الريل</h3><video src="stock.mp4" controls playsinline preload="metadata" poster="stock-cover.png"></video>
-   <div class="row"><a class="btn" href="https://raw.githubusercontent.com/noridsgn/nori-brand/main/reels/2026-11-25-a/stock.mp4">تحميل الريل</a></div></div>
+   <div class="row"><button class="btn dl" data-f="stock.mp4" data-n="reel-stock.mp4">تحميل الريل</button></div></div>
   <div class="card"><h3>الغلاف (مصمم بروحه، داخل قص 3:4)</h3><img src="stock-cover.png" alt="غلاف صورة الستوك تفضحك">
-   <div class="row"><a class="btn ghost" href="https://raw.githubusercontent.com/noridsgn/nori-brand/main/reels/2026-11-25-a/cover.png">تحميل الغلاف</a></div></div>
+   <div class="row"><button class="btn ghost dl" data-f="stock-cover.png" data-n="cover-stock.png">تحميل الغلاف</button></div></div>
  </div>
  <div class="card cc"><h3>الكابشن</h3><pre class="cap" id="cap1">ابحث عن صورة بوستك بقوقل… ولا تنصدم 👀
 
@@ -59,9 +59,9 @@ Real beats stock.
  <div class="hd"><h2>لا تلحق الترند بلوقوك</h2><p class="sub">29 ثانية · أنيميشن على صوتك + «ن» · خلفية متحركة · براند وهمي «قارب»</p></div>
  <div class="grid">
   <div class="card"><h3>الريل</h3><video src="trend.mp4" controls playsinline preload="metadata" poster="trend-cover.png"></video>
-   <div class="row"><a class="btn" href="https://raw.githubusercontent.com/noridsgn/nori-brand/main/reels/2026-11-26-a/trend.mp4">تحميل الريل</a></div></div>
+   <div class="row"><button class="btn dl" data-f="trend.mp4" data-n="reel-trend.mp4">تحميل الريل</button></div></div>
   <div class="card"><h3>الغلاف (مصمم بروحه، داخل قص 3:4)</h3><img src="trend-cover.png" alt="غلاف لا تلحق الترند بلوقوك">
-   <div class="row"><a class="btn ghost" href="https://raw.githubusercontent.com/noridsgn/nori-brand/main/reels/2026-11-26-a/cover.png">تحميل الغلاف</a></div></div>
+   <div class="row"><button class="btn ghost dl" data-f="trend-cover.png" data-n="cover-trend.png">تحميل الغلاف</button></div></div>
  </div>
  <div class="card cc"><h3>الكابشن</h3><pre class="cap" id="cap2">كل ما طلع ترند… غيّر اللوقو 😅
 
@@ -84,4 +84,12 @@ Trends fade. Logos stay.
 </section>
 </div>
 <script>{document.querySelectorAll('[data-c]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById(b.dataset.c).textContent);b.textContent='انسخ ✓'}catch(e){b.textContent='ظلّل النص وانسخه'}}))}</script>
+<script>{
+const L={};document.querySelectorAll('.dl').forEach(b=>{L[b.dataset.f]=b.textContent;b.disabled=true;b.style.opacity=.5;});
+claude.use("downloads").then(dl=>{if(!dl){document.querySelectorAll('.dl').forEach(b=>{b.textContent='التحميل مو متوفر هني';});return;}
+ document.querySelectorAll('.dl').forEach(b=>{b.disabled=false;b.style.opacity=1;b.addEventListener('click',async()=>{
+  try{b.textContent='جاري التجهيز…';const r=await fetch(b.dataset.f);const blob=await r.blob();await dl.save({filename:b.dataset.n,data:blob});b.textContent='انحفظ ✓';}
+  catch(e){b.textContent=(e&&e.code==='declined')?L[b.dataset.f]:(e&&e.code==='host_unavailable'?'افتحها من المتصفح عشان تحمّل':'صار خطأ، جرّب مرة ثانية');}
+ });});});
+}</script>
 </body></html>
