@@ -1,0 +1,218 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../../tools/reel-base.css">
+<style>
+#bgimg{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;background:url(bg.jpg) center/cover;filter:brightness(.74) saturate(.9)}
+#bgdim{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 38%,rgba(12,12,14,0),rgba(12,12,14,.55) 100%)}
+#beam{position:absolute;left:-200px;top:-300px;width:900px;height:1700px;background:linear-gradient(100deg,transparent 30%,rgba(255,214,150,.07) 48%,transparent 62%);pointer-events:none}
+#lab{top:150px}
+#ttl{position:absolute;left:0;top:196px;width:1080px;height:120px;z-index:20}
+.h{position:absolute;left:0;top:0;width:1080px;text-align:center;direction:rtl;font-weight:700;font-size:78px;line-height:1.2;white-space:nowrap;opacity:0;text-shadow:0 8px 30px rgba(0,0,0,.6)}
+.n{font-family:Inter;font-weight:700}
+/* artboard window */
+#art{position:absolute;left:150px;top:400px;width:780px;height:860px;z-index:10;opacity:0}
+#board{position:absolute;left:30px;top:96px;width:720px;height:720px;border-radius:22px;background:#EFE7D8;overflow:hidden}
+#blobs{position:absolute;inset:0;opacity:0}
+#blobs i{position:absolute;border-radius:50%;filter:blur(40px)}
+.lv{position:absolute;left:160px;top:110px;width:400px;height:480px;opacity:0}
+#chip{position:absolute;left:50%;top:330px;z-index:22;direction:rtl;font-weight:700;font-size:40px;padding:10px 32px;border-radius:999px;white-space:nowrap;opacity:0;background:rgba(23,19,10,.94);border:2.5px solid var(--gold);color:var(--gold)}
+/* fan of 4 */
+.fv{position:absolute;top:560px;width:230px;height:300px;border-radius:24px;background:#EFE7D8;overflow:hidden;z-index:12;opacity:0;box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1.5px rgba(255,255,255,.12)}
+.fv .lg{position:absolute;left:25px;top:20px;width:180px;height:216px}
+.fy{position:absolute;top:880px;width:230px;text-align:center;font:700 40px Inter;color:var(--grey);z-index:12;opacity:0}
+/* S2 mind vs sees */
+.cir{position:absolute;top:560px;width:380px;height:380px;border-radius:50%;background:#EFE7D8;overflow:hidden;z-index:12;opacity:0;box-shadow:0 30px 70px rgba(0,0,0,.65),0 0 0 6px rgba(255,255,255,.08)}
+.cir .lg{position:absolute;left:100px;top:70px;width:180px;height:216px}
+.cl{position:absolute;top:470px;width:380px;text-align:center;font-weight:700;font-size:40px;color:#C9C6BE;z-index:12;opacity:0}
+#neq{position:absolute;left:490px;top:700px;width:100px;height:100px;border-radius:50%;background:rgba(42,16,14,.95);border:4px solid var(--bad);color:var(--bad);font:700 60px Inter;display:flex;align-items:center;justify-content:center;z-index:14;opacity:0}
+.q{position:absolute;z-index:15;font:700 80px Plex;color:var(--ivory);opacity:0;text-shadow:0 6px 20px rgba(0,0,0,.7)}
+.tg{position:absolute;z-index:22;direction:rtl;font-weight:700;font-size:46px;padding:10px 34px;border-radius:999px;white-space:nowrap;opacity:0}
+.tg.bad{background:rgba(42,16,14,.94);border:2.5px solid var(--bad);color:var(--bad)}
+.tg.ok{background:rgba(12,34,22,.94);border:2.5px solid var(--ok);color:var(--ok)}
+.tg.gd{background:rgba(23,19,10,.94);border:2.5px solid var(--gold);color:var(--gold)}
+/* S3/S4 memory */
+#mem{position:absolute;left:340px;top:420px;width:400px;height:400px;border-radius:40px;background:#EFE7D8;z-index:12;opacity:0;box-shadow:0 40px 80px rgba(0,0,0,.65)}
+#mem .lg{position:absolute;left:110px;top:60px;width:180px;height:216px}
+#meter{position:absolute;left:190px;top:880px;width:700px;z-index:12;opacity:0;direction:rtl}
+#meter .tp{display:flex;justify-content:space-between;font-weight:700;font-size:40px;margin-bottom:16px}
+#meter .tp b{font-family:Inter;color:var(--gold)}
+#meter .bar{height:26px;border-radius:13px;background:rgba(255,255,255,.1);overflow:hidden;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.08)}
+#meter .fill{height:100%;width:0;border-radius:13px;background:linear-gradient(270deg,#E6B84C,#F5D58A)}
+#yr{position:absolute;left:190px;top:1010px;width:700px;text-align:center;font-weight:600;font-size:36px;color:var(--grey);z-index:12;opacity:0;direction:rtl}
+#yr b{font-family:Inter;color:var(--ivory)}
+.it{position:absolute;width:190px;height:190px;border-radius:32px;background:rgba(24,24,28,.95);border:1.5px solid rgba(255,255,255,.12);z-index:11;opacity:0;box-shadow:0 24px 50px rgba(0,0,0,.6)}
+/* S5 posts */
+.pp{position:absolute;top:500px;width:290px;height:390px;border-radius:26px;overflow:hidden;z-index:12;opacity:0;box-shadow:0 40px 80px rgba(0,0,0,.7),0 0 0 1.5px rgba(255,255,255,.14);direction:rtl}
+.pp .pl{position:absolute;right:20px;top:18px;width:64px;height:64px;border-radius:16px;background:#EFE7D8;display:flex;align-items:center;justify-content:center}
+.pp .pl .lg{width:44px;height:53px}
+.pp .pt{position:absolute;right:24px;bottom:30px;font-weight:700;font-size:48px;line-height:1.1}
+.ring{position:absolute;width:96px;height:96px;border-radius:24px;border:5px solid var(--gold);z-index:13;opacity:0;box-shadow:0 0 26px rgba(230,184,76,.55)}
+.pc{position:absolute;top:920px;width:290px;text-align:center;z-index:13;opacity:0;font-weight:700;font-size:32px;color:#C9C6BE}
+/* S6 lock */
+#big{position:absolute;left:330px;top:440px;width:420px;height:420px;border-radius:44px;background:#EFE7D8;z-index:14;opacity:0;box-shadow:0 50px 100px rgba(0,0,0,.7),0 0 0 2px rgba(230,184,76,.0)}
+#big .lg{position:absolute;left:120px;top:70px;width:180px;height:216px}
+#lock{position:absolute;left:690px;top:400px;width:120px;height:120px;border-radius:50%;background:var(--gold);z-index:15;opacity:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(230,184,76,.18),0 20px 40px rgba(0,0,0,.6)}
+/* S7 evolution */
+.ev{position:absolute;top:560px;width:260px;height:300px;border-radius:28px;background:#EFE7D8;z-index:12;opacity:0;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.ev .lg{position:absolute;left:40px;top:28px;width:180px;height:216px}
+.ey{position:absolute;top:890px;width:260px;text-align:center;font:700 40px Inter;color:var(--grey);z-index:12;opacity:0}
+.ar{position:absolute;top:680px;width:60px;z-index:12;opacity:0;font:700 50px Inter;color:var(--gold);text-align:center}
+.tk{position:absolute;top:530px;width:64px;height:64px;border-radius:50%;background:var(--ok);color:#0C0C0E;font:700 36px Inter;display:flex;align-items:center;justify-content:center;z-index:13;opacity:0;box-shadow:0 0 0 8px rgba(69,212,131,.2)}
+/* end */
+#endq{position:absolute;left:0;top:430px;width:1080px;text-align:center;direction:rtl;font-weight:700;font-size:100px;opacity:0;z-index:20;line-height:1.25}
+#endr{position:absolute;left:290px;top:720px;width:500px;height:260px;z-index:20;opacity:0;direction:ltr}
+#endr .a,#endr .b{position:absolute;top:20px;width:200px;height:220px;border-radius:30px;background:#EFE7D8}
+#endr .a{left:0}#endr .b{right:0}
+#endr .lg{position:absolute;left:30px;top:10px;width:140px;height:168px}
+#endr .m{position:absolute;left:220px;top:90px;width:60px;text-align:center;font:700 60px Inter;color:var(--gold)}
+#cbtn{position:absolute;left:250px;top:1100px;width:580px;height:110px;border-radius:999px;background:var(--gold);display:flex;align-items:center;justify-content:center;gap:18px;direction:rtl;opacity:0;z-index:20;color:#17130A;font-weight:700;font-size:44px;box-shadow:0 0 0 10px rgba(230,184,76,.16),0 24px 50px rgba(0,0,0,.6)}
+#mark{left:80px;top:136px;width:56px;opacity:0;z-index:30}
+#capbox{top:1462px}.cap{font-size:52px}
+#grain{position:absolute;inset:0;opacity:.06;z-index:70;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>")}
+#fade{position:absolute;inset:0;background:#0C0C0E;z-index:90}
+</style></head><body>
+<div id="bgimg"></div><div id="bgdim"></div><div id="beam"></div>
+<div id="stage">
+ <div id="lab">D E S I G N &nbsp; <b>N O T E S</b></div>
+ <div id="ttl">
+  <div class="h" id="h0">كل <span class="gold">ترند</span>… لوقو جديد</div>
+  <div class="h" id="h1">منو <span class="gold">هذا؟</span></div>
+  <div class="h" id="h2">شغلة اللوقو: <span class="gold">ينحفظ</span></div>
+  <div class="h" id="h3">الترند <span class="gold">بالبوستات</span></div>
+  <div class="h" id="h4">اللوقو <span class="gold">ثابت</span></div>
+  <div class="h" id="h5">طوّره <span class="gold">شوي شوي</span></div>
+ </div>
+ <div class="win" id="art"><div class="tb"><i></i><i></i><i></i><span id="fname">logo_final.svg</span></div>
+  <div id="board"><div id="blobs"><i style="left:60px;top:80px;width:360px;height:360px;background:#FF7A45"></i><i style="left:330px;top:300px;width:380px;height:380px;background:#2BB3C0"></i><i style="left:120px;top:420px;width:260px;height:260px;background:#8A5CF6"></i></div>
+   <div class="lv" id="L0"></div><div class="lv" id="L1"></div><div class="lv" id="L2"></div><div class="lv" id="L3"></div></div>
+ </div>
+ <div id="chip">ترند: قريدينت</div>
+ <div class="fv" id="f0" style="left:50px"><div class="lg"></div></div><div class="fv" id="f1" style="left:300px"><div class="lg"></div></div><div class="fv" id="f2" style="left:550px"><div class="lg"></div></div><div class="fv" id="f3" style="left:800px"><div class="lg"></div></div>
+ <div class="fy" id="y0" style="left:50px">2021</div><div class="fy" id="y1" style="left:300px">2022</div><div class="fy" id="y2" style="left:550px">2023</div><div class="fy" id="y3" style="left:800px">2024</div>
+
+ <div class="cl" id="cl1" style="left:80px">اللي ببالهم</div><div class="cl" id="cl2" style="left:620px">اللي يشوفونه</div>
+ <div class="cir" id="ci1" style="left:80px"><div class="lg"></div></div><div class="cir" id="ci2" style="left:620px"><div class="lg"></div></div>
+ <div id="neq">≠</div>
+ <div class="q" id="q1" style="left:980px;top:560px">؟</div><div class="q" id="q2" style="left:1000px;top:800px">؟</div><div class="q" id="q3" style="left:900px;top:930px">؟</div>
+ <div class="tg bad" id="tWho" style="left:395px;top:1010px">منو هذا؟</div>
+
+ <div class="it" id="i0" style="left:60px;top:470px"></div><div class="it" id="i1" style="left:830px;top:470px"></div><div class="it" id="i2" style="left:60px;top:700px"></div><div class="it" id="i3" style="left:830px;top:700px"></div><div class="it" id="i4" style="left:445px;top:1110px;opacity:0"></div>
+ <div id="mem"><div class="lg"></div></div>
+ <div id="meter"><div class="tp"><span>الحفظ</span><b id="pct">0%</b></div><div class="bar"><div class="fill" id="fill"></div></div></div>
+ <div id="yr">سنة <b id="yrn">1</b></div>
+
+ <div class="pp" id="p0" style="left:60px;background:linear-gradient(150deg,#7A3CF0,#F0457A 55%,#FFB04A)"><div class="pl"><div class="lg"></div></div><div class="pt" style="color:#fff">صيد<br>اليوم</div></div>
+ <div class="pp" id="p1" style="left:395px;background:radial-gradient(circle at 50% 35%,#2B3E5C,#0E1626)"><div class="pl"><div class="lg"></div></div><div class="pt" style="color:#F5D58A;text-shadow:0 2px 0 #B78A2E,0 4px 0 #8C6620,0 6px 0 #5E4416,0 14px 20px rgba(0,0,0,.6)">طبق<br>جديد</div></div>
+ <div class="pp" id="p2" style="left:730px;background:#1A2E2C"><div style="position:absolute;left:30px;top:120px;width:180px;height:180px;border-radius:50%;background:#2BB3C0;filter:blur(30px)"></div><div style="position:absolute;left:110px;top:200px;width:150px;height:150px;border-radius:50%;background:#FF7A45;filter:blur(30px)"></div><div style="position:absolute;left:24px;top:110px;width:242px;height:250px;border-radius:24px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.4);backdrop-filter:blur(8px)"></div><div class="pl"><div class="lg"></div></div><div class="pt" style="color:#fff">الويكند</div></div>
+ <div class="ring" id="rg0"></div><div class="ring" id="rg1"></div><div class="ring" id="rg2"></div>
+ <div class="pc" id="pc0" style="left:60px">قريدينت</div><div class="pc" id="pc1" style="left:395px">ثري دي</div><div class="pc" id="pc2" style="left:730px">زجاج</div>
+
+ <div id="big"><div class="lg"></div></div>
+ <div id="lock"><svg width="58" height="58" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="#17130A"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="#17130A" stroke-width="2.4"/></svg></div>
+
+ <div class="ev" id="e0" style="left:50px"><div class="lg"></div></div><div class="ev" id="e1" style="left:410px"><div class="lg"></div></div><div class="ev" id="e2" style="left:770px"><div class="lg"></div></div>
+ <div class="ar" id="a0" style="left:330px">→</div><div class="ar" id="a1" style="left:690px">→</div>
+ <div class="ey" id="ey0" style="left:50px">2021</div><div class="ey" id="ey1" style="left:410px">2026</div><div class="ey" id="ey2" style="left:770px">2031</div>
+ <div class="tk" id="k0" style="left:248px">✓</div><div class="tk" id="k1" style="left:608px">✓</div><div class="tk" id="k2" style="left:968px">✓</div>
+ <div class="tg ok" id="tKnow" style="left:350px;top:1010px">يعرفونه ✓</div>
+
+ <div id="endq">انت <span class="gold">غيّرت</span> لوقوك<br>من قبل؟</div>
+ <div id="endr"><div class="a"><div class="lg"></div></div><div class="m">→</div><div class="b"><div class="lg"></div></div></div>
+ <div id="cbtn"><svg width="52" height="52" viewBox="0 0 24 24"><path d="M12 3.5c-4.9 0-8.5 3.3-8.5 7.6 0 2.2 1 4.2 2.6 5.6L5.4 20.5l4.3-2c.7.2 1.5.3 2.3.3 4.9 0 8.5-3.3 8.5-7.6S16.9 3.5 12 3.5z" fill="#17130A"/></svg>اكتب لي بالتعليقات</div>
+ <img id="mark" class="abs" src="mark.svg">
+</div>
+<div id="capbox"></div><div id="vig"></div><div id="grain"></div><div id="fade"></div>
+<script src="../../../tools/reel-engine.js"></script>
+<script>
+const DUR=28.89;
+const CAP=/*CAPS*/;
+// «قارب» logo: lateen sail + hull + wordmark. style: flat | grad | d3 | glass | v2 | v3
+function LOGO(st,uid){const id='g'+uid;
+ const sail='M78 22 L156 128 L70 128 C86 98 92 60 78 22 Z',hull='M30 140 L170 140 C160 166 138 176 100 176 C62 176 40 166 30 140 Z',mast='M72 18 L72 140';
+ let defs='',sf,hf,ms,txt='#1E3A5F',extra='',filt='';
+ if(st==='flat'||st==='v2'||st==='v3'){sf='#1E3A5F';hf='#1E3A5F';ms='#1E3A5F';}
+ if(st==='v2'){}
+ if(st==='grad'){defs=`<linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A3CF0"/><stop offset=".5" stop-color="#F0457A"/><stop offset="1" stop-color="#FFB04A"/></linearGradient>`;sf=hf=ms=`url(#${id})`;txt=`url(#${id})`;}
+ if(st==='d3'){defs=`<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4C7BB8"/><stop offset="1" stop-color="#1E3A5F"/></linearGradient>`;sf=hf=`url(#${id})`;ms='#2C507F';txt='#2C507F';
+  let ex='';for(let k=12;k>0;k-=2)ex+=`<g transform="translate(${k*.7} ${k})" opacity="1"><path d="${sail}" fill="#0B1A2E"/><path d="${hull}" fill="#0B1A2E"/></g>`;extra=ex;
+  filt=`<path d="M80 30 L140 112" stroke="rgba(255,255,255,.55)" stroke-width="4" stroke-linecap="round"/><path d="M40 146 L160 146" stroke="rgba(255,255,255,.4)" stroke-width="4" stroke-linecap="round"/>`;}
+ if(st==='glass'){sf=hf='rgba(255,255,255,.28)';ms='rgba(255,255,255,.8)';txt='#FFFFFF';}
+ let sailP=sail,hullP=hull;
+ if(st==='v2'){sailP='M80 24 L154 126 L74 126 C88 96 92 60 80 24 Z';hullP='M34 140 L166 140 C156 162 136 172 100 172 C64 172 44 162 34 140 Z';}
+ if(st==='v3'){sailP='M82 26 L150 124 L78 124 C90 94 92 60 82 26 Z';hullP='M40 140 L160 140 C152 158 132 166 100 166 C68 166 48 158 40 140 Z';}
+ const strokeG=st==='glass'?'stroke="rgba(255,255,255,.85)" stroke-width="3"':'';
+ return `<svg viewBox="0 0 200 240" width="100%" height="100%"><defs>${defs}</defs>${extra}
+  ${st==='v3'?'':`<path d="${mast}" stroke="${ms}" stroke-width="${st==='v2'?5:6}" stroke-linecap="round"/>`}
+  <path d="${sailP}" fill="${sf}" ${strokeG}/><path d="${hullP}" fill="${hf}" ${strokeG}/>${filt}
+  ${st==='glass'?`<path d="M84 36 L130 100" stroke="rgba(255,255,255,.9)" stroke-width="3" stroke-linecap="round"/>`:''}
+  <text x="100" y="226" text-anchor="middle" font-family="Plex" font-weight="700" font-size="${st==='v3'?44:46}" fill="${txt}">قارب</text></svg>`;}
+let U=0;function put(sel,st){document.querySelectorAll(sel).forEach(e=>e.innerHTML=LOGO(st,U++));}
+function hh(id,t,a,b){S(id,pop(t,a,b,{dy:30,s0:.92}));}
+const IT=[
+ `<svg viewBox="0 0 190 190"><path d="M55 60 L135 60 L125 160 L65 160 Z" fill="#EFE7D8"/><rect x="50" y="48" width="90" height="16" rx="6" fill="#D9CDB8"/><g transform="translate(75 78) scale(.2)">LG</g></svg>`,
+ `<svg viewBox="0 0 190 190"><path d="M60 50 Q60 30 95 30 Q130 30 130 50" fill="none" stroke="#D9CDB8" stroke-width="7"/><rect x="40" y="50" width="110" height="115" rx="10" fill="#EFE7D8"/><g transform="translate(75 72) scale(.2)">LG</g></svg>`,
+ `<svg viewBox="0 0 190 190"><rect x="30" y="40" width="130" height="90" rx="10" fill="#EFE7D8"/><rect x="50" y="130" width="8" height="40" fill="#8D8D93"/><rect x="132" y="130" width="8" height="40" fill="#8D8D93"/><g transform="translate(75 46) scale(.2)">LG</g></svg>`,
+ `<svg viewBox="0 0 190 190"><circle cx="95" cy="95" r="62" fill="#EFE7D8" stroke="#E6B84C" stroke-width="5"/><g transform="translate(75 68) scale(.2)">LG</g></svg>`];
+function init(){mkCaps(CAP);
+ const st=['flat','grad','d3','glass'];st.forEach((s,i)=>{$('L'+i).innerHTML=LOGO(s,U++);document.querySelector('#f'+i+' .lg').innerHTML=LOGO(s,U++);});
+ $('f3').style.background='#22313A';$('f3').innerHTML=`<i style="position:absolute;left:10px;top:40px;width:140px;height:140px;border-radius:50%;background:#FF7A45;filter:blur(30px)"></i><i style="position:absolute;left:90px;top:120px;width:140px;height:140px;border-radius:50%;background:#2BB3C0;filter:blur(30px)"></i>`+$('f3').innerHTML;
+ document.querySelector('#ci1 .lg').innerHTML=LOGO('flat',U++);document.querySelector('#ci2 .lg').innerHTML=LOGO('glass',U++);
+ $('ci2').style.background='#22313A';$('ci2').innerHTML=`<i style="position:absolute;left:40px;top:60px;width:200px;height:200px;border-radius:50%;background:#FF7A45;filter:blur(40px)"></i><i style="position:absolute;left:160px;top:160px;width:200px;height:200px;border-radius:50%;background:#2BB3C0;filter:blur(40px)"></i>`+$('ci2').innerHTML;
+ put('#mem .lg','flat');put('.pp .lg','flat');put('#big .lg','flat');
+ document.querySelector('#e0 .lg').innerHTML=LOGO('flat',U++);document.querySelector('#e1 .lg').innerHTML=LOGO('v2',U++);document.querySelector('#e2 .lg').innerHTML=LOGO('v3',U++);
+ document.querySelector('#endr .a .lg').innerHTML=LOGO('flat',U++);document.querySelector('#endr .b .lg').innerHTML=LOGO('glass',U++);
+ $('endr').querySelector('.b').style.background='#22313A';
+ const mini=LOGO('flat',U++).replace('<svg ','<svg width="200" height="240" ');
+ IT.forEach((s,i)=>{$('i'+i).innerHTML=s.replace('LG',mini.replace(/width="100%" height="100%"/,''));});
+ $('i4').innerHTML='';}
+const RG=[[60+290-20-64,500+18],[395+290-20-64,500+18],[730+290-20-64,500+18]];
+function frame(t){
+ caps(t,CAP);
+ $('fade').style.opacity=ein(P(t,DUR-.45,.45));
+ const cs=1+.014*Math.sin(t*.36);$('stage').style.transform=`translate(${540-540*cs}px,${760-760*cs}px) scale(${cs})`;
+ $('bgimg').style.transform=`translate(${-18*Math.sin(t*.13)}px,${-30*P(t,0,DUR)}px) scale(${1.02+.03*P(t,0,DUR)})`;
+ $('beam').style.transform=`translateX(${lerp(-120,520,P(t,0,DUR))}px) rotate(-8deg)`;
+ // ---- S1 artboard 0..4.62; morph on each trend word
+ G('art',t,-.5,4.6,'pop','zoom');
+ const M=[0,2.02,3.2,3.98];const NM=['logo_final.svg','logo_final_v2.svg','logo_final_v3_3D.svg','logo_FINAL_final.svg'];
+ let cur=0;M.forEach((m,i)=>{if(t>=m)cur=i;});$('fname').textContent=NM[cur];
+ M.forEach((m,i)=>{const nx=M[i+1];const a=i===0?-1:m;const p=i===0?1:P(t,a,.3);const u=nx===undefined?0:P(t,nx,.22);
+  const e=$('L'+i);const o=cl(p*1.4)*(1-cl(u*1.4));e.style.opacity=o;e.style.visibility=o>0?'visible':'hidden';
+  e.style.transform=`scale(${lerp(.7,1,back(p))*(1+.1*eo(u))}) rotate(${lerp(i%2?-10:10,0,eo(p))}deg)`;e.style.filter=(1-cl(p*1.6))*10+u*12>.3?`blur(${((1-cl(p*1.6))*10+u*12).toFixed(1)}px)`:'';});
+ $('blobs').style.opacity=ee(P(t,3.98,.3));$('board').style.background=t>=3.98?mixc('#EFE7D8','#22313A',ee(P(t,3.98,.3))):'#EFE7D8';
+ const chip=$('chip');const CH=[[2.02,'ترند: قريدينت'],[3.2,'ترند: ثري دي'],[3.98,'ترند: زجاج']];let ci=-1;CH.forEach((c,i)=>{if(t>=c[0])ci=i;});
+ if(ci>=0){chip.textContent=CH[ci][1];const p=pop(t,CH[ci][0],4.55,{dy:20,s0:.7});chip.style.opacity=p.o;chip.style.transform=`translate(-50%,${p.y}px) scale(${p.s})`;chip.style.visibility=p.o>0?'visible':'hidden';}else{chip.style.opacity=0;chip.style.visibility='hidden';}
+ hh('h0',t,1.3,5.55);
+ // fan 4.62..5.6
+ ['f0','f1','f2','f3'].forEach((id,i)=>{const p=pop(t,4.62+i*.08,5.62,{dy:140,s0:.7,dx:(1.5-i)*-60});p.r=(i-1.5)*4*(1-cl(P(t,4.62+i*.08,.6)))+(i-1.5)*2;S(id,p);S('y'+i,pop(t,4.75+i*.08,5.62,{dy:30,s0:.8}));});
+ // ---- S2 5.72..8.4
+ S('cl1',pop(t,5.8,8.42,{dy:20}));S('cl2',pop(t,6.86,8.42,{dy:20}));
+ const c1=pop(t,5.75,8.42,{dy:60,s0:.8});S('ci1',c1);const c2=pop(t,6.86,8.42,{dy:60,s0:.8});S('ci2',c2);
+ S('neq',pop(t,7.3,8.42,{dy:0,s0:.3}));[['q1',7.7],['q2',7.84],['q3',7.95]].forEach(([id,a])=>S(id,pop(t,a,8.42,{dy:30,s0:.4})));
+ S('tWho',pop(t,7.8,8.42,{dy:30,s0:.7}));hh('h1',t,7.7,8.42);
+ // ---- S3/S4 8.54..13.4
+ S('mem',pop(t,8.54,13.42,{dy:80,s0:.8}));S('meter',pop(t,8.8,13.42,{dy:40}));
+ const pct=Math.round(lerp(0,30,ee(P(t,10.12,.6)))+lerp(0,35,ee(P(t,12.26,.4)))+lerp(0,35,ee(P(t,12.66,.6))));$('pct').textContent=pct+'%';$('fill').style.width=pct+'%';
+ S('yr',pop(t,12.26,13.42,{dy:20}));$('yrn').textContent=Math.max(1,Math.min(5,1+Math.floor(4*ee(P(t,12.26,1.0)))));
+ [['i0',12.66],['i1',12.76],['i2',12.86],['i3',12.96]].forEach(([id,a],i)=>{const p=pop(t,a,13.42,{dy:50,s0:.6});p.r=[-6,6,4,-4][i]*(1-cl(P(t,a,.5)));S(id,p);});
+ hh('h2',t,10.12,13.42);
+ // mem pulse on repeats
+ // ---- S5 posts 13.52..16.2
+ ['p0','p1','p2'].forEach((id,i)=>{const p=pop(t,14.06+i*.3,16.22,{dy:120,s0:.8});p.r=[-3,0,3][i];S(id,p);S('pc'+i,pop(t,14.2+i*.3,16.22,{dy:20}));});
+ ['rg0','rg1','rg2'].forEach((id,i)=>{const e=$(id);e.style.left=(RG[i][0]-16)+'px';e.style.top=(RG[i][1]-16)+'px';S(id,pop(t,15.4+i*.08,16.22,{dy:0,s0:1.5}));});
+ hh('h3',t,14.06,16.2);
+ // ---- S6 lock 16.31..18.6
+ const bg_=pop(t,16.4,18.62,{dy:0,s0:.4});S('big',bg_);
+ $('big').style.boxShadow=`0 50px 100px rgba(0,0,0,.7),0 0 ${60*ee(P(t,17.77,.4))}px rgba(230,184,76,${.45*ee(P(t,17.77,.4))}),0 0 0 ${4*ee(P(t,17.77,.3))}px rgba(230,184,76,.9)`;
+ const lk=pop(t,17.11,18.62,{dy:-40,s0:.3});lk.r=lerp(-30,0,cl(P(t,17.11,.5)));S('lock',lk);
+ hh('h4',t,17.77,18.62);
+ // ---- S7 evolution 18.76..23.6
+ [['e0',18.9],['e1',20.38],['e2',21.08]].forEach(([id,a],i)=>{S(id,pop(t,a,23.62,{dy:60,s0:.85}));S('ey'+i,pop(t,a+.1,23.62,{dy:20}));});
+ S('a0',pop(t,20.2,23.62,{dx:30,dy:0}));S('a1',pop(t,20.9,23.62,{dx:30,dy:0}));
+ [['k0',23.01],['k1',23.09],['k2',23.17]].forEach(([id,a])=>S(id,pop(t,a,23.62,{dy:0,s0:.3})));
+ S('tKnow',pop(t,23.05,23.62,{dy:30,s0:.7}));hh('h5',t,21.08,23.62);
+ // ---- end
+ S('endq',pop(t,23.72,undefined,{dy:50,s0:.85}));S('endr',pop(t,24.82,undefined,{dy:40,s0:.85}));
+ S('cbtn',pop(t,26.15,undefined,{dy:40,s0:.6}));
+ S('mark',{o:.55*cl(P(t,.4,.6))});
+}
+</script></body></html>

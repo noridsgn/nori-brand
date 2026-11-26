@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../tools/reel-base.css">
+<style>
+#bgimg{position:absolute;inset:0;background:url(bg.jpg) center/cover;filter:brightness(.72)}
+#v2{position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 50% 50%,transparent,rgba(12,12,14,.6))}
+#k{position:absolute;left:0;top:290px;width:1080px;text-align:center;font:600 24px Inter;letter-spacing:10px;color:rgba(242,240,235,.55)}#k b{color:var(--gold);font-weight:600}
+#t{position:absolute;left:0;top:330px;width:1080px;text-align:center;direction:rtl;font-weight:700;font-size:112px;line-height:1.15;text-shadow:0 10px 30px rgba(0,0,0,.6)}
+.tile{position:absolute;width:330px;height:400px;border-radius:36px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.65),0 0 0 1.5px rgba(255,255,255,.1)}
+.tile .lg{position:absolute;left:55px;top:40px;width:220px;height:264px}
+.x{position:absolute;width:74px;height:74px;border-radius:50%;background:var(--bad);color:#fff;font:700 40px Inter;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(255,90,82,.2)}
+#main{left:345px;top:830px;width:390px;height:470px;background:#EFE7D8;box-shadow:0 60px 120px rgba(0,0,0,.75),0 0 0 5px #E6B84C,0 0 60px rgba(230,184,76,.4)}
+#main .lg{left:65px;top:50px;width:260px;height:312px}
+#lock{position:absolute;left:690px;top:790px;width:120px;height:120px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(230,184,76,.18),0 20px 40px rgba(0,0,0,.6)}
+</style></head><body>
+<div id="bgimg"></div><div id="v2"></div>
+<div id="k">L O G O &nbsp; × &nbsp; <b>T R E N D S</b></div>
+<div id="t">لا تلحق <span class="gold">الترند</span><br>بلوقوك</div>
+<div class="tile" id="a" style="left:70px;top:700px;transform:rotate(-10deg);background:#EFE7D8;filter:brightness(.6)"><div class="lg"></div></div>
+<div class="tile" id="b" style="left:680px;top:700px;transform:rotate(10deg);background:#EFE7D8;filter:brightness(.6)"><div class="lg"></div></div>
+<div class="tile" id="c" style="left:375px;top:640px;transform:rotate(0deg) scale(.9);background:#22313A;filter:brightness(.55)"><i style="position:absolute;left:20px;top:60px;width:200px;height:200px;border-radius:50%;background:#FF7A45;filter:blur(40px)"></i><i style="position:absolute;left:130px;top:170px;width:200px;height:200px;border-radius:50%;background:#2BB3C0;filter:blur(40px)"></i><div class="lg"></div></div>
+<div class="x" style="left:150px;top:1080px">✕</div><div class="x" style="left:860px;top:1080px">✕</div>
+<div class="tile" id="main"><div class="lg"></div></div>
+<div id="lock"><svg width="58" height="58" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="#17130A"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="#17130A" stroke-width="2.4"/></svg></div>
+<img src="mark.svg" style="position:absolute;left:512px;top:1560px;width:56px;opacity:.6">
+<script>function LOGO(st,uid){const id='g'+uid;
+ const sail='M78 22 L156 128 L70 128 C86 98 92 60 78 22 Z',hull='M30 140 L170 140 C160 166 138 176 100 176 C62 176 40 166 30 140 Z',mast='M72 18 L72 140';
+ let defs='',sf,hf,ms,txt='#1E3A5F',extra='',filt='';
+ if(st==='flat'||st==='v2'||st==='v3'){sf='#1E3A5F';hf='#1E3A5F';ms='#1E3A5F';}
+ if(st==='v2'){}
+ if(st==='grad'){defs=`<linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A3CF0"/><stop offset=".5" stop-color="#F0457A"/><stop offset="1" stop-color="#FFB04A"/></linearGradient>`;sf=hf=ms=`url(#${id})`;txt=`url(#${id})`;}
+ if(st==='d3'){defs=`<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4C7BB8"/><stop offset="1" stop-color="#1E3A5F"/></linearGradient>`;sf=hf=`url(#${id})`;ms='#2C507F';txt='#2C507F';
+  let ex='';for(let k=12;k>0;k-=2)ex+=`<g transform="translate(${k*.7} ${k})" opacity="1"><path d="${sail}" fill="#0B1A2E"/><path d="${hull}" fill="#0B1A2E"/></g>`;extra=ex;
+  filt=`<path d="M80 30 L140 112" stroke="rgba(255,255,255,.55)" stroke-width="4" stroke-linecap="round"/><path d="M40 146 L160 146" stroke="rgba(255,255,255,.4)" stroke-width="4" stroke-linecap="round"/>`;}
+ if(st==='glass'){sf=hf='rgba(255,255,255,.28)';ms='rgba(255,255,255,.8)';txt='#FFFFFF';}
+ let sailP=sail,hullP=hull;
+ if(st==='v2'){sailP='M80 24 L154 126 L74 126 C88 96 92 60 80 24 Z';hullP='M34 140 L166 140 C156 162 136 172 100 172 C64 172 44 162 34 140 Z';}
+ if(st==='v3'){sailP='M82 26 L150 124 L78 124 C90 94 92 60 82 26 Z';hullP='M40 140 L160 140 C152 158 132 166 100 166 C68 166 48 158 40 140 Z';}
+ const strokeG=st==='glass'?'stroke="rgba(255,255,255,.85)" stroke-width="3"':'';
+ return `<svg viewBox="0 0 200 240" width="100%" height="100%"><defs>${defs}</defs>${extra}
+  ${st==='v3'?'':`<path d="${mast}" stroke="${ms}" stroke-width="${st==='v2'?5:6}" stroke-linecap="round"/>`}
+  <path d="${sailP}" fill="${sf}" ${strokeG}/><path d="${hullP}" fill="${hf}" ${strokeG}/>${filt}
+  ${st==='glass'?`<path d="M84 36 L130 100" stroke="rgba(255,255,255,.9)" stroke-width="3" stroke-linecap="round"/>`:''}
+  <text x="100" y="226" text-anchor="middle" font-family="Plex" font-weight="700" font-size="${st==='v3'?44:46}" fill="${txt}">قارب</text></svg>`;}
+
+document.querySelector('#a .lg').innerHTML=LOGO('grad',1);document.querySelector('#b .lg').innerHTML=LOGO('d3',2);document.querySelector('#c .lg').innerHTML=LOGO('glass',3);document.querySelector('#main .lg').innerHTML=LOGO('flat',4);
+</script></body></html>

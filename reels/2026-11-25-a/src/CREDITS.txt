@@ -1,0 +1,3 @@
+stock.jpg: Pexels photo 8770665 (Pexels License, free to use), via HF dataset p1atdev/pexels-1k-random. Laptop brand mark blurred.
+real.jpg: Pexels photo 4706141 (Pexels License, free to use), via the same dataset. Small wheel brand text blurred.
+bg.jpg: generated concrete texture (numpy), no third-party source.
