@@ -15,5 +15,6 @@ Every carousel/reel, archived as soon as it is made: PNGs + the HTML each slide 
 - `2026-11-20/E` – «عين الزبون تقرا من وين؟» visual hierarchy (Fri 20 Nov, educational) · fictional brand «رَف».
 - `2026-11-21/F` – «الفراغ مو ضياع… الفراغ يبيع» white space (Sat 21 Nov, educational) · fictional brand «لُجين».
 - `2026-11-28/K` – «أرقامك تلخبط الإعلان؟» one numeral system, RTL flips, the hero number (Sat 28 Nov 18:30, educational) · fictional delivery «بوصلة».
+- `2026-12-05/L` – «سلّمت اللوقو… بس شنو سلّمت؟» the logo delivery package: formats, 6 versions, one-page guide (Sat 5 Dec 18:30, educational) · fictional perfume shop «عنبر».
 - `2026-11-01/rejected-v1` – first attempt, rejected by NORI (black/grey only, 8 slides, Black Friday). Kept as what NOT to do.
-- `_generator/` – Node + Playwright scripts that render the slides (`node a2.js`, `node e-f.js`, `node concept-alf.js`, `node g-h.js`, `node i-j.js`, `node k.js`; needs fonts from `../fonts`).
+- `_generator/` – Node + Playwright scripts that render the slides (`node a2.js`, `node e-f.js`, `node concept-alf.js`, `node g-h.js`, `node i-j.js`, `node k.js`, `node l.js`; needs fonts from `../fonts`).
